@@ -1,12 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Noto_Sans_Arabic } from "next/font/google"
+import { Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "@/components/language-provider"
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-plus-jakarta-sans",
   display: "swap",
 })
 
@@ -73,7 +73,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${inter.variable} ${notoSansArabic.variable} antialiased`}>
+      <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Globe, Leaf } from "lucide-react"
+import { ChevronDown, Globe } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { MobileMenu } from "@/components/mobile-menu"
 
@@ -36,17 +37,15 @@ export function ScrollHeader() {
     >
       <div className="w-full">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className={`flex items-center space-x-2 ${isRTL ? "flex-row-reverse space-x-reverse" : ""}`}>
-            <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-white" />
-            </div>
-            <span
-              className={`text-xl font-bold transition-colors duration-300 ${
-                isScrolled ? "text-gray-800" : "text-white"
-              }`}
-            >
-              GREEN DESERT
-            </span>
+          <div className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`}>
+            <Image
+              src={isScrolled ? "/logo_GD_black_EN.png" : "/logo_GD_white_home_EN.png"}
+              alt="Green Desert Logo"
+              width={150}
+              height={40}
+              className="h-8 w-auto transition-opacity duration-300"
+              priority
+            />
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">

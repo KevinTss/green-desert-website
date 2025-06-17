@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
@@ -36,11 +37,14 @@ export function MobileMenu({ isScrolled = false }: MobileMenuProps) {
           >
             <div className="p-6">
               <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm font-bold">GD</span>
-                  </div>
-                  <span className="text-xl font-bold text-gray-800">GREEN DESERT</span>
+                <div className="flex items-center">
+                  <Image
+                    src="/logo_GD_black_EN.png"
+                    alt="Green Desert Logo"
+                    width={120}
+                    height={32}
+                    className="h-8 w-auto"
+                  />
                 </div>
                 <button onClick={toggleMenu} className="p-2">
                   <X className="w-6 h-6" />

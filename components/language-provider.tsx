@@ -176,7 +176,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("language", language)
     document.documentElement.lang = language
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr"
-    document.documentElement.style.fontFamily = language === "ar" ? "var(--font-arabic)" : "var(--font-inter)"
+    document.documentElement.style.fontFamily = language === "ar" ? "var(--font-arabic)" : "var(--font-plus-jakarta-sans)"
   }, [language])
 
   const t = (key: string): string => {

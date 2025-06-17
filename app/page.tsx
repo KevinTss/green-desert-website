@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Leaf, Recycle, TreePine, Droplets, Calendar } from "lucide-react"
+import { Recycle, TreePine, Droplets, Calendar } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { VideoHero } from "@/components/video-hero"
 import { ScrollHeader } from "@/components/scroll-header"
@@ -336,11 +336,14 @@ export default function Component() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               <div className="lg:col-span-2">
-                <div className={`flex items-center space-x-2 mb-6 ${isRTL ? "flex-row-reverse space-x-reverse" : ""}`}>
-                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                    <Leaf className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-xl font-bold">GREEN DESERT</span>
+                <div className={`flex items-center mb-6 ${isRTL ? "flex-row-reverse" : ""}`}>
+                  <Image
+                    src="/logo_GD_white_home_EN.png"
+                    alt="Green Desert Logo"
+                    width={140}
+                    height={35}
+                    className="h-8 w-auto"
+                  />
                 </div>
                 <p className={`text-gray-400 text-sm mb-4 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>
                   {t("footer.description")}
@@ -440,9 +443,13 @@ export default function Component() {
                 className={`flex items-center space-x-4 mt-4 md:mt-0 ${isRTL ? "flex-row-reverse space-x-reverse" : ""}`}
               >
                 <span className="text-sm text-gray-400">{t("footer.designed")}</span>
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-xs text-black font-bold">GD</span>
-                </div>
+                <Image
+                  src="/logo_GD_white_home_EN.png"
+                  alt="Green Desert Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8"
+                />
               </div>
             </div>
           </div>
