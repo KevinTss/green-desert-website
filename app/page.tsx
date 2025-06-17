@@ -23,7 +23,7 @@ export default function Component() {
 
       {/* Hero Section with Video Background */}
       <VideoHero
-        videoUrl={undefined} // Will be provided later
+        videoUrl="/sliderV.mp4"
         posterUrl="/placeholder.svg?height=800&width=1400"
       >
         <div className="container mx-auto px-4 h-full flex items-center">
