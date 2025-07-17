@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
-  basePath: "/green-desert-website",
+  basePath: isProd ? '/green-desert-website' : '',
   output: "export",
   eslint: {
     ignoreDuringBuilds: true,
