@@ -73,7 +73,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} antialiased`}>
+      <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} font-sans`}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
