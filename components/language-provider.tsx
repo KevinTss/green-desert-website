@@ -16,7 +16,7 @@ const translations = {
   en: {
     // Header
     "nav.home": "Home",
-    "nav.about": "About Us",
+    "nav.about": "About",
     "nav.products": "Products",
     "nav.services": "Services",
     "nav.news": "Latest News",
@@ -84,7 +84,6 @@ const translations = {
     "footer.services": "Services",
     "footer.articles": "Latest Articles",
     "footer.copyright": "© 2024 Green Desert Co. All rights reserved.",
-    "footer.designed": "Designed and developed by",
   },
   ar: {
     // Header
@@ -156,7 +155,6 @@ const translations = {
     "footer.services": "الخدمات",
     "footer.articles": "آخر المقالات",
     "footer.copyright": "© 2024 شركة الصحراء الخضراء. جميع الحقوق محفوظة.",
-    "footer.designed": "تم التصميم والتطوير بواسطة",
   },
 }
 
