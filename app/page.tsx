@@ -6,51 +6,18 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Recycle, TreePine, Droplets, Calendar } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
-import { VideoHero } from "@/components/video-hero"
+import { Section1Hero } from "@/components/section-1-hero"
 import { ScrollHeader } from "@/components/scroll-header"
 
 export default function Component() {
-  const { language, setLanguage, t, isRTL } = useLanguage()
-
-  const toggleLanguage = () => {
-    setLanguage(language === "en" ? "ar" : "en")
-  }
+  const { t, isRTL } = useLanguage()
 
   return (
     <div className="min-h-screen bg-white">
       {/* Scroll-aware Header */}
       <ScrollHeader />
 
-      {/* Hero Section with Video Background */}
-      <VideoHero
-        videoUrl="/sliderV.mp4"
-        posterUrl="/placeholder.svg?height=800&width=1400"
-      >
-        <div className="container mx-auto px-4 h-full flex items-center">
-          <div className={`text-white max-w-2xl ${isRTL ? "text-right" : "text-left"}`}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">{t("hero.title")}</h1>
-            <p className="text-lg sm:text-xl mb-8 opacity-90 leading-relaxed">{t("hero.subtitle")}</p>
-          </div>
-        </div>
-
-        {/* Language badges */}
-        <div className="absolute bottom-4 right-4 flex space-x-2">
-          <Badge
-            variant="secondary"
-            className={`bg-white/20 text-white cursor-pointer transition-colors ${language === "en" ? "bg-white/40" : "hover:bg-white/30"}`}
-            onClick={() => setLanguage("en")}
-          >
-            EN
-          </Badge>
-          <Badge
-            variant="secondary"
-            className={`bg-white/20 text-white cursor-pointer transition-colors ${language === "ar" ? "bg-white/40" : "hover:bg-white/30"}`}
-            onClick={() => setLanguage("ar")}
-          >
-            AR
-          </Badge>
-        </div>
-      </VideoHero>
+      <Section1Hero />
 
       {/* Rest of the content remains the same... */}
       {/* Green Desert Section */}
