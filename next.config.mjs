@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: "/green-desert-website",
+  output: "export",
   eslint: {
     ignoreDuringBuilds: true,
   },
