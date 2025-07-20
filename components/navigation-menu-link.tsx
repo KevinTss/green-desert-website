@@ -4,6 +4,8 @@ import { useState, useRef } from "react"
 import { ChevronDown } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export interface SubMenuItem {
   title: string
@@ -23,7 +25,8 @@ export function NavigationMenuLink({
   subMenuItems,
   isScrolled,
 }: NavigationMenuLinkProps) {
-  const { t, isRTL } = useLanguage()
+  const { t, isRTL, language } = useLanguage()
+  const pathname = usePathname()
   const [isMenuVisible, setIsMenuVisible] = useState(false)
   const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem | null>(
     subMenuItems?.[0] || null
@@ -47,6 +50,20 @@ export function NavigationMenuLink({
     }
   }
 
+  // Get the correct link URL
+  const getNavLink = () => {
+    const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
+    
+    switch (label) {
+      case 'nav.blog':
+        return `/${languageRoute}/blog`
+      case 'nav.home':
+        return `/${languageRoute}`
+      default:
+        return '#'
+    }
+  }
+
   return (
     <div
       className="relative"
@@ -54,15 +71,15 @@ export function NavigationMenuLink({
       onMouseLeave={handleMouseLeave}
     >
       <div className={`flex items-center cursor-pointer ${isRTL ? "space-x-reverse space-x-1" : "space-x-1"}`}>
-        <a
-          href="#"
+        <Link
+          href={getNavLink()}
           className={`transition-colors duration-300 hover:text-green-600 ${isScrolled
             ? "text-gray-700"
             : "text-white/90 hover:text-white"
             }`}
         >
           {t(label)}
-        </a>
+        </Link>
         {subMenuItems && (
           <ChevronDown
             className={`w-4 h-4 transition-colors duration-300 ${isScrolled ? "text-gray-500" : "text-white/70"

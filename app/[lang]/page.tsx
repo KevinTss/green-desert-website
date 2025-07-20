@@ -7,7 +7,7 @@ import { Section2OurMission } from "@/components/section-2-our-mission"
 import { Section3OurProducts } from "@/components/section-3-our-products"
 import { Section4OurServices } from "@/components/section-4-our-services"
 import { Section5Partners } from "@/components/section-5-partners"
-import { Section6News } from "@/components/section-6-news"
+import { Section6NewsClient } from "@/components/section-6-news-client"
 
 interface PageProps {
   params: Promise<{
@@ -24,7 +24,7 @@ export default function Page({ params }: PageProps) {
       <Section3OurProducts />
       <Section4OurServices />
       <Section5Partners />
-      <Section6News />
+      <Section6NewsClient />
       <Footer />
     </div>
   )

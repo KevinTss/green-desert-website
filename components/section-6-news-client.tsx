@@ -1,23 +1,18 @@
+"use client"
+
 import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, ArrowRight } from "lucide-react"
-import { BlogPost } from "@/lib/blog"
+import { getLatestPosts, BlogPost } from "@/lib/blog-static"
 
-interface Section6NewsProps {
-  latestPosts: {
-    en: BlogPost[]
-    ar: BlogPost[]
-  }
-}
-
-export const Section6News = ({ latestPosts }: Section6NewsProps) => {
+export const Section6NewsClient = () => {
   const { t, isRTL, language } = useLanguage()
-  
-  // Get posts for current language, fallback to empty array
-  const posts = latestPosts[language as 'en' | 'ar'] || []
   const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
+  
+  // Get latest posts for current language
+  const posts = getLatestPosts(language as 'en' | 'ar', 2)
   
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -42,7 +37,7 @@ export const Section6News = ({ latestPosts }: Section6NewsProps) => {
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-              {t("news.title").split(" ")[0]} <span className="text-orange-500">{t("news.title").split(" ")[1]}</span>
+              {t("news.title").split(" ")[0]} <span className="text-orange-500">{t("news.title").split(" ")[1] || t("news.title").split(" ")[0]}</span>
             </h2>
             {posts.length > 0 && (
               <Link 
@@ -60,7 +55,7 @@ export const Section6News = ({ latestPosts }: Section6NewsProps) => {
           {/* Blog Posts Grid */}
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {posts.length > 0 ? (
-              posts.slice(0, 2).map((post) => (
+              posts.map((post) => (
                 <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <Link href={`/${languageRoute}/blog/${post.slug}`}>
                     <div className="relative">

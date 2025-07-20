@@ -171,10 +171,10 @@ export function MobileMenu({
               </a>
 
               <a
-                href="#"
+                href={`/${language === 'ar' ? 'ar-SA' : 'en'}/blog`}
                 className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
               >
-                {t("nav.news")}
+                {t("nav.blog")}
               </a>
 
               <a
