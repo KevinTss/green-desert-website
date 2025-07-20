@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 
 type Language = "en" | "ar"
 
@@ -184,15 +185,30 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en")
+interface LanguageProviderProps {
+  children: React.ReactNode
+  initialLang?: string
+}
+
+export function LanguageProvider({ children, initialLang }: LanguageProviderProps) {
+  const router = useRouter()
+  const pathname = usePathname()
+  
+  const [language, setLanguage] = useState<Language>(() => {
+    if (initialLang === 'ar-SA') return 'ar'
+    if (initialLang === 'en') return 'en'
+    return 'en'
+  })
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as Language
-    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ar")) {
-      setLanguage(savedLanguage)
+    // Don't override initialLang on first render
+    if (!initialLang) {
+      const savedLanguage = localStorage.getItem("language") as Language
+      if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ar")) {
+        setLanguage(savedLanguage)
+      }
     }
-  }, [])
+  }, [initialLang])
 
   useEffect(() => {
     localStorage.setItem("language", language)
@@ -201,13 +217,24 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.style.fontFamily = language === "ar" ? "var(--font-arabic)" : "var(--font-plus-jakarta-sans)"
   }, [language])
 
+  const handleSetLanguage = (newLang: Language) => {
+    const targetRoute = newLang === 'ar' ? 'ar-SA' : 'en'
+    
+    // Get current path without language prefix
+    const currentPath = pathname.replace(/^\/(en|ar-SA)/, '') || ''
+    
+    // Navigate to new language route
+    router.push(`/${targetRoute}${currentPath}`)
+    setLanguage(newLang)
+  }
+
   const t = (key: string): string => {
     return translations[language][key as keyof (typeof translations)[typeof language]] || key
   }
 
   const isRTL = language === "ar"
 
-  return <LanguageContext.Provider value={{ language, setLanguage, t, isRTL }}>{children}</LanguageContext.Provider>
+  return <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, isRTL }}>{children}</LanguageContext.Provider>
 }
 
 export function useLanguage() {

@@ -1,25 +1,28 @@
 "use client"
 
-import { Section1Hero } from "@/components/section-1-hero"
-import { ScrollHeader } from "@/components/scroll-header"
-import { Footer } from "@/components/footer"
-import { Section2OurMission } from "@/components/section-2-our-mission"
-import { Section3OurProducts } from "@/components/section-3-our-products"
-import { Section4OurServices } from "@/components/section-4-our-services"
-import { Section5Partners } from "@/components/section-5-partners"
-import { Section6News } from "@/components/section-6-news"
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
-export default function Component() {
+export default function RootPage() {
+  const router = useRouter()
+
+  useEffect(() => {
+    // Get browser language preference
+    const browserLang = navigator.language.toLowerCase()
+    const isArabic = browserLang.includes('ar') || 
+                     localStorage.getItem('language') === 'ar'
+    
+    // Redirect to appropriate language route
+    const targetLang = isArabic ? 'ar-SA' : 'en'
+    router.replace(`/${targetLang}`)
+  }, [router])
+
   return (
-    <div className="min-h-screen bg-white">
-      <ScrollHeader />
-      <Section1Hero />
-      <Section2OurMission />
-      <Section3OurProducts />
-      <Section4OurServices />
-      <Section5Partners />
-      <Section6News />
-      <Footer />
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-2xl font-semibold text-gray-900">Loading...</h1>
+        <p className="mt-2 text-gray-600">Redirecting to your preferred language</p>
+      </div>
     </div>
   )
 }

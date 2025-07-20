@@ -29,7 +29,6 @@ export function MobileMenu({
   const { t, isRTL, language, setLanguage } = useLanguage()
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null)
 
-  console.log('Mobile Menu - isRTL:', isRTL, 'language:', language)
 
   const toggleMenu = (menuName: string) => {
     setExpandedMenu(expandedMenu === menuName ? null : menuName)
