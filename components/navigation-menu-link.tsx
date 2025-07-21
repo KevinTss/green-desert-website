@@ -104,7 +104,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
           // 3️⃣ let Popper push it back inside if it collides
           avoidCollisions
           collisionPadding={16}          // 16 px gutter on both sides
-          collisionBoundary={document.documentElement}
+          collisionBoundary={typeof window !== 'undefined' ? document.documentElement : undefined}
           // 4️⃣ cap the physical width so it can actually fit
           className={cn(
             "z-50 rounded-lg border bg-white shadow-xl overflow-hidden",

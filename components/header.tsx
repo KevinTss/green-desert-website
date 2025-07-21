@@ -66,6 +66,8 @@ export function Header() {
   ]
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const handleScroll = () => {
       // Get the hero section height (100vh)
       const heroHeight = window.innerHeight

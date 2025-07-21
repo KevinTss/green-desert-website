@@ -207,7 +207,7 @@ export function LanguageProvider({ children, initialLang }: LanguageProviderProp
 
   useEffect(() => {
     // Don't override initialLang on first render
-    if (!initialLang) {
+    if (!initialLang && typeof window !== 'undefined') {
       const savedLanguage = localStorage.getItem("language") as Language
       if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ar")) {
         setLanguage(savedLanguage)
@@ -216,6 +216,8 @@ export function LanguageProvider({ children, initialLang }: LanguageProviderProp
   }, [initialLang])
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     localStorage.setItem("language", language)
     document.documentElement.lang = language
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr"
