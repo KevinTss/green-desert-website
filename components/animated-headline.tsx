@@ -25,7 +25,7 @@ export const AnimatedHeadline = ({ prefix, phrases }: AnimatedHeadlineProps) => 
   }, [phrases.length])
 
   return (
-    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+    <h1 className="text-xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
       {prefix}{" "}
       <span
         className="inline-block min-w-[15ch] whitespace-nowrap"

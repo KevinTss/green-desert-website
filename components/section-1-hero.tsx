@@ -4,7 +4,7 @@ import { AnimatedHeadline } from "./animated-headline"
 
 
 export const Section1Hero = () => {
-  const { t, isRTL } = useLanguage()
+  const { t } = useLanguage()
 
   return (
     <VideoHero
@@ -12,7 +12,7 @@ export const Section1Hero = () => {
       posterUrl="/placeholder.svg?height=800&width=1400"
     >
       <div className="flex items-center justify-center h-full">
-        <div className="text-white text-center w-1/2">
+        <div className="text-white text-center w-4/5 sm:1/2">
           <AnimatedHeadline
             prefix={t("hero.title")}
             phrases={[
@@ -21,7 +21,7 @@ export const Section1Hero = () => {
               { text: t("hero.rotating.agriculture"), color: "text-[#949182]" },
             ]}
           />
-          <p className="text-lg sm:text-xl mb-8 opacity-90 leading-relaxed">
+          <p className="text-md sm:text-xl mb-8 opacity-90 leading-relaxed">
             {t("hero.subtitle")}
           </p>
         </div>
