@@ -33,9 +33,7 @@ const translations = {
     "nav.products.seeds.description": "Certified low-THC hemp seeds for sustainable feed, food, and future crop cultivation.",
     "nav.services": "Services",
     "nav.blog": "Blog",
-    "nav.news": "Latest News",
-    "nav.contact": "Contact",
-    "header.contact": "CONTACT US",
+    "header.contact": "Contact us",
     "header.language": "ENGLISH",
 
     // Hero
@@ -122,8 +120,6 @@ const translations = {
     "nav.products.seeds.description": "بذور قنب منخفضة THC معتمدة للاستخدام المستدام في التغذية البشرية والحيوانية وزراعة المحاصيل المستقبلية.",
     "nav.services": "الخدمات",
     "nav.blog": "المدونة",
-    "nav.news": "آخر الأخبار",
-    "nav.contact": "اتصل بنا",
     "header.contact": "اتصل بنا",
     "header.language": "العربية",
 

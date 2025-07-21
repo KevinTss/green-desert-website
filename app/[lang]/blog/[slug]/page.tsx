@@ -1,8 +1,8 @@
-import { getPostBySlug, getAllPosts, markdownToHtml } from '@/lib/blog'
+import { getPostBySlug, getAllPosts } from '@/lib/blog'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ScrollHeader } from '@/components/scroll-header'
+import { Header } from '@/components/header'
 import { Metadata } from 'next'
 
 interface BlogPostPageProps {
@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      <ScrollHeader />
+      <Header />
       <div className="container mx-auto px-4 py-8 pt-24">
         {/* Back to blog link */}
         <div className={`mb-8 ${isArabic ? 'text-right' : 'text-left'}`}>

@@ -1,6 +1,6 @@
 import { getAllPosts } from '@/lib/blog'
 import { BlogCard } from '@/components/blog-card'
-import { ScrollHeader } from '@/components/scroll-header'
+import { Header } from '@/components/header'
 import { Metadata } from 'next'
 
 interface BlogPageProps {
@@ -12,10 +12,10 @@ interface BlogPageProps {
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { lang } = await params
   const isArabic = lang === 'ar-SA'
-  
+
   return {
     title: isArabic ? 'مدونة الصحراء الخضراء' : 'Green Desert Blog',
-    description: isArabic 
+    description: isArabic
       ? 'اكتشف أحدث المقالات والأخبار حول التكنولوجيا الحيوية والحلول البيئية المستدامة'
       : 'Discover the latest articles and news about biotechnology and sustainable environmental solutions',
   }
@@ -29,7 +29,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      <ScrollHeader />
+      <Header />
       <div className="container mx-auto px-4 py-12 pt-24">
         {/* Header */}
         <div className="text-center mb-16">
@@ -37,7 +37,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
             {isArabic ? 'مدونة الصحراء الخضراء' : 'Green Desert Blog'}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {isArabic 
+            {isArabic
               ? 'اكتشف أحدث المقالات والأخبار حول التكنولوجيا الحيوية والحلول البيئية المستدامة في المملكة العربية السعودية'
               : 'Discover the latest articles and news about biotechnology and sustainable environmental solutions in Saudi Arabia'
             }
@@ -58,7 +58,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
               {isArabic ? 'لا توجد مقالات بعد' : 'No articles yet'}
             </h3>
             <p className="text-gray-600 max-w-md mx-auto">
-              {isArabic 
+              {isArabic
                 ? 'نحن نعمل على إضافة محتوى رائع قريباً. تابعونا للحصول على آخر الأخبار!'
                 : "We're working on adding great content soon. Stay tuned for the latest updates!"
               }

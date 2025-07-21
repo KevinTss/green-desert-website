@@ -13,7 +13,7 @@ import Link from "next/link"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 
-export function ScrollHeader() {
+export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
   const { language, setLanguage, t, isRTL } = useLanguage()
@@ -122,10 +122,6 @@ export function ScrollHeader() {
             />
             <NavigationMenuLink
               label="nav.blog"
-              isScrolled={isScrolled || isBlogPage}
-            />
-            <NavigationMenuLink
-              label="nav.contact"
               isScrolled={isScrolled || isBlogPage}
             />
           </nav>
