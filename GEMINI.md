@@ -16,6 +16,8 @@ This document provides a brief overview of the `green-desert-website` project, i
 - `public/`: Contains static assets like images and videos.
 - `lib/`: Contains utility functions.
 - `hooks/`: Contains custom React hooks.
+- `content/`: Contains markdown files for blog posts.
+- `styles/`: Contains global CSS styles.
 
 ## Development Scripts
 
