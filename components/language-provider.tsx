@@ -39,8 +39,12 @@ const translations = {
     "header.language": "ENGLISH",
 
     // Hero
-    "hero.title": "Accelerating Saudi Arabia's",
-    "hero.subtitle": "Transformation Towards A Greener Future",
+    "hero.title": "Accelerating Saudi Arabia’s transition to",
+    "hero.subtitle": "Pioneering sustainable innovation through industrial hemp",
+    "hero.rotating.greener": "a greener future",
+    "hero.rotating.bio": "a bio-based economy",
+    "hero.rotating.agriculture": "sustainable agriculture",
+
 
     // About
     "about.title": "Green Desert",
@@ -124,8 +128,11 @@ const translations = {
     "header.language": "العربية",
 
     // Hero
-    "hero.title": "تسريع تحول المملكة العربية السعودية",
-    "hero.subtitle": "نحو مستقبل أكثر خضرة",
+    "hero.title": "تسريع انتقال المملكة العربية السعودية نحو",
+    "hero.subtitle": "ريادة الابتكار المستدام من خلال القنب الصناعي",
+    "hero.rotating.greener": "مستقبل أكثر خضرة",
+    "hero.rotating.bio": "اقتصاد قائم على التكنولوجيا الحيوية",
+    "hero.rotating.agriculture": "الزراعة المستدامة",
 
     // About
     "about.title": "الصحراء الخضراء",
@@ -195,7 +202,7 @@ interface LanguageProviderProps {
 export function LanguageProvider({ children, initialLang }: LanguageProviderProps) {
   const router = useRouter()
   const pathname = usePathname()
-  
+
   const [language, setLanguage] = useState<Language>(() => {
     if (initialLang === 'ar-SA') return 'ar'
     if (initialLang === 'en') return 'en'
@@ -221,10 +228,10 @@ export function LanguageProvider({ children, initialLang }: LanguageProviderProp
 
   const handleSetLanguage = (newLang: Language) => {
     const targetRoute = newLang === 'ar' ? 'ar-SA' : 'en'
-    
+
     // Get current path without language prefix
     const currentPath = pathname.replace(/^\/(en|ar-SA)/, '') || ''
-    
+
     // Navigate to new language route
     router.push(`/${targetRoute}${currentPath}`)
     setLanguage(newLang)
