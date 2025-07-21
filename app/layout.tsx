@@ -17,6 +17,7 @@ const notoSansArabic = Noto_Sans_Arabic({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://greendesert.sa"),
   title: "Green Desert - Accelerating Saudi Arabia's Transformation Towards A Greener Future",
   description:
     "Green Desert is a biotechnology Saudi Arabian Start Up Company leading ecological impact in Saudi Arabia and the Gulf Countries. Sustainable solutions for environmental challenges.",

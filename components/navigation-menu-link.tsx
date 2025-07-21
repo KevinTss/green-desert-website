@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 
 export interface SubMenuItem {
@@ -122,9 +123,11 @@ export function NavigationMenuLink({
                 <div className="w-full">
                   {activeSubMenu && (
                     <div className={`flex items-center opacity-0 animate-fade-in ${isRTL ? "space-x-reverse space-x-6" : "space-x-6"}`}>
-                      <img
+                      <Image
                         src={activeSubMenu.image}
                         alt={t(activeSubMenu.title)}
+                        width={192}
+                        height={192}
                         className="w-48 h-48 object-cover rounded-lg shadow-md"
                       />
                       <div className="flex-1">
