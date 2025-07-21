@@ -1,5 +1,8 @@
 import fs from 'fs'
 import path from 'path'
+import matter from 'gray-matter'
+import { remark } from 'remark'
+import html from 'remark-html'
 
 export interface BlogPost {
   slug: string
@@ -23,52 +26,31 @@ export function getPostSlugs(language: 'en' | 'ar'): string[] {
   return fs.readdirSync(langDirectory).filter(file => file.endsWith('.md'))
 }
 
-export function getPostBySlug(slug: string, language: 'en' | 'ar'): BlogPost | null {
+export async function getPostBySlug(slug: string, language: 'en' | 'ar'): Promise<BlogPost | null> {
   try {
     const realSlug = slug.replace(/\.md$/, '')
     const fullPath = path.join(postsDirectory, language, `${realSlug}.md`)
-    
+
     if (!fs.existsSync(fullPath)) {
       return null
     }
-    
+
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-    
-    // Simple frontmatter parsing
-    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/
-    const match = fileContents.match(frontmatterRegex)
-    
-    if (!match) {
-      return null
-    }
-    
-    const frontmatter = match[1]
-    const content = match[2]
-    
-    // Parse frontmatter
-    const metadata: any = {}
-    frontmatter.split('\n').forEach(line => {
-      const [key, ...values] = line.split(':')
-      if (key && values.length > 0) {
-        const value = values.join(':').trim()
-        if (key.trim() === 'tags') {
-          metadata[key.trim()] = value.split(',').map(tag => tag.trim())
-        } else {
-          metadata[key.trim()] = value.replace(/^["']|["']$/g, '')
-        }
-      }
-    })
-    
+    const { data, content } = matter(fileContents)
+
+    const processedContent = await remark().use(html).process(content)
+    const contentHtml = processedContent.toString()
+
     return {
       slug: realSlug,
-      title: metadata.title || realSlug,
-      date: metadata.date || new Date().toISOString(),
-      excerpt: metadata.excerpt || content.substring(0, 200) + '...',
-      content: content,
-      author: metadata.author,
-      image: metadata.image,
-      tags: metadata.tags || [],
-      language
+      title: data.title || realSlug,
+      date: data.date || new Date().toISOString(),
+      excerpt: data.excerpt || content.substring(0, 200) + '...',
+      content: contentHtml,
+      author: data.author,
+      image: data.image,
+      tags: data.tags || [],
+      language,
     }
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error)
@@ -76,38 +58,17 @@ export function getPostBySlug(slug: string, language: 'en' | 'ar'): BlogPost | n
   }
 }
 
-export function getAllPosts(language: 'en' | 'ar'): BlogPost[] {
+export async function getAllPosts(language: 'en' | 'ar'): Promise<BlogPost[]> {
   const slugs = getPostSlugs(language)
-  const posts = slugs
-    .map(slug => getPostBySlug(slug, language))
+  const posts = await Promise.all(
+    slugs.map(slug => getPostBySlug(slug, language))
+  )
+
+  return posts
     .filter((post): post is BlogPost => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  
-  return posts
 }
 
-// Simple markdown to HTML converter
-export function markdownToHtml(markdown: string): string {
-  return markdown
-    // Headers
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-    // Bold
-    .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-    // Italic
-    .replace(/\*(.*)\*/gim, '<em>$1</em>')
-    // Links
-    .replace(/\[([^\]]*)\]\(([^\)]*)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-    // Images
-    .replace(/!\[([^\]]*)\]\(([^\)]*)\)/gim, '<img alt="$1" src="$2" class="w-full rounded-lg my-4" />')
-    // Line breaks
-    .replace(/\n\n/gim, '</p><p>')
-    .replace(/\n/gim, '<br>')
-    // Wrap in paragraphs
-    .replace(/^(.*)$/gim, '<p>$1</p>')
-    // Clean up empty paragraphs
-    .replace(/<p><\/p>/gim, '')
-    .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/gim, '$1')
-    .replace(/<p>(<img.*\/>)<\/p>/gim, '$1')
+export function markdownToHtml(markdown: string): Promise<string> {
+    return remark().use(html).process(markdown).then(file => String(file));
 }

@@ -13,8 +13,8 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const enPosts = getAllPosts('en')
-  const arPosts = getAllPosts('ar')
+  const enPosts = await getAllPosts('en')
+  const arPosts = await getAllPosts('ar')
 
   const params = [
     ...enPosts.map(post => ({ lang: 'en', slug: post.slug })),
@@ -27,7 +27,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { lang, slug } = await params
   const language = lang === 'ar-SA' ? 'ar' : 'en'
-  const post = getPostBySlug(slug, language)
+  const post = await getPostBySlug(slug, language)
 
   if (!post) {
     return {
@@ -58,15 +58,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { lang, slug } = await params
   const language = lang === 'ar-SA' ? 'ar' : 'en'
-  const post = getPostBySlug(slug, language)
+  const post = await getPostBySlug(slug, language)
   const isArabic = language === 'ar'
   const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
 
   if (!post) {
     notFound()
   }
-
-  const htmlContent = markdownToHtml(post.content)
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -161,7 +159,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               ? 'prose-headings:text-right prose-p:text-right prose-li:text-right prose-blockquote:text-right'
               : ''
               } prose-headings:text-gray-900 prose-a:text-green-600 prose-a:no-underline hover:prose-a:text-green-700`}
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
+            dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
 

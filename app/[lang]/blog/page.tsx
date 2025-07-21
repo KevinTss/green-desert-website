@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 export default async function BlogPage({ params }: BlogPageProps) {
   const { lang } = await params
   const language = lang === 'ar-SA' ? 'ar' : 'en'
-  const posts = getAllPosts(language)
+  const posts = await getAllPosts(language)
   const isArabic = language === 'ar'
 
   return (

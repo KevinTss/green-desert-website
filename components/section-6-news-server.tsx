@@ -9,13 +9,13 @@ interface Section6NewsServerProps {
   lang: string
 }
 
-export const Section6NewsServer = ({ lang }: Section6NewsServerProps) => {
+export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
   const language = lang === 'ar-SA' ? 'ar' : 'en'
   const isRTL = language === 'ar'
   const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
 
   // Get latest 2 posts for the current language
-  const posts = getAllPosts(language).slice(0, 2)
+  const posts = (await getAllPosts(language)).slice(0, 2)
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)

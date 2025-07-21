@@ -1,10 +1,10 @@
 ---
-title: Hemp Cultivation: A Sustainable Future for Saudi Arabia
+title: "Hemp Cultivation: A Sustainable Future for Saudi Arabia"
 date: 2024-12-01
 author: Green Desert Team
 excerpt: Exploring how hemp cultivation can contribute to Saudi Arabia's Vision 2030 environmental goals while creating sustainable agricultural solutions.
 image: /hemp_seeds_AdobeStock-443x300.jpeg
-tags: Hemp, Sustainability, Vision 2030, Agriculture
+tags: [Hemp, Sustainability, Vision 2030, Agriculture]
 ---
 
 # Hemp Cultivation: A Sustainable Future for Saudi Arabia

@@ -1,10 +1,10 @@
 ---
-title: Biotechnology Solutions for Environmental Challenges in the Middle East
+title: "Biotechnology Solutions for Environmental Challenges in the Middle East"
 date: 2024-11-15
 author: Dr. Ahmed Al-Rashid
 excerpt: How cutting-edge biotechnology is providing innovative solutions to address environmental challenges across the Middle East region.
 image: /placeholder.jpg
-tags: Biotechnology, Environment, Innovation, Middle East
+tags: [Biotechnology, Environment, Innovation, Middle East]
 ---
 
 # Biotechnology Solutions for Environmental Challenges in the Middle East
