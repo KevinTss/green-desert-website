@@ -136,9 +136,6 @@ dependencies:
   react-resizable-panels:
     specifier: ^2.1.7
     version: 2.1.7(react-dom@19.0.0)(react@19.0.0)
-  react-simple-typewriter:
-    specifier: ^5.0.1
-    version: 5.0.1(react-dom@19.0.0)(react@19.0.0)
   recharts:
     specifier: 2.15.0
     version: 2.15.0(react-dom@19.0.0)(react@19.0.0)
@@ -4968,17 +4965,6 @@ packages:
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-    dependencies:
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    dev: false
-
-  /react-simple-typewriter@5.0.1(react-dom@19.0.0)(react@19.0.0):
-    resolution: {integrity: sha512-vA5HkABwJKL/DJ4RshSlY/igdr+FiVY4MLsSQYJX6FZG/f1/VwN4y1i3mPXRyfaswrvI8xii1kOVe1dYtO2Row==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      react: '>=18.0.0'
-      react-dom: '>=18.0.0'
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
