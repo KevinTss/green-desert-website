@@ -11,9 +11,11 @@ import { useIsMobile } from "@/hooks/use-mobile"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { getAssetPath } from "@/lib/assets"
+import { cn } from "@/lib/utils"
 
 export function ScrollHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false)
   const { language, setLanguage, t, isRTL } = useLanguage()
   const isMobile = useIsMobile()
   const pathname = usePathname()
@@ -83,12 +85,14 @@ export function ScrollHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${isScrolled || isBlogPage ? "bg-white shadow-lg backdrop-blur-sm" : "bg-transparent"
-        }`}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out",
+        isScrolled || isBlogPage ? "bg-white shadow-lg backdrop-blur-sm" : "bg-transparent"
+      )}
     >
       <div className="w-full">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`}>
+          <div className={cn("flex items-center", isRTL && "flex-row-reverse")}>
             <Link href={`/${language === 'ar' ? 'ar-SA' : 'en'}`} className="transition-opacity hover:opacity-80">
               <Image
                 src={isScrolled || isBlogPage ? getAssetPath("/logo_GD_black_EN.png") : getAssetPath("/logo_GD_white_home_EN.png")}
@@ -126,25 +130,65 @@ export function ScrollHeader() {
             />
           </nav>
 
-          <div className={`flex items-center space-x-4 ${isRTL ? "flex-row-reverse space-x-reverse" : ""}`}>
+          <div className={cn(
+            "flex items-center space-x-4",
+            isRTL ? "space-x-reverse" : ""
+          )}>
             <Button
-              className={`hidden sm:block px-6 transition-all duration-300 ${isScrolled || isBlogPage
+              className={cn(
+                "hidden sm:block px-6 transition-all duration-300",
+                isScrolled || isBlogPage
                   ? "bg-green-500 hover:bg-green-600 text-white"
                   : "bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30"
-                }`}
+              )}
             >
               {t("header.contact")}
             </Button>
             {!isMobile && (
-              <button
-                onClick={toggleLanguage}
-                className={`flex items-center space-x-1 text-sm transition-colors duration-300 hover:text-green-600 ${isScrolled || isBlogPage ? "text-gray-600" : "text-white/90 hover:text-white"
-                  }`}
+              <div
+                className="relative"
+                onMouseEnter={() => setShowLanguageDropdown(true)}
+                onMouseLeave={() => setShowLanguageDropdown(false)}
               >
-                <Globe className="w-4 h-4" />
-                <span>{t("header.language")}</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
+                <button
+                  className={cn(
+                    "flex items-center space-x-1 text-sm transition-colors duration-300 hover:text-green-600",
+                    isScrolled || isBlogPage ? "text-gray-600" : "text-white/90 hover:text-white"
+                  )}
+                >
+                  <Globe className="w-4 h-4" />
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+
+                {/* Language Dropdown */}
+                <div className={cn(
+                  "absolute top-full right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-2 transition-all duration-200",
+                  showLanguageDropdown ? "opacity-100 visible" : "opacity-0 invisible"
+                )}>
+                  <button
+                    onClick={() => setLanguage("en")}
+                    className={cn(
+                      "w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors flex items-center space-x-2",
+                      language === "en" ? "bg-gray-50 text-gray-800" : "text-gray-600"
+                    )}
+                  >
+                    <span>🇺🇸</span>
+                    <span>English</span>
+                    {language === "en" && <span className="ml-auto text-gray-400">✓</span>}
+                  </button>
+                  <button
+                    onClick={() => setLanguage("ar")}
+                    className={cn(
+                      "w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors flex items-center space-x-2",
+                      language === "ar" ? "bg-gray-50 text-gray-800" : "text-gray-600"
+                    )}
+                  >
+                    <span>🇸🇦</span>
+                    <span>العربية</span>
+                    {language === "ar" && <span className="ml-auto text-gray-400">✓</span>}
+                  </button>
+                </div>
+              </div>
             )}
             {isMobile && (
               <MobileMenu
