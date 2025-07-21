@@ -26,9 +26,9 @@ interface LayoutProps {
 export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
   const { lang } = await params
   const isArabic = lang === 'ar-SA'
-  
+
   return {
-    title: isArabic 
+    title: isArabic
       ? "الصحراء الخضراء - تسريع تحول المملكة العربية السعودية نحو مستقبل أخضر"
       : "Green Desert - Accelerating Saudi Arabia's Transformation Towards A Greener Future",
     description: isArabic
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       alternateLocale: isArabic ? "en_US" : "ar_SA",
       url: `https://greendesert.sa/${lang}`,
       siteName: "Green Desert",
-      title: isArabic 
+      title: isArabic
         ? "الصحراء الخضراء - الحلول البيئية للمملكة العربية السعودية"
         : "Green Desert - Environmental Solutions for Saudi Arabia",
       description: isArabic
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     twitter: {
       card: "summary_large_image",
       title: isArabic ? "الصحراء الخضراء - الحلول البيئية" : "Green Desert - Environmental Solutions",
-      description: isArabic 
+      description: isArabic
         ? "حلول التكنولوجيا الحيوية المستدامة للتحديات البيئية في المملكة العربية السعودية."
         : "Sustainable biotechnology solutions for Saudi Arabia's environmental challenges.",
       images: ["/og-image.jpg"],
@@ -77,14 +77,13 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
         "ar-SA": "https://greendesert.sa/ar-SA",
       },
     },
-    generator: 'v0.dev'
   }
 }
 
 export default async function LangLayout({ children, params }: LayoutProps) {
   const { lang } = await params
   const isArabic = lang === 'ar-SA'
-  
+
   return (
     <html lang={isArabic ? "ar" : "en"} dir={isArabic ? "rtl" : "ltr"} suppressHydrationWarning>
       <head>
