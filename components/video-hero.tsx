@@ -1,4 +1,7 @@
 "use client"
+
+import { getAssetPath } from "@/lib/assets"
+
 interface VideoHeroProps {
   videoUrl?: string
   posterUrl?: string
@@ -18,7 +21,7 @@ export function VideoHero({ children }: VideoHeroProps) {
         loop
         playsInline
       >
-        <source src="/sliderV.mp4" type="video/mp4" />
+        <source src={getAssetPath("/sliderV.mp4")} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

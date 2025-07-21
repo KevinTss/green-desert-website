@@ -10,6 +10,7 @@ import { NavigationMenuLink, SubMenuItem } from "./navigation-menu-link"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { getAssetPath } from "@/lib/assets"
 
 export function ScrollHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,19 +46,19 @@ export function ScrollHeader() {
     {
       title: "nav.products.animalBedding",
       href: "/products/animal-bedding",
-      image: "/hemp_hurds_mulch-443x300.png",
+      image: getAssetPath("/hemp_hurds_mulch-443x300.png"),
       description: "nav.products.animalBedding.description",
     },
     {
       title: "nav.products.constructionBlocks",
       href: "/products/construction-blocks",
-      image: "/hemp-blocks-01-443x300.jpg",
+      image: getAssetPath("/hemp-blocks-01-443x300.jpg"),
       description: "nav.products.constructionBlocks.description",
     },
     {
       title: "nav.products.seeds",
       href: "/products/seeds",
-      image: "/hemp_seeds_AdobeStock-443x300.jpeg",
+      image: getAssetPath("/hemp_seeds_AdobeStock-443x300.jpeg"),
       description: "nav.products.seeds.description",
     },
   ]
@@ -90,7 +91,7 @@ export function ScrollHeader() {
           <div className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`}>
             <Link href={`/${language === 'ar' ? 'ar-SA' : 'en'}`} className="transition-opacity hover:opacity-80">
               <Image
-                src={isScrolled || isBlogPage ? "/logo_GD_black_EN.png" : "/logo_GD_white_home_EN.png"}
+                src={isScrolled || isBlogPage ? getAssetPath("/logo_GD_black_EN.png") : getAssetPath("/logo_GD_white_home_EN.png")}
                 alt="Green Desert Logo"
                 width={150}
                 height={40}

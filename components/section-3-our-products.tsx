@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { Card, CardContent } from "@/components/ui/card"
+import { getAssetPath } from "@/lib/assets"
 
 export const Section3OurProducts = () => {
   const { t, isRTL } = useLanguage()
@@ -18,7 +19,7 @@ export const Section3OurProducts = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <Image
-                src="/placeholder.svg?height=200&width=300"
+                src={getAssetPath("/placeholder.svg?height=200&width=300")}
                 alt="Hemp Seeds"
                 width={300}
                 height={200}
@@ -34,7 +35,7 @@ export const Section3OurProducts = () => {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <Image
-                src="/placeholder.svg?height=200&width=300"
+                src={getAssetPath("/placeholder.svg?height=200&width=300")}
                 alt="Temperature Boxes"
                 width={300}
                 height={200}
@@ -50,7 +51,7 @@ export const Section3OurProducts = () => {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1">
               <Image
-                src="/placeholder.svg?height=200&width=300"
+                src={getAssetPath("/placeholder.svg?height=200&width=300")}
                 alt="Hemp Fibers"
                 width={300}
                 height={200}

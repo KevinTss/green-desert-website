@@ -1,6 +1,7 @@
 import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { getAssetPath } from "@/lib/assets"
 
 export const Section5Partners = () => {
   const { t, isRTL } = useLanguage()
@@ -14,7 +15,7 @@ export const Section5Partners = () => {
 
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-8 sm:space-y-0 sm:space-x-12 mb-8">
             <Image
-              src="/placeholder.svg?height=80&width=120"
+              src={getAssetPath("/placeholder.svg?height=80&width=120")}
               alt="Partner 1"
               width={120}
               height={80}
@@ -22,7 +23,7 @@ export const Section5Partners = () => {
               loading="lazy"
             />
             <Image
-              src="/placeholder.svg?height=80&width=120"
+              src={getAssetPath("/placeholder.svg?height=80&width=120")}
               alt="Partner 2"
               width={120}
               height={80}

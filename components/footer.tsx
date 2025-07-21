@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "lucide-react"
+import { getAssetPath } from "@/lib/assets"
 
 export const Footer = () => {
   const { t, isRTL } = useLanguage()
@@ -13,7 +14,7 @@ export const Footer = () => {
             <div className="lg:col-span-2">
               <div className={`flex items-center mb-6 ${isRTL ? "flex-row-reverse" : ""}`}>
                 <Image
-                  src="/logo_GD_white_home_EN.png"
+                  src={getAssetPath("/logo_GD_white_home_EN.png")}
                   alt="Green Desert Logo"
                   width={140}
                   height={35}

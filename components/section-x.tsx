@@ -2,6 +2,7 @@ import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { getAssetPath } from "@/lib/assets"
 
 export const SectionX = () => {
   const { t, isRTL } = useLanguage()
@@ -30,7 +31,7 @@ export const SectionX = () => {
             </div>
             <div className={`relative ${isRTL ? "lg:order-1" : ""}`}>
               <Image
-                src="/placeholder.svg?height=400&width=500"
+                src={getAssetPath("/placeholder.svg?height=400&width=500")}
                 alt="Environmental data visualization"
                 width={500}
                 height={400}

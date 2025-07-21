@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Menu, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
+import { getAssetPath } from "@/lib/assets"
 import {
   Sheet,
   SheetContent,
@@ -52,7 +53,7 @@ export function MobileMenu({
           {/* Header */}
           <SheetHeader className={`flex flex-row items-center justify-between p-6 border-b border-gray-100 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <Image
-              src="/logo_GD_black_EN.png"
+              src={getAssetPath("/logo_GD_black_EN.png")}
               alt="Green Desert Logo"
               width={80}
               height={24}

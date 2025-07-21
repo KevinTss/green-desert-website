@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, ArrowRight } from "lucide-react"
 import { BlogPost } from "@/lib/blog"
+import { getAssetPath } from "@/lib/assets"
 
 interface Section6NewsProps {
   latestPosts: {
@@ -110,7 +111,7 @@ export const Section6News = ({ latestPosts }: Section6NewsProps) => {
               <>
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <Image
-                    src="/placeholder.svg?height=250&width=400"
+                    src={getAssetPath("/placeholder.svg?height=250&width=400")}
                     alt="Partnership News"
                     width={400}
                     height={250}
@@ -135,7 +136,7 @@ export const Section6News = ({ latestPosts }: Section6NewsProps) => {
 
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <Image
-                    src="/placeholder.svg?height=250&width=400"
+                    src={getAssetPath("/placeholder.svg?height=250&width=400")}
                     alt="Office News"
                     width={400}
                     height={250}
