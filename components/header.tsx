@@ -170,7 +170,6 @@ export function Header() {
                       language === "en" ? "bg-gray-50 text-gray-800" : "text-gray-600"
                     )}
                   >
-                    <span>🇺🇸</span>
                     <span>English</span>
                     {language === "en" && <span className="ml-auto text-gray-400">✓</span>}
                   </button>
@@ -181,7 +180,6 @@ export function Header() {
                       language === "ar" ? "bg-gray-50 text-gray-800" : "text-gray-600"
                     )}
                   >
-                    <span>🇸🇦</span>
                     <span>العربية</span>
                     {language === "ar" && <span className="ml-auto text-gray-400">✓</span>}
                   </button>
