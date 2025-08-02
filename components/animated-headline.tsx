@@ -26,7 +26,10 @@ export const AnimatedHeadline = ({ prefix, phrases }: AnimatedHeadlineProps) => 
 
   return (
     <h1 className="text-xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-      {prefix}{" "}
+      <span>
+        {prefix}{" "}
+      </span>
+      <br />
       <span
         className="inline-block min-w-[15ch] whitespace-nowrap"
         style={{ display: "inline-block" }}
