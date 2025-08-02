@@ -4,7 +4,7 @@ import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
 import { useRouter, usePathname } from "next/navigation"
 
-type Language = "en" | "ar"
+export type Language = "en" | "ar"
 
 interface LanguageContextType {
   language: Language
@@ -217,7 +217,7 @@ export function LanguageProvider({ children, initialLang }: LanguageProviderProp
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    
+
     localStorage.setItem("language", language)
     document.documentElement.lang = language
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr"
