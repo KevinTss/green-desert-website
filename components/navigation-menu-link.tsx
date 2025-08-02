@@ -8,6 +8,7 @@ import { useState, useRef } from "react"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import Link from "next/link"
 import { useLanguage } from "./language-provider"
+import { useIsTouchDevice } from "@/hooks/use-touch-device"
 
 export interface SubMenuItem {
   title: string
@@ -39,17 +40,19 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
   const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem | null>(
     subMenuItems?.[0] || null
   )
+  const isTouchDevice = useIsTouchDevice()
 
-  // 1️⃣ make the menu controlled
   const [open, setOpen] = useState(false)
   const openTimer = useRef<NodeJS.Timeout>(undefined)
   const closeTimer = useRef<NodeJS.Timeout>(undefined)
 
   const handleEnter = () => {
+    if (isTouchDevice) return
     clearTimeout(closeTimer.current)
     openTimer.current = setTimeout(() => setOpen(true), 40)
   }
   const handleLeave = () => {
+    if (isTouchDevice) return
     clearTimeout(openTimer.current)
     closeTimer.current = setTimeout(() => setOpen(false), 120)
   }
@@ -69,7 +72,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
 
   return (
     <DropdownMenu.Root
-      modal={false}            // keeps the page scrollable
+      modal={false}
       open={open}
       onOpenChange={setOpen}
     >
@@ -95,16 +98,14 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         </div>
       </DropdownMenu.Trigger>
 
-      {/* 2️⃣ always portal the content so Popper uses the viewport  */}
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           side="bottom"
           align="start"
           sideOffset={10}
-          // 4️⃣ cap the physical width so it can actually fit
           className={cn(
             "z-[60] rounded-lg border shadow-xl overflow-hidden",
-            "w-screen max-w-lg sm:max-w-3xl",   // ← NEW
+            "w-screen max-w-lg sm:max-w-3xl",
             isScrolled
               ? "bg-white/65 backdrop-blur-md border-gray-200"
               : "bg-white/10 backdrop-blur-md border-white/20",
@@ -153,7 +154,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
               <div className="w-full">
                 {activeSubMenu && (
                   <motion.div
-                    key={activeSubMenu.title} // Key for re-animating when activeSubMenu changes
+                    key={activeSubMenu.title}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}

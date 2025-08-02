@@ -3,6 +3,7 @@ import { ChevronDown, Globe } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Language } from "@/components/language-provider"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
+import { useIsTouchDevice } from "@/hooks/use-touch-device"
 
 export const LanguageDropdown = ({ isScrolled, isBlogPage, language, setLanguage }: {
   isScrolled: boolean
@@ -13,13 +14,16 @@ export const LanguageDropdown = ({ isScrolled, isBlogPage, language, setLanguage
   const [open, setOpen] = useState(false)
   const openTimer = useRef<NodeJS.Timeout>(undefined)
   const closeTimer = useRef<NodeJS.Timeout>(undefined)
+  const isTouchDevice = useIsTouchDevice()
 
   const handleEnter = () => {
+    if (isTouchDevice) return
     clearTimeout(closeTimer.current)
     openTimer.current = setTimeout(() => setOpen(true), 40)
   }
 
   const handleLeave = () => {
+    if (isTouchDevice) return
     clearTimeout(openTimer.current)
     closeTimer.current = setTimeout(() => setOpen(false), 120)
   }
