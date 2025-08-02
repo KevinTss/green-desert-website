@@ -101,14 +101,15 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
           side="bottom"
           align="start"
           sideOffset={10}
-          // 3️⃣ let Popper push it back inside if it collides
-          avoidCollisions
-          collisionPadding={16}          // 16 px gutter on both sides
-          collisionBoundary={typeof window !== 'undefined' ? document.documentElement : undefined}
+          // Force submenu to always stay below header
+          avoidCollisions={false}
           // 4️⃣ cap the physical width so it can actually fit
           className={cn(
-            "z-50 rounded-lg border bg-white shadow-xl overflow-hidden",
+            "z-[60] rounded-lg border shadow-xl overflow-hidden",
             "w-screen max-w-lg sm:max-w-3xl",   // ← NEW
+            isScrolled 
+              ? "bg-white border-gray-200" 
+              : "bg-white/10 backdrop-blur-md border-white/20",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
             "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -120,16 +121,25 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         >
 
           <div className="flex">
-            <div className={`w-1/3 p-6 border-gray-200 ${isRTL ? "border-l" : "border-r"}`}>
+            <div className={cn(
+              "w-1/3 p-6",
+              isScrolled ? "border-gray-200" : "border-white/20",
+              isRTL ? "border-l" : "border-r"
+            )}>
               <ul className="space-y-4">
                 {subMenuItems.map((item) => (
                   <DropdownMenu.Item asChild key={item.title}>
                     <a
                       href={item.href}
-                      className={`block text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 py-2 px-3 rounded-md ${activeSubMenu?.title === item.title
-                        ? "bg-green-50 text-green-600"
-                        : "hover:bg-gray-50"
-                        }`}
+                      className={cn(
+                        "block font-medium transition-colors duration-200 py-2 px-3 rounded-md",
+                        isScrolled
+                          ? "text-gray-700 hover:text-green-600"
+                          : "text-white/90 hover:text-white",
+                        activeSubMenu?.title === item.title
+                          ? (isScrolled ? "bg-green-50 text-green-600" : "bg-white/20 text-white")
+                          : (isScrolled ? "hover:bg-gray-50" : "hover:bg-white/10")
+                      )}
                       onMouseEnter={() => setActiveSubMenu(item)}
                     >
                       {t(item.title)}
@@ -138,7 +148,10 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                 ))}
               </ul>
             </div>
-            <div className="w-2/3 bg-gray-50 p-6 flex items-center min-h-[300px]">
+            <div className={cn(
+              "w-2/3 p-6 flex items-center min-h-[300px]",
+              isScrolled ? "bg-gray-50" : "bg-white/5"
+            )}>
               <div className="w-full">
                 {activeSubMenu && (
                   <motion.div
@@ -157,10 +170,16 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                       className="w-48 h-48 object-cover rounded-lg shadow-md"
                     />
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                      <h3 className={cn(
+                        "text-xl font-semibold mb-3",
+                        isScrolled ? "text-gray-800" : "text-white"
+                      )}>
                         {t(activeSubMenu.title)}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className={cn(
+                        "leading-relaxed",
+                        isScrolled ? "text-gray-600" : "text-white/80"
+                      )}>
                         {t(activeSubMenu.description)}
                       </p>
                     </div>
