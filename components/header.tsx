@@ -77,6 +77,7 @@ export function Header() {
       // Header becomes solid when hero section is 80% scrolled
       setIsScrolled(scrollPosition > heroHeight * 0.8)
     }
+    handleScroll() // Initial check on mount
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
@@ -86,7 +87,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out",
-        isScrolled || isBlogPage ? "bg-white shadow-lg backdrop-blur-sm" : "bg-transparent"
+        isScrolled || isBlogPage ? "bg-white/65 backdrop-blur-md shadow-sm" : "bg-black/10 backdrop-blur-md"
       )}
     >
       <div className="w-full">
@@ -126,7 +127,7 @@ export function Header() {
           </nav>
 
           <div className={cn(
-            "flex items-center space-x-4 border border-orange-300",
+            "flex items-center space-x-4",
             isRTL ? "space-x-reverse" : ""
           )}>
             <Button

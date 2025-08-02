@@ -18,7 +18,7 @@ export const LanguageDropdown = ({ isScrolled, isBlogPage, language, setLanguage
     clearTimeout(closeTimer.current)
     openTimer.current = setTimeout(() => setOpen(true), 40)
   }
-  
+
   const handleLeave = () => {
     clearTimeout(openTimer.current)
     closeTimer.current = setTimeout(() => setOpen(false), 120)
@@ -37,7 +37,7 @@ export const LanguageDropdown = ({ isScrolled, isBlogPage, language, setLanguage
       >
         <button
           className={cn(
-            "flex items-center space-x-1 text-sm transition-colors duration-300 hover:text-green-600",
+            "flex items-center space-x-1 text-sm transition-colors duration-300 outline-none",
             isScrolled || isBlogPage ? "text-gray-600" : "text-white/90 hover:text-white"
           )}
         >
@@ -54,7 +54,7 @@ export const LanguageDropdown = ({ isScrolled, isBlogPage, language, setLanguage
           className={cn(
             "z-[60] w-32 rounded-lg shadow-lg py-2 border",
             isScrolled || isBlogPage
-              ? "bg-white border-gray-200"
+              ? "bg-white/65 backdrop-blur-md border-gray-200"
               : "bg-white/10 backdrop-blur-md border-white/20",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
@@ -68,7 +68,7 @@ export const LanguageDropdown = ({ isScrolled, isBlogPage, language, setLanguage
             <button
               onClick={() => setLanguage("en")}
               className={cn(
-                "w-full px-4 py-2 text-left text-sm transition-colors flex items-center space-x-2 cursor-pointer",
+                "w-full px-4 py-2 text-left text-sm transition-colors flex items-center space-x-2 cursor-pointer outline-none",
                 isScrolled || isBlogPage
                   ? "hover:bg-gray-50"
                   : "hover:bg-white/10",
@@ -81,12 +81,12 @@ export const LanguageDropdown = ({ isScrolled, isBlogPage, language, setLanguage
               {language === "en" && <span className={cn("ml-auto", isScrolled || isBlogPage ? "text-gray-400" : "text-white/60")}>✓</span>}
             </button>
           </DropdownMenu.Item>
-          
+
           <DropdownMenu.Item asChild>
             <button
               onClick={() => setLanguage("ar")}
               className={cn(
-                "w-full px-4 py-2 text-left text-sm transition-colors flex items-center space-x-2 cursor-pointer",
+                "w-full px-4 py-2 text-left text-sm transition-colors flex items-center space-x-2 cursor-pointer outline-none",
                 isScrolled || isBlogPage
                   ? "hover:bg-gray-50"
                   : "hover:bg-white/10",

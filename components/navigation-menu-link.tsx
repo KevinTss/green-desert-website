@@ -101,14 +101,12 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
           side="bottom"
           align="start"
           sideOffset={10}
-          // Force submenu to always stay below header
-          avoidCollisions={false}
           // 4️⃣ cap the physical width so it can actually fit
           className={cn(
             "z-[60] rounded-lg border shadow-xl overflow-hidden",
             "w-screen max-w-lg sm:max-w-3xl",   // ← NEW
-            isScrolled 
-              ? "bg-white border-gray-200" 
+            isScrolled
+              ? "bg-white/65 backdrop-blur-md border-gray-200"
               : "bg-white/10 backdrop-blur-md border-white/20",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
@@ -132,7 +130,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                     <a
                       href={item.href}
                       className={cn(
-                        "block font-medium transition-colors duration-200 py-2 px-3 rounded-md",
+                        "block font-medium transition-colors duration-200 py-2 px-3 rounded-md outline-none",
                         isScrolled
                           ? "text-gray-700 hover:text-green-600"
                           : "text-white/90 hover:text-white",
@@ -150,7 +148,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
             </div>
             <div className={cn(
               "w-2/3 p-6 flex items-center min-h-[300px]",
-              isScrolled ? "bg-gray-50" : "bg-white/5"
+              isScrolled ? "bg-white/40" : "bg-white/5"
             )}>
               <div className="w-full">
                 {activeSubMenu && (
