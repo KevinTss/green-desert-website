@@ -82,20 +82,8 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
 
 export default async function LangLayout({ children, params }: LayoutProps) {
   const { lang } = await params
-  const isArabic = lang === 'ar-SA'
-
   return (
-    <html lang={isArabic ? "ar" : "en"} dir={isArabic ? "rtl" : "ltr"} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
-      </head>
-      <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} font-sans`}>
-        <LanguageProvider initialLang={lang}>{children}</LanguageProvider>
-      </body>
-    </html>
+    <LanguageProvider initialLang={lang}>{children}</LanguageProvider>
   )
 }
 
