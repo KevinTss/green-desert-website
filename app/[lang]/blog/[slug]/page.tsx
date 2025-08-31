@@ -61,6 +61,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = await getPostBySlug(slug, language)
   const isArabic = language === 'ar'
   const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://greendesert.sa'
+
+  const toAbsolute = (url?: string) => {
+    if (!url) return undefined
+    return /^https?:\/\//i.test(url) ? url : `${SITE_URL}${url}`
+  }
 
   if (!post) {
     notFound()
@@ -85,6 +91,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      {/* Article JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.title,
+            description: post.excerpt,
+            url: `${SITE_URL}/${languageRoute}/blog/${post.slug}`,
+            datePublished: post.date,
+            dateModified: post.date,
+            inLanguage: isArabic ? 'ar' : 'en',
+            image: post.image ? [toAbsolute(post.image)] : undefined,
+            author: post.author
+              ? { '@type': 'Person', name: post.author }
+              : { '@type': 'Organization', name: 'Green Desert' },
+            articleSection: post.tags && post.tags.length > 0 ? post.tags[0] : undefined,
+            keywords: post.tags && post.tags.length > 0 ? post.tags.join(', ') : undefined,
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `${SITE_URL}/${languageRoute}/blog/${post.slug}`,
+            },
+            isPartOf: { '@type': 'WebSite', '@id': `${SITE_URL}/#website` },
+            publisher: { '@id': `${SITE_URL}/#organization` },
+          }),
+        }}
+      />
       <div className="container mx-auto px-4 py-8 pt-24">
         {/* Back to blog link */}
         <div className={`mb-8 ${isArabic ? 'text-right' : 'text-left'}`}>

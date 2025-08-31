@@ -4,6 +4,8 @@ import { Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "@/components/language-provider"
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://greendesert.sa"
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta-sans",
@@ -17,7 +19,7 @@ const notoSansArabic = Noto_Sans_Arabic({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://greendesert.sa"),
+  metadataBase: new URL(SITE_URL),
   title: "Green Desert - Accelerating Saudi Arabia's Transformation Towards A Greener Future",
   description:
     "Green Desert is a biotechnology Saudi Arabian Start Up Company leading ecological impact in Saudi Arabia and the Gulf Countries. Sustainable solutions for environmental challenges.",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: "ar_SA",
-    url: "https://greendesert.sa",
+    url: SITE_URL,
     siteName: "Green Desert",
     title: "Green Desert - Environmental Solutions for Saudi Arabia",
     description:
@@ -52,10 +54,10 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://greendesert.sa",
+    canonical: SITE_URL,
     languages: {
-      "en-US": "https://greendesert.sa/en",
-      "ar-SA": "https://greendesert.sa/ar",
+      "en-US": `${SITE_URL}/en`,
+      "ar-SA": `${SITE_URL}/ar`,
     },
   },
 }
@@ -68,10 +70,45 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self'; media-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              '@id': `${SITE_URL}/#organization`,
+              name: 'Green Desert',
+              url: SITE_URL,
+              logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/og-image.jpg`,
+              },
+            }),
+          }}
+        />
+        {/* WebSite JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              '@id': `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: 'Green Desert',
+              publisher: { '@id': `${SITE_URL}/#organization` },
+            }),
+          }}
+        />
       </head>
       <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} font-sans`}>
         <LanguageProvider>{children}</LanguageProvider>
