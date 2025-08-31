@@ -12,4 +12,4 @@ export default function robots(): MetadataRoute.Robots {
     host: BASE_URL,
   }
 }
-
+export const dynamic = 'force-static'
