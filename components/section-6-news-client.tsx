@@ -65,6 +65,7 @@ export const Section6NewsClient = () => {
                         alt={post.title}
                         width={400}
                         height={250}
+                        sizes="(min-width: 768px) 50vw, 100vw"
                         className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
@@ -110,6 +111,7 @@ export const Section6NewsClient = () => {
                     alt="Partnership News"
                     width={400}
                     height={250}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     className="w-full h-64 object-cover"
                     loading="lazy"
                   />
@@ -135,6 +137,7 @@ export const Section6NewsClient = () => {
                     alt="Office News"
                     width={400}
                     height={250}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     className="w-full h-64 object-cover"
                     loading="lazy"
                   />
