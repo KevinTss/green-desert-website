@@ -62,7 +62,7 @@ export function MiniNavbar() {
   }
 
   return (
-    <div ref={navRef} className={cn("sticky top-24 z-30")}>
+    <div ref={navRef} className={cn("sticky z-30")} style={{ top: 'calc(var(--gd-header-offset, 0px) + 12px)' }}>
       <div className={cn("container mx-auto px-4")}>
         <nav
           className={cn(

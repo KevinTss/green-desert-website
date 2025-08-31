@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -58,6 +58,10 @@ const productsMenuItems: SubMenuItem[] = [
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [showHeader, setShowHeader] = useState(true)
+  const headerRef = useRef<HTMLElement | null>(null)
+  const lastScrollYRef = useRef(0)
+  const headerHeightRef = useRef(72) // fallback height
 
   const { language, setLanguage, t, isRTL } = useLanguage()
   const isMobile = useIsMobile()
@@ -69,24 +73,62 @@ export function Header() {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const handleScroll = () => {
-      // Get the hero section height (100vh)
-      const heroHeight = window.innerHeight
-      const scrollPosition = window.scrollY
-
-      // Header becomes solid when hero section is 80% scrolled
-      setIsScrolled(scrollPosition > heroHeight * 0.8)
+    const measure = () => {
+      if (headerRef.current) {
+        headerHeightRef.current = headerRef.current.getBoundingClientRect().height || headerHeightRef.current
+      }
     }
-    handleScroll() // Initial check on mount
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
+    const onScroll = () => {
+      const heroHeight = window.innerHeight
+      const y = window.scrollY
+      // Background change based on hero progression
+      setIsScrolled(y > heroHeight * 0.8)
+
+      const last = lastScrollYRef.current
+      const delta = Math.abs(y - last)
+      // Small threshold to avoid flicker on tiny scrolls
+      const threshold = 8
+
+      if (y < headerHeightRef.current) {
+        // Near top: always show
+        setShowHeader(true)
+      } else if (delta > threshold) {
+        if (y > last && y > headerHeightRef.current + 8) {
+          // Scrolling down past header height: hide
+          setShowHeader(false)
+        } else if (y < last) {
+          // Scrolling up: show
+          setShowHeader(true)
+        }
+      }
+
+      lastScrollYRef.current = y
+    }
+
+    measure()
+    onScroll()
+    window.addEventListener('resize', measure)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('resize', measure)
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
+
+  // Expose header offset as CSS variable for sticky elements (e.g., mini navbar)
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    const h = headerRef.current?.getBoundingClientRect().height || headerHeightRef.current
+    document.documentElement.style.setProperty('--gd-header-offset', showHeader ? `${h}px` : '0px')
+  }, [showHeader])
 
   return (
     <header
+      ref={headerRef}
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out",
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out transform-gpu",
+        showHeader ? "translate-y-0" : "-translate-y-full",
         isScrolled || isBlogPage ? "bg-white/65 backdrop-blur-md shadow-sm" : "bg-black/10 backdrop-blur-md"
       )}
     >
