@@ -90,22 +90,21 @@ export function Header() {
         isScrolled || isBlogPage ? "bg-white/65 backdrop-blur-md shadow-sm" : "bg-black/10 backdrop-blur-md"
       )}
     >
-      <div className="w-full">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className={cn("flex items-center", isRTL && "flex-row-reverse")}>
-            <Link href={`/${language === 'ar' ? 'ar-SA' : 'en'}`} className="transition-opacity hover:opacity-80">
-              <Image
-                src={isScrolled || isBlogPage ? getAssetPath("/logo_GD_black_EN.png") : getAssetPath("/logo_GD_white_home_EN.png")}
-                alt="Green Desert Logo"
-                width={150}
-                height={40}
-                className="h-8 w-auto transition-opacity duration-300"
-                priority
-              />
-            </Link>
-          </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+      <div className="flex w-full px-7 md:px-10 lg:px-12 py-4 items-center">
+        <div className="flex flex-1 items-center gap-8">
+          <Link href={`/${language === 'ar' ? 'ar-SA' : 'en'}`} className="transition-opacity hover:opacity-80">
+            <Image
+              src={isScrolled || isBlogPage ? getAssetPath("/logo_GD_black_EN.png") : getAssetPath("/logo_GD_white_home_EN.png")}
+              alt="Green Desert Logo"
+              width={150}
+              height={40}
+              className="h-8 w-auto transition-opacity duration-300"
+              priority
+            />
+          </Link>
+
+          <nav className="hidden md:flex items-center gap-8">
             <NavigationMenuLink
               label="nav.about"
               isScrolled={isScrolled || isBlogPage}
@@ -125,30 +124,27 @@ export function Header() {
               isScrolled={isScrolled || isBlogPage}
             />
           </nav>
+        </div>
 
-          <div className={cn(
-            "flex items-center space-x-4",
-            isRTL ? "space-x-reverse" : ""
-          )}>
-            <Button
-              className={cn(
-                "hidden sm:block px-6 transition-all duration-300",
-                isScrolled || isBlogPage
-                  ? "bg-green-500 hover:bg-green-600 text-white"
-                  : "bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30"
-              )}
-            >
-              {t("header.contact")}
-            </Button>
-            {!isMobile && <LanguageDropdown isScrolled={isScrolled} isBlogPage={isBlogPage} language={language} setLanguage={setLanguage} />}
-            {isMobile && (
-              <MobileMenu
-                isScrolled={isScrolled || isBlogPage}
-                aboutMenuItems={aboutMenuItems}
-                productsMenuItems={productsMenuItems}
-              />
+        <div className="flex items-center space-x-4">
+          <Button
+            className={cn(
+              "hidden sm:block px-6 transition-all duration-300",
+              isScrolled || isBlogPage
+                ? "bg-green-500 hover:bg-green-600 text-white"
+                : "bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30"
             )}
-          </div>
+          >
+            {t("header.contact")}
+          </Button>
+          {!isMobile && <LanguageDropdown isScrolled={isScrolled} isBlogPage={isBlogPage} language={language} setLanguage={setLanguage} />}
+          {isMobile && (
+            <MobileMenu
+              isScrolled={isScrolled || isBlogPage}
+              aboutMenuItems={aboutMenuItems}
+              productsMenuItems={productsMenuItems}
+            />
+          )}
         </div>
       </div>
     </header>
