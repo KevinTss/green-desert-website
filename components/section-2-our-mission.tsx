@@ -3,7 +3,7 @@ import { useLanguage } from "@/components/language-provider"
 export const Section2OurMission = () => {
   const { t, isRTL } = useLanguage()
   return (
-    <section className="py-16 lg:py-20 relative overflow-hidden flex items-center min-h-[60vh]">
+    <section id="story" className="py-16 lg:py-20 relative overflow-hidden flex items-center min-h-[60vh]">
       <div className="absolute inset-0 w-full">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"

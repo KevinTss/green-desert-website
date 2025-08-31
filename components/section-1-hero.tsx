@@ -1,6 +1,7 @@
 import { VideoHero } from "@/components/video-hero"
 import { useLanguage } from "@/components/language-provider"
 import { AnimatedHeadline } from "./animated-headline"
+import { MiniNavbar } from "./mini-navbar"
 
 export const Section1Hero = () => {
   const { t } = useLanguage()

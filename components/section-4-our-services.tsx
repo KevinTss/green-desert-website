@@ -6,7 +6,7 @@ export const Section4OurServices = () => {
   const { t, isRTL } = useLanguage()
 
   return (
-    <section className="py-16 lg:py-20 flex items-center min-h-[60vh]">
+    <section id="services" className="py-16 lg:py-20 flex items-center min-h-[60vh]">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-12">{t("services.title")}</h2>
 

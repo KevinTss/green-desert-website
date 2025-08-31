@@ -42,6 +42,12 @@ const translations = {
     "hero.rotating.greener": "a greener future",
     "hero.rotating.bio": "a bio-based economy",
     "hero.rotating.agriculture": "sustainable agriculture",
+    // Mini navbar
+    "mini.story": "Story",
+    "mini.services": "Services",
+    "mini.products": "Products",
+    "mini.partners": "Partners",
+    "mini.news": "News",
 
 
     // About
@@ -129,6 +135,12 @@ const translations = {
     "hero.rotating.greener": "مستقبل أكثر خضرة",
     "hero.rotating.bio": "اقتصاد قائم على التكنولوجيا الحيوية",
     "hero.rotating.agriculture": "الزراعة المستدامة",
+    // Mini navbar
+    "mini.story": "القصة",
+    "mini.services": "الخدمات",
+    "mini.products": "المنتجات",
+    "mini.partners": "الشركاء",
+    "mini.news": "الأخبار",
 
     // About
     "about.title": "الصحراء الخضراء",

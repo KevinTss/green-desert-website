@@ -8,6 +8,7 @@ import { Section3OurProducts } from "@/components/section-3-our-products"
 import { Section4OurServices } from "@/components/section-4-our-services"
 import { Section5Partners } from "@/components/section-5-partners"
 import { Section6NewsClient } from "@/components/section-6-news-client"
+import { MiniNavbar } from "@/components/mini-navbar"
 
 interface PageProps {
   params: Promise<{
@@ -20,11 +21,17 @@ export default function Page({ params }: PageProps) {
     <div className="min-h-screen bg-white">
       <Header />
       <Section1Hero />
-      <Section2OurMission />
-      <Section3OurProducts />
-      <Section4OurServices />
-      <Section5Partners />
-      <Section6NewsClient />
+      {/* Sticky wrapper: overlaps hero with negative margin to visually place mini navbar */}
+      <div className="relative -mt-56 md:-mt-56 lg:-mt-60">
+        <MiniNavbar />
+        <div className="mt-56 md:mt-56 lg:mt-60">
+          <Section2OurMission />
+          <Section3OurProducts />
+          <Section4OurServices />
+          <Section5Partners />
+          <Section6NewsClient />
+        </div>
+      </div>
       <Footer />
     </div>
   )
