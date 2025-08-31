@@ -1,8 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeRaw from 'rehype-raw'
+import rehypeSanitize from 'rehype-sanitize'
+import rehypeStringify from 'rehype-stringify'
 
 export interface BlogPost {
   slug: string
@@ -38,8 +42,18 @@ export async function getPostBySlug(slug: string, language: 'en' | 'ar'): Promis
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
-    const processedContent = await remark().use(html).process(content)
-    const contentHtml = processedContent.toString()
+    const processedContent = await unified()
+      .use(remarkParse)
+      // Convert Markdown (mdast) to HTML (hast), allowing raw HTML nodes to be parsed
+      .use(remarkRehype, { allowDangerousHtml: true })
+      // Parse any raw HTML in the Markdown into the HAST tree
+      .use(rehypeRaw)
+      // Sanitize the HTML to prevent XSS
+      .use(rehypeSanitize)
+      // Stringify back to HTML
+      .use(rehypeStringify)
+      .process(content)
+    const contentHtml = String(processedContent)
 
     return {
       slug: realSlug,
@@ -69,6 +83,13 @@ export async function getAllPosts(language: 'en' | 'ar'): Promise<BlogPost[]> {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export function markdownToHtml(markdown: string): Promise<string> {
-    return remark().use(html).process(markdown).then(file => String(file));
+export async function markdownToHtml(markdown: string): Promise<string> {
+  const file = await unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeSanitize)
+    .use(rehypeStringify)
+    .process(markdown)
+  return String(file)
 }
