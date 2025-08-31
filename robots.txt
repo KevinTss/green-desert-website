@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://greendesert.sa
+Sitemap: https://greendesert.sa/sitemap.xml
