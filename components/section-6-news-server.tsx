@@ -2,13 +2,14 @@ import { getAllPosts } from "@/lib/blog"
 import { getAssetPath } from "@/lib/assets"
 import { SectionHeader } from "@/components/section-header"
 import { BlogCard, BlogCardPost } from "@/components/blog-card"
+import { Language } from "./language-provider"
 
 interface Section6NewsServerProps {
   lang: string
 }
 
 export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
-  const language = lang === 'ar-SA' ? 'ar' : 'en'
+  const language: Language = lang === 'ar-SA' ? 'ar' : 'en'
   const isRTL = language === 'ar'
   const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
 
@@ -55,7 +56,7 @@ export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {posts.length > 0 ? (
             posts.map((post) => (
-              <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={languageRoute as 'en' | 'ar-SA'} />
+              <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={language} />
             ))
           ) : (
             (() => {
@@ -95,7 +96,7 @@ export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
                 },
               ]
               return fallbackPosts.map((post) => (
-                <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={languageRoute as 'en' | 'ar-SA'} />
+                <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={language} />
               ))
             })()
           )}

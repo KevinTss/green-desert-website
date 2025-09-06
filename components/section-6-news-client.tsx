@@ -35,7 +35,7 @@ export const Section6NewsClient = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {posts.length > 0 ? (
             posts.map((post) => (
-              <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={languageRoute as 'en' | 'ar-SA'} />
+              <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={language} />
             ))
           ) : (
             (() => {
@@ -68,7 +68,7 @@ export const Section6NewsClient = () => {
                 },
               ]
               return fallbackPosts.map((post) => (
-                <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={languageRoute as 'en' | 'ar-SA'} />
+                <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={language} />
               ))
             })()
           )}

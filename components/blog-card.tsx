@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
+import { Language } from './language-provider'
 
 // Narrow post shape so this component works with both
 // lib/blog and lib/blog-static post sources
@@ -17,7 +18,7 @@ export interface BlogCardPost {
 interface BlogCardProps {
   post: BlogCardPost
   isRTL: boolean
-  languageRoute: 'en' | 'ar-SA'
+  languageRoute: Language
 }
 
 export function BlogCard({ post, isRTL, languageRoute }: BlogCardProps) {
