@@ -27,9 +27,7 @@ export function SectionHeader({
     <div className={cn("mb-12 flex items-end justify-between", className)}>
       <div className={cn(isRTL ? "text-right" : "text-left")}
       >
-        <h2 className="text-3xl lg:text-4xl text-gray-800">
-          {title}
-        </h2>
+        {title}
         {subtitle && (
           <div className="text-sm text-gray-500 mt-1">{subtitle}</div>
         )}

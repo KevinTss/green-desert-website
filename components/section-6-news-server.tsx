@@ -3,6 +3,7 @@ import { getAssetPath } from "@/lib/assets"
 import { SectionHeader } from "@/components/section-header"
 import { BlogCard, BlogCardPost } from "@/components/blog-card"
 import { Language } from "./language-provider"
+import { SectionTitle } from "./section-title"
 
 interface Section6NewsServerProps {
   lang: string
@@ -41,10 +42,7 @@ export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <SectionHeader
-          title={<>
-            {t.title.split(" ")[0]} {" "}
-            <span className="text-orange-500">{t.title.split(" ")[1] || t.title.split(" ")[0]}</span>
-          </>}
+          title={<SectionTitle className="mb-2">{t.title}</SectionTitle>}
           subtitle={t.subtitle}
           actionHref={posts.length > 0 ? `/${languageRoute}/blog` : undefined}
           actionText={posts.length > 0 ? t.viewAll : undefined}
