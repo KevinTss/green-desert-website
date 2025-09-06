@@ -100,31 +100,29 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          side="bottom"
-          align="start"
-          sideOffset={10}
+          sideOffset={22}
           className={cn(
-            "z-[60] rounded-lg border shadow-xl overflow-hidden",
-            "w-screen max-w-lg sm:max-w-3xl",
+            "z-50 w-screen max-w-none rounded-none",
             isScrolled
-              ? "bg-white/65 backdrop-blur-md border-gray-200"
-              : "bg-white/10 backdrop-blur-md border-white/20",
+              ? "bg-white/65 backdrop-blur-md shadow-sm"
+              : "bg-black/10 backdrop-blur-md",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
-            "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-            "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
-            "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2",
-            "data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2"
+            "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
           )}
           onPointerEnter={handleEnter}
           onPointerLeave={handleLeave}
         >
-
-          <div className="flex">
-            <div className={cn(
-              "w-1/3 p-6",
-              isScrolled ? "border-gray-200" : "border-white/20",
-              isRTL ? "border-l" : "border-r"
-            )}>
+          <div className={cn(
+            "flex px-7 md:px-10 lg:px-12 border-t-gray-300 border-t",
+            isScrolled ? "border-t" : "border-t-white/30",
+          )}>
+            <div
+              className={cn(
+                "w-1/3 p-6",
+                isRTL ? "border-l" : "border-r",
+                isScrolled ? "border-gray-300" : "border-white/30"
+              )}
+            >
               <ul className="space-y-4">
                 {subMenuItems.map((item) => (
                   <DropdownMenu.Item asChild key={item.title}>
@@ -136,8 +134,12 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                           ? "text-gray-700 hover:text-green-600"
                           : "text-white/90 hover:text-white",
                         activeSubMenu?.title === item.title
-                          ? (isScrolled ? "bg-green-50 text-green-600" : "bg-white/20 text-white")
-                          : (isScrolled ? "hover:bg-gray-50" : "hover:bg-white/10")
+                          ? isScrolled
+                            ? "bg-green-50 text-green-600"
+                            : "bg-white/20 text-white"
+                          : isScrolled
+                            ? "hover:bg-gray-50"
+                            : "hover:bg-white/10"
                       )}
                       onMouseEnter={() => setActiveSubMenu(item)}
                     >
@@ -147,10 +149,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                 ))}
               </ul>
             </div>
-            <div className={cn(
-              "w-2/3 p-6 flex items-center min-h-[300px]",
-              isScrolled ? "bg-white/40" : "bg-white/5"
-            )}>
+            <div className={cn("w-2/3 p-6 flex items-center min-h-[300px]")}>
               <div className="w-full">
                 {activeSubMenu && (
                   <motion.div
@@ -169,16 +168,20 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                       className="w-48 h-48 object-cover rounded-lg shadow-md"
                     />
                     <div className="flex-1">
-                      <h3 className={cn(
-                        "text-xl font-semibold mb-3",
-                        isScrolled ? "text-gray-800" : "text-white"
-                      )}>
+                      <h3
+                        className={cn(
+                          "text-xl font-semibold mb-3",
+                          isScrolled ? "text-gray-800" : "text-white"
+                        )}
+                      >
                         {t(activeSubMenu.title)}
                       </h3>
-                      <p className={cn(
-                        "leading-relaxed",
-                        isScrolled ? "text-gray-600" : "text-white/80"
-                      )}>
+                      <p
+                        className={cn(
+                          "leading-relaxed",
+                          isScrolled ? "text-gray-600" : "text-white/80"
+                        )}
+                      >
                         {t(activeSubMenu.description)}
                       </p>
                     </div>
@@ -187,7 +190,6 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
               </div>
             </div>
           </div>
-
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
