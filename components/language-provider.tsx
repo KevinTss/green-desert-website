@@ -90,6 +90,7 @@ const translations = {
 
     // News
     "news.title": "Latest News",
+    "news.subtitle": "Green Desert",
     "news.partnership.title": "Exclusive Partnership Between Green Desert Establishment and La Chanvriere",
     "news.partnership.description":
       "Green Desert announces strategic partnership with La Chanvriere to advance sustainable agricultural practices in the Middle East region.",
@@ -181,6 +182,7 @@ const translations = {
 
     // News
     "news.title": "آخر الأخبار",
+    "news.subtitle": "الصحراء الخضراء",
     "news.partnership.title": "شراكة حصرية بين مؤسسة الصحراء الخضراء ولا شانفرير",
     "news.partnership.description":
       "تعلن الصحراء الخضراء عن شراكة استراتيجية مع لا شانفرير لتطوير الممارسات الزراعية المستدامة في منطقة الشرق الأوسط.",

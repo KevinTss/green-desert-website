@@ -35,6 +35,16 @@ export const staticBlogPosts: { en: BlogPost[], ar: BlogPost[] } = {
       image: "/placeholder.jpg",
       tags: ["Biotechnology", "Environment", "Innovation", "Middle East"],
       language: "en"
+    },
+    {
+      slug: "hempcrete-basics-benefits",
+      title: "Sustainable Building with Hempcrete: Basics and Benefits",
+      date: "2024-10-20",
+      excerpt: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      author: "Green Desert Editorial",
+      image: "/hemp_hurds_mulch-443x300.png",
+      tags: ["Hempcrete", "Construction"],
+      language: "en"
     }
   ],
   ar: [
@@ -56,6 +66,16 @@ export const staticBlogPosts: { en: BlogPost[], ar: BlogPost[] } = {
       author: "د. أحمد الراشد",
       image: "/placeholder.jpg",
       tags: ["التكنولوجيا الحيوية", "البيئة", "الابتكار", "الشرق الأوسط"],
+      language: "ar"
+    },
+    {
+      slug: "hempcrete-basics-benefits",
+      title: "البناء المستدام باستخدام خرسانة القنب: الأساسيات والفوائد",
+      date: "2024-10-20",
+      excerpt: "لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسشينغ إيليت، سيد دو إيوسمد تيمبور إنسيديديونت أوت لابوري إت دولار ماجنا أليكوا.",
+      author: "فريق الصحراء الخضراء",
+      image: "/hemp_hurds_mulch-443x300.png",
+      tags: ["خرسانة القنب", "البناء"],
       language: "ar"
     }
   ]
