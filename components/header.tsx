@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 
 import { useLanguage } from "@/components/language-provider"
 import { MobileMenu } from "@/components/mobile-menu"
@@ -169,16 +168,16 @@ export function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button
+          <button
             className={cn(
-              "hidden sm:block px-6 transition-all duration-300",
+              "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium",
               isScrolled || isBlogPage
-                ? "bg-green-500 hover:bg-green-600 text-white"
-                : "bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30"
+                ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                : "bg-white/20 hover:bg-white/30 text-white"
             )}
           >
             {t("header.contact")}
-          </Button>
+          </button>
           {!isMobile && <LanguageDropdown isScrolled={isScrolled} isBlogPage={isBlogPage} language={language} setLanguage={setLanguage} />}
           {isMobile && (
             <MobileMenu
