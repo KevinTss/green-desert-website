@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { Menu, ChevronDown, ChevronUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import {
@@ -15,6 +14,7 @@ import {
 import { clsx } from "clsx"
 import { useState } from "react"
 import { SubMenuItem } from "./navigation-menu-link"
+import { cn } from "@/lib/utils"
 
 interface MobileMenuProps {
   isScrolled?: boolean
@@ -181,13 +181,17 @@ export function MobileMenu({
 
             {/* Footer Actions */}
             <div className="px-6 py-6 border-t border-gray-100">
-              <Button className="w-full bg-green-500 hover:bg-green-600 text-white py-4 text-lg font-medium transition-colors rounded-lg">
+              <button
+                className={cn(
+                  "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium",
+                  "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                )}>
                 {t("header.contact")}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
       </SheetContent>
-    </Sheet>
+    </Sheet >
   )
 }
