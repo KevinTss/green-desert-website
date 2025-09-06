@@ -22,9 +22,11 @@ export default function Page({ params }: PageProps) {
       <Header />
       <Section1Hero />
       {/* Sticky wrapper: overlaps hero with negative margin to visually place mini navbar */}
-      <div className="relative -mt-56 md:-mt-56 lg:-mt-60">
+      {/* <div className="relative -mt-56 md:-mt-56 lg:-mt-60"> */}
+      <div className="pt-3">
         <MiniNavbar />
-        <div className="mt-56 md:mt-56 lg:mt-60">
+        {/* <div className="mt-56 md:mt-56 lg:mt-60"> */}
+        <div className="">
           <Section2OurMission />
           <Section3OurProducts />
           <Section4OurServices />
