@@ -114,6 +114,8 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
             isScrolled
               ? "text-gray-700 hover:bg-gray-100"
               : "text-white/90 hover:text-white hover:bg-black/10",
+            !isScrolled && open && "bg-black/10",
+            isScrolled && open && "bg-gray-100"
           )}
         >
           {t(label)}
