@@ -128,7 +128,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out transform-gpu",
         showHeader ? "translate-y-0" : "-translate-y-full",
-        isScrolled || isBlogPage ? "bg-white/65 backdrop-blur-md shadow-sm" : "bg-black/10 backdrop-blur-md"
+        isScrolled || isBlogPage ? "bg-white/65 backdrop-blur-md shadow-sm" : "bg-black/5 backdrop-blur-md"
       )}
     >
 
