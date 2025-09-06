@@ -99,6 +99,7 @@ const translations = {
       "Green Desert opens new headquarters in Riyadh as part of expansion strategy to serve growing demand for environmental solutions.",
 
     // Footer
+    "footer.follow": "Follow us",
     "footer.description":
       "We provide biotechnology solutions for environmental challenges while being aligned to right for the planet.",
     "footer.company": "Company",
@@ -191,6 +192,7 @@ const translations = {
       "تفتتح الصحراء الخضراء مقرها الجديد في الرياض كجزء من استراتيجية التوسع لخدمة الطلب المتزايد على الحلول البيئية.",
 
     // Footer
+    "footer.follow": "تابعنا",
     "footer.description": "نحن نقدم حلول التكنولوجيا الحيوية للتحديات البيئية مع التوافق مع حقوق الكوكب.",
     "footer.company": "الشركة",
     "footer.products": "المنتجات",
