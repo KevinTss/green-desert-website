@@ -85,8 +85,7 @@ const translations = {
     "products.hemp_fibers": "Hemp Fibers for Animal Bedding",
 
     // Partners
-    "partners.title": "Our Partners And",
-    "partners.subtitle": "Sponsors",
+    "partners.title": "Our Partners and Sponsors",
     "partners.more": "MORE",
 
     // News
@@ -177,8 +176,7 @@ const translations = {
     "products.hemp_fibers": "ألياف القنب لفراش الحيوانات",
 
     // Partners
-    "partners.title": "شركاؤنا",
-    "partners.subtitle": "والرعاة",
+    "partners.title": "شركاؤنا والرعاة",
     "partners.more": "المزيد",
 
     // News

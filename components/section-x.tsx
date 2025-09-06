@@ -2,6 +2,7 @@ import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { SectionTitle } from "@/components/section-title"
 import { getAssetPath } from "@/lib/assets"
 
 export const SectionX = () => {
@@ -14,11 +15,12 @@ export const SectionX = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className={`${isRTL ? "lg:order-2" : ""}`}>
               <Badge className="bg-green-100 text-green-800 mb-4">{t("env.badge")}</Badge>
-              <h2
-                className={`text-2xl lg:text-4xl font-bold text-gray-800 mb-6 leading-tight ${isRTL ? "text-right" : "text-left"}`}
+              <SectionTitle
+                className="mb-6 leading-tight"
+                align={isRTL ? 'right' : 'left'}
               >
                 {t("env.title")}
-              </h2>
+              </SectionTitle>
               <p className={`text-gray-600 mb-6 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>
                 {t("env.description1")}
               </p>

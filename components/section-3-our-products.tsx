@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { Card, CardContent } from "@/components/ui/card"
+import { SectionTitle } from "@/components/section-title"
 import { getAssetPath } from "@/lib/assets"
 
 export const Section3OurProducts = () => {
@@ -9,7 +10,7 @@ export const Section3OurProducts = () => {
   return (
     <section id="products" className="py-16 lg:py-20 flex items-center min-h-[60vh] bg-gray-50">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-12">{t("products.title")}</h2>
+        <SectionTitle>{t("products.title")}</SectionTitle>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">

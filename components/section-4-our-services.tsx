@@ -1,5 +1,6 @@
 import { useLanguage } from "@/components/language-provider"
 import { Card, CardContent } from "@/components/ui/card"
+import { SectionTitle } from "@/components/section-title"
 import { Recycle, TreePine, Droplets } from "lucide-react"
 
 export const Section4OurServices = () => {
@@ -8,7 +9,7 @@ export const Section4OurServices = () => {
   return (
     <section id="services" className="py-16 lg:py-20 flex items-center min-h-[60vh]">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-12">{t("services.title")}</h2>
+        <SectionTitle>{t("services.title")}</SectionTitle>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <Card className="p-6 lg:p-8 hover:shadow-lg transition-shadow duration-300">

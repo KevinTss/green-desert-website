@@ -1,7 +1,9 @@
 import { useLanguage } from "@/components/language-provider"
+import { cn } from "@/lib/utils"
+import { SectionTitle } from "@/components/section-title"
 
 export const Section2OurMission = () => {
-  const { t, isRTL } = useLanguage()
+  const { t } = useLanguage()
   return (
     <section id="story" className="py-16 lg:py-20 relative overflow-hidden flex items-center min-h-[60vh]">
       <div className="absolute inset-0 w-full">
@@ -14,13 +16,11 @@ export const Section2OurMission = () => {
       </div>
 
       <div className="container mx-auto px-4 text-center">
-        <h2
-          className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6 text-center"
-        >
-          {t("about.title").split(" ")[0]} <span className="text-green-600">{t("about.title").split(" ")[1]}</span>
-        </h2>
+        <SectionTitle>{t("about.title")}</SectionTitle>
         <p
-          className={`text-base lg:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed ${isRTL ? "text-right" : "text-left"} text-center`}
+          className={cn(
+            "text-4xl text-gray-600 max-w-screen-xl mx-auto leading-snug text-center",
+          )}
         >
           {t("about.description")}
         </p>

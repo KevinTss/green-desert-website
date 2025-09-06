@@ -2,8 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, ArrowRight } from "lucide-react"
-import { getAllPosts, BlogPost } from "@/lib/blog"
+import { getAllPosts } from "@/lib/blog"
 import { getAssetPath } from "@/lib/assets"
+import { SectionTitle } from "@/components/section-title"
 
 interface Section6NewsServerProps {
   lang: string
@@ -54,9 +55,7 @@ export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-            {t.title.split(" ")[0]} <span className="text-orange-500">{t.title.split(" ")[1] || t.title.split(" ")[0]}</span>
-          </h2>
+          <SectionTitle>{t.title}</SectionTitle>
           {posts.length > 0 && (
             <Link
               href={`/${languageRoute}/blog`}
@@ -182,6 +181,6 @@ export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
           )}
         </div>
       </div>
-    </section>
+    </section >
   )
 }

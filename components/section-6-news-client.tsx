@@ -4,8 +4,9 @@ import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
+import { SectionTitle } from "@/components/section-title"
 import { Calendar, ArrowRight } from "lucide-react"
-import { getLatestPosts, BlogPost } from "@/lib/blog-static"
+import { getLatestPosts } from "@/lib/blog-static"
 import { getAssetPath } from "@/lib/assets"
 
 export const Section6NewsClient = () => {
@@ -36,9 +37,7 @@ export const Section6NewsClient = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-            {t("news.title").split(" ")[0]} <span className="text-orange-500">{t("news.title").split(" ")[1] || t("news.title").split(" ")[0]}</span>
-          </h2>
+          <SectionTitle>{t("news.title")}</SectionTitle>
           {posts.length > 0 && (
             <Link
               href={`/${languageRoute}/blog`}
