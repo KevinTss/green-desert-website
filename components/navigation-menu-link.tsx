@@ -9,6 +9,7 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import Link from "next/link"
 import { useLanguage } from "./language-provider"
 import { useIsTouchDevice } from "@/hooks/use-touch-device"
+import { usePathname } from "next/navigation"
 
 export interface SubMenuItem {
   title: string
@@ -41,6 +42,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
     subMenuItems?.[0] || null
   )
   const isTouchDevice = useIsTouchDevice()
+  const pathname = usePathname() || "/"
 
   const [open, setOpen] = useState(false)
   const openTimer = useRef<NodeJS.Timeout>(undefined)
@@ -57,17 +59,41 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
     closeTimer.current = setTimeout(() => setOpen(false), 120)
   }
 
-  if (!subMenuItems) return (
-    <Link
-      href={getNavLink({ label, language })}
-      className={`transition-colors duration-300 hover:text-green-600 ${isScrolled
-        ? "text-gray-700"
-        : "text-white/90 hover:text-white"
-        }`}
-    >
-      {t(label)}
-    </Link>
-  )
+  const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
+  const routeActiveForLabel = (lbl: string) => {
+    switch (lbl) {
+      case 'nav.about':
+        return pathname.startsWith(`/${languageRoute}/about`)
+      case 'nav.products':
+        return pathname.startsWith(`/${languageRoute}/products`)
+      case 'nav.services':
+        return pathname.startsWith(`/${languageRoute}/services`)
+      case 'nav.blog':
+        return pathname.startsWith(`/${languageRoute}/blog`)
+      case 'nav.home':
+        return pathname === `/${languageRoute}` || pathname === `/${languageRoute}/`
+      default:
+        return false
+    }
+  }
+
+  if (!subMenuItems) {
+    const isActive = routeActiveForLabel(label)
+    return (
+      <Link
+        href={getNavLink({ label, language })}
+        className={cn(
+          "transition-colors duration-300 rounded-full px-5 py-2 hover:bg-gray-100",
+          isActive && "bg-gray-200",
+          isScrolled
+            ? "text-gray-700 hover:bg-gray-100"
+            : "text-white/90 hover:text-white hover:bg-black/10",
+        )}
+      >
+        {t(label)}
+      </Link>
+    )
+  }
 
 
   return (
@@ -81,26 +107,26 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         onPointerEnter={handleEnter}
         onPointerLeave={handleLeave}
       >
-        <div className={`flex items-center cursor-pointer ${isRTL ? "space-x-reverse space-x-1" : "space-x-1"}`}>
-          <Link
-            href={getNavLink({ label, language })}
-            className={`transition-colors duration-300 hover:text-green-600 ${isScrolled
-              ? "text-gray-700"
-              : "text-white/90 hover:text-white"
-              }`}
-          >
-            {t(label)}
-          </Link>
+        <Link
+          href={getNavLink({ label, language })}
+          className={cn(
+            "flex items-center gap-2 cursor-pointer rounded-full px-5 py-2 transition-colors duration-300 outline-none",
+            isScrolled
+              ? "text-gray-700 hover:bg-gray-100"
+              : "text-white/90 hover:text-white hover:bg-black/10",
+          )}
+        >
+          {t(label)}
           <ChevronDown
-            className={`w-4 h-4 transition-colors duration-300 ${isScrolled ? "text-gray-500" : "text-white/70"
-              }`}
+            className={cn(
+              "w-4 h-4 transition-colors duration-300 text-inherit",
+            )}
           />
-        </div>
+        </Link>
       </DropdownMenu.Trigger>
-
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          sideOffset={22}
+          sideOffset={16}
           className={cn(
             "z-50 w-screen max-w-none rounded-none",
             isScrolled

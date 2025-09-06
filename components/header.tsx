@@ -145,7 +145,7 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             <NavigationMenuLink
               label="nav.about"
               isScrolled={isScrolled || isBlogPage}
