@@ -3,6 +3,9 @@
 import { useLanguage } from "@/components/language-provider"
 
 import { MiniNavbar } from "@/components/mini-navbar"
+import { PageHero } from "@/components/page-hero"
+import { PageSection } from "@/components/page-section"
+import { Paragraph } from "@/components/paragraph"
 
 export function ClientCompany() {
   const { t, isRTL, language, languageRoute } = useLanguage()
@@ -13,44 +16,23 @@ export function ClientCompany() {
   ] as const
 
   return (
-    <main className={`pt-28 pb-16 ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
-      {/* Hero */}
-      <section className="text-center">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="text-sm uppercase tracking-wider text-green-700 font-semibold">
-            {t('company.badge')}
-          </p>
-          <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-            {t('company.title')}
-          </h1>
-        </div>
-      </section>
+    <main className={`${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
+      <PageHero title={t('company.title')} badge={t('company.badge')} />
 
-      {/* Sticky Mini Navbar */}
-      <div className="px-6">
+      <div className="">
         <MiniNavbar sections={[...sections]} />
 
-        {/* Vision */}
-        <section id="vision" className="mt-10 py-16 min-h-[80vh] w-full flex items-center bg-gray-50">
-          <div className="mx-auto max-w-xl">
-            <h2 className="text-3xl lg:text-4xl text-gray-800 mb-4">{t('company.vision.title')}</h2>
-            <p className="mt-4 text-gray-700 leading-relaxed">
-              {t('company.vision.body')}
-            </p>
-          </div>
-        </section>
+        <PageSection title={t('company.mission.title')} isBgGray>
+          <Paragraph>
+            {t('company.mission.body')}
+          </Paragraph>
+        </PageSection>
 
-        {/* Journey */}
-        <section id="journey" className="py-16 min-h-[80vh] flex items-center">
-          <div className="mx-auto max-w-xl">
-            <h2 className="text-3xl lg:text-4xl text-gray-800 mb-4">{t('company.journey.title')}</h2>
-            <div className="mt-4 text-gray-700 leading-relaxed space-y-4">
-              <p>{t('company.journey.p1')}</p>
-              <p>{t('company.journey.p2')}</p>
-              <p>{t('company.journey.p3')}</p>
-            </div>
-          </div>
-        </section>
+        <PageSection title={t('company.journey.title')}>
+          <Paragraph>{t('company.journey.p1')}</Paragraph>
+          <Paragraph>{t('company.journey.p2')}</Paragraph>
+          <Paragraph>{t('company.journey.p3')}</Paragraph>
+        </PageSection>
       </div>
 
       {/* Structured data */}
@@ -75,6 +57,6 @@ export function ClientCompany() {
           }),
         }}
       />
-    </main>
+    </main >
   )
 }

@@ -61,7 +61,11 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
   const routeActiveForLabel = (lbl: string) => {
     switch (lbl) {
       case 'nav.about':
-        return pathname.startsWith(`/${languageRoute}/about`) || pathname.startsWith(`/${languageRoute}/company`)
+        return (
+          pathname.startsWith(`/${languageRoute}/company`) ||
+          pathname.startsWith(`/${languageRoute}/team`) ||
+          pathname.startsWith(`/${languageRoute}/sponsors`)
+        )
       case 'nav.products':
         return pathname.startsWith(`/${languageRoute}/products`)
       case 'nav.services':

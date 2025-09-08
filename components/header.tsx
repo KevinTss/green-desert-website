@@ -22,13 +22,13 @@ const aboutMenuItems: SubMenuItem[] = [
   },
   {
     title: "nav.about.sponsors",
-    href: "/about/sponsors",
+    href: "/sponsors",
     image: "/placeholder.svg",
     description: "nav.about.sponsors.description",
   },
   {
     title: "nav.about.team",
-    href: "/about/team",
+    href: "/team",
     image: "/placeholder.svg",
     description: "nav.about.team.description",
   },

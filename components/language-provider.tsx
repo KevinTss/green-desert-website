@@ -85,6 +85,31 @@ const translations = {
     "company.journey.p2": "From research pilots and field trials to early product prototypes—such as hemp‑lime blocks, high‑absorbency animal bedding, and soil remediation media—we build evidence, supply partnerships, and community engagement.",
     "company.journey.p3": "Next, we focus on scaling pilots across regions, deepening regulatory collaboration, and developing local manufacturing to create green jobs and measurable environmental impact aligned with Vision 2030.",
 
+    // Team page
+    "team.badge": "Team",
+    "team.title": "Our Team",
+    "team.intro": "A multidisciplinary team committed to sustainable innovation and environmental impact across Saudi Arabia and the Gulf region.",
+    "team.vision.title": "Our Team Vision",
+    "team.vision.body": "We bring together science, policy, and industry expertise to accelerate the Kingdom’s transition toward circular, bio‑based solutions that serve communities and ecosystems.",
+    "team.journey.title": "Our Journey",
+    "team.journey.p1": "Our team grew from a shared belief that Saudi Arabia can lead the region in sustainable biotechnology by aligning innovation with local needs and regulations.",
+    "team.journey.p2": "Through partnerships with academia and industry, we validate real‑world use cases and build the capabilities needed for scale.",
+    "team.journey.p3": "We continue to expand our network, cultivate talent, and build capacity for a greener future.",
+    "team.member.abdulhadi.name": "Abdulhadi Alamer",
+    "team.member.abdulhadi.role": "Founder",
+    "team.member.abdulhadi.bio": "Founder of Green Desert. Abdulhadi first learned about cannabis—particularly medical use—when Colorado’s Amendment 64 passed on November 6, 2012, leading to recreational legalization. Shortly after, he became an entrepreneur and built a reputation for forming relationships in green businesses around the globe.",
+
+    // Sponsors page
+    "sponsors.badge": "Sponsors",
+    "sponsors.title": "Sponsors & Partners",
+    "sponsors.intro": "Our strategic sponsors and partners help us scale impact with governance, research, and industry collaboration.",
+    "sponsors.vision.title": "Partnership Vision",
+    "sponsors.vision.body": "We build long‑term collaborations that combine scientific rigor, regulatory alignment, and market execution to deliver measurable environmental outcomes.",
+    "sponsors.journey.title": "Our Partnership Journey",
+    "sponsors.journey.p1": "From early pilots to deployment, partners enable access to infrastructure, data, and communities.",
+    "sponsors.journey.p2": "We co‑develop solutions with institutions and companies aligned with Vision 2030 sustainability goals.",
+    "sponsors.journey.p3": "New sponsorships and alliances are underway to expand our regional footprint and local manufacturing.",
+
     // About
     "about.title": "Green Desert",
     "about.description":
@@ -211,6 +236,31 @@ const translations = {
     "company.journey.p1": "تأسست في يناير 2020 في المملكة العربية السعودية، تقود الصحراء الخضراء الابتكار في التكنولوجيا الحيوية المستدامة حول القنب الصناعي ضمن الأطر التنظيمية المحلية، وبالتعاون مع الجامعات والمختبرات والشركاء الصناعيين.",
     "company.journey.p2": "من الدراسات البحثية والتجارب الحقلية إلى نماذج أولية للمنتجات — مثل كتل الهيمبلايم، وفراش الحيوانات عالي الامتصاص، ووسائط تحسين التربة — نبني الأدلة العلمية، وشراكات التوريد، والتفاعل المجتمعي.",
     "company.journey.p3": "تتمثل خطوتنا التالية في توسيع التجارب عبر المناطق، وتعميق التعاون التنظيمي، وتطوير التصنيع المحلي لخلق وظائف خضراء وأثر بيئي ملموس يتماشى مع رؤية 2030.",
+
+    // Team page (AR)
+    "team.badge": "الفريق",
+    "team.title": "فريقنا",
+    "team.intro": "فريق متعدد التخصصات ملتزم بالابتكار المستدام والأثر البيئي عبر المملكة العربية السعودية ومنطقة الخليج.",
+    "team.vision.title": "رؤيتنا للفريق",
+    "team.vision.body": "نجمع بين الخبرات العلمية والتنظيمية والصناعية لتسريع انتقال المملكة نحو حلول حيوية دائرية تخدم المجتمع والبيئة.",
+    "team.journey.title": "رحلتنا",
+    "team.journey.p1": "نما فريقنا من إيمان مشترك بأن المملكة يمكنها قيادة المنطقة في التكنولوجيا الحيوية المستدامة عبر مواءمة الابتكار مع الاحتياجات المحلية والأنظمة.",
+    "team.journey.p2": "من خلال الشراكات مع الجامعات والصناعة نثبت حالات استخدام واقعية ونبني القدرات اللازمة للتوسع.",
+    "team.journey.p3": "نواصل توسيع شبكتنا وتنمية المواهب وبناء القدرات لمستقبل أكثر خضرة.",
+    "team.member.abdulhadi.name": "عبدالهادي العامر",
+    "team.member.abdulhadi.role": "المؤسس",
+    "team.member.abdulhadi.bio": "مؤسس الصحراء الخضراء. تعرّف عبدالهادي على نبات القنب — خصوصًا الاستخدام الطبي — عند إقرار تعديل كولورادو 64 في 6 نوفمبر 2012 الذي أدى إلى التقنين الترفيهي. بعد ذلك بوقت قصير أصبح رائد أعمال وبنى سمعته في بناء العلاقات ضمن الأعمال الخضراء حول العالم.",
+
+    // Sponsors page (AR)
+    "sponsors.badge": "الرعاة",
+    "sponsors.title": "الرعاة والشركاء",
+    "sponsors.intro": "يدعم رعاتنا وشركاؤنا الاستراتيجيون توسيع أثرنا من خلال الحوكمة والبحث والتعاون الصناعي.",
+    "sponsors.vision.title": "رؤية الشراكات",
+    "sponsors.vision.body": "نبني تعاونات طويلة الأمد تجمع بين الصرامة العلمية والمواءمة التنظيمية والتنفيذ السوقي لتحقيق نتائج بيئية قابلة للقياس.",
+    "sponsors.journey.title": "رحلة الشراكات",
+    "sponsors.journey.p1": "من التجارب المبكرة إلى النشر، تمكّننا الشراكات من الوصول إلى البنية التحتية والبيانات والمجتمعات.",
+    "sponsors.journey.p2": "نطوّر حلولًا مشتركة مع مؤسسات وشركات متوافقة مع أهداف الاستدامة لرؤية 2030.",
+    "sponsors.journey.p3": "تجري رعايات وتحالفات جديدة لتوسيع حضورنا الإقليمي والتصنيع المحلي.",
 
     // About
     "about.title": "الصحراء الخضراء",
