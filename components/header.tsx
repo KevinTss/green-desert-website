@@ -16,7 +16,7 @@ import { LanguageDropdown } from "@/components/language-dropdown"
 const aboutMenuItems: SubMenuItem[] = [
   {
     title: "nav.about.company",
-    href: "/about/company",
+    href: "/company",
     image: "/placeholder.svg",
     description: "nav.about.company.description",
   },
@@ -62,12 +62,13 @@ export function Header() {
   const lastScrollYRef = useRef(0)
   const headerHeightRef = useRef(72) // fallback height
 
-  const { language, setLanguage, t, isRTL } = useLanguage()
+  const { language, languageRoute, setLanguage, t, isRTL } = useLanguage()
   const isMobile = useIsMobile()
   const pathname = usePathname()
 
-  // Check if we're on a blog page (always show solid background)
-  const isBlogPage = pathname.includes('/blog')
+  // Solid header on any non-home page
+  const isHomePage = pathname === `/${languageRoute}` || pathname === `/${languageRoute}/`
+  const forceSolidHeader = !isHomePage
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -128,7 +129,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out transform-gpu",
         showHeader ? "translate-y-0" : "-translate-y-full",
-        isScrolled || isBlogPage ? "bg-white/65 backdrop-blur-md shadow-sm" : "bg-black/5 backdrop-blur-md"
+        isScrolled || forceSolidHeader ? "bg-white/65 backdrop-blur-md shadow-sm" : "bg-black/5 backdrop-blur-md"
       )}
     >
 
@@ -136,7 +137,7 @@ export function Header() {
         <div className="flex flex-1 items-center gap-8">
           <Link href={`/${language === 'ar' ? 'ar-SA' : 'en'}`} className="transition-opacity hover:opacity-80">
             <Image
-              src={isScrolled || isBlogPage ? getAssetPath("/logo_GD_black_EN.png") : getAssetPath("/logo_GD_white_home_EN.png")}
+              src={isScrolled || forceSolidHeader ? getAssetPath("/logo_GD_black_EN.png") : getAssetPath("/logo_GD_white_home_EN.png")}
               alt="Green Desert Logo"
               width={150}
               height={40}
@@ -148,21 +149,21 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-6">
             <NavigationMenuLink
               label="nav.about"
-              isScrolled={isScrolled || isBlogPage}
+              isScrolled={isScrolled || forceSolidHeader}
               subMenuItems={aboutMenuItems}
             />
             <NavigationMenuLink
               label="nav.products"
-              isScrolled={isScrolled || isBlogPage}
+              isScrolled={isScrolled || forceSolidHeader}
               subMenuItems={productsMenuItems}
             />
             <NavigationMenuLink
               label="nav.services"
-              isScrolled={isScrolled || isBlogPage}
+              isScrolled={isScrolled || forceSolidHeader}
             />
             <NavigationMenuLink
               label="nav.blog"
-              isScrolled={isScrolled || isBlogPage}
+              isScrolled={isScrolled || forceSolidHeader}
             />
           </nav>
         </div>
@@ -171,17 +172,17 @@ export function Header() {
           <button
             className={cn(
               "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium",
-              isScrolled || isBlogPage
+              isScrolled || forceSolidHeader
                 ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
                 : "bg-white/20 hover:bg-white/30 text-white"
             )}
           >
             {t("header.contact")}
           </button>
-          {!isMobile && <LanguageDropdown isScrolled={isScrolled} isBlogPage={isBlogPage} language={language} setLanguage={setLanguage} />}
+          {!isMobile && <LanguageDropdown isScrolled={isScrolled} isBlogPage={forceSolidHeader} language={language} setLanguage={setLanguage} />}
           {isMobile && (
             <MobileMenu
-              isScrolled={isScrolled || isBlogPage}
+              isScrolled={isScrolled || forceSolidHeader}
               aboutMenuItems={aboutMenuItems}
               productsMenuItems={productsMenuItems}
             />

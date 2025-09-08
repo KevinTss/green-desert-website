@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "lucide-react"
@@ -5,7 +7,7 @@ import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 
 export const Footer = () => {
-  const { t, isRTL } = useLanguage()
+  const { t, isRTL, languageRoute } = useLanguage()
 
   return (
     <footer id="site-footer" className="bg-gray-50 text-gray-800">
@@ -48,7 +50,7 @@ export const Footer = () => {
             <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.company')}</h4>
             <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
               {[
-                { href: "#", label: t('nav.about') },
+                { href: `/${languageRoute}/company`, label: t('nav.about') },
                 { href: "#", label: "Careers" },
                 { href: "#", label: t('nav.products') },
                 { href: "#", label: t('nav.services') },

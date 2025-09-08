@@ -24,8 +24,7 @@ interface NavigationMenuLinkProps {
   isScrolled: boolean
 }
 
-const getNavLink = ({ label, language }: { label: string, language: string }) => {
-  const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
+const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'en' | 'ar-SA' }) => {
   switch (label) {
     case 'nav.blog':
       return `/${languageRoute}/blog`
@@ -37,7 +36,7 @@ const getNavLink = ({ label, language }: { label: string, language: string }) =>
 }
 
 export function NavigationMenuLink({ label, subMenuItems, isScrolled }: NavigationMenuLinkProps) {
-  const { t, isRTL, language } = useLanguage()
+  const { t, isRTL, language, languageRoute } = useLanguage()
   const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem | null>(
     subMenuItems?.[0] || null
   )
@@ -59,11 +58,10 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
     closeTimer.current = setTimeout(() => setOpen(false), 120)
   }
 
-  const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
   const routeActiveForLabel = (lbl: string) => {
     switch (lbl) {
       case 'nav.about':
-        return pathname.startsWith(`/${languageRoute}/about`)
+        return pathname.startsWith(`/${languageRoute}/about`) || pathname.startsWith(`/${languageRoute}/company`)
       case 'nav.products':
         return pathname.startsWith(`/${languageRoute}/products`)
       case 'nav.services':
@@ -81,7 +79,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
     const isActive = routeActiveForLabel(label)
     return (
       <Link
-        href={getNavLink({ label, language })}
+        href={getNavLink({ label, languageRoute })}
         className={cn(
           "transition-colors duration-300 rounded-full px-5 py-2 hover:bg-gray-100",
           isActive && "bg-gray-200",
@@ -108,7 +106,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         onPointerLeave={handleLeave}
       >
         <Link
-          href={getNavLink({ label, language })}
+          href={getNavLink({ label, languageRoute })}
           className={cn(
             "flex items-center gap-2 cursor-pointer rounded-full px-5 py-2 transition-colors duration-300 outline-none",
             isScrolled
@@ -152,10 +150,12 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
               )}
             >
               <ul className="space-y-4">
-                {subMenuItems.map((item) => (
+                {subMenuItems.map((item) => {
+                  const href = item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href
+                  return (
                   <DropdownMenu.Item asChild key={item.title}>
                     <a
-                      href={item.href}
+                      href={href}
                       className={cn(
                         "block font-medium transition-colors duration-200 py-2 px-3 rounded-md outline-none",
                         isScrolled
@@ -174,7 +174,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                       {t(item.title)}
                     </a>
                   </DropdownMenu.Item>
-                ))}
+                )})}
               </ul>
             </div>
             <div className={cn("w-2/3 p-6 flex items-center min-h-[300px]")}>

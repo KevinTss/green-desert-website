@@ -8,8 +8,7 @@ import { BlogCard, BlogCardPost } from "@/components/blog-card"
 import { SectionTitle } from "./section-title"
 
 export const Section6NewsClient = () => {
-  const { t, isRTL, language } = useLanguage()
-  const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
+  const { t, isRTL, language, languageRoute } = useLanguage()
 
   // Get latest posts for current language
   const posts = getLatestPosts(language as 'en' | 'ar', 3)

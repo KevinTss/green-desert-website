@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/components/language-provider"
 
-const SECTIONS: { id: string; key: string }[] = [
+export interface MiniSection { id: string; key: string }
+
+const DEFAULT_SECTIONS: MiniSection[] = [
   { id: "story", key: "mini.story" },
   { id: "products", key: "mini.products" },
   { id: "services", key: "mini.services" },
@@ -12,19 +14,23 @@ const SECTIONS: { id: string; key: string }[] = [
   { id: "news", key: "mini.news" },
 ]
 
-export function MiniNavbar() {
+interface MiniNavbarProps {
+  sections?: MiniSection[]
+}
+
+export function MiniNavbar({ sections = DEFAULT_SECTIONS }: MiniNavbarProps) {
   const { t, isRTL } = useLanguage()
   const [active, setActive] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    const sections = SECTIONS.map(s => document.getElementById(s.id)).filter(Boolean) as HTMLElement[]
-    if (sections.length === 0) return
+    const sectionEls = sections.map(s => document.getElementById(s.id)).filter(Boolean) as HTMLElement[]
+    if (sectionEls.length === 0) return
     let ticking = false
     const update = () => {
       ticking = false
       const navTop = navRef.current?.getBoundingClientRect().top ?? 0
-      const crossed = sections.filter(sec => sec.getBoundingClientRect().top <= navTop + 1)
+      const crossed = sectionEls.filter(sec => sec.getBoundingClientRect().top <= navTop + 1)
       if (crossed.length > 0) {
         const last = crossed[crossed.length - 1]
         if (last.id !== active) setActive(last.id)
@@ -72,7 +78,7 @@ export function MiniNavbar() {
           )}
         >
           <ul className={cn("flex items-center gap-1 p-1", isRTL && "flex-row-reverse")}>
-            {SECTIONS.map((s) => (
+            {sections.map((s) => (
               <li key={s.id} className="shrink-0">
                 <button
                   onClick={() => scrollTo(s.id)}

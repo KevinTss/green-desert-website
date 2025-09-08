@@ -11,6 +11,7 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void
   t: (key: string) => string
   isRTL: boolean
+  languageRoute: 'en' | 'ar-SA'
 }
 
 const translations = {
@@ -48,7 +49,41 @@ const translations = {
     "mini.products": "Products",
     "mini.partners": "Partners",
     "mini.news": "News",
+    "mini.vision": "Vision",
+    "mini.journey": "Journey",
 
+
+    // Company page
+    "company.badge": "Company",
+    "company.title": "About Green Desert",
+    "company.intro": "Green Desert is a Saudi Arabian biotechnology startup founded in January 2020. We address the region’s most pressing environmental challenges through innovative, sustainable solutions rooted in Cannabis sativa (industrial hemp), aligned with Saudi Arabia’s Vision 2030.",
+    "company.mission.title": "Our Mission",
+    "company.mission.body": "We aim to break the vicious cycle of desertification, water scarcity, and soil degradation with practical, scalable solutions. Our biotechnology-driven products and services reduce waste, turn byproducts into value, and power a greener circular economy across the Kingdom.",
+    "company.why.title": "Why Industrial Hemp?",
+    "company.why.body": "Industrial hemp (Cannabis sativa) is a low-input, fast-growing crop used worldwide for environmental and industrial applications. We explore its use in soil improvement, water management, and sustainable biomaterials — operating within local regulatory frameworks and full legal compliance.",
+    "company.why.bullets.soil": "Soil remediation: helping improve soil structure and health through phytoremediation.",
+    "company.why.bullets.water": "Water stewardship: high absorbency and uses in bio-mulch/biochar to improve moisture retention.",
+    "company.why.bullets.materials": "Bio-based materials: hemp fibers and hurds for products like hemp-lime blocks and insulation.",
+    "company.why.bullets.regen": "Regenerative agriculture: potential role in biomass circularity and waste reduction.",
+    "company.impact.title": "Impact Pillars",
+    "company.impact.greening.title": "Desert Greening",
+    "company.impact.greening.desc": "Solutions that reduce erosion, increase ground cover, and enhance soil vitality.",
+    "company.impact.water.title": "Water Stewardship",
+    "company.impact.water.desc": "Improving moisture retention and reducing waste through smart biomaterials.",
+    "company.impact.waste.title": "Waste-to-Value",
+    "company.impact.waste.desc": "Converting organic residues into valuable resources within a circular economy.",
+    "company.impact.jobs.title": "Jobs & Knowledge",
+    "company.impact.jobs.desc": "Creating green jobs and building local capabilities with academic partners.",
+    "company.vision.title": "Committed to Vision 2030",
+    "company.vision.body": "Our initiatives contribute to quality-of-life, environmental protection, and economic diversification goals. We collaborate with government stakeholders and industry partners to deploy scalable solutions that deliver tangible impact across Saudi cities and regions.",
+    "company.cta.lead": "Follow our journey toward a greener Kingdom:",
+    "company.cta.back": "Back to Home",
+    "company.cta.blog": "Visit the Blog",
+    "company.schema.description": "Sustainable biotechnology company in Saudi Arabia using industrial hemp to address environmental challenges.",
+    "company.journey.title": "Our Journey",
+    "company.journey.p1": "Founded in January 2020 in Saudi Arabia, Green Desert pioneers sustainable biotechnology centered on industrial hemp within local regulatory frameworks, collaborating with universities, labs, and industry partners.",
+    "company.journey.p2": "From research pilots and field trials to early product prototypes—such as hemp‑lime blocks, high‑absorbency animal bedding, and soil remediation media—we build evidence, supply partnerships, and community engagement.",
+    "company.journey.p3": "Next, we focus on scaling pilots across regions, deepening regulatory collaboration, and developing local manufacturing to create green jobs and measurable environmental impact aligned with Vision 2030.",
 
     // About
     "about.title": "Green Desert",
@@ -142,6 +177,40 @@ const translations = {
     "mini.products": "المنتجات",
     "mini.partners": "الشركاء",
     "mini.news": "الأخبار",
+    "mini.vision": "الرؤية",
+    "mini.journey": "رحلتنا",
+
+    // Company page
+    "company.badge": "عن الشركة",
+    "company.title": "عن الصحراء الخضراء",
+    "company.intro": "الصحراء الخضراء شركة سعودية ناشئة في مجال التكنولوجيا الحيوية تأسست في يناير 2020. نعمل على معالجة التحديات البيئية في المملكة العربية السعودية ودول الخليج عبر حلول مبتكرة ومستدامة تعتمد على نبات القنب الصناعي (Cannabis sativa) بما يتماشى مع رؤية 2030.",
+    "company.mission.title": "مهمتنا",
+    "company.mission.body": "نهدف إلى كسر الحلقة المفرغة للتصحر وندرة المياه وتدهور التربة من خلال حلول عملية قابلة للتوسع. نطوّر منتجات وخدمات حيوية تقلل الهدر، وتحوّل المخلفات إلى موارد، وتغذي اقتصادًا دائريًا أكثر خضرة في المملكة.",
+    "company.why.title": "لماذا القنب الصناعي؟",
+    "company.why.body": "القنب الصناعي (Cannabis sativa) هو محصول منخفض المدخلات وسريع النمو يُستخدم حول العالم في التطبيقات البيئية والصناعية. نستكشف استخداماته في تحسين التربة، وإدارة المياه، والمواد الحيوية المستدامة — ضمن الأطر التنظيمية المحلية وبالتوافق التام مع الأنظمة المعمول بها.",
+    "company.why.bullets.soil": "المعالجة النباتية للتربة: المساعدة في تحسين بنية التربة وصحتها.",
+    "company.why.bullets.water": "إدارة المياه: امتصاص عالٍ واستخدامات في المهاد الحيوي والبايوشار لتحسين حفظ الرطوبة.",
+    "company.why.bullets.materials": "مواد بناء حيوية: ألياف ولبّ القنب لمنتجات مثل كتل الهيمبلايم والعوازل.",
+    "company.why.bullets.regen": "الزراعة التجديدية: دور محتمل في تدوير الكتلة الحيوية وتقليل الهدر.",
+    "company.impact.title": "مجالات الأثر",
+    "company.impact.greening.title": "تخضير الصحراء",
+    "company.impact.greening.desc": "حلول تقلّل التعرية وتزيد الغطاء النباتي وتدعم صحة التربة.",
+    "company.impact.water.title": "إدارة المياه",
+    "company.impact.water.desc": "تحسين حفظ الرطوبة وتقليل الهدر عبر مواد حيوية ذكية.",
+    "company.impact.waste.title": "تحويل النفايات إلى قيمة",
+    "company.impact.waste.desc": "تحويل المخلفات العضوية إلى موارد نافعة ضمن اقتصاد دائري.",
+    "company.impact.jobs.title": "وظائف ومعرفة",
+    "company.impact.jobs.desc": "خلق فرص عمل خضراء وبناء قدرات محلية بالشراكة مع الجامعات.",
+    "company.vision.title": "الالتزام برؤية 2030",
+    "company.vision.body": "تسهم مبادراتنا في أهداف جودة الحياة، وحماية البيئة، وتنويع الاقتصاد. نعمل مع الجهات الحكومية والشركاء الصناعيين لتطوير حلول قابلة للتوسع تحدث أثرًا ملموسًا في مدن ومناطق المملكة.",
+    "company.cta.lead": "تابع رحلتنا نحو مملكة أكثر اخضرارًا:",
+    "company.cta.back": "العودة إلى الرئيسية",
+    "company.cta.blog": "زيارة المدونة",
+    "company.schema.description": "شركة تكنولوجيا حيوية سعودية تستخدم القنب الصناعي لمعالجة التحديات البيئية.",
+    "company.journey.title": "رحلتنا",
+    "company.journey.p1": "تأسست في يناير 2020 في المملكة العربية السعودية، تقود الصحراء الخضراء الابتكار في التكنولوجيا الحيوية المستدامة حول القنب الصناعي ضمن الأطر التنظيمية المحلية، وبالتعاون مع الجامعات والمختبرات والشركاء الصناعيين.",
+    "company.journey.p2": "من الدراسات البحثية والتجارب الحقلية إلى نماذج أولية للمنتجات — مثل كتل الهيمبلايم، وفراش الحيوانات عالي الامتصاص، ووسائط تحسين التربة — نبني الأدلة العلمية، وشراكات التوريد، والتفاعل المجتمعي.",
+    "company.journey.p3": "تتمثل خطوتنا التالية في توسيع التجارب عبر المناطق، وتعميق التعاون التنظيمي، وتطوير التصنيع المحلي لخلق وظائف خضراء وأثر بيئي ملموس يتماشى مع رؤية 2030.",
 
     // About
     "about.title": "الصحراء الخضراء",
@@ -255,7 +324,8 @@ export function LanguageProvider({ children, initialLang }: LanguageProviderProp
 
   const isRTL = language === "ar"
 
-  return <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, isRTL }}>{children}</LanguageContext.Provider>
+  const languageRoute: 'en' | 'ar-SA' = language === 'ar' ? 'ar-SA' : 'en'
+  return <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t, isRTL, languageRoute }}>{children}</LanguageContext.Provider>
 }
 
 export function useLanguage() {
