@@ -97,7 +97,10 @@ const translations = {
     "team.journey.p3": "We continue to expand our network, cultivate talent, and build capacity for a greener future.",
     "team.member.abdulhadi.name": "Abdulhadi Alamer",
     "team.member.abdulhadi.role": "Founder",
-    "team.member.abdulhadi.bio": "Founder of Green Desert. Abdulhadi first learned about cannabis—particularly medical use—when Colorado’s Amendment 64 passed on November 6, 2012, leading to recreational legalization. Shortly after, he became an entrepreneur and built a reputation for forming relationships in green businesses around the globe.",
+    "team.member.abdulhadi.bio": "Abdulhadi first learned about cannabis—particularly medical use—when Colorado’s Amendment 64 passed on November 6, 2012, leading to recreational legalization. Shortly after, he became an entrepreneur and built a reputation for forming relationships in green businesses around the globe.",
+    "team.member.lucas.name": "Lucas Dietrich",
+    "team.member.lucas.role": "Co‑founder",
+    "team.member.lucas.bio": "Lucas became an entrepreneur and started a business to grow industrial hemp in France. Later, he joined a program to master the cultivation of this multipurpose plant, gaining the skills and knowledge to support large‑scale, sustainable applications.",
 
     // Sponsors page
     "sponsors.badge": "Sponsors",
@@ -250,6 +253,9 @@ const translations = {
     "team.member.abdulhadi.name": "عبدالهادي العامر",
     "team.member.abdulhadi.role": "المؤسس",
     "team.member.abdulhadi.bio": "مؤسس الصحراء الخضراء. تعرّف عبدالهادي على نبات القنب — خصوصًا الاستخدام الطبي — عند إقرار تعديل كولورادو 64 في 6 نوفمبر 2012 الذي أدى إلى التقنين الترفيهي. بعد ذلك بوقت قصير أصبح رائد أعمال وبنى سمعته في بناء العلاقات ضمن الأعمال الخضراء حول العالم.",
+    "team.member.lucas.name": "لوكاس ديتريش",
+    "team.member.lucas.role": "الشريك المؤسس",
+    "team.member.lucas.bio": "الشريك المؤسس للصحراء الخضراء. قرر لوكاس أن يصبح رائد أعمال وبدأ نشاطًا لزراعة القنب الصناعي في فرنسا. لاحقًا، انضم إلى برنامج اكتسب من خلاله المهارات والمعرفة لإتقان زراعة هذا النبات متعدد الاستخدامات لدعم تطبيقات مستدامة واسعة النطاق.",
 
     // Sponsors page (AR)
     "sponsors.badge": "الرعاة",

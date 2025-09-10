@@ -1,68 +1,62 @@
 "use client"
 
 import { useLanguage } from "@/components/language-provider"
-import { MiniNavbar } from "@/components/mini-navbar"
 import { PageHero } from "@/components/page-hero"
-import { PageSection } from "@/components/page-section"
-import { Paragraph } from "@/components/paragraph"
 import { getAssetPath } from "@/lib/assets"
 import { LinkedinIcon, InstagramIcon, TwitterIcon, MailIcon } from "lucide-react"
 
 export function ClientTeam() {
   const { t, isRTL, language } = useLanguage()
 
-  const sections = [
-    { id: 'vision', key: 'mini.vision' },
-    { id: 'journey', key: 'mini.journey' },
-  ] as const
-
   return (
     <main className={`${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
       <PageHero title={t('team.title')} badge={t('team.badge')} />
 
-      <div className="">
-        <MiniNavbar sections={[...sections]} />
-
-        <PageSection title={t('team.vision.title')} isBgGray>
-          <Paragraph>{t('team.vision.body')}</Paragraph>
-        </PageSection>
-
-        {/* Journey: includes member cards */}
-        <section id="journey" className="scroll-mt-24 py-16 min-h-[80vh] flex items-center bg-gray-50">
-          <div className="w-full">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">{t('team.journey.title')}</h2>
-            <div className="mt-4 text-gray-700 leading-relaxed space-y-4">
-              <p>{t('team.journey.p1')}</p>
-              <p>{t('team.journey.p2')}</p>
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Hadi block */}
+        <section className="py-16">
+          <div className={`flex flex-col md:flex-row ${isRTL ? 'md:flex-row-reverse' : ''} items-center gap-10`}>
+            <div className="shrink-0 relative">
+              <img
+                src={getAssetPath('/hadi.jpg')}
+                alt={t('team.member.abdulhadi.name')}
+                className="w-44 h-44 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover ring-4 ring-white shadow-xl"
+              />
             </div>
-
-            {/* Members grid */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="border rounded-xl p-6 bg-white shadow-sm">
-                <div className={`flex items-center ${isRTL ? 'flex-row-reverse space-x-reverse space-x-4' : 'space-x-4'}`}>
-                  <img
-                    src={getAssetPath('/placeholder-user.jpg')}
-                    alt={t('team.member.abdulhadi.name')}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{t('team.member.abdulhadi.name')}</h3>
-                    <p className="text-gray-600 text-sm">{t('team.member.abdulhadi.role')}</p>
-                  </div>
-                </div>
-                <p className={`mt-4 text-gray-700 ${isRTL ? 'text-right' : 'text-left'}`}>{t('team.member.abdulhadi.bio')}</p>
-
-                <div className={`mt-4 flex items-center gap-3 ${isRTL ? 'justify-start' : 'justify-start'}`}>
-                  <a aria-label="email" href="mailto:info@greendesert.sa" className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><MailIcon size={16} /></a>
-                  <a aria-label="LinkedIn" href="https://www.linkedin.com/company/green-desert-sa/" className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><LinkedinIcon size={16} /></a>
-                  <a aria-label="Instagram" href="https://www.instagram.com/greendesertsa/" className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><InstagramIcon size={16} /></a>
-                  <a aria-label="Twitter" href="https://twitter.com/Greendesertsa" className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><TwitterIcon size={16} /></a>
-                </div>
+            <div className={`max-w-2xl ${isRTL ? 'md:-translate-y-4' : 'md:translate-y-4'}`}>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{t('team.member.abdulhadi.name')}</h3>
+              <p className="text-green-700 font-medium mt-1">{t('team.member.abdulhadi.role')}</p>
+              <p className="mt-4 text-gray-700 leading-relaxed">{t('team.member.abdulhadi.bio')}</p>
+              <div className="mt-5 flex items-center gap-3">
+                <a aria-label="email" href="mailto:info@greendesert.sa" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><MailIcon size={18} /></a>
+                <a aria-label="LinkedIn" href="https://www.linkedin.com/in/hadialamer/" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><LinkedinIcon size={18} /></a>
+                <a aria-label="Instagram" href="https://www.instagram.com/alameraa2020/" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><InstagramIcon size={18} /></a>
+                <a aria-label="Twitter" href="https://twitter.com/AlamerAA2020" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><TwitterIcon size={18} /></a>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="mt-8 text-gray-700 leading-relaxed">
-              <p>{t('team.journey.p3')}</p>
+        {/* Lucas block (reverse) */}
+        <section className="py-16">
+          <div className={`flex flex-col md:flex-row ${isRTL ? '' : 'md:flex-row-reverse'} items-center gap-10`}>
+            <div className="shrink-0 relative">
+              <img
+                src={getAssetPath('/lucas.jpg')}
+                alt={t('team.member.lucas.name')}
+                className="w-44 h-44 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover ring-4 ring-white shadow-xl"
+              />
+            </div>
+            <div className={`max-w-2xl ${isRTL ? 'md:translate-y-4' : 'md:-translate-y-4'}`}>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{t('team.member.lucas.name')}</h3>
+              <p className="text-green-700 font-medium mt-1">{t('team.member.lucas.role')}</p>
+              <p className="mt-4 text-gray-700 leading-relaxed">{t('team.member.lucas.bio')}</p>
+              <div className="mt-5 flex items-center gap-3">
+                <a aria-label="email" href="mailto:info@greendesert.sa" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><MailIcon size={18} /></a>
+                <a aria-label="LinkedIn" href="https://www.linkedin.com/in/lucasdietrich/" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><LinkedinIcon size={18} /></a>
+                <a aria-label="Instagram" href="https://www.instagram.com/dietrichld2020/" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><InstagramIcon size={18} /></a>
+                <a aria-label="Twitter" href="https://twitter.com/DietrichLD2020" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><TwitterIcon size={18} /></a>
+              </div>
             </div>
           </div>
         </section>
@@ -70,4 +64,3 @@ export function ClientTeam() {
     </main>
   )
 }
-
