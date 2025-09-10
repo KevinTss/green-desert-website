@@ -4,13 +4,15 @@ import React from 'react'
 export const PageSection = ({
   title,
   children,
-  isBgGray
+  isBgGray,
+  id
 }: {
   title: string;
   children: React.ReactNode;
   isBgGray?: boolean
+  id?: string
 }) => (
-  <section id="vision" className={cn(
+  <section id={id} className={cn(
     "mt-10 py-16 min-h-[80vh] w-full flex items-center",
     { 'bg-gray-50': !!isBgGray }
   )}>

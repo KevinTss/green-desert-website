@@ -22,13 +22,13 @@ export function ClientCompany() {
       <div className="">
         <MiniNavbar sections={[...sections]} />
 
-        <PageSection title={t('company.mission.title')} isBgGray>
+        <PageSection id='vision' title={t('company.vision.title')} isBgGray>
           <Paragraph>
-            {t('company.mission.body')}
+            {t('company.vision.body')}
           </Paragraph>
         </PageSection>
 
-        <PageSection title={t('company.journey.title')}>
+        <PageSection id='journey' title={t('company.journey.title')}>
           <Paragraph>{t('company.journey.p1')}</Paragraph>
           <Paragraph>{t('company.journey.p2')}</Paragraph>
           <Paragraph>{t('company.journey.p3')}</Paragraph>
@@ -57,6 +57,6 @@ export function ClientCompany() {
           }),
         }}
       />
-    </main >
+    </main>
   )
 }
