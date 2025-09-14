@@ -1,6 +1,5 @@
 "use client"
 
-import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -121,11 +120,6 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
           )}
         >
           {t(label)}
-          <ChevronDown
-            className={cn(
-              "w-4 h-4 transition-colors duration-300 text-inherit",
-            )}
-          />
         </Link>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
@@ -157,28 +151,29 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
                 {subMenuItems.map((item) => {
                   const href = item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href
                   return (
-                  <DropdownMenu.Item asChild key={item.title}>
-                    <a
-                      href={href}
-                      className={cn(
-                        "block font-medium transition-colors duration-200 py-2 px-3 rounded-md outline-none",
-                        isScrolled
-                          ? "text-gray-700 hover:text-green-600"
-                          : "text-white/90 hover:text-white",
-                        activeSubMenu?.title === item.title
-                          ? isScrolled
-                            ? "bg-green-50 text-green-600"
-                            : "bg-white/20 text-white"
-                          : isScrolled
-                            ? "hover:bg-gray-50"
-                            : "hover:bg-white/10"
-                      )}
-                      onMouseEnter={() => setActiveSubMenu(item)}
-                    >
-                      {t(item.title)}
-                    </a>
-                  </DropdownMenu.Item>
-                )})}
+                    <DropdownMenu.Item asChild key={item.title}>
+                      <a
+                        href={href}
+                        className={cn(
+                          "block font-medium transition-colors duration-200 py-2 px-3 rounded-md outline-none",
+                          isScrolled
+                            ? "text-gray-700 hover:text-green-600"
+                            : "text-white/90 hover:text-white",
+                          activeSubMenu?.title === item.title
+                            ? isScrolled
+                              ? "bg-green-50 text-green-600"
+                              : "bg-white/20 text-white"
+                            : isScrolled
+                              ? "hover:bg-gray-50"
+                              : "hover:bg-white/10"
+                        )}
+                        onMouseEnter={() => setActiveSubMenu(item)}
+                      >
+                        {t(item.title)}
+                      </a>
+                    </DropdownMenu.Item>
+                  )
+                })}
               </ul>
             </div>
             <div className={cn("w-2/3 p-6 flex items-center min-h-[300px]")}>
