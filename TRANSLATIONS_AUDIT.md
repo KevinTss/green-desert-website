@@ -1,0 +1,158 @@
+# Translations Audit
+
+- ❌ unused: key not referenced via t("…") in app/components
+- ❓ missing ar: key exists in EN but not in AR
+
+- about.description  // ❓ missing ar
+- about.title  // ❓ missing ar
+- company.badge
+- company.intro  // ❌ unused, ❓ missing ar
+- company.mission.body  // ❌ unused, ❓ missing ar
+- company.mission.title  // ❌ unused, ❓ missing ar
+- company.title
+- company.vision.body
+- company.vision.title
+- env.badge  // ❓ missing ar
+- env.button  // ❓ missing ar
+- env.description1  // ❓ missing ar
+- env.description2  // ❓ missing ar
+- env.title  // ❓ missing ar
+- footer.articles  // ❌ unused, ❓ missing ar
+- footer.company  // ❓ missing ar
+- footer.copyright  // ❓ missing ar
+- footer.description  // ❓ missing ar
+- footer.follow  // ❓ missing ar
+- footer.products  // ❓ missing ar
+- footer.services  // ❓ missing ar
+- header.contact
+- header.language  // ❌ unused
+- hero.rotating.agriculture
+- hero.rotating.bio
+- hero.rotating.greener
+- hero.subtitle
+- hero.title
+- mini.apps  // ❌ unused
+- mini.features  // ❌ unused
+- mini.journey  // ❌ unused
+- mini.news
+- mini.overview  // ❌ unused
+- mini.partners  // ❌ unused
+- mini.products  // ❌ unused
+- mini.quality  // ❌ unused
+- mini.services  // ❌ unused
+- mini.story  // ❌ unused
+- mini.vision  // ❌ unused
+- mini.why  // ❌ unused
+- nav.about
+- nav.about.company  // ❌ unused
+- nav.about.company.description  // ❌ unused
+- nav.about.sponsors  // ❌ unused
+- nav.about.sponsors.description  // ❌ unused
+- nav.about.team  // ❌ unused
+- nav.about.team.description  // ❌ unused
+- nav.blog
+- nav.home
+- nav.products
+- nav.products.bastFiber  // ❌ unused
+- nav.products.bastFiber.description  // ❌ unused
+- nav.products.hurds  // ❌ unused
+- nav.products.hurds.description  // ❌ unused
+- nav.products.seeds  // ❌ unused
+- nav.products.seeds.description  // ❌ unused
+- nav.services
+- news.office.description  // ❓ missing ar
+- news.office.title  // ❓ missing ar
+- news.partnership.description  // ❓ missing ar
+- news.partnership.title  // ❓ missing ar
+- news.subtitle  // ❓ missing ar
+- news.title  // ❓ missing ar
+- partners.more  // ❓ missing ar
+- partners.title  // ❓ missing ar
+- product.bastFiber.apps.industry.body  // ❌ unused
+- product.bastFiber.apps.industry.title  // ❌ unused
+- product.bastFiber.apps.nonwoven.body  // ❌ unused
+- product.bastFiber.apps.nonwoven.title  // ❌ unused
+- product.bastFiber.apps.textiles.body  // ❌ unused
+- product.bastFiber.apps.textiles.title  // ❌ unused
+- product.bastFiber.apps.title
+- product.bastFiber.badge
+- product.bastFiber.features.light.body  // ❌ unused
+- product.bastFiber.features.light.title  // ❌ unused
+- product.bastFiber.features.strength.body  // ❌ unused
+- product.bastFiber.features.strength.title  // ❌ unused
+- product.bastFiber.features.sustainable.body  // ❌ unused
+- product.bastFiber.features.sustainable.title  // ❌ unused
+- product.bastFiber.features.title
+- product.bastFiber.features.versatile.body  // ❌ unused
+- product.bastFiber.features.versatile.title  // ❌ unused
+- product.bastFiber.overview.body
+- product.bastFiber.title
+- product.bastFiber.why.body
+- product.bastFiber.why.title
+- product.hurds.badge
+- product.hurds.features.absorption.body  // ❌ unused
+- product.hurds.features.absorption.title  // ❌ unused
+- product.hurds.features.comfort.body  // ❌ unused
+- product.hurds.features.comfort.title  // ❌ unused
+- product.hurds.features.eco.body  // ❌ unused
+- product.hurds.features.eco.title  // ❌ unused
+- product.hurds.features.odor.body  // ❌ unused
+- product.hurds.features.odor.title  // ❌ unused
+- product.hurds.features.title
+- product.hurds.overview.body
+- product.hurds.overview.title  // ❌ unused
+- product.hurds.title
+- product.hurds.why.body
+- product.hurds.why.title
+- product.seeds.badge
+- product.seeds.features.fats.body  // ❌ unused
+- product.seeds.features.fats.title  // ❌ unused
+- product.seeds.features.nutrients.body  // ❌ unused
+- product.seeds.features.nutrients.title  // ❌ unused
+- product.seeds.features.title
+- product.seeds.features.versatile.body  // ❌ unused
+- product.seeds.features.versatile.title  // ❌ unused
+- product.seeds.overview.body
+- product.seeds.overview.title  // ❌ unused
+- product.seeds.quality.p1  // ❌ unused
+- product.seeds.quality.p2  // ❌ unused
+- product.seeds.quality.p3  // ❌ unused
+- product.seeds.quality.title
+- product.seeds.title
+- product.seeds.why.body
+- product.seeds.why.title
+- products.hemp_fibers  // ❓ missing ar
+- products.hemp_seeds  // ❓ missing ar
+- products.subtitle  // ❌ unused, ❓ missing ar
+- products.temperature_boxes  // ❓ missing ar
+- products.title  // ❓ missing ar
+- services.education.description  // ❓ missing ar
+- services.education.title  // ❓ missing ar
+- services.research.description  // ❓ missing ar
+- services.research.title  // ❓ missing ar
+- services.subtitle  // ❌ unused, ❓ missing ar
+- services.sustainability.description  // ❓ missing ar
+- services.sustainability.title  // ❓ missing ar
+- services.title  // ❓ missing ar
+- sponsors.badge
+- sponsors.intro  // ❌ unused
+- sponsors.journey.p1
+- sponsors.journey.p2
+- sponsors.journey.p3
+- sponsors.journey.title
+- sponsors.title
+- sponsors.vision.body
+- sponsors.vision.title
+- team.badge
+- team.intro  // ❌ unused
+- team.journey.p1  // ❌ unused
+- team.journey.p2  // ❌ unused
+- team.journey.p3  // ❌ unused
+- team.journey.title  // ❌ unused
+- team.member.abdulhadi.bio
+- team.member.abdulhadi.name
+- team.member.abdulhadi.role
+- team.member.lucas.bio
+- team.member.lucas.name
+- team.member.lucas.role
+- team.title

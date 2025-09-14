@@ -36,21 +36,21 @@ const aboutMenuItems: SubMenuItem[] = [
 
 const productsMenuItems: SubMenuItem[] = [
   {
-    title: "nav.products.animalBedding",
-    href: "/products/animal-bedding",
-    image: getAssetPath("/hemp_hurds_mulch-443x300.png"),
-    description: "nav.products.animalBedding.description",
+    title: "nav.products.hurds",
+    href: "/products/hurds",
+    image: getAssetPath("/hurds.png"),
+    description: "nav.products.hurds.description",
   },
   {
-    title: "nav.products.constructionBlocks",
-    href: "/products/construction-blocks",
-    image: getAssetPath("/hemp-blocks-01-443x300.jpg"),
-    description: "nav.products.constructionBlocks.description",
+    title: "nav.products.bastFiber",
+    href: "/products/bast-fiber",
+    image: getAssetPath("/bast-fiber.png"),
+    description: "nav.products.bastFiber.description",
   },
   {
     title: "nav.products.seeds",
     href: "/products/seeds",
-    image: getAssetPath("/hemp_seeds_AdobeStock-443x300.jpeg"),
+    image: getAssetPath("/seeds.png"),
     description: "nav.products.seeds.description",
   },
 ]

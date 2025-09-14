@@ -52,7 +52,7 @@ export function MiniNavbar({ sections = DEFAULT_SECTIONS }: MiniNavbarProps) {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
     }
-  }, [active])
+  }, [active, sections])
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id)

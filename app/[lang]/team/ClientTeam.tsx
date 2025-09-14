@@ -4,6 +4,7 @@ import { useLanguage } from "@/components/language-provider"
 import { PageHero } from "@/components/page-hero"
 import { getAssetPath } from "@/lib/assets"
 import { LinkedinIcon, InstagramIcon, TwitterIcon, MailIcon } from "lucide-react"
+import Image from 'next/image'
 
 export function ClientTeam() {
   const { t, isRTL, language } = useLanguage()
@@ -17,10 +18,13 @@ export function ClientTeam() {
         <section className="py-16">
           <div className={`flex flex-col md:flex-row ${isRTL ? 'md:flex-row-reverse' : ''} items-center gap-10`}>
             <div className="shrink-0 relative">
-              <img
+              <Image
                 src={getAssetPath('/hadi.jpg')}
                 alt={t('team.member.abdulhadi.name')}
+                width={288}
+                height={288}
                 className="w-44 h-44 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover ring-4 ring-white shadow-xl"
+                priority={false}
               />
             </div>
             <div className={`max-w-2xl ${isRTL ? 'md:-translate-y-4' : 'md:translate-y-4'}`}>
@@ -41,10 +45,13 @@ export function ClientTeam() {
         <section className="py-16">
           <div className={`flex flex-col md:flex-row ${isRTL ? '' : 'md:flex-row-reverse'} items-center gap-10`}>
             <div className="shrink-0 relative">
-              <img
+              <Image
                 src={getAssetPath('/lucas.jpg')}
                 alt={t('team.member.lucas.name')}
+                width={288}
+                height={288}
                 className="w-44 h-44 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-full object-cover ring-4 ring-white shadow-xl"
+                priority={false}
               />
             </div>
             <div className={`max-w-2xl ${isRTL ? 'md:translate-y-4' : 'md:-translate-y-4'}`}>
