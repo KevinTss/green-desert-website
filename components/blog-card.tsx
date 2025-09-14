@@ -47,7 +47,7 @@ export function BlogCard({ post, isRTL, languageRoute, href, imageClassName }: B
 
   return (
     <Link href={linkHref} className="group block h-full">
-      <article className="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-gray-200 transition-colors transition-shadow duration-300 hover:shadow-lg hover:border-gray-300 hover:cursor-pointer">
+      <article className="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-gray-200 transition-colors duration-300 hover:shadow-lg hover:border-gray-300 hover:cursor-pointer">
         {post.image && (
           <div className="relative h-48 w-full overflow-hidden">
             <Image
