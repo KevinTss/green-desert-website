@@ -158,7 +158,7 @@ const en = {
 
   // Products (home)
   "products.title": "Products",
-  "products.subtitle": "Green Desert",
+  "products.subtitle": "Sustainably made hemp essentials for home and industry.",
   "products.hemp_seeds": "Hemp Seeds For Human and Animal Consumption",
   "products.temperature_boxes": "Temperature Boxes for Construction",
   "products.hemp_fibers": "Hemp Fibers for Animal Bedding",
@@ -182,4 +182,3 @@ const en = {
 }
 
 export default en
-

@@ -1,65 +1,52 @@
-import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
-import { Card, CardContent } from "@/components/ui/card"
 import { SectionTitle } from "@/components/section-title"
 import { getAssetPath } from "@/lib/assets"
+import { BlogCard } from '@/components/blog-card'
 
 export const Section3OurProducts = () => {
-  const { t, isRTL } = useLanguage()
+  const { t, isRTL, language, languageRoute } = useLanguage()
 
   return (
     <section id="products" className="py-16 lg:py-20 flex items-center min-h-[60vh] bg-gray-50">
       <div className="container mx-auto px-4 text-center">
-        <SectionTitle>{t("products.title")}</SectionTitle>
+        <SectionTitle className="mb-2">{t("products.title")}</SectionTitle>
+        <p className="text-gray-600 max-w-2xl mx-auto mt-2 mb-16">
+          {t("products.subtitle")}
+        </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src={getAssetPath("/placeholder.svg?height=200&width=300")}
-              alt="Hemp Seeds"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-              loading="lazy"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-left items-stretch">
+          {[
+            {
+              key: 'hurds',
+              title: t('nav.products.hurds'),
+              excerpt: t('nav.products.hurds.description'),
+              image: getAssetPath('/hurds.png'),
+              href: `/${languageRoute}/products/hurds`
+            },
+            {
+              key: 'bast-fiber',
+              title: t('nav.products.bastFiber'),
+              excerpt: t('nav.products.bastFiber.description'),
+              image: getAssetPath('/bast-fiber.png'),
+              href: `/${languageRoute}/products/bast-fiber`
+            },
+            {
+              key: 'seeds',
+              title: t('nav.products.seeds'),
+              excerpt: t('nav.products.seeds.description'),
+              image: getAssetPath('/seeds.png'),
+              href: `/${languageRoute}/products/seeds`
+            },
+          ].map((p) => (
+            <BlogCard
+              key={p.key}
+              post={{ slug: p.key, title: p.title, image: p.image, excerpt: p.excerpt }}
+              isRTL={isRTL}
+              languageRoute={language}
+              href={p.href}
+              imageClassName="object-contain"
             />
-            <CardContent className="p-6">
-              <h3 className={`text-lg font-bold text-gray-800 mb-2 ${isRTL ? "text-right" : "text-left"}`}>
-                {t("products.hemp_seeds")}
-              </h3>
-            </CardContent>
-          </Card>
-
-          <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src={getAssetPath("/placeholder.svg?height=200&width=300")}
-              alt="Temperature Boxes"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-              loading="lazy"
-            />
-            <CardContent className="p-6">
-              <h3 className={`text-lg font-bold text-gray-800 mb-2 ${isRTL ? "text-right" : "text-left"}`}>
-                {t("products.temperature_boxes")}
-              </h3>
-            </CardContent>
-          </Card>
-
-          <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1">
-            <Image
-              src={getAssetPath("/placeholder.svg?height=200&width=300")}
-              alt="Hemp Fibers"
-              width={300}
-              height={200}
-              className="w-full h-48 object-cover"
-              loading="lazy"
-            />
-            <CardContent className="p-6">
-              <h3 className={`text-lg font-bold text-gray-800 mb-2 ${isRTL ? "text-right" : "text-left"}`}>
-                {t("products.hemp_fibers")}
-              </h3>
-            </CardContent>
-          </Card>
+          ))}
         </div>
       </div>
     </section>

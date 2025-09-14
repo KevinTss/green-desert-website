@@ -40,6 +40,10 @@ const ar = {
   "mini.why": "لماذا؟",
   "mini.apps": "التطبيقات",
   "mini.quality": "الجودة",
+  
+  // Products section (home)
+  "products.title": "المنتجات",
+  "products.subtitle": "منتجات قنب مستدامة للمنازل والصناعة.",
 
   // Company (minimal for layout)
   "company.badge": "عن الشركة",
@@ -138,4 +142,3 @@ const ar = {
 }
 
 export default ar
-
