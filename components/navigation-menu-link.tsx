@@ -111,7 +111,7 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         <Link
           href={getNavLink({ label, languageRoute })}
           className={cn(
-            "flex items-center gap-2 cursor-pointer rounded-full px-5 py-2 transition-colors duration-300 outline-none",
+            "flex items-center gap-2 cursor-pointer rounded-full px-5 py-2 transition-colors duration-300 outline-none relative",
             isScrolled
               ? "text-gray-700 hover:bg-gray-100"
               : "text-white/90 hover:text-white hover:bg-black/10",
@@ -128,8 +128,11 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
           className={cn(
             "z-50 w-screen max-w-none rounded-none",
             isScrolled
-              ? "bg-white/65 backdrop-blur-md shadow-sm"
-              : "bg-black/10 backdrop-blur-md",
+              ? "bg-white"
+              : "bg-black",
+            // isScrolled
+            //   ? "bg-white/65 backdrop-blur-md shadow-sm"
+            //   : "bg-black/10 backdrop-blur-md",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
           )}
@@ -137,16 +140,10 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
           onPointerLeave={handleLeave}
         >
           <div className={cn(
-            "flex px-7 md:px-10 lg:px-12 border-t-gray-300 border-t",
-            isScrolled ? "border-t" : "border-t-white/30",
+            "flex px-7 md:px-10 lg:px-12 border-b",
+            isScrolled ? "border-b-gray-50" : "border-b-gray-800",
           )}>
-            <div
-              className={cn(
-                "w-1/3 p-6",
-                isRTL ? "border-l" : "border-r",
-                isScrolled ? "border-gray-300" : "border-white/30"
-              )}
-            >
+            <div className={cn("w-1/3 p-6")}>
               <ul className="space-y-4">
                 {subMenuItems.map((item) => {
                   const href = item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href
@@ -217,6 +214,12 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
               </div>
             </div>
           </div>
+          <div className={cn(
+            'absolute w-full h-screen pointer-events-none',
+            isScrolled
+              ? "bg-white/65 backdrop-blur-lg"
+              : "bg-black/50 backdrop-blur-md",
+          )} />
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
