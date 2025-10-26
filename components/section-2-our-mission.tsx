@@ -1,6 +1,7 @@
 import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
 import { SectionTitle } from "@/components/section-title"
+import { PartnersCarousel } from "@/components/partners-carousel"
 
 export const Section2OurMission = () => {
   const { t } = useLanguage()
@@ -16,6 +17,7 @@ export const Section2OurMission = () => {
       </div>
 
       <div className="container mx-auto px-4 text-center">
+        <PartnersCarousel />
         <SectionTitle>{t("about.title")}</SectionTitle>
         <p
           className={cn(
