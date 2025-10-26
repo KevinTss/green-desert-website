@@ -1,13 +1,26 @@
 "use client"
 
+import * as React from "react"
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
-import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "lucide-react"
+import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon, ArrowRight } from "lucide-react"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 
 export const Footer = () => {
   const { t, isRTL, languageRoute } = useLanguage()
+  const [email, setEmail] = React.useState("")
+  const [submitted, setSubmitted] = React.useState<"idle" | "success" | "error">("idle")
+
+  const isValidEmail = (val: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim())
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!isValidEmail(email)) {
+      setSubmitted("error")
+      return
+    }
+    setSubmitted("success")
+  }
 
   return (
     <footer id="site-footer" className="bg-gray-50 text-gray-800">
@@ -47,6 +60,22 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
+            <div className="mb-8">
+              <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.products')}</h4>
+              <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
+                {[
+                  { href: "#", label: t('products.hemp_seeds') },
+                  { href: "#", label: t('products.temperature_boxes') },
+                  { href: "#", label: t('products.hemp_fibers') },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <a href={item.href} className="hover:text-gray-900 transition-colors">
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.company')}</h4>
             <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
               {[
@@ -68,23 +97,6 @@ export const Footer = () => {
           {/* Products + Services stacked */}
           <div>
             <div className="mb-8">
-              <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.products')}</h4>
-              <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
-                {[
-                  { href: "#", label: t('products.hemp_seeds') },
-                  { href: "#", label: t('products.temperature_boxes') },
-                  { href: "#", label: t('products.hemp_fibers') },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="hover:text-gray-900 transition-colors">
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
               <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.services')}</h4>
               <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
                 {[
@@ -99,6 +111,45 @@ export const Footer = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+
+            {/* Newsletter signup */}
+            <div className="md:col-span-3">
+              <h4 className={cn("font-bold mb-2 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.title')}</h4>
+              <p className={cn("text-sm text-gray-600 mb-4", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.description')}</p>
+            <form onSubmit={onSubmit} className={cn("flex flex-col gap-3 items-start", isRTL && "items-end")}> 
+              <div className="relative w-full md:w-96">
+                <input
+                  type="email"
+                  inputMode="email"
+                  placeholder={t('footer.newsletter.placeholder')}
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); if (submitted !== 'idle') setSubmitted('idle') }}
+                  className={cn(
+                    "w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-green-600",
+                    isRTL ? "pl-10 pr-4 text-right" : "pr-10 pl-4"
+                  )}
+                  aria-invalid={submitted === 'error'}
+                />
+                <button
+                  type="submit"
+                  aria-label={t('footer.newsletter.cta')}
+                  className={cn(
+                    "absolute top-1/2 -translate-y-1/2 p-1 rounded-md text-green-700 hover:text-green-800",
+                    isRTL ? "left-2" : "right-2"
+                  )}
+                >
+                  <ArrowRight className={cn("w-5 h-5", isRTL && "rotate-180")} />
+                </button>
+              </div>
+            </form>
+              {submitted === 'error' && (
+                <p className={cn("mt-2 text-sm text-gray-500", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.error')}</p>
+              )}
+              {submitted === 'success' && (
+                <p className={cn("mt-2 text-sm text-gray-500", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.success')}</p>
+              )}
             </div>
           </div>
         </div>

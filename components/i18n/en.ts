@@ -179,6 +179,13 @@ const en = {
   "footer.services": "Services",
   "footer.articles": "Latest Articles",
   "footer.copyright": "© 2024 Green Desert Co. All rights reserved.",
+  // Newsletter
+  "footer.newsletter.title": "Sign up for updates on our latest innovations",
+  "footer.newsletter.description": "I accept Green Desert's Terms and Conditions and acknowledge that my information will be used in accordance with Green Desert's Privacy Policy.",
+  "footer.newsletter.placeholder": "name@example.com",
+  "footer.newsletter.cta": "Subscribe",
+  "footer.newsletter.success": "Thank you for signing up",
+  "footer.newsletter.error": "Please enter a valid email (e.g., \"name@example.com\")",
 }
 
 export default en
