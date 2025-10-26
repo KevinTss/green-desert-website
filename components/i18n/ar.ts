@@ -1,240 +1,184 @@
 const ar = {
   // Header
-  'nav.home': 'الرئيسية',
-  'nav.about': 'من نحن',
-  'nav.about.company': 'الشركة',
-  'nav.about.company.description':
-    'اكتشف مهمتنا، التزامنا برؤية 2030، وقصة أول مبتكر مرخص للقنب في المملكة العربية السعودية.',
-  'nav.about.sponsors': 'الرعاة',
-  'nav.about.sponsors.description':
-    'تعرّف على الشركاء والجهات الداعمة لمسيرتنا نحو مستقبل أخضر قائم على المواد الحيوية.',
-  'nav.about.team': 'الفريق',
-  'nav.about.team.description':
-    'تعرّف على الفريق الشغوف وراء الصحراء الخضراء، المكرّس للابتكار البيئي والاستدامة.',
-  'nav.products': 'المنتجات',
-  'nav.products.hurds': 'قشور القنب',
-  'nav.products.hurds.description':
-    'قشور قنب نظيفة للهيمبلايم وفراش الحيوانات والمهاد الحيوي.',
-  'nav.products.bastFiber': 'ألياف اللحاء',
-  'nav.products.bastFiber.description':
-    'ألياف قنب قوية وخفيفة للتطبيقات المركبة والمنسوجات والعزل.',
-  'nav.products.seeds': 'البذور',
-  'nav.products.seeds.description':
-    'بذور قنب منخفضة THC معتمدة للاستخدام المستدام في التغذية البشرية والحيوانية وزراعة المحاصيل المستقبلية.',
-  'nav.services': 'الخدمات',
-  'nav.blog': 'المدونة',
-  'header.contact': 'اتصل بنا',
-  'header.language': 'العربية',
+  "nav.home": "الرئيسية",
+  "nav.about": "من نحن",
+  "nav.about.company": "الشركة",
+  "nav.about.company.description": "اكتشف مهمتنا، التزامنا برؤية 2030، وقصة أول مبتكر مرخص للقنب في المملكة العربية السعودية.",
+  "nav.about.sponsors": "الرعاة",
+  "nav.about.sponsors.description": "تعرّف على الشركاء والجهات الداعمة لمسيرتنا نحو مستقبل أخضر قائم على المواد الحيوية.",
+  "nav.about.team": "الفريق",
+  "nav.about.team.description": "تعرّف على الفريق الشغوف وراء الصحراء الخضراء، المكرّس للابتكار البيئي والاستدامة.",
+  "nav.products": "المنتجات",
+  "nav.products.hurds": "قشور القنب",
+  "nav.products.hurds.description": "قشور قنب نظيفة للهيمبلايم وفراش الحيوانات والمهاد الحيوي.",
+  "nav.products.bastFiber": "ألياف اللحاء",
+  "nav.products.bastFiber.description": "ألياف قنب قوية وخفيفة للتطبيقات المركبة والمنسوجات والعزل.",
+  "nav.products.seeds": "البذور",
+  "nav.products.seeds.description": "بذور قنب منخفضة THC معتمدة للاستخدام المستدام في التغذية البشرية والحيوانية وزراعة المحاصيل المستقبلية.",
+  "nav.services": "الخدمات",
+  "nav.blog": "المدونة",
+  "header.contact": "اتصل بنا",
+  "header.language": "العربية",
 
   // Hero
-  'hero.title': 'تسريع انتقال المملكة العربية السعودية نحو',
-  'hero.subtitle': 'ريادة الابتكار المستدام من خلال القنب الصناعي',
-  'hero.rotating.greener': 'مستقبل أكثر خضرة',
-  'hero.rotating.bio': 'اقتصاد قائم على التكنولوجيا الحيوية',
-  'hero.rotating.agriculture': 'الزراعة المستدامة',
+  "hero.title": "تسريع انتقال المملكة العربية السعودية نحو",
+  "hero.subtitle": "نمزج القوة التكنولوجية بالتعاون المؤسسي لبناء أسس مستقبلٍ محايدٍ كربونيًا",
+  "hero.rotating.greener": "مستقبل أكثر خضرة",
+  "hero.rotating.bio": "اقتصاد قائم على التكنولوجيا الحيوية",
+  "hero.rotating.agriculture": "الزراعة المستدامة",
 
   // Mini navbar
-  'mini.story': 'القصة',
-  'mini.services': 'الخدمات',
-  'mini.products': 'المنتجات',
-  'mini.partners': 'الشركاء',
-  'mini.news': 'الأخبار',
-  'mini.vision': 'الرؤية',
-  'mini.journey': 'رحلتنا',
-  'mini.overview': 'نظرة عامة',
-  'mini.features': 'المميزات',
-  'mini.why': 'لماذا؟',
-  'mini.apps': 'التطبيقات',
-  'mini.quality': 'الجودة',
+  "mini.story": "القصة",
+  "mini.services": "الخدمات",
+  "mini.products": "المنتجات",
+  "mini.partners": "الشركاء",
+  "mini.news": "الأخبار",
+  "mini.vision": "الرؤية",
+  "mini.journey": "رحلتنا",
+  "mini.overview": "نظرة عامة",
+  "mini.features": "المميزات",
+  "mini.why": "لماذا؟",
+  "mini.apps": "التطبيقات",
+  "mini.quality": "الجودة",
 
   // Company page
-  'company.badge': 'عن الشركة',
-  'company.title': 'عن الصحراء الخضراء',
-  'company.intro':
-    'Green Desert is a Saudi Arabian biotechnology startup founded in January 2020. We address the region’s most pressing environmental challenges through innovative, sustainable solutions rooted in Cannabis sativa (industrial hemp), aligned with Saudi Arabia’s Vision 2030.',
-  'company.mission.title': 'Our Mission',
-  'company.mission.body':
-    'We aim to break the vicious cycle of desertification, water scarcity, and soil degradation with practical, scalable solutions. Our biotechnology-driven products and services reduce waste, turn byproducts into value, and power a greener circular economy across the Kingdom.',
-  'company.vision.title': 'الالتزام برؤية 2030',
-  'company.vision.body':
-    'تسهم مبادراتنا في أهداف جودة الحياة، وحماية البيئة، وتنويع الاقتصاد. نعمل مع الجهات الحكومية والشركاء الصناعيين لتطوير حلول قابلة للتوسع تحدث أثرًا ملموسًا في مدن ومناطق المملكة.',
+  "company.badge": "عن الشركة",
+  "company.title": "عن الصحراء الخضراء",
+  "company.intro": "Green Desert is a Saudi Arabian biotechnology startup founded in January 2020. We address the region’s most pressing environmental challenges through innovative, sustainable solutions rooted in Cannabis sativa (industrial hemp), aligned with Saudi Arabia’s Vision 2030.",
+  "company.mission.title": "Our Mission",
+  "company.mission.body": "We aim to break the vicious cycle of desertification, water scarcity, and soil degradation with practical, scalable solutions. Our biotechnology-driven products and services reduce waste, turn byproducts into value, and power a greener circular economy across the Kingdom.",
+  "company.vision.title": "الالتزام برؤية 2030",
+  "company.vision.body": "تسهم مبادراتنا في أهداف جودة الحياة، وحماية البيئة، وتنويع الاقتصاد. نعمل مع الجهات الحكومية والشركاء الصناعيين لتطوير حلول قابلة للتوسع تحدث أثرًا ملموسًا في مدن ومناطق المملكة.",
 
   // Team page
-  'team.badge': 'الفريق',
-  'team.title': 'فريقنا',
-  'team.intro':
-    'فريق متعدد التخصصات ملتزم بالابتكار المستدام والأثر البيئي عبر المملكة العربية السعودية ومنطقة الخليج.',
-  'team.journey.title': 'رحلتنا',
-  'team.journey.p1':
-    'نما فريقنا من إيمان مشترك بأن المملكة يمكنها قيادة المنطقة في التكنولوجيا الحيوية المستدامة عبر مواءمة الابتكار مع الاحتياجات المحلية والأنظمة.',
-  'team.journey.p2':
-    'من خلال الشراكات مع الجامعات والصناعة نثبت حالات استخدام واقعية ونبني القدرات اللازمة للتوسع.',
-  'team.journey.p3':
-    'نواصل توسيع شبكتنا وتنمية المواهب وبناء القدرات لمستقبل أكثر خضرة.',
-  'team.member.abdulhadi.name': 'عبدالهادي العامر',
-  'team.member.abdulhadi.role': 'المؤسس',
-  'team.member.abdulhadi.bio':
-    'مؤسس الصحراء الخضراء. تعرّف عبدالهادي على نبات القنب — خصوصًا الاستخدام الطبي — عند إقرار تعديل كولورادو 64 في 6 نوفمبر 2012 الذي أدى إلى التقنين الترفيهي. بعد ذلك بوقت قصير أصبح رائد أعمال وبنى سمعته في بناء العلاقات ضمن الأعمال الخضراء حول العالم.',
-  'team.member.lucas.name': 'لوكاس ديتريش',
-  'team.member.lucas.role': 'الشريك المؤسس',
-  'team.member.lucas.bio':
-    'الشريك المؤسس للصحراء الخضراء. قرر لوكاس أن يصبح رائد أعمال وبدأ نشاطًا لزراعة القنب الصناعي في فرنسا. لاحقًا، انضم إلى برنامج اكتسب من خلاله المهارات والمعرفة لإتقان زراعة هذا النبات متعدد الاستخدامات لدعم تطبيقات مستدامة واسعة النطاق.',
+  "team.badge": "الفريق",
+  "team.title": "فريقنا",
+  "team.intro": "فريق متعدد التخصصات ملتزم بالابتكار المستدام والأثر البيئي عبر المملكة العربية السعودية ومنطقة الخليج.",
+  "team.journey.title": "رحلتنا",
+  "team.journey.p1": "نما فريقنا من إيمان مشترك بأن المملكة يمكنها قيادة المنطقة في التكنولوجيا الحيوية المستدامة عبر مواءمة الابتكار مع الاحتياجات المحلية والأنظمة.",
+  "team.journey.p2": "من خلال الشراكات مع الجامعات والصناعة نثبت حالات استخدام واقعية ونبني القدرات اللازمة للتوسع.",
+  "team.journey.p3": "نواصل توسيع شبكتنا وتنمية المواهب وبناء القدرات لمستقبل أكثر خضرة.",
+  "team.member.abdulhadi.name": "عبدالهادي العامر",
+  "team.member.abdulhadi.role": "المؤسس",
+  "team.member.abdulhadi.bio": "مؤسس الصحراء الخضراء. تعرّف عبدالهادي على نبات القنب — خصوصًا الاستخدام الطبي — عند إقرار تعديل كولورادو 64 في 6 نوفمبر 2012 الذي أدى إلى التقنين الترفيهي. بعد ذلك بوقت قصير أصبح رائد أعمال وبنى سمعته في بناء العلاقات ضمن الأعمال الخضراء حول العالم.",
+  "team.member.lucas.name": "لوكاس ديتريش",
+  "team.member.lucas.role": "الشريك المؤسس",
+  "team.member.lucas.bio": "الشريك المؤسس للصحراء الخضراء. قرر لوكاس أن يصبح رائد أعمال وبدأ نشاطًا لزراعة القنب الصناعي في فرنسا. لاحقًا، انضم إلى برنامج اكتسب من خلاله المهارات والمعرفة لإتقان زراعة هذا النبات متعدد الاستخدامات لدعم تطبيقات مستدامة واسعة النطاق.",
 
   // Sponsors page
-  'sponsors.badge': 'الرعاة',
-  'sponsors.title': 'الرعاة والشركاء',
-  'sponsors.intro':
-    'يدعم رعاتنا وشركاؤنا الاستراتيجيون توسيع أثرنا من خلال الحوكمة والبحث والتعاون الصناعي.',
-  'sponsors.vision.title': 'رؤية الشراكات',
-  'sponsors.vision.body':
-    'نبني تعاونات طويلة الأمد تجمع بين الصرامة العلمية والمواءمة التنظيمية والتنفيذ السوقي لتحقيق نتائج بيئية قابلة للقياس.',
-  'sponsors.journey.title': 'رحلة الشراكات',
-  'sponsors.journey.p1':
-    'من التجارب المبكرة إلى النشر، تمكّننا الشراكات من الوصول إلى البنية التحتية والبيانات والمجتمعات.',
-  'sponsors.journey.p2':
-    'نطوّر حلولًا مشتركة مع مؤسسات وشركات متوافقة مع أهداف الاستدامة لرؤية 2030.',
-  'sponsors.journey.p3':
-    'تجري رعايات وتحالفات جديدة لتوسيع حضورنا الإقليمي والتصنيع المحلي.',
+  "sponsors.badge": "الرعاة",
+  "sponsors.title": "الرعاة والشركاء",
+  "sponsors.intro": "يدعم رعاتنا وشركاؤنا الاستراتيجيون توسيع أثرنا من خلال الحوكمة والبحث والتعاون الصناعي.",
+  "sponsors.vision.title": "رؤية الشراكات",
+  "sponsors.vision.body": "نبني تعاونات طويلة الأمد تجمع بين الصرامة العلمية والمواءمة التنظيمية والتنفيذ السوقي لتحقيق نتائج بيئية قابلة للقياس.",
+  "sponsors.journey.title": "رحلة الشراكات",
+  "sponsors.journey.p1": "من التجارب المبكرة إلى النشر، تمكّننا الشراكات من الوصول إلى البنية التحتية والبيانات والمجتمعات.",
+  "sponsors.journey.p2": "نطوّر حلولًا مشتركة مع مؤسسات وشركات متوافقة مع أهداف الاستدامة لرؤية 2030.",
+  "sponsors.journey.p3": "تجري رعايات وتحالفات جديدة لتوسيع حضورنا الإقليمي والتصنيع المحلي.",
 
   // Products page
-  'product.hurds.badge': 'المنتج',
-  'product.hurds.title':
-    'فراش قشور القنب للحيوانات – عالي الامتصاص وطبيعي ومخفِّض للروائح',
-  'product.hurds.overview.title': 'نظرة عامة',
-  'product.hurds.overview.body':
-    'وفّر لحيوناتك بيئة أنظف وأكثر جفافًا وصحة مع فراش قشور القنب عالي الجودة. مصنوع من اللب الخشبي لساق القنب، يتميز بامتصاص عالٍ وتقليل للروائح مع بقاء الطبقة العلوية دافئة وناعمة وجافة.',
-  'product.hurds.features.title': 'كيف يعمل',
-  'product.hurds.features.absorption.title': 'امتصاص فائق',
-  'product.hurds.features.absorption.body':
-    'تمتص قشور القنب السوائل بسرعة وتحجز الرطوبة في الطبقات السفلية.',
-  'product.hurds.features.odor.title': 'تقليل الروائح',
-  'product.hurds.features.odor.body':
-    'بحبس الرطوبة عميقًا، تُقلَل الروائح وتبقى الحظائر أنعش لمدة أطول.',
-  'product.hurds.features.comfort.title': 'راحة الحيوانات',
-  'product.hurds.features.comfort.body':
-    'تظل الطبقة الجافة العلوية ناعمة ودافئة وخالية من الغبار لتوفير سطح مريح.',
-  'product.hurds.features.eco.title': 'صديق للبيئة',
-  'product.hurds.features.eco.body':
-    'طبيعي 100% وقابل للتحلل ويزرع دون مواد كيميائية ضارة.',
-  'product.hurds.why.title': 'لماذا اختيار فراش القنب؟',
-  'product.hurds.why.body':
-    'يمتص أكثر حتى 4 مرات من القش أو نشارة الخشب، ما يعني نفايات أقل وتنظيفًا أسهل وصحة أعلى.',
+  "product.hurds.badge": "المنتج",
+  "product.hurds.title": "فراش قشور القنب للحيوانات – عالي الامتصاص وطبيعي ومخفِّض للروائح",
+  "product.hurds.overview.title": "نظرة عامة",
+  "product.hurds.overview.body": "وفّر لحيوناتك بيئة أنظف وأكثر جفافًا وصحة مع فراش قشور القنب عالي الجودة. مصنوع من اللب الخشبي لساق القنب، يتميز بامتصاص عالٍ وتقليل للروائح مع بقاء الطبقة العلوية دافئة وناعمة وجافة.",
+  "product.hurds.features.title": "كيف يعمل",
+  "product.hurds.features.absorption.title": "امتصاص فائق",
+  "product.hurds.features.absorption.body": "تمتص قشور القنب السوائل بسرعة وتحجز الرطوبة في الطبقات السفلية.",
+  "product.hurds.features.odor.title": "تقليل الروائح",
+  "product.hurds.features.odor.body": "بحبس الرطوبة عميقًا، تُقلَل الروائح وتبقى الحظائر أنعش لمدة أطول.",
+  "product.hurds.features.comfort.title": "راحة الحيوانات",
+  "product.hurds.features.comfort.body": "تظل الطبقة الجافة العلوية ناعمة ودافئة وخالية من الغبار لتوفير سطح مريح.",
+  "product.hurds.features.eco.title": "صديق للبيئة",
+  "product.hurds.features.eco.body": "طبيعي 100% وقابل للتحلل ويزرع دون مواد كيميائية ضارة.",
+  "product.hurds.why.title": "لماذا اختيار فراش القنب؟",
+  "product.hurds.why.body": "يمتص أكثر حتى 4 مرات من القش أو نشارة الخشب، ما يعني نفايات أقل وتنظيفًا أسهل وصحة أعلى.",
 
   // Products: Seeds
-  'product.seeds.badge': 'المنتج',
-  'product.seeds.title':
-    'بذور قنب معتمدة عالية الجودة – غنية بالعناصر ومستمرة ومتعددة الاستخدامات',
-  'product.seeds.overview.title': 'نظرة عامة',
-  'product.seeds.overview.body':
-    'مليئة بالبروتين والألياف والأحماض الدهنية الأساسية. مثالية للتغذية البشرية وعلف الحيوانات وتلبي أعلى المعايير الأوروبية للجودة.',
-  'product.seeds.features.title': 'قوة غذائية',
-  'product.seeds.features.nutrients.title': 'غنية بالعناصر الأساسية',
-  'product.seeds.features.nutrients.body':
-    'نسبة عالية من البروتين والألياف والفيتامينات والمعادن.',
-  'product.seeds.features.fats.title': 'دهون صحية',
-  'product.seeds.features.fats.body':
-    'توازن أوميغا‑3 وأوميغا‑6 يدعم صحة القلب والدماغ.',
-  'product.seeds.features.versatile.title': 'استخدامات متعددة',
-  'product.seeds.features.versatile.body':
-    'مناسبة للاستهلاك البشري (عصائر، سلطات، خبز) وكذلك أعلاف للحيوانات (طيور، دواجن، تربية الأحياء المائية).',
-  'product.seeds.quality.title': 'جودة وسلامة موثوقة',
-  'product.seeds.quality.p1':
-    'مصادر من بذور قنب معتمدة أوروبية، مع THC أقل من 0.2% و0.1% حسب الصنف.',
-  'product.seeds.quality.p2': 'تزرع دون مبيدات أو ري، مع احترام الصحة والبيئة.',
-  'product.seeds.quality.p3': 'قابلة للتتبع والاعتماد من البذرة حتى المحصول.',
-  'product.seeds.why.title': 'لماذا اختيار بذورنا؟',
-  'product.seeds.why.body':
-    'على عكس المورّدين العامين، نضمن بذورًا نظيفة وآمنة وغنية بالعناصر تدعم الزراعة المستدامة والحياة الصحية.',
+  "product.seeds.badge": "المنتج",
+  "product.seeds.title": "بذور قنب معتمدة عالية الجودة – غنية بالعناصر ومستمرة ومتعددة الاستخدامات",
+  "product.seeds.overview.title": "نظرة عامة",
+  "product.seeds.overview.body": "مليئة بالبروتين والألياف والأحماض الدهنية الأساسية. مثالية للتغذية البشرية وعلف الحيوانات وتلبي أعلى المعايير الأوروبية للجودة.",
+  "product.seeds.features.title": "قوة غذائية",
+  "product.seeds.features.nutrients.title": "غنية بالعناصر الأساسية",
+  "product.seeds.features.nutrients.body": "نسبة عالية من البروتين والألياف والفيتامينات والمعادن.",
+  "product.seeds.features.fats.title": "دهون صحية",
+  "product.seeds.features.fats.body": "توازن أوميغا‑3 وأوميغا‑6 يدعم صحة القلب والدماغ.",
+  "product.seeds.features.versatile.title": "استخدامات متعددة",
+  "product.seeds.features.versatile.body": "مناسبة للاستهلاك البشري (عصائر، سلطات، خبز) وكذلك أعلاف للحيوانات (طيور، دواجن، تربية الأحياء المائية).",
+  "product.seeds.quality.title": "جودة وسلامة موثوقة",
+  "product.seeds.quality.p1": "مصادر من بذور قنب معتمدة أوروبية، مع THC أقل من 0.2% و0.1% حسب الصنف.",
+  "product.seeds.quality.p2": "تزرع دون مبيدات أو ري، مع احترام الصحة والبيئة.",
+  "product.seeds.quality.p3": "قابلة للتتبع والاعتماد من البذرة حتى المحصول.",
+  "product.seeds.why.title": "لماذا اختيار بذورنا؟",
+  "product.seeds.why.body": "على عكس المورّدين العامين، نضمن بذورًا نظيفة وآمنة وغنية بالعناصر تدعم الزراعة المستدامة والحياة الصحية.",
 
   // Products: Bast Fiber
-  'product.bastFiber.badge': 'المنتج',
-  'product.bastFiber.title': 'ألياف اللحاء من القنب – خفيفة، متينة، ومستدامة',
-  'product.bastFiber.overview.body':
-    'تُستخلص من الطبقة الخارجية لساق القنب، وتُعد من أقوى الألياف الطبيعية. خفيفة الوزن شديدة المتانة — أقوى بنحو 10 مرات من الفولاذ قياسًا بالوزن — مادة صديقة للبيئة متعددة الاستخدامات في المنسوجات والبناء والتصنيع.',
-  'product.bastFiber.features.title': 'أهم فوائد ألياف اللحاء',
-  'product.bastFiber.features.strength.title': 'القوة والمتانة',
-  'product.bastFiber.features.strength.body':
-    'قوة شد عالية تجعلها مثالية للحبال والمنسوجات والمركبات.',
-  'product.bastFiber.features.light.title': 'خفيفة ومرنة',
-  'product.bastFiber.features.light.body':
-    'قوية مثل الفولاذ قياسًا بالوزن، ومع ذلك مناسبة لإنتاج الأقمشة.',
-  'product.bastFiber.features.sustainable.title': 'مادة مستدامة',
-  'product.bastFiber.features.sustainable.body':
-    'طبيعية 100%، قابلة للتحلل الحيوي، وتزرع دون مبيدات ضارة.',
-  'product.bastFiber.features.versatile.title': 'تطبيقات متعددة',
-  'product.bastFiber.features.versatile.body':
-    'من الملابس إلى تسليح الخرسانة، تتكيف ألياف القنب مع صناعات عديدة.',
-  'product.bastFiber.apps.title': 'التطبيقات',
-  'product.bastFiber.apps.textiles.title': 'منسوجات عالية الجودة',
-  'product.bastFiber.apps.textiles.body':
-    'تُغزل إلى خيوط للحبال والخيوط والأشرطة والمنسوجات.',
-  'product.bastFiber.apps.nonwoven.title': 'الاستخدامات غير المنسوجة',
-  'product.bastFiber.apps.nonwoven.body': 'الورق والعزل والمركبات الخاصة.',
-  'product.bastFiber.apps.industry.title': 'البناء والصناعة',
-  'product.bastFiber.apps.industry.body':
-    'تسليح الخرسانة والمواد البلاستيكية الحيوية والألواح المركبة (مثل استخدامها في السيارات مع الألياف الزجاجية والكيناف والكتان).',
-  'product.bastFiber.why.title': 'لماذا ألياف القنب؟',
-  'product.bastFiber.why.body':
-    'على عكس الألياف الاصطناعية، تجمع ألياف اللحاء بين القوة الاستثنائية والاستدامة البيئية، مما يجعلها مادة المستقبل للصناعات التي تبحث عن الأداء والمسؤولية البيئية.',
+  "product.bastFiber.badge": "المنتج",
+  "product.bastFiber.title": "ألياف اللحاء من القنب – خفيفة، متينة، ومستدامة",
+  "product.bastFiber.overview.body": "تُستخلص من الطبقة الخارجية لساق القنب، وتُعد من أقوى الألياف الطبيعية. خفيفة الوزن شديدة المتانة — أقوى بنحو 10 مرات من الفولاذ قياسًا بالوزن — مادة صديقة للبيئة متعددة الاستخدامات في المنسوجات والبناء والتصنيع.",
+  "product.bastFiber.features.title": "أهم فوائد ألياف اللحاء",
+  "product.bastFiber.features.strength.title": "القوة والمتانة",
+  "product.bastFiber.features.strength.body": "قوة شد عالية تجعلها مثالية للحبال والمنسوجات والمركبات.",
+  "product.bastFiber.features.light.title": "خفيفة ومرنة",
+  "product.bastFiber.features.light.body": "قوية مثل الفولاذ قياسًا بالوزن، ومع ذلك مناسبة لإنتاج الأقمشة.",
+  "product.bastFiber.features.sustainable.title": "مادة مستدامة",
+  "product.bastFiber.features.sustainable.body": "طبيعية 100%، قابلة للتحلل الحيوي، وتزرع دون مبيدات ضارة.",
+  "product.bastFiber.features.versatile.title": "تطبيقات متعددة",
+  "product.bastFiber.features.versatile.body": "من الملابس إلى تسليح الخرسانة، تتكيف ألياف القنب مع صناعات عديدة.",
+  "product.bastFiber.apps.title": "التطبيقات",
+  "product.bastFiber.apps.textiles.title": "منسوجات عالية الجودة",
+  "product.bastFiber.apps.textiles.body": "تُغزل إلى خيوط للحبال والخيوط والأشرطة والمنسوجات.",
+  "product.bastFiber.apps.nonwoven.title": "الاستخدامات غير المنسوجة",
+  "product.bastFiber.apps.nonwoven.body": "الورق والعزل والمركبات الخاصة.",
+  "product.bastFiber.apps.industry.title": "البناء والصناعة",
+  "product.bastFiber.apps.industry.body": "تسليح الخرسانة والمواد البلاستيكية الحيوية والألواح المركبة (مثل استخدامها في السيارات مع الألياف الزجاجية والكيناف والكتان).",
+  "product.bastFiber.why.title": "لماذا ألياف القنب؟",
+  "product.bastFiber.why.body": "على عكس الألياف الاصطناعية، تجمع ألياف اللحاء بين القوة الاستثنائية والاستدامة البيئية، مما يجعلها مادة المستقبل للصناعات التي تبحث عن الأداء والمسؤولية البيئية.",
 
   // About (home section)
-  'about.title': 'Green Desert',
-  'about.description':
-    "Green Desert is a biotechnology Saudi Arabian Start Up Company Founded in January 2020, Green Desert Aims to Lead The Ecological Impact Of Saudi Arabia And The Gulf Countries. Our Ultimate Goal Is To Develop Saudi's Environmental Sector Through Innovation And Technology. We Provide Sustainable Solutions For Environmental Challenges And Contribute To Saudi Arabia's Vision 2030.",
+  "about.title": "Green Desert",
+  "about.description": "Green Desert is a biotechnology Saudi Arabian Start Up Company Founded in January 2020, Green Desert Aims to Lead The Ecological Impact Of Saudi Arabia And The Gulf Countries. Our Ultimate Goal Is To Develop Saudi's Environmental Sector Through Innovation And Technology. We Provide Sustainable Solutions For Environmental Challenges And Contribute To Saudi Arabia's Vision 2030.",
 
   // Environmental section
-  'env.badge': 'ENVIRONMENT',
-  'env.title':
-    'Addressing Environmental Problems In The Kingdom Of Saudi Arabia',
-  'env.description1':
-    'Saudi Arabia faces significant environmental challenges including desertification, water scarcity, air pollution, and biodiversity loss. Our innovative solutions address these critical issues through sustainable technology and eco-friendly practices.',
-  'env.description2':
-    "Through our comprehensive approach, we aim to restore ecological balance and create sustainable solutions that align with the Kingdom's Vision 2030 environmental goals.",
-  'env.button': 'MORE DETAILS',
+  "env.badge": "ENVIRONMENT",
+  "env.title": "Addressing Environmental Problems In The Kingdom Of Saudi Arabia",
+  "env.description1": "Saudi Arabia faces significant environmental challenges including desertification, water scarcity, air pollution, and biodiversity loss. Our innovative solutions address these critical issues through sustainable technology and eco-friendly practices.",
+  "env.description2": "Through our comprehensive approach, we aim to restore ecological balance and create sustainable solutions that align with the Kingdom's Vision 2030 environmental goals.",
+  "env.button": "MORE DETAILS",
 
   // Services (home)
-  'services.title': 'Our Services',
-  'services.subtitle': 'Green Desert',
-  'services.sustainability.title':
-    'Sustainability & Advanced Using Biomass Composting',
-  'services.sustainability.description':
-    'Advanced biomass composting solutions that transform organic waste into valuable resources and sustainable soil amendments.',
-  'services.research.title':
-    'Scientific Research and Academic Collaboration in Saudi Arabia',
-  'services.research.description':
-    'Collaborative research initiatives with academic institutions to advance scientific research in finding sustainable and technological solutions.',
-  'services.education.title':
-    'Education and Awareness about Desert and Its Benefits',
-  'services.education.description':
-    'Educational programs and awareness campaigns about desert ecosystems, their importance, and sustainable development practices.',
+  "services.title": "Our Services",
+  "services.subtitle": "Green Desert",
+  "services.sustainability.title": "Sustainability & Advanced Using Biomass Composting",
+  "services.sustainability.description": "Advanced biomass composting solutions that transform organic waste into valuable resources and sustainable soil amendments.",
+  "services.research.title": "Scientific Research and Academic Collaboration in Saudi Arabia",
+  "services.research.description": "Collaborative research initiatives with academic institutions to advance scientific research in finding sustainable and technological solutions.",
+  "services.education.title": "Education and Awareness about Desert and Its Benefits",
+  "services.education.description": "Educational programs and awareness campaigns about desert ecosystems, their importance, and sustainable development practices.",
 
   // Products (home)
-  'products.title': 'المنتجات',
-  'products.subtitle': 'منتجات قنب مستدامة للمنازل والصناعة.',
-  'products.hemp_seeds': 'Hemp Seeds For Human and Animal Consumption',
-  'products.temperature_boxes': 'Temperature Boxes for Construction',
-  'products.hemp_fibers': 'Hemp Fibers for Animal Bedding',
+  "products.title": "المنتجات",
+  "products.subtitle": "منتجات قنب مستدامة للمنازل والصناعة.",
+  "products.hemp_seeds": "Hemp Seeds For Human and Animal Consumption",
+  "products.temperature_boxes": "Temperature Boxes for Construction",
+  "products.hemp_fibers": "Hemp Fibers for Animal Bedding",
 
   // Partners / News / Footer
-  'partners.title': 'Our Partners and Sponsors',
-  'partners.more': 'MORE',
-  'news.title': 'Latest News',
-  'news.subtitle': 'Green Desert',
-  'news.partnership.title':
-    'Exclusive Partnership Between Green Desert Establishment and La Chanvriere',
-  'news.partnership.description':
-    'Green Desert announces strategic partnership with La Chanvriere to advance sustainable agricultural practices in the Middle East region.',
-  'news.office.title': 'New Office Opening and Expansion Plans',
-  'news.office.description':
-    'Green Desert opens new headquarters in Riyadh as part of expansion strategy to serve growing demand for environmental solutions.',
-  'footer.follow': 'Follow us',
-  'footer.description':
-    'We provide biotechnology solutions for environmental challenges while being aligned to right for the planet.',
-  'footer.company': 'Company',
-  'footer.products': 'Products',
-  'footer.services': 'Services',
-  'footer.articles': 'Latest Articles',
-  'footer.copyright': '© 2024 Green Desert Co. All rights reserved.',
+  "partners.title": "Our Partners and Sponsors",
+  "partners.more": "MORE",
+  "news.title": "Latest News",
+  "news.subtitle": "Green Desert",
+  "news.partnership.title": "Exclusive Partnership Between Green Desert Establishment and La Chanvriere",
+  "news.partnership.description": "Green Desert announces strategic partnership with La Chanvriere to advance sustainable agricultural practices in the Middle East region.",
+  "news.office.title": "New Office Opening and Expansion Plans",
+  "news.office.description": "Green Desert opens new headquarters in Riyadh as part of expansion strategy to serve growing demand for environmental solutions.",
+  "footer.follow": "Follow us",
+  "footer.description": "We provide biotechnology solutions for environmental challenges while being aligned to right for the planet.",
+  "footer.company": "Company",
+  "footer.products": "Products",
+  "footer.services": "Services",
+  "footer.articles": "Latest Articles",
+  "footer.copyright": "© 2024 Green Desert Co. All rights reserved.",
 };
 
 export default ar;

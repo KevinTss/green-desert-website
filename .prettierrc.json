@@ -1,0 +1,13 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "content/blog/**/*.{md,mdx}",
+        "components/i18n/**/*.ts"
+      ],
+      "options": {
+        "printWidth": 1000
+      }
+    }
+  ]
+}

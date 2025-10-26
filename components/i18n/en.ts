@@ -22,7 +22,7 @@ const en = {
 
   // Hero
   "hero.title": "Accelerating Saudi Arabia’s transition to",
-  "hero.subtitle": "Pioneering sustainable innovation through industrial hemp",
+  "hero.subtitle": "Combining technological power and institutional cooperation to build the foundations of a carbon-neutral future",
   "hero.rotating.greener": "a greener future",
   "hero.rotating.bio": "a bio-based economy",
   "hero.rotating.agriculture": "sustainable agriculture",
@@ -185,7 +185,7 @@ const en = {
   "footer.newsletter.placeholder": "name@example.com",
   "footer.newsletter.cta": "Subscribe",
   "footer.newsletter.success": "Thank you for signing up",
-  "footer.newsletter.error": "Please enter a valid email (e.g., \"name@example.com\")",
-}
+  "footer.newsletter.error": 'Please enter a valid email (e.g., "name@example.com")',
+};
 
-export default en
+export default en;
