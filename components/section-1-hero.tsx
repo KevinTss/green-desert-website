@@ -1,7 +1,8 @@
 import { VideoHero } from "@/components/video-hero"
 import { useLanguage } from "@/components/language-provider"
+import { Button } from "@/components/ui/button"
 import { AnimatedHeadline } from "./animated-headline"
-import { MiniNavbar } from "./mini-navbar"
+import { ArrowRight, Download } from "lucide-react"
 
 export const Section1Hero = () => {
   const { t } = useLanguage()
@@ -21,9 +22,23 @@ export const Section1Hero = () => {
               { text: t("hero.rotating.agriculture"), color: "text-[#949182]" },
             ]}
           />
-          <p className="text-md sm:text-xl mb-8 opacity-90 leading-relaxed">
+          <p className="text-md sm:text-xl mb-8 opacity-90 leading-relaxed max-w-[900px] mx-auto">
             {t("hero.subtitle")}
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+            <Button asChild size="lg" variant="ghost">
+              <a href="mailto:info@greendesert.sa">
+                {t("hero.cta.consultation")}
+                <ArrowRight />
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="ghost">
+              <a href="/company-profile.pdf" target="_blank" rel="noopener noreferrer">
+                {t("hero.cta.downloadProfile")}
+                <Download />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </VideoHero>

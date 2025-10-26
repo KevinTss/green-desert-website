@@ -26,6 +26,8 @@ const ar = {
   "hero.rotating.greener": "مستقبل أكثر خضرة",
   "hero.rotating.bio": "اقتصاد قائم على التكنولوجيا الحيوية",
   "hero.rotating.agriculture": "الزراعة المستدامة",
+  "hero.cta.consultation": "طلب استشارة للمشروع",
+  "hero.cta.downloadProfile": "تحميل الملف التعريفي للشركة",
 
   // Mini navbar
   "mini.story": "القصة",

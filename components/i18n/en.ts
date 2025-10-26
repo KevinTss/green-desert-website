@@ -26,6 +26,8 @@ const en = {
   "hero.rotating.greener": "a greener future",
   "hero.rotating.bio": "a bio-based economy",
   "hero.rotating.agriculture": "sustainable agriculture",
+  "hero.cta.consultation": "Request project consultation",
+  "hero.cta.downloadProfile": "Download company profile",
 
   // Mini navbar
   "mini.story": "Story",
