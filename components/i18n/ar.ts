@@ -157,6 +157,21 @@ const ar = {
   "about.process.steps.building.title": "Building",
   "about.process.steps.building.description": "Circular construction systems deploy hemp materials to create healthier spaces.",
 
+  // KPI strip
+  "kpi.heading": "Impact-ready metrics for every sustainability roadmap",
+  "kpi.subheading": "We partner with private and public stakeholders to scale regenerative outcomes where they matter most.",
+  "kpi.goalTagline": "Impact indicators",
+  "kpi.goalMessage": "Show we can help all private sectors reach their sustainability KPIs.",
+  "kpi.co2.label": "CO₂ SEQUESTERED",
+  "kpi.co2.value": "7.8 t",
+  "kpi.co2.description": "per hectare, annually",
+  "kpi.footprint.label": "LOW-CARBON FOOTPRINT",
+  "kpi.footprint.value": "18,000 m²",
+  "kpi.footprint.description": "of hemp-based structures",
+  "kpi.pilots.label": "PILOT PROGRAMS",
+  "kpi.pilots.value": "12",
+  "kpi.pilots.description": "cross-sector deployments",
+
   // Environmental section
   "env.badge": "ENVIRONMENT",
   "env.title": "Addressing Environmental Problems In The Kingdom Of Saudi Arabia",
