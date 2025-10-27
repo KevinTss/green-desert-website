@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
+import { SOLUTION_SECTORS } from '@/lib/solutions'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://greendesert.sa'
 
@@ -11,42 +12,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    // Products
+    // Solutions overview
     {
-      url: `${BASE_URL}/en/products/hurds/`,
+      url: `${BASE_URL}/en/solutions/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.75,
+      priority: 0.85,
     },
     {
-      url: `${BASE_URL}/ar-SA/products/hurds/`,
+      url: `${BASE_URL}/ar-SA/solutions/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${BASE_URL}/en/products/seeds/`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${BASE_URL}/ar-SA/products/seeds/`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${BASE_URL}/en/products/bast-fiber/`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${BASE_URL}/ar-SA/products/bast-fiber/`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.75,
+      priority: 0.85,
     },
     {
       url: `${BASE_URL}/en/team/`,
@@ -109,6 +86,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getAllPosts('en'),
     getAllPosts('ar'),
   ])
+
+  SOLUTION_SECTORS.forEach((sector) => {
+    routes.push(
+      {
+        url: `${BASE_URL}/en/solutions/${sector.slug}/`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.75,
+      },
+      {
+        url: `${BASE_URL}/ar-SA/solutions/${sector.slug}/`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.75,
+      },
+    )
+  })
 
   enPosts.forEach((post) => {
     routes.push({

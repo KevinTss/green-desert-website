@@ -27,6 +27,8 @@ const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'e
   switch (label) {
     case 'nav.blog':
       return `/${languageRoute}/blog`
+    case 'nav.solutions':
+      return `/${languageRoute}/solutions`
     case 'nav.home':
       return `/${languageRoute}`
     default:
@@ -67,6 +69,8 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         )
       case 'nav.products':
         return pathname.startsWith(`/${languageRoute}/products`)
+      case 'nav.solutions':
+        return pathname.startsWith(`/${languageRoute}/solutions`)
       case 'nav.services':
         return pathname.startsWith(`/${languageRoute}/services`)
       case 'nav.blog':

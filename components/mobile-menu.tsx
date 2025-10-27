@@ -19,13 +19,13 @@ import { cn } from "@/lib/utils"
 interface MobileMenuProps {
   isScrolled?: boolean
   aboutMenuItems?: SubMenuItem[]
-  productsMenuItems?: SubMenuItem[]
+  solutionsMenuItems?: SubMenuItem[]
 }
 
 export function MobileMenu({
   isScrolled = false,
   aboutMenuItems = [],
-  productsMenuItems = []
+  solutionsMenuItems = []
 }: MobileMenuProps) {
   const { t, isRTL, language, setLanguage } = useLanguage()
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null)
@@ -131,27 +131,27 @@ export function MobileMenu({
                 )}
               </div>
 
-              {/* Products Menu */}
+              {/* Solutions Menu */}
               <div className="rounded-lg overflow-hidden">
                 <button
-                  onClick={() => toggleMenu('products')}
-                  className={`w-full py-4 px-4 hover:bg-green-50 rounded-lg transition-all duration-200 ${expandedMenu === 'products' ? 'bg-green-50' : ''
+                  onClick={() => toggleMenu('solutions')}
+                  className={`w-full py-4 px-4 hover:bg-green-50 rounded-lg transition-all duration-200 ${expandedMenu === 'solutions' ? 'bg-green-50' : ''
                     }`}
                 >
                   <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <span className="text-xl font-medium text-gray-900 hover:text-green-600">
-                      {t("nav.products")}
+                      {t("nav.solutions")}
                     </span>
-                    {expandedMenu === 'products' ? (
+                    {expandedMenu === 'solutions' ? (
                       <ChevronUp className="w-5 h-5 text-gray-400" />
                     ) : (
                       <ChevronDown className="w-5 h-5 text-gray-400" />
                     )}
                   </div>
                 </button>
-                {expandedMenu === 'products' && (
+                {expandedMenu === 'solutions' && (
                   <div className={`mt-2 ${isRTL ? 'mr-4' : 'ml-4'} space-y-1`}>
-                    {productsMenuItems.map((item) => (
+                    {solutionsMenuItems.map((item) => (
                       <a
                         key={item.title}
                         href={item.href}

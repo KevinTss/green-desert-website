@@ -12,6 +12,7 @@ import Link from "next/link"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 import { LanguageDropdown } from "@/components/language-dropdown"
+import { SOLUTION_SECTORS } from "@/lib/solutions"
 
 const aboutMenuItems: SubMenuItem[] = [
   {
@@ -34,26 +35,12 @@ const aboutMenuItems: SubMenuItem[] = [
   },
 ]
 
-const productsMenuItems: SubMenuItem[] = [
-  {
-    title: "nav.products.hurds",
-    href: "/products/hurds",
-    image: getAssetPath("/hurds.png"),
-    description: "nav.products.hurds.description",
-  },
-  {
-    title: "nav.products.bastFiber",
-    href: "/products/bast-fiber",
-    image: getAssetPath("/bast-fiber.png"),
-    description: "nav.products.bastFiber.description",
-  },
-  {
-    title: "nav.products.seeds",
-    href: "/products/seeds",
-    image: getAssetPath("/seeds.png"),
-    description: "nav.products.seeds.description",
-  },
-]
+const solutionsMenuItems: SubMenuItem[] = SOLUTION_SECTORS.slice(0, 6).map((sector) => ({
+  title: sector.titleKey,
+  href: `/solutions/${sector.slug}`,
+  image: getAssetPath("/placeholder-logo.svg"),
+  description: sector.summaryKey,
+}))
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -153,9 +140,9 @@ export function Header() {
               subMenuItems={aboutMenuItems}
             />
             <NavigationMenuLink
-              label="nav.products"
+              label="nav.solutions"
               isScrolled={isScrolled || forceSolidHeader}
-              subMenuItems={productsMenuItems}
+              subMenuItems={solutionsMenuItems}
             />
             <NavigationMenuLink
               label="nav.services"
@@ -184,7 +171,7 @@ export function Header() {
             <MobileMenu
               isScrolled={isScrolled || forceSolidHeader}
               aboutMenuItems={aboutMenuItems}
-              productsMenuItems={productsMenuItems}
+              solutionsMenuItems={solutionsMenuItems}
             />
           )}
         </div>
