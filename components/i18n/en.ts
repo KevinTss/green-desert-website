@@ -195,6 +195,20 @@ const en = {
   "kpi.pilots.value": "12",
   "kpi.pilots.description": "cross-sector deployments",
 
+  // Persona links
+  "personas.badge": "Audience pathways",
+  "personas.heading": "Choose the track that matches your mission",
+  "personas.subheading": "Guided journeys tailored to regulators, corporate sustainability leaders, capital partners, and engineering teams.",
+  "personas.prompt": "Start where impact begins",
+  "personas.government.link": "Government",
+  "personas.government.description": "Policy-aligned pilots, climate reporting, and Vision 2030 acceleration.",
+  "personas.private.link": "Private Sector",
+  "personas.private.description": "Carbon-smart materials and turnkey solutions for sustainable developments.",
+  "personas.investors.link": "Investors",
+  "personas.investors.description": "Data-backed ventures in regenerative materials and green infrastructure.",
+  "personas.engineers.link": "Engineers",
+  "personas.engineers.description": "Technical specs, case studies, and modeling support for hemp-based systems.",
+
   // Partners / News / Footer
   "partners.title": "Our Partners and Sponsors",
   "partners.more": "MORE",
