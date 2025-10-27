@@ -140,6 +140,22 @@ const ar = {
   // About (home section)
   "about.title": "Green Desert",
   "about.description": "Green Desert is a biotechnology Saudi Arabian Start Up Company Founded in January 2020, Green Desert Aims to Lead The Ecological Impact Of Saudi Arabia And The Gulf Countries. Our Ultimate Goal Is To Develop Saudi's Environmental Sector Through Innovation And Technology. We Provide Sustainable Solutions For Environmental Challenges And Contribute To Saudi Arabia's Vision 2030.",
+  "about.smallTitle": "We are Green Desert",
+  "about.smallDescription": "We are Saudi Arabia’s pioneering biotechnology startup, dedicated to scaling sustainable innovation across the Kingdom and the Gulf. By combining scientific research, advanced cultivation, and circular solutions, we help industries accelerate Vision 2030 environmental goals.",
+  "about.process.title": "How our hemp lifecycle works",
+  "about.process.subtitle": "Hover over each stage to watch the process evolve from seed to sustainable structures.",
+  "about.process.loopLabel": "Circular flow",
+  "about.process.cta": "Explore our solutions",
+  "about.process.steps.growing.title": "Growing",
+  "about.process.steps.growing.description": "Regenerative hemp cultivation restores soils and optimizes every drop of water.",
+  "about.process.steps.harvesting.title": "Harvesting",
+  "about.process.steps.harvesting.description": "Precision harvesting captures fiber and hurd at peak quality with minimal waste.",
+  "about.process.steps.decorticating.title": "Decorticating",
+  "about.process.steps.decorticating.description": "Fiber and hurd are separated cleanly to unlock high-value biomaterials.",
+  "about.process.steps.transforming.title": "Transforming",
+  "about.process.steps.transforming.description": "We convert hemp inputs into bio-based solutions ready for industrial use.",
+  "about.process.steps.building.title": "Building",
+  "about.process.steps.building.description": "Circular construction systems deploy hemp materials to create healthier spaces.",
 
   // Environmental section
   "env.badge": "ENVIRONMENT",
