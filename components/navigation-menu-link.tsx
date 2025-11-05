@@ -1,26 +1,29 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import Image from "next/image"
-import { motion } from "framer-motion"
 import { useState, useRef } from "react"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import Link from "next/link"
 import { useLanguage } from "./language-provider"
 import { useIsTouchDevice } from "@/hooks/use-touch-device"
 import { usePathname } from "next/navigation"
+import { ChevronRight, CornerRightDown } from "lucide-react"
 
 export interface SubMenuItem {
   title: string
   href: string
-  image: string
   description: string
+  image?: string
 }
 
-interface NavigationMenuLinkProps {
+export interface NavigationMenuLinkProps {
   label: string
-  subMenuItems?: SubMenuItem[]
-  isScrolled: boolean
+  subMenuItems: SubMenuItem[]
+  subMenuLead?: {
+    lead: string
+    cta: string
+    ctaHref: string
+  }
 }
 
 const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'en' | 'ar-SA' }) => {
@@ -36,11 +39,8 @@ const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'e
   }
 }
 
-export function NavigationMenuLink({ label, subMenuItems, isScrolled }: NavigationMenuLinkProps) {
-  const { t, isRTL, language, languageRoute } = useLanguage()
-  const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem | null>(
-    subMenuItems?.[0] || null
-  )
+export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: NavigationMenuLinkProps) {
+  const { t, isRTL, languageRoute } = useLanguage()
   const isTouchDevice = useIsTouchDevice()
   const pathname = usePathname() || "/"
 
@@ -82,24 +82,20 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
     }
   }
 
-  if (!subMenuItems) {
+  if (!subMenuItems.length) {
     const isActive = routeActiveForLabel(label)
     return (
       <Link
         href={getNavLink({ label, languageRoute })}
         className={cn(
-          "transition-colors duration-300 rounded-full px-5 py-2 hover:bg-gray-100",
-          isActive && "bg-gray-200",
-          isScrolled
-            ? "text-gray-700 hover:bg-gray-100"
-            : "text-white/90 hover:text-white hover:bg-black/10",
+          "transition-colors duration-300 rounded-full px-5 py-2 hover:bg-gray-100 text-gray-700",
+          isActive && "bg-gray-200"
         )}
       >
         {t(label)}
       </Link>
     )
   }
-
 
   return (
     <DropdownMenu.Root
@@ -115,12 +111,8 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         <Link
           href={getNavLink({ label, languageRoute })}
           className={cn(
-            "flex items-center gap-2 cursor-pointer rounded-full px-5 py-2 transition-colors duration-300 outline-none relative",
-            isScrolled
-              ? "text-gray-700 hover:bg-gray-100"
-              : "text-white/90 hover:text-white hover:bg-black/10",
-            !isScrolled && open && "bg-black/10",
-            isScrolled && open && "bg-gray-100"
+            "flex items-center gap-2 cursor-pointer rounded-full px-5 py-2 transition-colors duration-300 outline-none relative text-gray-700 hover:bg-gray-100",
+            open && "bg-gray-100"
           )}
         >
           {t(label)}
@@ -130,100 +122,61 @@ export function NavigationMenuLink({ label, subMenuItems, isScrolled }: Navigati
         <DropdownMenu.Content
           sideOffset={16}
           className={cn(
-            "z-50 w-screen max-w-none rounded-none",
-            isScrolled
-              ? "bg-white"
-              : "bg-black",
-            // isScrolled
-            //   ? "bg-white/65 backdrop-blur-md shadow-sm"
-            //   : "bg-black/10 backdrop-blur-md",
+            "z-50 w-screen max-w-none rounded-none bg-white",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
           )}
           onPointerEnter={handleEnter}
           onPointerLeave={handleLeave}
         >
-          <div className={cn(
-            "flex px-7 md:px-10 lg:px-12 border-b",
-            isScrolled ? "border-b-gray-50" : "border-b-gray-800",
-          )}>
-            <div className={cn("w-1/3 p-6")}>
-              <ul className="space-y-4">
-                {subMenuItems.map((item) => {
-                  const href = item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href
-                  return (
-                    <DropdownMenu.Item asChild key={item.title}>
-                      <a
-                        href={href}
-                        className={cn(
-                          "block font-medium transition-colors duration-200 py-2 px-3 rounded-md outline-none",
-                          isScrolled
-                            ? "text-gray-700 hover:text-green-600"
-                            : "text-white/90 hover:text-white",
-                          activeSubMenu?.title === item.title
-                            ? isScrolled
-                              ? "bg-green-50 text-green-600"
-                              : "bg-white/20 text-white"
-                            : isScrolled
-                              ? "hover:bg-gray-50"
-                              : "hover:bg-white/10"
-                        )}
-                        onMouseEnter={() => setActiveSubMenu(item)}
-                      >
-                        {t(item.title)}
-                      </a>
-                    </DropdownMenu.Item>
-                  )
-                })}
-              </ul>
+          <div
+            className="py-20 mx-auto flex w-full max-w-6xl px-4"
+            dir={isRTL ? "rtl" : "ltr"}
+          >
+            <div className="flex flex-col items-start gap-8 pr-10 sm:max-w-48 md:max-w-72 max-w-96">
+              <p className="text-lg leading-relaxed text-gray-900">
+                {subMenuLead && t(subMenuLead.lead)}
+              </p>
+              {subMenuLead && (
+                <Link
+                  href={
+                    subMenuLead.ctaHref.startsWith("/")
+                      ? `/${languageRoute}${subMenuLead.ctaHref}`
+                      : subMenuLead.ctaHref
+                  }
+                  className="inline-flex gap-3 rounded-full border border-gray-100 pl-5 pr-4 py-2 text-sm font-semibold text-gray-600 transition-colors duration-200 hover:bg-gray-50"
+                >
+                  {t(subMenuLead.cta)}
+                  <ChevronRight className="w-4 text-gray-600" />
+                </Link>
+              )}
             </div>
-            <div className={cn("w-2/3 p-6 flex items-center min-h-[300px]")}>
-              <div className="w-full">
-                {activeSubMenu && (
-                  <motion.div
-                    key={activeSubMenu.title}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className={`flex items-center ${isRTL ? "space-x-reverse space-x-6" : "space-x-6"}`}
-                  >
-                    <Image
-                      src={activeSubMenu.image}
-                      alt={t(activeSubMenu.title)}
-                      width={192}
-                      height={192}
-                      className="w-48 h-48 object-cover rounded-lg shadow-md"
-                    />
-                    <div className="flex-1">
-                      <h3
-                        className={cn(
-                          "text-xl font-semibold mb-3",
-                          isScrolled ? "text-gray-800" : "text-white"
-                        )}
-                      >
-                        {t(activeSubMenu.title)}
-                      </h3>
-                      <p
-                        className={cn(
-                          "leading-relaxed",
-                          isScrolled ? "text-gray-600" : "text-white/80"
-                        )}
-                      >
-                        {t(activeSubMenu.description)}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-              </div>
+            <div className="grid grid-cols-3 gap-5">
+              {subMenuItems.map((item) => {
+                const href = item.href.startsWith("/")
+                  ? `/${languageRoute}${item.href}`
+                  : item.href
+                return (
+                  <DropdownMenu.Item asChild key={item.title}>
+                    <a
+                      href={href}
+                      className="flex flex-col justify-between transition-colors duration-200 outline-none"
+                    >
+                      <span className="text-lg font-semibold text-gray-900">
+                        {t(item.title)}
+                      </span>
+                      <span className="mt-2 text-xs leading-relaxed text-gray-600">
+                        {t(item.description)}
+                      </span>
+                      <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-gray-600 transition-colors duration-200 hover:text-gray-900">
+                        {t("nav.menu.learnMore")}
+                      </span>
+                    </a>
+                  </DropdownMenu.Item>
+                )
+              })}
             </div>
           </div>
-          <div className={cn(
-            'absolute w-full h-screen pointer-events-none',
-            isScrolled
-              ? "bg-white/65 backdrop-blur-lg"
-              : "bg-black/50 backdrop-blur-md",
-          )} />
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

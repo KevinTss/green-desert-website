@@ -17,17 +17,15 @@ import { SubMenuItem } from "./navigation-menu-link"
 import { cn } from "@/lib/utils"
 
 interface MobileMenuProps {
-  isScrolled?: boolean
   aboutMenuItems?: SubMenuItem[]
   solutionsMenuItems?: SubMenuItem[]
 }
 
 export function MobileMenu({
-  isScrolled = false,
   aboutMenuItems = [],
   solutionsMenuItems = []
 }: MobileMenuProps) {
-  const { t, isRTL, language, setLanguage } = useLanguage()
+  const { t, isRTL, language, languageRoute, setLanguage } = useLanguage()
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null)
 
 
@@ -40,8 +38,7 @@ export function MobileMenu({
       <SheetTrigger asChild>
         <button
           className={clsx(
-            "md:hidden p-2 transition-colors duration-300 hover:text-green-600",
-            isScrolled ? "text-gray-700" : "text-white/90 hover:text-white"
+            "md:hidden p-2 text-gray-700 transition-colors duration-300 hover:text-green-600"
           )}
           aria-label="Toggle menu"
         >
@@ -92,7 +89,7 @@ export function MobileMenu({
             {/* Navigation Links */}
             <nav className="flex-1 px-6 py-8 space-y-2">
               <a
-                href="#"
+                href={`/${languageRoute}`}
                 className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
               >
                 {t("nav.home")}
@@ -121,10 +118,11 @@ export function MobileMenu({
                     {aboutMenuItems.map((item) => (
                       <a
                         key={item.title}
-                        href={item.href}
-                        className="block py-3 px-4 text-lg text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-md transition-all duration-200"
+                        href={item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href}
+                        className="block rounded-lg px-4 py-3 transition-all duration-200 hover:bg-green-50 hover:text-green-600"
                       >
-                        {t(item.title)}
+                        <span className="text-lg font-medium text-gray-900">{t(item.title)}</span>
+                        <p className="mt-1 text-sm text-gray-600">{t(item.description)}</p>
                       </a>
                     ))}
                   </div>
@@ -154,25 +152,26 @@ export function MobileMenu({
                     {solutionsMenuItems.map((item) => (
                       <a
                         key={item.title}
-                        href={item.href}
-                        className="block py-3 px-4 text-lg text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-md transition-all duration-200"
+                        href={item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href}
+                        className="block rounded-lg px-4 py-3 transition-all duration-200 hover:bg-green-50 hover:text-green-600"
                       >
-                        {t(item.title)}
+                        <span className="text-lg font-medium text-gray-900">{t(item.title)}</span>
+                        <p className="mt-1 text-sm text-gray-600">{t(item.description)}</p>
                       </a>
                     ))}
                   </div>
                 )}
               </div>
 
-              <a
-                href="#"
+              {/* <a
+                href={`/${languageRoute}/services`}
                 className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
               >
                 {t("nav.services")}
-              </a>
+              </a> */}
 
               <a
-                href={`/${language === 'ar' ? 'ar-SA' : 'en'}/blog`}
+                href={`/${languageRoute}/blog`}
                 className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
               >
                 {t("nav.blog")}

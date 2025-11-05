@@ -5,57 +5,63 @@ import Image from "next/image"
 
 import { useLanguage } from "@/components/language-provider"
 import { MobileMenu } from "@/components/mobile-menu"
-import { NavigationMenuLink, SubMenuItem } from "./navigation-menu-link"
+import { NavigationMenuLink, SubMenuItem, NavigationMenuLinkProps } from "./navigation-menu-link"
 import { useIsMobile } from "@/hooks/use-mobile"
-import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 import { LanguageDropdown } from "@/components/language-dropdown"
 import { SOLUTION_SECTORS } from "@/lib/solutions"
 
+const aboutMenuLead: NavigationMenuLinkProps['subMenuLead'] = {
+  lead: "nav.about.menu.body",
+  cta: "nav.about.menu.cta",
+  ctaHref: "/company",
+}
+
 const aboutMenuItems: SubMenuItem[] = [
   {
-    title: "nav.about.company",
-    href: "/company",
-    image: "/placeholder.svg",
-    description: "nav.about.company.description",
+    title: "nav.about.story",
+    href: "/company#story",
+    description: "nav.about.story.description",
   },
   {
-    title: "nav.about.sponsors",
-    href: "/sponsors",
-    image: "/placeholder.svg",
-    description: "nav.about.sponsors.description",
+    title: "nav.about.vision",
+    href: "/company#vision",
+    description: "nav.about.vision.description",
   },
   {
-    title: "nav.about.team",
-    href: "/team",
-    image: "/placeholder.svg",
-    description: "nav.about.team.description",
+    title: "nav.about.leadership",
+    href: "/company#leadership",
+    description: "nav.about.leadership.description",
+  },
+  {
+    title: "nav.about.timeline",
+    href: "/company#timeline",
+    description: "nav.about.timeline.description",
   },
 ]
 
-const solutionsMenuItems: SubMenuItem[] = SOLUTION_SECTORS.slice(0, 6).map((sector) => ({
+const solutionsMenuLead: NavigationMenuLinkProps['subMenuLead'] = {
+  lead: "nav.solutions.menu.body",
+  cta: "nav.solutions.menu.cta",
+  ctaHref: "/solutions",
+}
+
+const solutionsMenuItems: SubMenuItem[] = SOLUTION_SECTORS.map((sector) => ({
   title: sector.titleKey,
   href: `/solutions/${sector.slug}`,
-  image: getAssetPath("/placeholder-logo.svg"),
-  description: sector.summaryKey,
+  description: sector.taglineKey,
 }))
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [showHeader, setShowHeader] = useState(true)
   const headerRef = useRef<HTMLElement | null>(null)
   const lastScrollYRef = useRef(0)
   const headerHeightRef = useRef(72) // fallback height
 
-  const { language, languageRoute, setLanguage, t, isRTL } = useLanguage()
+  const { language, setLanguage, t } = useLanguage()
   const isMobile = useIsMobile()
-  const pathname = usePathname()
-
-  // Solid header on any non-home page
-  const isHomePage = pathname === `/${languageRoute}` || pathname === `/${languageRoute}/`
-  const forceSolidHeader = !isHomePage
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -67,10 +73,7 @@ export function Header() {
     }
 
     const onScroll = () => {
-      const heroHeight = window.innerHeight
       const y = window.scrollY
-      // Background change based on hero progression
-      setIsScrolled(y > heroHeight * 0.8)
 
       const last = lastScrollYRef.current
       const delta = Math.abs(y - last)
@@ -114,9 +117,8 @@ export function Header() {
     <header
       ref={headerRef}
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out transform-gpu",
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out transform-gpu bg-white shadow-sm",
         showHeader ? "translate-y-0" : "-translate-y-full",
-        isScrolled || forceSolidHeader ? "bg-white" : "bg-black"
       )}
     >
 
@@ -124,7 +126,7 @@ export function Header() {
         <div className="flex flex-1 items-center gap-8">
           <Link href={`/${language === 'ar' ? 'ar-SA' : 'en'}`} className="transition-opacity hover:opacity-80">
             <Image
-              src={isScrolled || forceSolidHeader ? getAssetPath("/logo_GD_black_EN.png") : getAssetPath("/logo_GD_white_home_EN.png")}
+              src={getAssetPath("/logo_GD_black_EN.png")}
               alt="Green Desert Logo"
               width={150}
               height={40}
@@ -136,21 +138,18 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-6">
             <NavigationMenuLink
               label="nav.about"
-              isScrolled={isScrolled || forceSolidHeader}
               subMenuItems={aboutMenuItems}
+              subMenuLead={aboutMenuLead}
             />
             <NavigationMenuLink
               label="nav.solutions"
-              isScrolled={isScrolled || forceSolidHeader}
               subMenuItems={solutionsMenuItems}
+              subMenuLead={solutionsMenuLead}
             />
-            <NavigationMenuLink
-              label="nav.services"
-              isScrolled={isScrolled || forceSolidHeader}
-            />
+            {/* <NavigationMenuLink label="nav.services" /> */}
             <NavigationMenuLink
               label="nav.blog"
-              isScrolled={isScrolled || forceSolidHeader}
+              subMenuItems={[]}
             />
           </nav>
         </div>
@@ -158,18 +157,14 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <button
             className={cn(
-              "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium",
-              isScrolled || forceSolidHeader
-                ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                : "bg-white/20 hover:bg-white/30 text-white"
+              "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium bg-slate-900 text-white hover:bg-slate-800"
             )}
           >
             {t("header.contact")}
           </button>
-          {!isMobile && <LanguageDropdown isScrolled={isScrolled} isBlogPage={forceSolidHeader} language={language} setLanguage={setLanguage} />}
+          {!isMobile && <LanguageDropdown language={language} setLanguage={setLanguage} />}
           {isMobile && (
             <MobileMenu
-              isScrolled={isScrolled || forceSolidHeader}
               aboutMenuItems={aboutMenuItems}
               solutionsMenuItems={solutionsMenuItems}
             />
