@@ -11,18 +11,27 @@ interface Phrase {
 interface AnimatedHeadlineProps {
   prefix: string
   phrases: Phrase[]
+  intervalMs?: number
+  onPhraseChange?: (index: number) => void
 }
 
-export const AnimatedHeadline = ({ prefix, phrases }: AnimatedHeadlineProps) => {
+export const AnimatedHeadline = ({ prefix, phrases, intervalMs = 3000, onPhraseChange }: AnimatedHeadlineProps) => {
   const [index, setIndex] = useState(0)
   const current = phrases[index]
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((i) => (i + 1) % phrases.length)
-    }, 3000)
+      setIndex((i) => {
+        const next = (i + 1) % phrases.length
+        return next
+      })
+    }, intervalMs)
     return () => clearInterval(interval)
-  }, [phrases.length])
+  }, [phrases.length, intervalMs])
+
+  useEffect(() => {
+    onPhraseChange?.(index)
+  }, [index, onPhraseChange])
 
   return (
     <h1 className="text-xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
