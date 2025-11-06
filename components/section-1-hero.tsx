@@ -31,7 +31,7 @@ export const Section1Hero = () => {
 
   return (
     <section className="relative pt-24 pb-20 sm:pt-32 sm:pb-20">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl bg-slate-900">
           <div className="absolute inset-0">
             <AnimatePresence mode="wait">

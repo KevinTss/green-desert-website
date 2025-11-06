@@ -130,10 +130,10 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
           onPointerLeave={handleLeave}
         >
           <div
-            className="py-20 mx-auto flex w-full max-w-6xl px-4"
+            className="py-20 container mx-auto flex w-full gap-12 px-4"
             dir={isRTL ? "rtl" : "ltr"}
           >
-            <div className="flex flex-col items-start gap-8 pr-10 sm:max-w-48 md:max-w-72 max-w-96">
+            <div className="flex flex-col items-start gap-8 pr-10 sm:max-w-48 md:max-w-72 max-w-96 shrink-0">
               <p className="text-lg leading-relaxed text-gray-900">
                 {subMenuLead && t(subMenuLead.lead)}
               </p>
@@ -151,7 +151,7 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
                 </Link>
               )}
             </div>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid flex-1 min-w-0 grid-cols-3 gap-5">
               {subMenuItems.map((item) => {
                 const href = item.href.startsWith("/")
                   ? `/${languageRoute}${item.href}`
