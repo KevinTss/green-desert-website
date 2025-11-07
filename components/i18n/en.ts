@@ -413,7 +413,6 @@ const en = {
   "kpi.heading": "Impact-ready metrics for every sustainability roadmap",
   "kpi.subheading": "We partner with private and public stakeholders to scale regenerative outcomes where they matter most.",
   "kpi.goalTagline": "Impact indicators",
-  "kpi.goalMessage": "Show we can help all private sectors reach their sustainability KPIs.",
   "kpi.co2.label": "CO₂ SEQUESTERED",
   "kpi.co2.value": "7.8 t",
   "kpi.co2.description": "per hectare, annually",
