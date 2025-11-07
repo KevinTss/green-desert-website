@@ -5,7 +5,7 @@ import { useMemo } from "react"
 
 import { useLanguage } from "@/components/language-provider"
 import { MiniNavbar } from "@/components/mini-navbar"
-import { PageHero } from "@/components/page-hero"
+import { SectionCompanyHero } from "@/components/section-company-hero"
 import { cn } from "@/lib/utils"
 import { getAssetPath } from "@/lib/assets"
 
@@ -162,7 +162,7 @@ export function ClientCompany() {
 
   return (
     <main className={cn(isRTL ? "rtl" : "ltr") } dir={isRTL ? "rtl" : "ltr"} lang={language}>
-      <PageHero title={t('company.title')} badge={t('company.badge')} />
+      <SectionCompanyHero />
 
       <MiniNavbar sections={navSections} />
 
