@@ -147,10 +147,10 @@ export function Header() {
               subMenuLead={solutionsMenuLead}
             />
             {/* <NavigationMenuLink label="nav.services" /> */}
-            <NavigationMenuLink
+            {/* <NavigationMenuLink
               label="nav.blog"
               subMenuItems={[]}
-            />
+            /> */}
           </nav>
         </div>
 
