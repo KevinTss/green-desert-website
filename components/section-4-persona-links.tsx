@@ -33,7 +33,7 @@ export const Section4PersonaLinks = () => {
   const { t, languageRoute } = useLanguage()
 
   return (
-    <section className="bg-white py-16 lg:py-20">
+    <section id="personas" className="bg-white py-16 lg:py-20">
       <div className="container mx-auto flex flex-col gap-10 px-4">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">

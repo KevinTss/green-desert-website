@@ -100,11 +100,11 @@ export const Section3KpiStrip = () => {
   }, [hasAnimated])
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-gray-50 py-24 text-gray-900">
+    <section id="kpis" ref={sectionRef} className="relative overflow-hidden bg-gray-50 py-24 text-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-green-500">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-500">
               {t("kpi.goalTagline")}
             </p>
             <h2 className="mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">

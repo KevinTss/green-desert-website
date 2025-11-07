@@ -55,6 +55,8 @@ const ar = {
   "mini.why": "لماذا؟",
   "mini.apps": "التطبيقات",
   "mini.quality": "الجودة",
+  "mini.kpis": "KPIs",
+  "mini.personas": "الأشخاص",
 
   // Company page
   "company.badge": "عن الشركة",

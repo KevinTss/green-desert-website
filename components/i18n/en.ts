@@ -221,6 +221,8 @@ const en = {
   "mini.why": "Why?",
   "mini.apps": "Applications",
   "mini.quality": "Quality",
+  "mini.kpis": "KPIs",
+  "mini.personas": "Personas",
 
   // Company page
   "company.badge": "Company",
