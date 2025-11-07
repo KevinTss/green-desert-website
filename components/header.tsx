@@ -12,6 +12,7 @@ import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 import { LanguageDropdown } from "@/components/language-dropdown"
 import { SOLUTION_SECTORS } from "@/lib/solutions"
+import { usePathname } from "next/navigation"
 
 const aboutMenuLead: NavigationMenuLinkProps['subMenuLead'] = {
   lead: "nav.about.menu.body",
@@ -56,12 +57,15 @@ const solutionsMenuItems: SubMenuItem[] = SOLUTION_SECTORS.map((sector) => ({
 
 export function Header() {
   const [showHeader, setShowHeader] = useState(true)
+  const [isHeroVisible, setIsHeroVisible] = useState(true)
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
   const headerRef = useRef<HTMLElement | null>(null)
   const lastScrollYRef = useRef(0)
   const headerHeightRef = useRef(72) // fallback height
 
   const { language, setLanguage, t } = useLanguage()
   const isMobile = useIsMobile()
+  const pathname = usePathname()
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -106,6 +110,26 @@ export function Header() {
     }
   }, [])
 
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const heroElement = document.querySelector('[data-hero="true"]')
+    if (!heroElement) {
+      setIsHeroVisible(false)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsHeroVisible(entry.isIntersecting && entry.intersectionRatio > 0.2)
+      },
+      { threshold: [0, 0.2, 0.35, 0.6, 0.9] }
+    )
+
+    observer.observe(heroElement)
+    return () => observer.disconnect()
+  }, [pathname])
+
   // Expose header offset as CSS variable for sticky elements (e.g., mini navbar)
   useEffect(() => {
     if (typeof document === 'undefined') return
@@ -113,12 +137,35 @@ export function Header() {
     document.documentElement.style.setProperty('--gd-header-offset', showHeader ? `${h}px` : '0px')
   }, [showHeader])
 
+  const isSubmenuOpen = activeSubmenu !== null
+
+  const navVariant = isHeroVisible ? "dark" : "light"
+  const logoSrc = isHeroVisible ? "/logo_GD_white_home_EN.png" : "/logo_GD_black_EN.png"
+
+  const handleMenuToggle = (menu: string) => (open: boolean) => {
+    setActiveSubmenu(open ? menu : null)
+  }
+
+  useEffect(() => {
+    setActiveSubmenu(null)
+  }, [pathname])
+
+  const isOverlayState = isHeroVisible && !isSubmenuOpen
+  const headerTone = isHeroVisible ? "dark" : "light"
+
+  const headerBackgroundClass = isOverlayState
+    ? "bg-transparent text-white"
+    : headerTone === "dark"
+      ? "bg-slate-950/90 text-white shadow-[0_20px_45px_rgba(2,6,23,0.55)] backdrop-blur"
+      : "bg-white/95 text-slate-900 shadow-sm backdrop-blur"
+
   return (
     <header
       ref={headerRef}
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out transform-gpu bg-white shadow-sm",
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out transform-gpu",
         showHeader ? "translate-y-0" : "-translate-y-full",
+        headerBackgroundClass
       )}
     >
 
@@ -126,7 +173,7 @@ export function Header() {
         <div className="flex flex-1 items-center gap-8">
           <Link href={`/${language === 'ar' ? 'ar-SA' : 'en'}`} className="transition-opacity hover:opacity-80">
             <Image
-              src={getAssetPath("/logo_GD_black_EN.png")}
+              src={getAssetPath(logoSrc)}
               alt="Green Desert Logo"
               width={150}
               height={40}
@@ -140,16 +187,22 @@ export function Header() {
               label="nav.about"
               subMenuItems={aboutMenuItems}
               subMenuLead={aboutMenuLead}
+              variant={navVariant}
+              onOpenChange={handleMenuToggle("nav.about")}
             />
             <NavigationMenuLink
               label="nav.solutions"
               subMenuItems={solutionsMenuItems}
               subMenuLead={solutionsMenuLead}
+              variant={navVariant}
+              onOpenChange={handleMenuToggle("nav.solutions")}
             />
             {/* <NavigationMenuLink label="nav.services" /> */}
             <NavigationMenuLink
               label="nav.blog"
               subMenuItems={[]}
+              variant={navVariant}
+              onOpenChange={handleMenuToggle("nav.blog")}
             />
           </nav>
         </div>
@@ -157,16 +210,26 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <button
             className={cn(
-              "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium bg-slate-900 text-white hover:bg-slate-800"
+              "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
+              isHeroVisible
+                ? "bg-white text-slate-900 hover:bg-white/90"
+                : "bg-slate-900 text-white hover:bg-slate-800"
             )}
           >
             {t("header.contact")}
           </button>
-          {!isMobile && <LanguageDropdown language={language} setLanguage={setLanguage} />}
+          {!isMobile && (
+            <LanguageDropdown
+              language={language}
+              setLanguage={setLanguage}
+              variant={navVariant}
+            />
+          )}
           {isMobile && (
             <MobileMenu
               aboutMenuItems={aboutMenuItems}
               solutionsMenuItems={solutionsMenuItems}
+              variant={navVariant}
             />
           )}
         </div>

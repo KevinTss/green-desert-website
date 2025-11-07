@@ -30,7 +30,7 @@ export const Section1Hero = () => {
   const backgroundImage = slides[activePhrase]?.image ?? getAssetPath("/fiber-cover.jpg")
 
   return (
-    <section className="relative min-h-[95vh]">
+    <section className="relative min-h-[95vh]" data-hero="true">
       <div className="relative flex min-h-[95vh] w-full items-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
           <AnimatePresence mode="wait">

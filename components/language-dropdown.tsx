@@ -5,9 +5,14 @@ import { Language } from "@/components/language-provider"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 import { useIsTouchDevice } from "@/hooks/use-touch-device"
 
-export const LanguageDropdown = ({ language, setLanguage }: {
+export const LanguageDropdown = ({
+  language,
+  setLanguage,
+  variant = "light"
+}: {
   language: Language
   setLanguage: (lang: Language) => void
+  variant?: "light" | "dark"
 }) => {
   const [open, setOpen] = useState(false)
   const openTimer = useRef<NodeJS.Timeout>(undefined)
@@ -39,11 +44,14 @@ export const LanguageDropdown = ({ language, setLanguage }: {
       >
         <button
           className={cn(
-            "flex items-center space-x-1 text-sm text-gray-600 transition-colors duration-300 outline-none hover:text-gray-900"
+            "flex items-center space-x-1 text-sm transition-colors duration-300 outline-none",
+            variant === "dark"
+              ? "text-white/85 hover:text-white"
+              : "text-gray-600 hover:text-gray-900"
           )}
         >
-          <Globe className="w-4 h-4" />
-          <ChevronDown className="w-4 h-4" />
+          <Globe className={cn("w-4 h-4", variant === "dark" ? "text-white/80" : "text-gray-600")} />
+          <ChevronDown className={cn("w-4 h-4", variant === "dark" ? "text-white/80" : "text-gray-600")} />
         </button>
       </DropdownMenu.Trigger>
 

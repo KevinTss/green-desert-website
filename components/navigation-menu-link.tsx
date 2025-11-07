@@ -7,7 +7,7 @@ import Link from "next/link"
 import { useLanguage } from "./language-provider"
 import { useIsTouchDevice } from "@/hooks/use-touch-device"
 import { usePathname } from "next/navigation"
-import { ChevronRight, CornerRightDown } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 export interface SubMenuItem {
   title: string
@@ -24,6 +24,8 @@ export interface NavigationMenuLinkProps {
     cta: string
     ctaHref: string
   }
+  variant?: "light" | "dark"
+  onOpenChange: (open: boolean) => void
 }
 
 const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'en' | 'ar-SA' }) => {
@@ -39,7 +41,7 @@ const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'e
   }
 }
 
-export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: NavigationMenuLinkProps) {
+export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant = "light", onOpenChange }: NavigationMenuLinkProps) {
   const { t, isRTL, languageRoute } = useLanguage()
   const isTouchDevice = useIsTouchDevice()
   const pathname = usePathname() || "/"
@@ -51,12 +53,12 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
   const handleEnter = () => {
     if (isTouchDevice) return
     clearTimeout(closeTimer.current)
-    openTimer.current = setTimeout(() => setOpen(true), 40)
+    openTimer.current = setTimeout(() => handleDropdownChange(true), 10)
   }
   const handleLeave = () => {
     if (isTouchDevice) return
     clearTimeout(openTimer.current)
-    closeTimer.current = setTimeout(() => setOpen(false), 120)
+    closeTimer.current = setTimeout(() => handleDropdownChange(false), 10)
   }
 
   const routeActiveForLabel = (lbl: string) => {
@@ -82,14 +84,27 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
     }
   }
 
+  const isDarkVariant = variant === "dark"
+
+  const baseLinkClasses = cn(
+    "transition-colors duration-300 rounded-full px-5 py-2 text-sm font-medium",
+    isDarkVariant
+      ? "text-white/85 hover:bg-white/10 focus-visible:bg-white/15"
+      : "text-gray-700 hover:bg-gray-100 focus-visible:bg-gray-100"
+  )
+
+  const activeLinkClasses = isDarkVariant
+    ? "bg-white/20 text-white"
+    : "bg-gray-200 text-gray-900"
+
   if (!subMenuItems.length) {
     const isActive = routeActiveForLabel(label)
     return (
       <Link
         href={getNavLink({ label, languageRoute })}
         className={cn(
-          "transition-colors duration-300 rounded-full px-5 py-2 hover:bg-gray-100 text-gray-700",
-          isActive && "bg-gray-200"
+          baseLinkClasses,
+          isActive && activeLinkClasses
         )}
       >
         {t(label)}
@@ -97,11 +112,28 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
     )
   }
 
+  const dropdownWrapperClasses = isDarkVariant
+    ? "bg-slate-950/90 backdrop-blur-md"
+    : "bg-white"
+
+  const dropdownTextClasses = isDarkVariant ? "text-white" : "text-gray-900"
+  const dropdownMutedText = isDarkVariant ? "text-white/70" : "text-gray-600"
+  const dropdownCtaClasses = isDarkVariant
+    ? "inline-flex gap-3 rounded-full border border-white/20 pl-5 pr-4 py-2 text-sm font-semibold text-white/90 transition-colors duration-200 hover:bg-white/10"
+    : "inline-flex gap-3 rounded-full border border-gray-100 pl-5 pr-4 py-2 text-sm font-semibold text-gray-600 transition-colors duration-200 hover:bg-gray-50"
+
+  const chevronColor = isDarkVariant ? "text-white/70" : "text-gray-600"
+
+  const handleDropdownChange = (nextOpen: boolean) => {
+    setOpen(nextOpen)
+    onOpenChange(nextOpen)
+  }
+
   return (
     <DropdownMenu.Root
       modal={false}
       open={open}
-      onOpenChange={setOpen}
+      onOpenChange={handleDropdownChange}
     >
       <DropdownMenu.Trigger
         asChild
@@ -111,8 +143,9 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
         <Link
           href={getNavLink({ label, languageRoute })}
           className={cn(
-            "flex items-center gap-2 cursor-pointer rounded-full px-5 py-2 transition-colors duration-300 outline-none relative text-gray-700 hover:bg-gray-100",
-            open && "bg-gray-100"
+            "flex items-center gap-2 cursor-pointer outline-none relative",
+            baseLinkClasses,
+            open && activeLinkClasses
           )}
         >
           {t(label)}
@@ -122,7 +155,8 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
         <DropdownMenu.Content
           sideOffset={16}
           className={cn(
-            "z-50 w-screen max-w-none rounded-none bg-white",
+            "z-50 w-screen max-w-none rounded-none",
+            dropdownWrapperClasses,
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
           )}
@@ -134,7 +168,7 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
             dir={isRTL ? "rtl" : "ltr"}
           >
             <div className="flex flex-col items-start gap-8 pr-10 sm:max-w-48 md:max-w-72 max-w-96 shrink-0">
-              <p className="text-lg leading-relaxed text-gray-900">
+              <p className={cn("text-lg leading-relaxed", dropdownTextClasses)}>
                 {subMenuLead && t(subMenuLead.lead)}
               </p>
               {subMenuLead && (
@@ -144,10 +178,10 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
                       ? `/${languageRoute}${subMenuLead.ctaHref}`
                       : subMenuLead.ctaHref
                   }
-                  className="inline-flex gap-3 rounded-full border border-gray-100 pl-5 pr-4 py-2 text-sm font-semibold text-gray-600 transition-colors duration-200 hover:bg-gray-50"
+                  className={dropdownCtaClasses}
                 >
                   {t(subMenuLead.cta)}
-                  <ChevronRight className="w-4 text-gray-600" />
+                  <ChevronRight className={cn("w-4", chevronColor)} />
                 </Link>
               )}
             </div>
@@ -162,13 +196,19 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead }: Navigat
                       href={href}
                       className="flex flex-col justify-between transition-colors duration-200 outline-none"
                     >
-                      <span className="text-lg font-semibold text-gray-900">
+                      <span className={cn("text-lg font-semibold", dropdownTextClasses)}>
                         {t(item.title)}
                       </span>
-                      <span className="mt-2 text-xs leading-relaxed text-gray-600">
+                      <span className={cn("mt-2 text-xs leading-relaxed", dropdownMutedText)}>
                         {t(item.description)}
                       </span>
-                      <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-gray-600 transition-colors duration-200 hover:text-gray-900">
+                      <span
+                        className={cn(
+                          "mt-4 inline-flex items-center gap-1 text-xs font-semibold transition-colors duration-200",
+                          dropdownMutedText,
+                          isDarkVariant ? "hover:text-white" : "hover:text-gray-900"
+                        )}
+                      >
                         {t("nav.menu.learnMore")}
                       </span>
                     </a>

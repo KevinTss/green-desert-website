@@ -19,11 +19,13 @@ import { cn } from "@/lib/utils"
 interface MobileMenuProps {
   aboutMenuItems?: SubMenuItem[]
   solutionsMenuItems?: SubMenuItem[]
+  variant?: "light" | "dark"
 }
 
 export function MobileMenu({
   aboutMenuItems = [],
-  solutionsMenuItems = []
+  solutionsMenuItems = [],
+  variant = "light"
 }: MobileMenuProps) {
   const { t, isRTL, language, languageRoute, setLanguage } = useLanguage()
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null)
@@ -38,7 +40,10 @@ export function MobileMenu({
       <SheetTrigger asChild>
         <button
           className={clsx(
-            "md:hidden p-2 text-gray-700 transition-colors duration-300 hover:text-green-600"
+            "md:hidden p-2 transition-colors duration-300",
+            variant === "dark"
+              ? "text-white hover:text-white/80"
+              : "text-gray-700 hover:text-green-600"
           )}
           aria-label="Toggle menu"
         >
