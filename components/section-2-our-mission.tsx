@@ -11,7 +11,7 @@ export const Section2OurMission = () => {
         <PartnersCarousel />
         <div className="max-w-4xl mt-40">
           <p className="text-xs font-semibold tracking-[0.35em] text-gray-500 uppercase">
-            {t("about.smallTitle")}
+            1. {t("about.smallTitle")}
           </p>
           <p
             className={cn(
