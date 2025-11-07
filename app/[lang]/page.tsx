@@ -25,7 +25,7 @@ export default function Page({ params }: PageProps) {
       <Section1Hero />
       {/* Sticky wrapper: overlaps hero with negative margin to visually place mini navbar */}
       {/* <div className="relative -mt-56 md:-mt-56 lg:-mt-60"> */}
-      <div className="pt-3">
+      <div className="pt-[5%]">
         <MiniNavbar sections={[
           { id: "story", key: "mini.story" },
           { id: "kpis", key: "mini.kpis" },
