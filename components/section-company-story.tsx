@@ -1,21 +1,24 @@
 import { useLanguage } from "@/components/language-provider"
 
+const STORY_COLUMN_KEYS = [
+  "company.story.body",
+  "company.intro",
+  "company.mission.subtitle",
+] as const
+
 export function SectionCompanyStory() {
   const { t } = useLanguage()
 
   return (
     <section id="story" className="bg-white py-16">
-      <div className="container mx-auto grid gap-10 px-4 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
-            {t("company.badge")}
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">{t("company.story.title")}</h2>
-          <p className="mt-6 text-base leading-relaxed text-slate-600">{t("company.story.body")}</p>
-        </div>
-        <div className="rounded-3xl bg-gradient-to-br from-emerald-500/20 via-white to-slate-100 p-8 shadow-inner">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-600">{t("company.title")}</p>
-          <p className="mt-4 text-lg leading-relaxed text-slate-700">{t("company.intro")}</p>
+      <div className="container mx-auto px-4">
+        <p className="text-xs font-semibold tracking-[0.35em] text-gray-500 uppercase">{t("company.badge")}</p>
+        <div className="mt-8 grid gap-8 lg:grid-cols-3">
+          {STORY_COLUMN_KEYS.map((key) => (
+            <p key={key} className="text-base leading-relaxed text-slate-600">
+              {t(key)}
+            </p>
+          ))}
         </div>
       </div>
     </section>
