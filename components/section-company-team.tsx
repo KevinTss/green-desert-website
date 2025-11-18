@@ -1,8 +1,12 @@
 import Image from "next/image"
 
+import { MailIcon, LinkedinIcon } from "lucide-react"
+
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
+import { Heading, Text, Badge } from "@/components/typography"
+import { cn } from "@/lib/utils"
 
 interface PersonItem {
   key: string
@@ -10,6 +14,8 @@ interface PersonItem {
   roleKey: string
   bioKey: string
   image?: string
+  email?: string
+  linkedin?: string
 }
 
 const teamMembers: PersonItem[] = [
@@ -19,6 +25,8 @@ const teamMembers: PersonItem[] = [
     roleKey: "team.member.abdulhadi.role",
     bioKey: "team.member.abdulhadi.bio",
     image: "/hadi.jpg",
+    email: "info@greendesert.sa",
+    linkedin: "https://www.linkedin.com/in/hadialamer/",
   },
   {
     key: "lucas",
@@ -26,6 +34,8 @@ const teamMembers: PersonItem[] = [
     roleKey: "team.member.lucas.role",
     bioKey: "team.member.lucas.bio",
     image: "/lucas.jpg",
+    email: "info@greendesert.sa",
+    linkedin: "https://www.linkedin.com/in/lucasdietrich/",
   },
 ]
 
@@ -35,34 +45,70 @@ export function SectionCompanyTeam() {
   return (
     <Section id="team" className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
+        <div className="container mx-auto px-4 max-w-2xl mb-20">
+          <Heading className="pb-4">
             {t("company.team.title")}
-          </p>
-          <h3 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">{t("company.team.subtitle")}</h3>
+          </Heading>
+          <Text>
+            {t("company.team.subtitle")}
+          </Text>
         </div>
-        <div className="grid gap-8 md:grid-cols-2">
-          {teamMembers.map((member) => (
-            <div
-              key={member.key}
-              className="flex flex-col gap-6 rounded-3xl border border-slate-100 bg-slate-50/60 p-6 shadow-sm md:flex-row"
-            >
-              <div className="relative mx-auto overflow-hidden rounded-2xl bg-emerald-100 md:mx-0">
-                <Image
-                  src={getAssetPath(member.image ?? "/placeholder-logo.svg")}
-                  alt={t(member.nameKey)}
-                  width={240}
-                  height={240}
-                  className="h-40 w-40 object-cover md:h-48 md:w-48"
-                />
+        <div className="space-y-12">
+          {teamMembers.map((member, index) => {
+            const isReversed = index % 2 !== 0
+            return (
+              <div
+                key={member.key}
+                className={cn(
+                  "flex flex-col gap-8 rounded-3xl bg-white p-0 lg:flex-row lg:items-center overflow-hidden",
+                  isReversed && "lg:flex-row-reverse"
+                )}
+              >
+                <div className="relative w-full lg:w-1/2 flex items-center justify-center">
+                  <Image
+                    src={getAssetPath(member.image ?? "/placeholder-logo.svg")}
+                    alt={t(member.nameKey)}
+                    width={320}
+                    height={320}
+                    className="h-72 w-72 rounded-3xl object-cover"
+                  />
+                </div>
+                <div className="flex flex-col gap-4 p-8 lg:w-1/2">
+                  <Heading as="h4" size="lg">
+                    {t(member.nameKey)}
+                  </Heading>
+                  <Badge>
+                    {/* <span className="inline-flex w-fit items-center rounded-full border border-emerald-200 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600"> */}
+                    {t(member.roleKey)}
+                    {/* </span> */}
+                  </Badge>
+                  <Text>
+                    {t(member.bioKey)}
+                  </Text>
+                  <div className="mt-6 flex items-center gap-4">
+                    <a
+                      href={`mailto:${member.email ?? "info@greendesert.sa"}`}
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-emerald-200 hover:text-emerald-600"
+                      aria-label={`${t(member.nameKey)} email`}
+                    >
+                      <MailIcon className="h-5 w-5" />
+                    </a>
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-emerald-200 hover:text-emerald-600"
+                        aria-label={`${t(member.nameKey)} LinkedIn`}
+                      >
+                        <LinkedinIcon className="h-5 w-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <div>
-                <h4 className="text-xl font-semibold text-slate-900">{t(member.nameKey)}</h4>
-                <p className="text-sm font-medium uppercase tracking-[0.25em] text-emerald-500">{t(member.roleKey)}</p>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600">{t(member.bioKey)}</p>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </Section>

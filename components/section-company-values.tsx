@@ -31,15 +31,15 @@ export function SectionCompanyValues() {
 
   return (
     <Section id="values" className="bg-gray-50">
-      <div className="container mx-auto px-4 max-w-2xl mb-20">
-        <Heading className="pb-8">
+      <div className="container mx-auto px-4 max-w-2xl mt-20 mb-16">
+        <Heading className="pb-4">
           {t("company.values.title")}
         </Heading>
         <Text>
           {t("company.values.subtitle")}
         </Text>
       </div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mb-20">
         <div className="grid gap-6 md:grid-cols-3">
           {valueItems.map((value) => (
             <div
