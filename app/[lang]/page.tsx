@@ -4,11 +4,11 @@ import { Section1Hero } from "@/components/section-1-hero"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Section2OurMission } from "@/components/section-2-our-mission"
-import { SectionBeliefHighlights } from "@/components/section-belief-highlights"
+// import { SectionBeliefHighlights } from "@/components/section-belief-highlights"
 import { Section3KpiStrip } from "@/components/section-3-kpi-strip"
 import { Section4PersonaLinks } from "@/components/section-4-persona-links"
-import { Section4OurServices } from "@/components/section-4-our-services"
-import { Section5Partners } from "@/components/section-5-partners"
+// import { Section4OurServices } from "@/components/section-4-our-services"
+// import { Section5Partners } from "@/components/section-5-partners"
 import { Section6NewsClient } from "@/components/section-6-news-client"
 import { MiniNavbar } from "@/components/mini-navbar"
 
@@ -35,7 +35,7 @@ export default function Page({ params }: PageProps) {
         {/* <div className="mt-56 md:mt-56 lg:mt-60"> */}
         <div className="">
           <Section2OurMission />
-          <SectionBeliefHighlights />
+          {/* <SectionBeliefHighlights /> */}
           <Section3KpiStrip />
           <Section4PersonaLinks />
           {/* <Section4OurServices /> */}
