@@ -113,8 +113,8 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
   }
 
   const dropdownWrapperClasses = isDarkVariant
-    ? "bg-slate-950/90 backdrop-blur-md"
-    : "bg-white"
+    ? "bg-slate-950/90 backdrop-blur-md border-b border-gray-800"
+    : "bg-white border-b border-gray-200"
 
   const dropdownTextClasses = isDarkVariant ? "text-white" : "text-gray-900"
   const dropdownMutedText = isDarkVariant ? "text-white/70" : "text-gray-600"
