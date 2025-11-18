@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react"
 
 import { useLanguage } from "@/components/language-provider"
 import { Badge, Heading, Text } from "@/components/typography"
+import { Section } from "@/components/section"
 
 const personas = [
   {
@@ -35,7 +36,7 @@ export const Section4PersonaLinks = () => {
   const { t, languageRoute } = useLanguage()
 
   return (
-    <section id="personas" className="bg-white py-16 lg:py-20">
+    <Section id="personas" className="bg-white">
       <div className="container mx-auto flex flex-col gap-10 px-4">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
@@ -89,6 +90,6 @@ export const Section4PersonaLinks = () => {
           })}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

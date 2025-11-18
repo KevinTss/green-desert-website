@@ -1,3 +1,5 @@
+import { Section } from "@/components/section"
+
 export const PageHero = ({
   title,
   badge
@@ -6,7 +8,7 @@ export const PageHero = ({
   badge: string
 }) => {
   return (
-    <section className="pt-32 pb-8 text-center">
+    <Section className="pt-32 pb-8 text-center">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <p className="text-sm uppercase tracking-wider text-green-700 font-semibold">
           {badge}
@@ -15,6 +17,6 @@ export const PageHero = ({
           {title}
         </h1>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -6,6 +6,7 @@ import { getLatestPosts } from "@/lib/blog-static"
 import { getAssetPath } from "@/lib/assets"
 import { BlogCard, BlogCardPost } from "@/components/blog-card"
 import { Heading } from "@/components/typography"
+import { Section } from "@/components/section"
 
 export const Section6NewsClient = () => {
   const { t, isRTL, language, languageRoute } = useLanguage()
@@ -16,7 +17,7 @@ export const Section6NewsClient = () => {
   // Card formatting handled by reusable BlogCard component
 
   return (
-    <section id="news" className="py-16 lg:py-20">
+    <Section id="news">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <SectionHeader
@@ -71,6 +72,6 @@ export const Section6NewsClient = () => {
           )}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

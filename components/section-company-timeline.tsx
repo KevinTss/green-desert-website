@@ -1,5 +1,6 @@
 import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
+import { Section } from "@/components/section"
 
 interface TimelineItem {
   key: string
@@ -56,7 +57,7 @@ export function SectionCompanyTimeline() {
   const timelineItemPaddingClass = isRTL ? "pr-6" : "pl-6"
 
   return (
-    <section id="timeline" className="bg-slate-950 py-16 text-white">
+    <Section id="timeline" className="bg-slate-950 text-white">
       <div className="container mx-auto grid gap-10 px-4 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-emerald-500/20 via-slate-900 to-sky-500/20 p-10">
           <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden>
@@ -110,6 +111,6 @@ export function SectionCompanyTimeline() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

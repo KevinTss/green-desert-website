@@ -1,5 +1,6 @@
 import { useLanguage } from "@/components/language-provider"
 import { Badge, Text } from "@/components/typography"
+import { Section } from "@/components/section"
 
 const STORY_COLUMN_KEYS = [
   "company.story.body",
@@ -11,7 +12,7 @@ export function SectionCompanyStory() {
   const { t } = useLanguage()
 
   return (
-    <section id="story" className="bg-white py-16">
+    <Section id="story" className="bg-white">
       <div className="container mx-auto px-4">
         <Badge>{t("company.badge")}</Badge>
         <div className="mt-8 grid gap-8 lg:grid-cols-3">
@@ -22,6 +23,6 @@ export function SectionCompanyStory() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

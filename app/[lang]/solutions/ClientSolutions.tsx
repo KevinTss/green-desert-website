@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { SOLUTION_SECTORS } from "@/lib/solutions"
+import { Section } from "@/components/section"
 
 export function ClientSolutions() {
   const { t, languageRoute, isRTL, language } = useLanguage()
@@ -18,7 +19,7 @@ export function ClientSolutions() {
 
   return (
     <main className={cn(isRTL ? "rtl" : "ltr")} dir={isRTL ? "rtl" : "ltr"} lang={language}>
-      <section className="relative overflow-hidden bg-slate-950 py-24 text-white">
+      <Section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#22c55e44,transparent_65%)]" />
           <div className="absolute -top-40 -left-40 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl" />
@@ -60,9 +61,9 @@ export function ClientSolutions() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-white py-20">
+      <Section className="bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
@@ -111,9 +112,8 @@ export function ClientSolutions() {
             })}
           </div>
         </div>
-      </section>
-
-      <section className="bg-gray-50 py-20">
+      </Section>
+      <Section className="bg-gray-50">
         <div className="container mx-auto grid gap-8 px-4 lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="max-w-3xl">
             <h3 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -144,7 +144,7 @@ export function ClientSolutions() {
             </p>
           </div>
         </div>
-      </section>
+      </Section>
     </main>
   )
 }

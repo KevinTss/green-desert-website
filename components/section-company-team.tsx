@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
+import { Section } from "@/components/section"
 
 interface PersonItem {
   key: string
@@ -32,7 +33,7 @@ export function SectionCompanyTeam() {
   const { t } = useLanguage()
 
   return (
-    <section id="team" className="bg-white py-16">
+    <Section id="team" className="bg-white">
       <div className="container mx-auto px-4">
         <div className="mb-10 max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
@@ -64,6 +65,6 @@ export function SectionCompanyTeam() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

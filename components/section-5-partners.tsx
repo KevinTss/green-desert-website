@@ -4,12 +4,13 @@ import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Button } from "@/components/ui/button"
 import { Heading } from "@/components/typography"
+import { Section } from "@/components/section"
 
 export const Section5Partners = () => {
   const { t } = useLanguage()
 
   return (
-    <section id="partners" className="py-16 lg:py-20 flex items-center min-h-[60vh] bg-gray-50">
+    <Section id="partners" className="flex items-center min-h-[60vh] bg-gray-50">
       <div className="container mx-auto px-4 text-center">
         <Heading align="center">{t("partners.title")}</Heading>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-8 sm:space-y-0 sm:space-x-12 mb-8">
@@ -35,6 +36,6 @@ export const Section5Partners = () => {
           {t("partners.more")}
         </Button>
       </div>
-    </section>
+    </Section>
   )
 }

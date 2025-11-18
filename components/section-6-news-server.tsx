@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/section-header"
 import { BlogCard, BlogCardPost } from "@/components/blog-card"
 import { Language } from "./language-provider"
 import { Heading } from "@/components/typography"
+import { Section } from "@/components/section"
 
 interface Section6NewsServerProps {
   lang: string
@@ -38,7 +39,7 @@ export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
   const t = translations[language as 'en' | 'ar']
 
   return (
-    <section className="py-16 lg:py-20">
+    <Section>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <SectionHeader
@@ -100,6 +101,6 @@ export const Section6NewsServer = async ({ lang }: Section6NewsServerProps) => {
           )}
         </div>
       </div>
-    </section >
+    </Section>
   )
 }

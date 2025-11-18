@@ -5,12 +5,13 @@ import { getAssetPath } from "@/lib/assets"
 import { Button } from "@/components/ui/button"
 import { Badge as UIBadge } from "@/components/ui/badge"
 import { Heading, Text } from "@/components/typography"
+import { Section } from "@/components/section"
 
 export const SectionX = () => {
   const { t, isRTL } = useLanguage()
 
   return (
-    <section className="py-16 lg:py-20 bg-gray-50">
+    <Section className="bg-gray-50">
       <div className="w-full">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -49,6 +50,6 @@ export const SectionX = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

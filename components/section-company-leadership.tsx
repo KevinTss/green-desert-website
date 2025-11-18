@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
+import { Section } from "@/components/section"
 
 interface PersonItem {
   key: string
@@ -43,7 +44,7 @@ export function SectionCompanyLeadership() {
   const { t } = useLanguage()
 
   return (
-    <section id="leadership" className="bg-gray-50 py-16">
+    <Section id="leadership" className="bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="mb-10 max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
@@ -95,6 +96,6 @@ export function SectionCompanyLeadership() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

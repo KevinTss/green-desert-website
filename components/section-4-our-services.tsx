@@ -3,12 +3,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Recycle, TreePine, Droplets } from "lucide-react"
 
 import { Heading } from "@/components/typography"
+import { Section } from "@/components/section"
 
 export const Section4OurServices = () => {
   const { t, isRTL } = useLanguage()
 
   return (
-    <section id="services" className="py-16 lg:py-20 flex items-center min-h-[60vh]">
+    <Section id="services" className="flex items-center min-h-[60vh]">
       <div className="container mx-auto px-4 text-center">
         <Heading align="center">{t("services.title")}</Heading>
 
@@ -50,6 +51,6 @@ export const Section4OurServices = () => {
           </Card>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

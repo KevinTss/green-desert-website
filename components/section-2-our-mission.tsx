@@ -2,11 +2,12 @@ import { useLanguage } from "@/components/language-provider"
 import { PartnersCarousel } from "@/components/partners-carousel"
 import { ProcessExplainer } from "@/components/process-explainer"
 import { Badge, Text } from "@/components/typography"
+import { Section } from "@/components/section"
 
 export const Section2OurMission = () => {
   const { t } = useLanguage()
   return (
-    <section id="story" className="py-16 lg:py-20 relative overflow-hidden flex items-center min-h-[60vh]">
+    <Section id="story" className="relative overflow-hidden flex items-center min-h-[60vh]">
       <div className="container mx-auto px-4">
         <PartnersCarousel />
         <div className="max-w-4xl mt-40">
@@ -19,6 +20,6 @@ export const Section2OurMission = () => {
         </div>
         <ProcessExplainer />
       </div>
-    </section>
+    </Section>
   )
 }

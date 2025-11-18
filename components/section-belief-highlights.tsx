@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
+import { Section } from "@/components/section"
 
 const FLOATING_STORIES = [
   {
@@ -48,7 +49,7 @@ export const SectionBeliefHighlights = () => {
   const { t } = useLanguage()
 
   return (
-    <section className="bg-white py-20 md:py-24">
+    <Section className="bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl">
           <p className="text-xs font-semibold tracking-[0.35em] text-gray-500 uppercase">
@@ -98,6 +99,6 @@ export const SectionBeliefHighlights = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

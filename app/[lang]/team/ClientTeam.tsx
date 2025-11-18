@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero"
 import { getAssetPath } from "@/lib/assets"
 import { LinkedinIcon, InstagramIcon, TwitterIcon, MailIcon } from "lucide-react"
 import Image from 'next/image'
+import { Section } from "@/components/section"
 
 export function ClientTeam() {
   const { t, isRTL, language } = useLanguage()
@@ -15,7 +16,7 @@ export function ClientTeam() {
 
       <div className="mx-auto max-w-6xl px-6">
         {/* Hadi block */}
-        <section className="py-16">
+        <Section>
           <div className={`flex flex-col md:flex-row ${isRTL ? 'md:flex-row-reverse' : ''} items-center gap-10`}>
             <div className="shrink-0 relative">
               <Image
@@ -39,10 +40,10 @@ export function ClientTeam() {
               </div>
             </div>
           </div>
-        </section>
+        </Section>
 
         {/* Lucas block (reverse) */}
-        <section className="py-16">
+        <Section>
           <div className={`flex flex-col md:flex-row ${isRTL ? '' : 'md:flex-row-reverse'} items-center gap-10`}>
             <div className="shrink-0 relative">
               <Image
@@ -66,7 +67,7 @@ export function ClientTeam() {
               </div>
             </div>
           </div>
-        </section>
+        </Section>
       </div>
     </main>
   )

@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { getSolutionBySlug } from "@/lib/solutions"
+import { Section } from "@/components/section"
 
 const DEFAULT_PREZI = "https://prezi.com/embed/6p0dzyxytq0x/"
 
@@ -31,7 +32,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
 
   return (
     <main className={cn(isRTL ? "rtl" : "ltr")} dir={isRTL ? "rtl" : "ltr"} lang={language}>
-      <section className="bg-slate-950 py-24 text-white">
+      <Section className="bg-slate-950 text-white">
         <div className="container mx-auto px-4">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-200">
             {t(solution.taglineKey)}
@@ -53,9 +54,9 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
             </Button>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-white py-16">
+      <Section className="bg-white">
         <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
@@ -92,9 +93,9 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
             </ul>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-gray-50 py-16">
+      <Section className="bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="rounded-3xl bg-slate-900 p-8 text-white shadow-lg">
             <div className="flex flex-col gap-8 lg:flex-row">
@@ -128,7 +129,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </main>
   )
 }

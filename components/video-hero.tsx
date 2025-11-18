@@ -1,6 +1,7 @@
 "use client"
 
 import { getAssetPath } from "@/lib/assets"
+import { Section } from "@/components/section"
 
 interface VideoHeroProps {
   videoUrl?: string
@@ -18,7 +19,7 @@ const scrollToNextSection = () => {
 
 export function VideoHero({ children }: VideoHeroProps) {
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden">
+    <Section disablePadding className="relative h-screen min-h-[600px] overflow-hidden">
       {/* Video Background */}
 
       <video
@@ -68,6 +69,6 @@ export function VideoHero({ children }: VideoHeroProps) {
           animation: scroll-indicator 2s ease-in-out infinite;
         }
       `}</style>
-    </section>
+    </Section>
   )
 }

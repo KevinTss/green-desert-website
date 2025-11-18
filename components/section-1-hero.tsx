@@ -4,6 +4,7 @@ import { AnimatedHeadline } from "./animated-headline"
 import Image from "next/image"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
+import { Section } from "@/components/section"
 
 export const Section1Hero = () => {
   const { t } = useLanguage()
@@ -30,7 +31,7 @@ export const Section1Hero = () => {
   const backgroundImage = slides[activePhrase]?.image ?? getAssetPath("/fiber-cover.jpg")
 
   return (
-    <section className="relative min-h-[95vh]" data-hero="true">
+    <Section disablePadding className="relative min-h-[95vh]" data-hero="true">
       <div className="relative flex min-h-[95vh] w-full items-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
           <AnimatePresence mode="wait">
@@ -65,6 +66,6 @@ export const Section1Hero = () => {
           </p>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

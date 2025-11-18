@@ -1,4 +1,5 @@
 import { useLanguage } from "@/components/language-provider"
+import { Section } from "@/components/section"
 
 const PREZI_FALLBACK_EMBED = "https://prezi.com/embed/6p0dzyxytq0x/"
 
@@ -10,7 +11,7 @@ export function SectionCompanyPresentation() {
   const hasEmbed = preziEmbedUrl.length > 0
 
   return (
-    <section id="presentation" className="relative mx-auto mt-10 w-full max-w-6xl px-4">
+    <Section id="presentation" className="relative mx-auto mt-10 w-full max-w-6xl px-4">
       <div className="mb-6 flex flex-col gap-3 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
           {t("company.presentation.title")}
@@ -32,6 +33,6 @@ export function SectionCompanyPresentation() {
           </div>
         )}
       </div>
-    </section>
+    </Section>
   )
 }

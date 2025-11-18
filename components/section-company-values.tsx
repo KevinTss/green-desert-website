@@ -1,4 +1,5 @@
 import { useLanguage } from "@/components/language-provider"
+import { Section } from "@/components/section"
 
 interface ValueItem {
   key: string
@@ -28,7 +29,7 @@ export function SectionCompanyValues() {
   const { t } = useLanguage()
 
   return (
-    <section id="values" className="bg-gray-50 py-16">
+    <Section id="values" className="bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="mb-10 max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
@@ -49,6 +50,6 @@ export function SectionCompanyValues() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 import { useLanguage } from "@/components/language-provider"
 import { Badge, Heading, Text } from "@/components/typography"
+import { Section } from "@/components/section"
 
 const kpis = [
   {
@@ -101,7 +102,7 @@ export const Section3KpiStrip = () => {
   }, [hasAnimated])
 
   return (
-    <section id="kpis" ref={sectionRef} className="relative overflow-hidden bg-gray-50 py-24 text-gray-900">
+    <Section id="kpis" ref={sectionRef} className="relative overflow-hidden bg-gray-50 text-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
@@ -158,6 +159,6 @@ export const Section3KpiStrip = () => {
           })}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
