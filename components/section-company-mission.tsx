@@ -6,7 +6,7 @@ export function SectionCompanyMission() {
   const { t } = useLanguage()
 
   return (
-    <Section id="mission" className="bg-slate-50">
+    <Section id="mission">
       <div className="container mx-auto px-4 max-w-2xl">
         <Heading className="pb-8">
           {t("company.mission.title")}

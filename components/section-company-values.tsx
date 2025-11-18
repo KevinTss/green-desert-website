@@ -1,5 +1,6 @@
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
+import { Heading, Text } from "@/components/typography"
 
 interface ValueItem {
   key: string
@@ -30,13 +31,15 @@ export function SectionCompanyValues() {
 
   return (
     <Section id="values" className="bg-gray-50">
+      <div className="container mx-auto px-4 max-w-2xl mb-20">
+        <Heading className="pb-8">
+          {t("company.values.title")}
+        </Heading>
+        <Text>
+          {t("company.values.subtitle")}
+        </Text>
+      </div>
       <div className="container mx-auto px-4">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
-            {t("company.values.title")}
-          </p>
-          <h3 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">{t("company.values.subtitle")}</h3>
-        </div>
         <div className="grid gap-6 md:grid-cols-3">
           {valueItems.map((value) => (
             <div
