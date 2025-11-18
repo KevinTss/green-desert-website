@@ -5,7 +5,7 @@ import { SectionHeader } from "@/components/section-header"
 import { getLatestPosts } from "@/lib/blog-static"
 import { getAssetPath } from "@/lib/assets"
 import { BlogCard, BlogCardPost } from "@/components/blog-card"
-import { SectionTitle } from "./section-title"
+import { Heading } from "@/components/typography"
 
 export const Section6NewsClient = () => {
   const { t, isRTL, language, languageRoute } = useLanguage()
@@ -20,9 +20,7 @@ export const Section6NewsClient = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <SectionHeader
-          title={
-            <SectionTitle className="mb-2">{t("news.title")}</SectionTitle>
-          }
+          title={<Heading className="mb-2" align={isRTL ? "right" : "left"}>{t("news.title")}</Heading>}
           subtitle={t("news.subtitle")}
           actionHref={posts.length > 0 ? `/${languageRoute}/blog` : undefined}
           actionText={posts.length > 0 ? (isRTL ? 'عرض جميع المقالات' : 'View all articles') : undefined}

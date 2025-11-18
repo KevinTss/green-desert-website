@@ -1,6 +1,8 @@
 import Link from "next/link"
-import { useLanguage } from "@/components/language-provider"
 import { ArrowUpRight } from "lucide-react"
+
+import { useLanguage } from "@/components/language-provider"
+import { Badge, Heading, Text } from "@/components/typography"
 
 const personas = [
   {
@@ -37,20 +39,20 @@ export const Section4PersonaLinks = () => {
       <div className="container mx-auto flex flex-col gap-10 px-4">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+            <Badge>
               {t("personas.badge")}
-            </p>
-            <h2 className="mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+            </Badge>
+            <Heading size="lg" className="mt-3">
               {t("personas.heading")}
-            </h2>
-            <p className="mt-4 text-base text-slate-600">
+            </Heading>
+            <Text className="mt-4">
               {t("personas.subheading")}
-            </p>
+            </Text>
           </div>
           <div className="lg:text-right">
-            <p className="text-sm font-medium uppercase tracking-[0.25em] text-emerald-500">
+            <Badge as="p" size="sm" className="text-emerald-500">
               {t("personas.prompt")}
-            </p>
+            </Badge>
           </div>
         </div>
 
@@ -66,14 +68,22 @@ export const Section4PersonaLinks = () => {
                 className="group flex h-full w-full flex-col items-start gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-5 text-left shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg"
               >
                 <div className="flex w-full items-center justify-between gap-3">
-                  <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700 break-words">
+                  <Badge
+                    as="span"
+                    size="sm"
+                    className="text-slate-700 break-words tracking-[0.2em]"
+                  >
                     {t(persona.linkKey)}
-                  </span>
+                  </Badge>
                   <ArrowUpRight className="h-5 w-5 text-emerald-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
-                <p className="text-sm text-slate-500 break-words leading-relaxed">
+                <Text
+                  as="p"
+                  size="sm"
+                  className="break-words text-slate-500"
+                >
                   {t(persona.descriptionKey)}
-                </p>
+                </Text>
               </Link>
             )
           })}

@@ -1,7 +1,7 @@
 import { useLanguage } from "@/components/language-provider"
-import { cn } from "@/lib/utils"
 import { PartnersCarousel } from "@/components/partners-carousel"
 import { ProcessExplainer } from "@/components/process-explainer"
+import { Badge, Text } from "@/components/typography"
 
 export const Section2OurMission = () => {
   const { t } = useLanguage()
@@ -10,16 +10,12 @@ export const Section2OurMission = () => {
       <div className="container mx-auto px-4">
         <PartnersCarousel />
         <div className="max-w-4xl mt-40">
-          <p className="text-xs font-semibold tracking-[0.35em] text-gray-500 uppercase">
+          <Badge>
             {t("about.smallTitle")}
-          </p>
-          <p
-            className={cn(
-              "mt-4 text-lg lg:text-xl text-gray-600 leading-relaxed",
-            )}
-          >
+          </Badge>
+          <Text size="lg" className="mt-4 lg:text-xl">
             {t("about.smallDescription")}
-          </p>
+          </Text>
         </div>
         <ProcessExplainer />
       </div>

@@ -1,8 +1,9 @@
-import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { SectionTitle } from "@/components/section-title"
+
+import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
+import { Button } from "@/components/ui/button"
+import { Heading } from "@/components/typography"
 
 export const Section5Partners = () => {
   const { t } = useLanguage()
@@ -10,7 +11,7 @@ export const Section5Partners = () => {
   return (
     <section id="partners" className="py-16 lg:py-20 flex items-center min-h-[60vh] bg-gray-50">
       <div className="container mx-auto px-4 text-center">
-        <SectionTitle>{t("partners.title")}</SectionTitle>
+        <Heading align="center">{t("partners.title")}</Heading>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-8 sm:space-y-0 sm:space-x-12 mb-8">
           <Image
             src={getAssetPath("/placeholder.svg?height=80&width=120")}

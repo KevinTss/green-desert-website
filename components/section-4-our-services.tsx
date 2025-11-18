@@ -1,7 +1,8 @@
 import { useLanguage } from "@/components/language-provider"
 import { Card, CardContent } from "@/components/ui/card"
-import { SectionTitle } from "@/components/section-title"
 import { Recycle, TreePine, Droplets } from "lucide-react"
+
+import { Heading } from "@/components/typography"
 
 export const Section4OurServices = () => {
   const { t, isRTL } = useLanguage()
@@ -9,7 +10,7 @@ export const Section4OurServices = () => {
   return (
     <section id="services" className="py-16 lg:py-20 flex items-center min-h-[60vh]">
       <div className="container mx-auto px-4 text-center">
-        <SectionTitle>{t("services.title")}</SectionTitle>
+        <Heading align="center">{t("services.title")}</Heading>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <Card className="p-6 lg:p-8 hover:shadow-lg transition-shadow duration-300">

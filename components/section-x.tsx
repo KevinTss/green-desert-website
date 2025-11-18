@@ -1,9 +1,10 @@
-import { useLanguage } from "@/components/language-provider"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { SectionTitle } from "@/components/section-title"
+
+import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
+import { Button } from "@/components/ui/button"
+import { Badge as UIBadge } from "@/components/ui/badge"
+import { Heading, Text } from "@/components/typography"
 
 export const SectionX = () => {
   const { t, isRTL } = useLanguage()
@@ -14,19 +15,19 @@ export const SectionX = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className={`${isRTL ? "lg:order-2" : ""}`}>
-              <Badge className="bg-green-100 text-green-800 mb-4">{t("env.badge")}</Badge>
-              <SectionTitle
+              <UIBadge className="bg-green-100 text-green-800 mb-4">{t("env.badge")}</UIBadge>
+              <Heading
                 className="mb-6 leading-tight"
                 align={isRTL ? 'right' : 'left'}
               >
                 {t("env.title")}
-              </SectionTitle>
-              <p className={`text-gray-600 mb-6 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>
+              </Heading>
+              <Text className={`text-gray-600 mb-6 ${isRTL ? "text-right" : "text-left"}`}>
                 {t("env.description1")}
-              </p>
-              <p className={`text-gray-600 mb-8 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>
+              </Text>
+              <Text className={`text-gray-600 mb-8 ${isRTL ? "text-right" : "text-left"}`}>
                 {t("env.description2")}
-              </p>
+              </Text>
               <Button className="bg-green-600 hover:bg-green-700 text-white transition-colors">
                 {t("env.button")}
               </Button>
