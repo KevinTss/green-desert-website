@@ -13,7 +13,7 @@ export function SectionSolutionDetailContent({ solution }: SectionSolutionDetail
   const { t } = useLanguage()
 
   return (
-    <Section className="bg-slate-50">
+    <Section className="bg-white">
       <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-3">
           <Badge className="text-emerald-600">

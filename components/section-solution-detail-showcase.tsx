@@ -19,7 +19,7 @@ export function SectionSolutionDetailShowcase({ solution }: SectionSolutionDetai
   const imageSrc = getAssetPath(solution.image || SOLUTION_DETAIL_SHOWCASE_FALLBACK_IMAGE)
 
   return (
-    <Section className="bg-white">
+    <Section className="bg-slate-50">
       <div className="container mx-auto grid items-center gap-12 px-4 lg:grid-cols-[1fr_1.1fr]">
         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-100 shadow-sm">
           <Image
