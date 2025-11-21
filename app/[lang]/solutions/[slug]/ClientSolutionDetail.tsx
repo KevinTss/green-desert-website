@@ -31,7 +31,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
 
   return (
     <main className={cn(isRTL ? "rtl" : "ltr")} dir={isRTL ? "rtl" : "ltr"} lang={language}>
-      <SectionSolutionDetailHero solution={solution} scheduleHref={scheduleHref} specsHref={specsHref} />
+      <SectionSolutionDetailHero solution={solution} />
       <SectionSolutionDetailOverview solution={solution} />
       <SectionSolutionDetailWalkthrough
         solution={solution}
