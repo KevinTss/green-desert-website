@@ -17,6 +17,7 @@ interface SectionSolutionDetailShowcaseProps {
 export function SectionSolutionDetailShowcase({ solution }: SectionSolutionDetailShowcaseProps) {
   const { t } = useLanguage()
   const imageSrc = getAssetPath(solution.image || SOLUTION_DETAIL_SHOWCASE_FALLBACK_IMAGE)
+  const secondaryParagraph = solution.highlightKeys.map((key) => t(key)).join(" ")
 
   return (
     <Section className="bg-slate-50">
@@ -38,13 +39,12 @@ export function SectionSolutionDetailShowcase({ solution }: SectionSolutionDetai
           <Heading size="2xl">
             {t(solution.titleKey)}
           </Heading>
-          <div className="space-y-3">
-            {solution.highlightKeys.map((key) => (
-              <Text key={key}>
-                {t(key)}
-              </Text>
-            ))}
-          </div>
+          <Text>
+            {t(solution.summaryKey)}
+          </Text>
+          <Text>
+            {secondaryParagraph}
+          </Text>
         </div>
       </div>
     </Section>
