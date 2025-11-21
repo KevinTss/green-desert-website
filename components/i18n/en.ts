@@ -27,6 +27,10 @@ const en = {
   "nav.blog": "Blog",
   "header.contact": "Contact us",
 
+  "cta.workWithUs.title": "Partner with our team",
+  "cta.workWithUs.body": "Tell us about your project and we'll design a hemp solution mapped to your KPIs.",
+  "cta.workWithUs.action": "Work with us",
+
   // Solutions page
   "solutions.hero.badge": "Plant-based impact",
   "solutions.hero.title": "Hemp-based solutions for every sustainability mandate",

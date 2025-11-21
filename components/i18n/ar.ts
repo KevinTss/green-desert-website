@@ -27,6 +27,10 @@ const ar = {
   "nav.blog": "المدونة",
   "header.contact": "اتصل بنا",
 
+  "cta.workWithUs.title": "Partner with our team",
+  "cta.workWithUs.body": "Tell us about your project and we'll design a hemp solution mapped to your KPIs.",
+  "cta.workWithUs.action": "Work with us",
+
   // Hero
   "hero.title": "تسريع انتقال المملكة العربية السعودية نحو",
   "hero.subtitle": "نمزج القوة التكنولوجية بالتعاون المؤسسي لبناء أسس مستقبلٍ محايدٍ كربونيًا",

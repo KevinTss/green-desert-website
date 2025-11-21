@@ -1,9 +1,7 @@
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-
 import { useLanguage } from "@/components/language-provider"
 import { Badge, Heading, Text } from "@/components/typography"
 import { Section } from "@/components/section"
+import { AnimatedStatCards } from "@/components/animated-stat-cards"
 
 const personas = [
   {
@@ -57,38 +55,19 @@ export const Section4PersonaLinks = () => {
           </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {personas.map((persona) => {
-            const href = persona.href.startsWith("/")
-              ? `/${languageRoute}${persona.href}`
-              : persona.href
-            return (
-              <Link
-                key={persona.key}
-                href={href}
-                className="group flex h-full w-full flex-col items-start gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-5 text-left shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg"
-              >
-                <div className="flex w-full items-center justify-between gap-3">
-                  <Badge
-                    as="span"
-                    size="sm"
-                    className="text-slate-700 break-words tracking-[0.2em]"
-                  >
-                    {t(persona.linkKey)}
-                  </Badge>
-                  <ArrowUpRight className="h-5 w-5 text-emerald-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </div>
-                <Text
-                  as="p"
-                  size="sm"
-                  className="break-words text-slate-500"
-                >
-                  {t(persona.descriptionKey)}
-                </Text>
-              </Link>
-            )
+        <AnimatedStatCards
+          className="mt-2"
+          items={personas.map((persona) => {
+            const href = persona.href.startsWith("/") ? `/${languageRoute}${persona.href}` : persona.href
+            return {
+              id: persona.key,
+              label: t(persona.linkKey),
+              value: t(persona.linkKey),
+              description: t(persona.descriptionKey),
+              href,
+            }
           })}
-        </div>
+        />
       </div>
     </Section>
   )
