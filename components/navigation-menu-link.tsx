@@ -30,6 +30,8 @@ export interface NavigationMenuLinkProps {
 
 const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'en' | 'ar-SA' }) => {
   switch (label) {
+    case 'nav.about':
+      return `/${languageRoute}/company`
     case 'nav.blog':
       return `/${languageRoute}/blog`
     case 'nav.solutions':
