@@ -20,14 +20,15 @@ export function SectionSolutionsPathways() {
             {t("solutions.pathways.subtitle")}
           </h2>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="relative flex h-[430px] gap-4 mt-12 pb-4 overflow-x-auto overflow-y-visible snap-x snap-mandatory">
           {SOLUTION_SECTORS.map((sector) => {
             const href = `/${languageRoute}/solutions/${sector.slug}`
             return (
               <Link
                 key={sector.slug}
                 href={href}
-                className="group flex h-full flex-col justify-between gap-6 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm transition hover:-translate-y-2 hover:border-emerald-200 hover:shadow-lg"
+                className="group flex h-full w-[380px] flex-shrink-0 flex-col justify-between gap-6 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm transition hover:-translate-y-2 hover:border-emerald-200 hover:shadow-lg snap-start"
+                style={{ width: "calc(25% - 12px)" }}
               >
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-500">
@@ -58,7 +59,7 @@ export function SectionSolutionsPathways() {
             )
           })}
         </div>
-      </div>
-    </Section>
+      </div >
+    </Section >
   )
 }
