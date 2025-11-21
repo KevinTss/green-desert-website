@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { SOLUTION_SECTORS } from "@/lib/solutions"
+import { getAssetPath } from "@/lib/assets"
 
 const sectorImages: Record<string, string> = {
   cultivation: "/seeds-cover.webp",
@@ -43,7 +44,7 @@ export function SectionSolutionsPathways() {
         <div className="relative mt-12 flex h-[440px] gap-6 overflow-x-auto overflow-y-visible pb-4 snap-x snap-mandatory">
           {SOLUTION_SECTORS.map((sector) => {
             const href = `/${languageRoute}/solutions/${sector.slug}`
-            const image = getSectorImage(sector.slug)
+            const image = getAssetPath(sector.image || getSectorImage(sector.slug))
             return (
               <Link
                 key={sector.slug}
