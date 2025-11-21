@@ -17,6 +17,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.cultivation.title",
     taglineKey: "solutions.sectors.cultivation.tagline",
     summaryKey: "solutions.sectors.cultivation.summary",
+    image: "/seeds-cover.jpg",
     highlightKeys: [
       "solutions.sectors.cultivation.highlights.0",
       "solutions.sectors.cultivation.highlights.1",
@@ -38,6 +39,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.construction.title",
     taglineKey: "solutions.sectors.construction.tagline",
     summaryKey: "solutions.sectors.construction.summary",
+    image: "/hemp-blocks-01-443x300.jpg",
     highlightKeys: [
       "solutions.sectors.construction.highlights.0",
       "solutions.sectors.construction.highlights.1",
@@ -59,6 +61,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.textiles.title",
     taglineKey: "solutions.sectors.textiles.tagline",
     summaryKey: "solutions.sectors.textiles.summary",
+    image: "/fiber-cover.jpg",
     highlightKeys: [
       "solutions.sectors.textiles.highlights.0",
       "solutions.sectors.textiles.highlights.1",
@@ -80,6 +83,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.energy.title",
     taglineKey: "solutions.sectors.energy.tagline",
     summaryKey: "solutions.sectors.energy.summary",
+    image: "/hurd-cover.jpg",
     highlightKeys: [
       "solutions.sectors.energy.highlights.0",
       "solutions.sectors.energy.highlights.1",
@@ -101,6 +105,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.biocomposites.title",
     taglineKey: "solutions.sectors.biocomposites.tagline",
     summaryKey: "solutions.sectors.biocomposites.summary",
+    image: "/fiber-pack.png",
     highlightKeys: [
       "solutions.sectors.biocomposites.highlights.0",
       "solutions.sectors.biocomposites.highlights.1",
@@ -122,6 +127,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.waste.title",
     taglineKey: "solutions.sectors.waste.tagline",
     summaryKey: "solutions.sectors.waste.summary",
+    image: "/diagram-1.png",
     highlightKeys: [
       "solutions.sectors.waste.highlights.0",
       "solutions.sectors.waste.highlights.1",
@@ -143,6 +149,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.agriculture.title",
     taglineKey: "solutions.sectors.agriculture.tagline",
     summaryKey: "solutions.sectors.agriculture.summary",
+    image: "/seeds-cover.jpg",
     highlightKeys: [
       "solutions.sectors.agriculture.highlights.0",
       "solutions.sectors.agriculture.highlights.1",
@@ -164,6 +171,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.animalCare.title",
     taglineKey: "solutions.sectors.animalCare.tagline",
     summaryKey: "solutions.sectors.animalCare.summary",
+    image: "/hemp_hurds_mulch-443x300.png",
     highlightKeys: [
       "solutions.sectors.animalCare.highlights.0",
       "solutions.sectors.animalCare.highlights.1",
@@ -185,6 +193,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.cosmetics.title",
     taglineKey: "solutions.sectors.cosmetics.tagline",
     summaryKey: "solutions.sectors.cosmetics.summary",
+    image: "/seeds.png",
     highlightKeys: [
       "solutions.sectors.cosmetics.highlights.0",
       "solutions.sectors.cosmetics.highlights.1",
@@ -206,6 +215,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.food.title",
     taglineKey: "solutions.sectors.food.tagline",
     summaryKey: "solutions.sectors.food.summary",
+    image: "/hemp_seeds_AdobeStock-443x300.jpeg",
     highlightKeys: [
       "solutions.sectors.food.highlights.0",
       "solutions.sectors.food.highlights.1",
@@ -227,6 +237,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.pharma.title",
     taglineKey: "solutions.sectors.pharma.tagline",
     summaryKey: "solutions.sectors.pharma.summary",
+    image: "/bast-fiber.png",
     highlightKeys: [
       "solutions.sectors.pharma.highlights.0",
       "solutions.sectors.pharma.highlights.1",
@@ -248,6 +259,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     titleKey: "solutions.sectors.services.title",
     taglineKey: "solutions.sectors.services.tagline",
     summaryKey: "solutions.sectors.services.summary",
+    image: "/download.png",
     highlightKeys: [
       "solutions.sectors.services.highlights.0",
       "solutions.sectors.services.highlights.1",
