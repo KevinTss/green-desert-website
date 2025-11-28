@@ -206,7 +206,7 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
                       </span>
                       <span
                         className={cn(
-                          "mt-4 inline-flex items-center gap-1 text-xs font-semibold transition-colors duration-200",
+                          "mt-2 inline-flex items-center gap-1 text-xs font-semibold transition-colors duration-200",
                           dropdownMutedText,
                           isDarkVariant ? "hover:text-white" : "hover:text-gray-900"
                         )}
