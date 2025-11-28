@@ -7,6 +7,7 @@ import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { SOLUTION_SECTORS } from "@/lib/solutions"
 import { getAssetPath } from "@/lib/assets"
+import { Badge, Heading } from "./typography"
 
 const sectorImages: Record<string, string> = {
   cultivation: "/seeds-cover.webp",
@@ -34,12 +35,12 @@ export function SectionSolutionsPathways() {
     <Section className="bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-emerald-500">
+          <Badge variant="emerald" size="xs">
             {t("solutions.pathways.title")}
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold leading-snug text-slate-900 sm:text-3xl">
+          </Badge>
+          <Heading size="xl" className="mt-3">
             {t("solutions.pathways.subtitle")}
-          </h2>
+          </Heading>
         </div>
         <div className="relative mt-12 flex h-[440px] gap-6 overflow-x-auto overflow-y-visible pb-4 snap-x snap-mandatory">
           {SOLUTION_SECTORS.map((sector) => {
@@ -64,9 +65,9 @@ export function SectionSolutionsPathways() {
                   <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-slate-900/5 to-slate-900/25" />
                 </div>
                 <div className="flex flex-1 flex-col justify-between px-4 pb-5 pt-4">
-                  <h3 className="text-xl font-semibold text-slate-900">
+                  <Heading as="h3" size="md">
                     {t(sector.titleKey)}
-                  </h3>
+                  </Heading>
                   <p className="mt-2 text-[13px] leading-normal text-slate-600">
                     {t(sector.summaryKey)}
                   </p>

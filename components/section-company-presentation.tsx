@@ -1,5 +1,6 @@
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
+import { Badge, Text as TypographyText } from "@/components/typography"
 
 const PREZI_FALLBACK_EMBED = "https://prezi.com/embed/6p0dzyxytq0x/"
 
@@ -13,10 +14,10 @@ export function SectionCompanyPresentation() {
   return (
     <Section id="presentation" className="relative mx-auto mt-8 w-full max-w-5xl px-4">
       <div className="mb-6 flex flex-col gap-3 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
+        <Badge variant="emerald" size="md">
           {t("company.presentation.title")}
-        </p>
-        <p className="text-sm text-slate-600">{t("company.presentation.subtitle")}</p>
+        </Badge>
+        <TypographyText size="sm">{t("company.presentation.subtitle")}</TypographyText>
       </div>
       <div className="relative overflow-hidden rounded-3xl bg-slate-900 shadow-2xl">
         {hasEmbed ? (

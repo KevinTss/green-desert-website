@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 
 import { useLanguage } from "@/components/language-provider"
-import { Badge, Heading, Text, Stat, Label } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText, Stat, Label } from "@/components/typography"
 import { Section } from "@/components/section"
 
 const kpis = [
@@ -112,9 +112,9 @@ export const Section3KpiStrip = () => {
             <Heading size="lg" className="mt-3">
               {t("kpi.heading")}
             </Heading>
-            <Text className="mt-3 sm:text-base">
+            <TypographyText className="mt-3 sm:text-base">
               {t("kpi.subheading")}
-            </Text>
+            </TypographyText>
           </div>
         </div>
 
@@ -150,9 +150,9 @@ export const Section3KpiStrip = () => {
                       {suffixText}
                     </Label>
                   )}
-                  <Text as="p" size="sm" className="text-slate-500">
+                  <TypographyText as="p" size="sm" className="text-slate-500">
                     {t(kpi.descriptionKey)}
-                  </Text>
+                  </TypographyText>
                 </div>
               </div>
             )

@@ -1,7 +1,7 @@
 import { useLanguage } from "@/components/language-provider"
 import { PartnersCarousel } from "@/components/partners-carousel"
 import { ProcessExplainer } from "@/components/process-explainer"
-import { Badge, Text } from "@/components/typography"
+import { Badge, Text as TypographyText } from "@/components/typography"
 import { Section } from "@/components/section"
 
 export const Section2OurMission = () => {
@@ -14,9 +14,9 @@ export const Section2OurMission = () => {
           <Badge>
             {t("about.smallTitle")}
           </Badge>
-          <Text size="lg" className="mt-3">
+          <TypographyText size="lg" className="mt-3">
             {t("about.smallDescription")}
-          </Text>
+          </TypographyText>
         </div>
         <ProcessExplainer />
       </div>

@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
+import { Badge, Heading } from "@/components/typography"
 import { Button } from "@/components/ui/button"
 
 export function SectionSolutionsWalkthrough() {
@@ -13,7 +14,7 @@ export function SectionSolutionsWalkthrough() {
     <Section className="bg-gray-50">
       <div className="container mx-auto grid gap-8 px-4 lg:grid-cols-[1fr_auto] lg:items-center">
         <div className="max-w-2xl">
-          <h3 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+          <Heading as="h3" size="2xl">
             {t("solutions.details.walkthroughHeading")}
           </h3>
           <p className="mt-4 text-base leading-relaxed text-slate-600">

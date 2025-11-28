@@ -15,6 +15,7 @@ import { clsx } from "clsx"
 import { useState } from "react"
 import { SubMenuItem } from "./navigation-menu-link"
 import { cn } from "@/lib/utils"
+import { Text as TypographyText } from "./typography"
 
 interface MobileMenuProps {
   aboutMenuItems?: SubMenuItem[]
@@ -127,7 +128,7 @@ export function MobileMenu({
                         className="block rounded-lg px-4 py-3 transition-all duration-200 hover:bg-green-50 hover:text-green-600"
                       >
                         <span className="text-lg font-medium text-gray-900">{t(item.title)}</span>
-                        <p className="mt-1 text-sm text-gray-600">{t(item.description)}</p>
+                        <TypographyText variant="muted" className="mt-1 text-sm">{t(item.description)}</TypographyText>
                       </a>
                     ))}
                   </div>
@@ -161,7 +162,7 @@ export function MobileMenu({
                         className="block rounded-lg px-4 py-3 transition-all duration-200 hover:bg-green-50 hover:text-green-600"
                       >
                         <span className="text-lg font-medium text-gray-900">{t(item.title)}</span>
-                        <p className="mt-1 text-sm text-gray-600">{t(item.description)}</p>
+                        <TypographyText variant="muted" className="mt-1 text-sm">{t(item.description)}</TypographyText>
                       </a>
                     ))}
                   </div>

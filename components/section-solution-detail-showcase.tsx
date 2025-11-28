@@ -4,7 +4,7 @@ import Image from "next/image"
 
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Badge, Heading, Text } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import { getAssetPath } from "@/lib/assets"
 import type { SolutionSectorDefinition } from "@/lib/solutions"
 
@@ -39,12 +39,12 @@ export function SectionSolutionDetailShowcase({ solution }: SectionSolutionDetai
           <Heading size="2xl">
             {t(solution.titleKey)}
           </Heading>
-          <Text>
+          <TypographyText>
             {t(solution.summaryKey)}
-          </Text>
-          <Text>
+          </TypographyText>
+          <TypographyText>
             {secondaryParagraph}
-          </Text>
+          </TypographyText>
         </div>
       </div>
     </Section>

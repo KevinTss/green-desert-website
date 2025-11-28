@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/language-provider"
 import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon, ArrowRight } from "lucide-react"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
+import { Text as TypographyText } from "@/components/typography"
 
 export const Footer = () => {
   const { t, isRTL, languageRoute } = useLanguage()
@@ -117,7 +118,7 @@ export const Footer = () => {
             {/* Newsletter signup */}
             <div className="md:col-span-3">
               <h4 className={cn("font-bold mb-2 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.title')}</h4>
-              <p className={cn("text-sm text-gray-600 mb-4", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.description')}</p>
+              <TypographyText variant="muted" className={cn("text-sm mb-4", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.description')}</TypographyText>
               <form onSubmit={onSubmit} className={cn("flex flex-col gap-3 items-start", isRTL && "items-end")}>
                 <div className="relative w-full md:w-96">
                   <input
@@ -145,10 +146,10 @@ export const Footer = () => {
                 </div>
               </form>
               {submitted === 'error' && (
-                <p className={cn("mt-2 text-sm text-gray-500", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.error')}</p>
+                <TypographyText variant="muted" className={cn("mt-2 text-sm", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.error')}</TypographyText>
               )}
               {submitted === 'success' && (
-                <p className={cn("mt-2 text-sm text-gray-500", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.success')}</p>
+                <TypographyText variant="muted" className={cn("mt-2 text-sm", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.success')}</TypographyText>
               )}
             </div>
           </div>
@@ -167,7 +168,7 @@ export const Footer = () => {
               className="h-8 w-auto"
             />
           </div>
-          <p className="text-sm text-gray-600 text-center">{t('footer.copyright')}</p>
+          <TypographyText variant="muted" className="text-sm text-center">{t('footer.copyright')}</TypographyText>
         </div>
       </div>
     </footer>

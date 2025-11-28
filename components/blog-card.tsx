@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Language } from './language-provider'
 import { cn } from '@/lib/utils'
+import { Heading } from '@/components/typography'
 
 // Narrow post shape so this component works with both
 // lib/blog and lib/blog-static post sources
@@ -72,9 +73,9 @@ export function BlogCard({ post, isRTL, languageRoute, href, imageClassName }: B
           )}
 
           {/* Title */}
-          <h2 className={`text-xl font-semibold text-gray-900 mb-3 line-clamp-2 ${isRTL ? 'text-right' : 'text-left'} transition-colors`}>
+          <Heading as="h2" size="lg" className={`mb-3 line-clamp-2 ${isRTL ? 'text-right' : 'text-left'} transition-colors`}>
             {post.title}
-          </h2>
+          </Heading>
 
           {/* Excerpt */}
           {post.excerpt && (

@@ -1,6 +1,6 @@
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Heading, Text } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 
 interface ValueItem {
   key: string
@@ -35,9 +35,9 @@ export function SectionCompanyValues() {
         <Heading className="pb-4">
           {t("company.values.title")}
         </Heading>
-        <Text>
+        <TypographyText>
           {t("company.values.subtitle")}
-        </Text>
+        </TypographyText>
       </div>
       <div className="container mx-auto px-4 mb-20">
         <div className="grid gap-6 md:grid-cols-3">

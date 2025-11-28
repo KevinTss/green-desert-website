@@ -4,7 +4,7 @@ import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Button } from "@/components/ui/button"
 import { Badge as UIBadge } from "@/components/ui/badge"
-import { Heading, Text } from "@/components/typography"
+import { Heading, Text as TypographyText } from "@/components/typography"
 import { Section } from "@/components/section"
 
 export const SectionX = () => {
@@ -23,12 +23,12 @@ export const SectionX = () => {
               >
                 {t("env.title")}
               </Heading>
-              <Text className={`text-gray-600 mb-6 ${isRTL ? "text-right" : "text-left"}`}>
+              <TypographyText className={`text-gray-600 mb-6 ${isRTL ? "text-right" : "text-left"}`}>
                 {t("env.description1")}
-              </Text>
-              <Text className={`text-gray-600 mb-8 ${isRTL ? "text-right" : "text-left"}`}>
+              </TypographyText>
+              <TypographyText className={`text-gray-600 mb-8 ${isRTL ? "text-right" : "text-left"}`}>
                 {t("env.description2")}
-              </Text>
+              </TypographyText>
               <Button className="bg-green-600 hover:bg-green-700 text-white transition-colors">
                 {t("env.button")}
               </Button>

@@ -1,5 +1,5 @@
 import { useLanguage } from "@/components/language-provider"
-import { Badge, Heading, Text } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import { Section } from "@/components/section"
 import { AnimatedStatCards } from "@/components/animated-stat-cards"
 
@@ -44,9 +44,9 @@ export const Section4PersonaLinks = () => {
             <Heading size="lg" className="mt-3">
               {t("personas.heading")}
             </Heading>
-            <Text className="mt-3">
+            <TypographyText className="mt-3">
               {t("personas.subheading")}
-            </Text>
+            </TypographyText>
           </div>
           <div className="lg:text-right">
             <Badge as="p" size="sm" className="text-emerald-500">

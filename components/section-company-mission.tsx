@@ -1,6 +1,6 @@
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Heading, Text } from "@/components/typography"
+import { Heading, Text as TypographyText } from "@/components/typography"
 
 export function SectionCompanyMission() {
   const { t } = useLanguage()
@@ -11,12 +11,12 @@ export function SectionCompanyMission() {
         <Heading className="pb-4">
           {t("company.mission.title")}
         </Heading>
-        <Text className="pb-4">
+        <TypographyText className="pb-4">
           {t("company.mission.body")}
-        </Text>
-        <Text>
+        </TypographyText>
+        <TypographyText>
           {t("company.mission.subtitle")}
-        </Text>
+        </TypographyText>
       </div>
     </Section>
   )

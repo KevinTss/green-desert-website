@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react"
 import { useEffect, useMemo, useRef, useState } from "react"
 
 import { cn } from "@/lib/utils"
+import { Badge, Stat, Label, Text as TypographyText } from "@/components/typography"
 
 type StatItem = {
   id: string
@@ -101,28 +102,28 @@ export function AnimatedStatCards({ items, className }: AnimatedStatCardsProps) 
             <div className="absolute inset-x-0 -top-16 h-32 bg-gradient-to-b from-emerald-300/20 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
             <div className="flex items-start justify-between gap-3">
               {item.label && (
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-600">
+                <Badge variant="emerald-dark" size="md">
                   {item.label}
-                </p>
+                </Badge>
               )}
               {isLink && <ArrowUpRight className="h-5 w-5 text-emerald-500 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />}
             </div>
             <div className="mt-3">
-              <span className="block text-2xl font-semibold text-slate-900 sm:text-3xl">
+              <Stat size="md">
                 {hasNumber ? (
                   <AnimatedNumber value={numericValue} decimals={decimals} active={active} />
                 ) : item.value}
-              </span>
+              </Stat>
               {hasNumber && suffixText.length > 0 && (
-                <span className="mt-1 inline-block text-sm font-medium text-slate-500">
+                <Label variant="default" className="mt-1">
                   {suffixText}
-                </span>
+                </Label>
               )}
             </div>
             {item.description && (
-              <p className="mt-3 text-sm text-slate-600">
+              <TypographyText size="sm" className="mt-3">
                 {item.description}
-              </p>
+              </TypographyText>
             )}
           </CardWrapper>
         )

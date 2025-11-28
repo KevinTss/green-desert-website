@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Badge, Heading, Text } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import type { SolutionSectorDefinition } from "@/lib/solutions"
 
 interface SectionSolutionDetailContentProps {
@@ -23,9 +23,9 @@ export function SectionSolutionDetailContent({ solution }: SectionSolutionDetail
             {t(solution.titleKey)}
           </Heading>
           {solution.businessKeys.map((key) => (
-            <Text key={key}>
+            <TypographyText key={key}>
               {t(key)}
-            </Text>
+            </TypographyText>
           ))}
         </div>
 
@@ -37,9 +37,9 @@ export function SectionSolutionDetailContent({ solution }: SectionSolutionDetail
             {solution.useCaseKeys.map((key) => (
               <li key={key} className="flex items-start gap-3">
                 <span className="mt-2 inline-flex h-2 w-2 shrink-0 rounded-full bg-emerald-500" />
-                <Text className="m-0">
+                <TypographyText className="m-0">
                   {t(key)}
-                </Text>
+                </TypographyText>
               </li>
             ))}
           </ul>

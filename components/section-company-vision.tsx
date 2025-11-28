@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Badge, Heading, Text } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import { cn } from "@/lib/utils"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
@@ -127,9 +127,9 @@ export function SectionCompanyVision() {
           <Heading size="lg" className="mt-4">
             {t("company.vision.roadmapTitle")}
           </Heading>
-          <Text size="lg" className="mt-6">
+          <TypographyText size="lg" className="mt-6">
             {t("company.vision.body")}
-          </Text>
+          </TypographyText>
         </div>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.35fr_0.65fr]">
           <div
@@ -162,12 +162,12 @@ export function SectionCompanyVision() {
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
                 <div className="rounded-2xl bg-white/10 p-5 backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
+                  <Badge variant="emerald-light" className="text-emerald-200">
                     {t(activePhase.titleKey)}
-                  </p>
-                  <Text className="mt-3 text-sm text-white/90">
+                  </Badge>
+                  <TypographyText className="mt-3 text-sm text-white/90">
                     {t(activePhase.bodyKey)}
-                  </Text>
+                  </TypographyText>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -187,12 +187,12 @@ export function SectionCompanyVision() {
                     activePhaseKey === phase.key ? "border-emerald-300 shadow-lg" : "border-transparent opacity-80"
                   )}
                 >
-                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-500">
+                  <Badge variant="emerald" size="sm">
                     {t(phase.titleKey)}
-                  </p>
-                  <Text className="mt-4">
+                  </Badge>
+                  <TypographyText className="mt-4">
                     {t(phase.bodyKey)}
-                  </Text>
+                  </TypographyText>
                   <ul className="mt-6 space-y-2 text-sm text-slate-600">
                     {phase.detailKeys.map((detailKey) => (
                       <li key={detailKey} className="flex gap-2">

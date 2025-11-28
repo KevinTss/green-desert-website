@@ -88,9 +88,9 @@ export const SectionBeliefHighlights = () => {
                 </div>
               </div>
               <div className="max-w-xs space-y-2 text-[13px] leading-normal text-gray-600">
-                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.45em] text-gray-600">
+                <Badge variant="default" size="xs" className="text-gray-600">
                   {t(card.titleKey)}
-                </p>
+                </Badge>
                 <p className="text-sm text-gray-600">
                   {t(card.descriptionKey)}
                 </p>

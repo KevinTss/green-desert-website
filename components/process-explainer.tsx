@@ -8,6 +8,7 @@ import { ArrowRight, Sprout, Scissors, Factory, Workflow, Building2 } from "luci
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/components/language-provider"
+import { Text as TypographyText } from "@/components/typography"
 
 interface StepConfig {
   id: string
@@ -145,9 +146,9 @@ export const ProcessExplainer = () => {
                 >
                   {t(activeStep.titleKey)}
                 </p>
-                <p className="text-sm text-white/80">
+                <TypographyText variant="white-muted" className="text-sm">
                   {t(activeStep.descriptionKey)}
-                </p>
+                </TypographyText>
               </div>
             </div>
           </div>
@@ -212,12 +213,13 @@ export const ProcessExplainer = () => {
                         >
                           {t(step.titleKey)}
                         </p>
-                        <p
-                          className="text-sm text-slate-600"
+                        <TypographyText
+                          variant="muted"
+                          className="text-sm"
                           style={isActive ? { color: `${step.accent}cc` } : undefined}
                         >
                           {t(step.descriptionKey)}
-                        </p>
+                        </TypographyText>
                       </div>
                     </div>
                   </button>

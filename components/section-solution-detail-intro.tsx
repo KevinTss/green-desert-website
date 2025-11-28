@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Text } from "@/components/typography"
+import { Text as TypographyText } from "@/components/typography"
 import type { SolutionSectorDefinition } from "@/lib/solutions"
 
 interface SectionSolutionDetailIntroProps {
@@ -15,9 +15,9 @@ export function SectionSolutionDetailIntro({ solution }: SectionSolutionDetailIn
   return (
     <Section>
       <div className="container mx-auto max-w-2xl px-4 py-10 sm:py-12 lg:py-16">
-        <Text className="text-center">
+        <TypographyText className="text-center">
           {t(solution.summaryKey)}
-        </Text>
+        </TypographyText>
       </div>
     </Section>
   )

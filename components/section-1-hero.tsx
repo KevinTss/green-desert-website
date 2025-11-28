@@ -5,6 +5,7 @@ import Image from "next/image"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
 import { Section } from "@/components/section"
+import { Text as TypographyText } from "@/components/typography"
 
 export const Section1Hero = () => {
   const { t } = useLanguage()
@@ -61,9 +62,9 @@ export const Section1Hero = () => {
             phrases={slides.map(({ text, color }) => ({ text, color }))}
             onPhraseChange={setActivePhrase}
           />
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-normal text-white/80 sm:text-base">
+          <TypographyText variant="white-muted" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
             {t("hero.subtitle")}
-          </p>
+          </TypographyText>
         </div>
       </div>
     </Section>

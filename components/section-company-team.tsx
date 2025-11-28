@@ -5,7 +5,7 @@ import { MailIcon, LinkedinIcon } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
-import { Heading, Text, Badge } from "@/components/typography"
+import { Heading, Text as TypographyText, Badge } from "@/components/typography"
 import { cn } from "@/lib/utils"
 
 interface PersonItem {
@@ -49,9 +49,9 @@ export function SectionCompanyTeam() {
           <Heading className="pb-4">
             {t("company.team.title")}
           </Heading>
-          <Text>
+          <TypographyText>
             {t("company.team.subtitle")}
-          </Text>
+          </TypographyText>
         </div>
         <div className="space-y-12">
           {teamMembers.map((member, index) => {
@@ -82,9 +82,9 @@ export function SectionCompanyTeam() {
                     {t(member.roleKey)}
                     {/* </span> */}
                   </Badge>
-                  <Text>
+                  <TypographyText>
                     {t(member.bioKey)}
-                  </Text>
+                  </TypographyText>
                   <div className="mt-6 flex items-center gap-4">
                     <a
                       href={`mailto:${member.email ?? "info@greendesert.sa"}`}

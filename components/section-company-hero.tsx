@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
-import { Badge, Heading, Text } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 
 const COMPANY_HERO_IMAGE = "/fiber-cover.jpg"
 
@@ -33,9 +33,9 @@ export const SectionCompanyHero = () => {
           <Heading as="h1" size="3xl" variant="white" className="mt-4">
             {t("company.title")}
           </Heading>
-          <Text variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
+          <TypographyText variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
             {t("company.intro")}
-          </Text>
+          </TypographyText>
         </div>
       </div>
     </Section>

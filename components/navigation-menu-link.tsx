@@ -8,6 +8,7 @@ import { useLanguage } from "./language-provider"
 import { useIsTouchDevice } from "@/hooks/use-touch-device"
 import { usePathname } from "next/navigation"
 import { ChevronRight } from "lucide-react"
+import { Text as TypographyText } from "./typography"
 
 export interface SubMenuItem {
   title: string
@@ -170,9 +171,9 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
             dir={isRTL ? "rtl" : "ltr"}
           >
             <div className="flex flex-col items-start gap-8 pr-10 sm:max-w-48 md:max-w-72 max-w-96 shrink-0">
-              <p className={cn("text-base leading-normal", dropdownTextClasses)}>
+              <TypographyText className={cn("text-base leading-normal", dropdownTextClasses)}>
                 {subMenuLead && t(subMenuLead.lead)}
-              </p>
+              </TypographyText>
               {subMenuLead && (
                 <Link
                   href={

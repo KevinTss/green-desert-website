@@ -1,5 +1,5 @@
 import { useLanguage } from "@/components/language-provider"
-import { Badge, Text } from "@/components/typography"
+import { Badge, Text as TypographyText } from "@/components/typography"
 import { Section } from "@/components/section"
 
 const STORY_COLUMN_KEYS = [
@@ -17,9 +17,9 @@ export function SectionCompanyStory() {
         <Badge>{t("company.badge")}</Badge>
         <div className="mt-8 grid gap-8 lg:grid-cols-3">
           {STORY_COLUMN_KEYS.map((key) => (
-            <Text key={key} className="text-base">
+            <TypographyText key={key} className="text-base">
               {t(key)}
-            </Text>
+            </TypographyText>
           ))}
         </div>
       </div>

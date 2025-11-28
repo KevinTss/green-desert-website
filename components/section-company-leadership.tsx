@@ -47,12 +47,12 @@ export function SectionCompanyLeadership() {
     <Section id="leadership" className="bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="mb-8 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
+          <Badge variant="emerald" size="md">
             {t("company.leadership.title")}
-          </p>
-          <h3 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+          </Badge>
+          <Heading size="2xl" className="mt-3">
             {t("company.leadership.subtitle")}
-          </h3>
+          </Heading>
         </div>
         <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
           <div className="grid gap-6 md:grid-cols-2">
@@ -81,10 +81,10 @@ export function SectionCompanyLeadership() {
               </div>
             ))}
           </div>
-          <div className="rounded-3xl border border-emerald-100 bg-white/90 p-6 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-500">
+          <div className="rounded-2xl border border-emerald-100 bg-white p-6">
+            <Badge variant="emerald" size="lg">
               {t("company.leadership.committee.title")}
-            </p>
+            </Badge>
             <ul className="mt-4 space-y-3">
               {committeeItems.map((itemKey) => (
                 <li key={itemKey} className="flex items-start gap-3 text-sm text-slate-600">

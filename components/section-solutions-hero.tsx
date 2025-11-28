@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { Button } from "@/components/ui/button"
 import { getAssetPath } from "@/lib/assets"
-import { Heading, Text } from "@/components/typography"
+import { Heading, Text as TypographyText } from "@/components/typography"
 
 const SOLUTIONS_HERO_IMAGE = "/hurd-cover.jpg"
 
@@ -32,9 +32,9 @@ export function SectionSolutionsHero() {
           <Heading as="h1" size="3xl" variant="white">
             {t("solutions.hero.title")}
           </Heading>
-          <Text variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
+          <TypographyText variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
             {t("solutions.hero.subtitle")}
-          </Text>
+          </TypographyText>
         </div>
       </div>
     </Section>

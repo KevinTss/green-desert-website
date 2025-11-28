@@ -3,6 +3,7 @@
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { AnimatedStatCards } from "@/components/animated-stat-cards"
+import { Badge, Text as TypographyText } from "@/components/typography"
 
 export function SectionSolutionsHighlights() {
   const { t } = useLanguage()
@@ -17,12 +18,12 @@ export function SectionSolutionsHighlights() {
     <Section className="bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
+          <Badge variant="emerald" size="md">
             {t("solutions.hero.badge")}
-          </p>
-          <p className="mt-3 text-sm leading-normal text-slate-600 sm:text-base">
+          </Badge>
+          <TypographyText className="mt-3 text-sm sm:text-base">
             {t("solutions.hero.body")}
-          </p>
+          </TypographyText>
         </div>
 
         <AnimatedStatCards items={stats} className="mt-10" />
