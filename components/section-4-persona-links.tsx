@@ -35,8 +35,8 @@ export const Section4PersonaLinks = () => {
 
   return (
     <Section id="personas" className="bg-white">
-      <div className="container mx-auto flex flex-col gap-10 px-4">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="container mx-auto flex flex-col gap-8 px-4">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <Badge>
               {t("personas.badge")}
@@ -44,7 +44,7 @@ export const Section4PersonaLinks = () => {
             <Heading size="lg" className="mt-3">
               {t("personas.heading")}
             </Heading>
-            <Text className="mt-4">
+            <Text className="mt-3">
               {t("personas.subheading")}
             </Text>
           </div>

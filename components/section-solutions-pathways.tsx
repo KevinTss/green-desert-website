@@ -33,11 +33,11 @@ export function SectionSolutionsPathways() {
   return (
     <Section className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
+        <div className="max-w-2xl">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-emerald-500">
             {t("solutions.pathways.title")}
           </p>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-semibold leading-snug text-slate-900 sm:text-3xl">
             {t("solutions.pathways.subtitle")}
           </h2>
         </div>
@@ -64,13 +64,13 @@ export function SectionSolutionsPathways() {
                   <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-slate-900/5 to-slate-900/25" />
                 </div>
                 <div className="flex flex-1 flex-col justify-between px-4 pb-5 pt-4">
-                  <h3 className="text-2xl font-semibold text-slate-900">
+                  <h3 className="text-xl font-semibold text-slate-900">
                     {t(sector.titleKey)}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-2 text-[13px] leading-normal text-slate-600">
                     {t(sector.summaryKey)}
                   </p>
-                  <div className="mt-6 flex items-center justify-between text-sm font-semibold text-emerald-600">
+                  <div className="mt-4 flex items-center justify-between text-[13px] font-semibold text-emerald-600">
                     <span>{t("nav.menu.learnMore")}</span>
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-full text-emerald-400 group-hover:text-emerald-600 transition">
                       ↗

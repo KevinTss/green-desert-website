@@ -51,13 +51,13 @@ export const SectionBeliefHighlights = () => {
   return (
     <Section className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl">
-          <p className="text-xs font-semibold tracking-[0.35em] text-gray-500 uppercase">
+        <div className="max-w-3xl">
+          <p className="text-[10px] font-semibold tracking-[0.35em] text-gray-500 uppercase">
             2. {t("about.smallTitle")}
           </p>
           <p
             className={cn(
-              "mt-4 text-lg lg:text-xl text-gray-600 leading-relaxed",
+              "mt-3 text-base lg:text-lg text-gray-600 leading-normal",
             )}
           >
             {t("about.smallDescription")}
@@ -87,7 +87,7 @@ export const SectionBeliefHighlights = () => {
                   </div>
                 </div>
               </div>
-              <div className="max-w-xs space-y-3 text-sm leading-relaxed text-gray-600">
+              <div className="max-w-xs space-y-2 text-[13px] leading-normal text-gray-600">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.45em] text-gray-600">
                   {t(card.titleKey)}
                 </p>

@@ -43,8 +43,8 @@ export const SectionX = () => {
                 loading="lazy"
               />
               <div className={`absolute top-4 ${isRTL ? "left-4" : "right-4"} bg-white rounded-lg p-4 shadow-lg`}>
-                <div className="text-3xl font-bold text-green-600">27%</div>
-                <div className="text-sm text-gray-600">Improvement</div>
+                <div className="text-2xl font-bold text-green-600">27%</div>
+                <div className="text-[13px] text-gray-600">Improvement</div>
               </div>
             </div>
           </div>

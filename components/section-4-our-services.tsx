@@ -19,10 +19,10 @@ export const Section4OurServices = () => {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Recycle className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-4 leading-tight">
+              <h3 className="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight">
                 {t("services.sustainability.title")}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{t("services.sustainability.description")}</p>
+              <p className="text-gray-600 leading-normal text-[14px]">{t("services.sustainability.description")}</p>
             </CardContent>
           </Card>
 
@@ -31,10 +31,10 @@ export const Section4OurServices = () => {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <TreePine className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-4 leading-tight">
+              <h3 className="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight">
                 {t("services.research.title")}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{t("services.research.description")}</p>
+              <p className="text-gray-600 leading-normal text-[14px]">{t("services.research.description")}</p>
             </CardContent>
           </Card>
 
@@ -43,10 +43,10 @@ export const Section4OurServices = () => {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Droplets className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-4 leading-tight">
+              <h3 className="text-base lg:text-lg font-bold text-gray-800 mb-3 leading-tight">
                 {t("services.education.title")}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{t("services.education.description")}</p>
+              <p className="text-gray-600 leading-normal text-[14px]">{t("services.education.description")}</p>
             </CardContent>
           </Card>
         </div>

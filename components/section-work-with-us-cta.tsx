@@ -19,11 +19,11 @@ export function SectionWorkWithUsCta({ muted }: SectionWorkWithUsCtaProps) {
       <div className="container mx-auto px-4">
         <div className="rounded-3xl border border-gray-100 bg-white px-6 py-8 shadow-sm md:px-10 md:py-10">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-            <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600">
+            <div className="max-w-2xl">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-emerald-600">
                 {t("cta.workWithUs.title")}
               </p>
-              <p className="mt-3 text-base leading-relaxed text-slate-700 sm:text-lg">
+              <p className="mt-2 text-sm leading-normal text-slate-700 sm:text-base">
                 {t("cta.workWithUs.body")}
               </p>
             </div>

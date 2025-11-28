@@ -46,7 +46,7 @@ export function SectionCompanyLeadership() {
   return (
     <Section id="leadership" className="bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="mb-10 max-w-3xl">
+        <div className="mb-8 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
             {t("company.leadership.title")}
           </p>

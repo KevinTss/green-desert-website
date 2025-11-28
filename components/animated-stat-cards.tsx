@@ -108,7 +108,7 @@ export function AnimatedStatCards({ items, className }: AnimatedStatCardsProps) 
               {isLink && <ArrowUpRight className="h-5 w-5 text-emerald-500 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />}
             </div>
             <div className="mt-3">
-              <span className="block text-3xl font-semibold text-slate-900 sm:text-4xl">
+              <span className="block text-2xl font-semibold text-slate-900 sm:text-3xl">
                 {hasNumber ? (
                   <AnimatedNumber value={numericValue} decimals={decimals} active={active} />
                 ) : item.value}

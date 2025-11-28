@@ -11,7 +11,7 @@ export function SectionCompanyPresentation() {
   const hasEmbed = preziEmbedUrl.length > 0
 
   return (
-    <Section id="presentation" className="relative mx-auto mt-10 w-full max-w-6xl px-4">
+    <Section id="presentation" className="relative mx-auto mt-8 w-full max-w-5xl px-4">
       <div className="mb-6 flex flex-col gap-3 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
           {t("company.presentation.title")}

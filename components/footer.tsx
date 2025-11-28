@@ -53,7 +53,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Tagline only */}
           <div>
-            <p className={cn("text-lg md:text-xl text-gray-700 leading-relaxed", isRTL ? "text-right" : "text-left")}>
+            <p className={cn("text-base md:text-lg text-gray-700 leading-normal", isRTL ? "text-right" : "text-left")}>
               {t('footer.description')}
             </p>
           </div>
@@ -118,32 +118,32 @@ export const Footer = () => {
             <div className="md:col-span-3">
               <h4 className={cn("font-bold mb-2 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.title')}</h4>
               <p className={cn("text-sm text-gray-600 mb-4", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.description')}</p>
-            <form onSubmit={onSubmit} className={cn("flex flex-col gap-3 items-start", isRTL && "items-end")}> 
-              <div className="relative w-full md:w-96">
-                <input
-                  type="email"
-                  inputMode="email"
-                  placeholder={t('footer.newsletter.placeholder')}
-                  value={email}
-                  onChange={(e) => { setEmail(e.target.value); if (submitted !== 'idle') setSubmitted('idle') }}
-                  className={cn(
-                    "w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-green-600",
-                    isRTL ? "pl-10 pr-4 text-right" : "pr-10 pl-4"
-                  )}
-                  aria-invalid={submitted === 'error'}
-                />
-                <button
-                  type="submit"
-                  aria-label={t('footer.newsletter.cta')}
-                  className={cn(
-                    "absolute top-1/2 -translate-y-1/2 p-1 rounded-md text-green-700 hover:text-green-800",
-                    isRTL ? "left-2" : "right-2"
-                  )}
-                >
-                  <ArrowRight className={cn("w-5 h-5", isRTL && "rotate-180")} />
-                </button>
-              </div>
-            </form>
+              <form onSubmit={onSubmit} className={cn("flex flex-col gap-3 items-start", isRTL && "items-end")}>
+                <div className="relative w-full md:w-96">
+                  <input
+                    type="email"
+                    inputMode="email"
+                    placeholder={t('footer.newsletter.placeholder')}
+                    value={email}
+                    onChange={(e) => { setEmail(e.target.value); if (submitted !== 'idle') setSubmitted('idle') }}
+                    className={cn(
+                      "w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-green-600",
+                      isRTL ? "pl-10 pr-4 text-right" : "pr-10 pl-4"
+                    )}
+                    aria-invalid={submitted === 'error'}
+                  />
+                  <button
+                    type="submit"
+                    aria-label={t('footer.newsletter.cta')}
+                    className={cn(
+                      "absolute top-1/2 -translate-y-1/2 p-1 rounded-md text-green-700 hover:text-green-800",
+                      isRTL ? "left-2" : "right-2"
+                    )}
+                  >
+                    <ArrowRight className={cn("w-5 h-5", isRTL && "rotate-180")} />
+                  </button>
+                </div>
+              </form>
               {submitted === 'error' && (
                 <p className={cn("mt-2 text-sm text-gray-500", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.error')}</p>
               )}

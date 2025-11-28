@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
+import { Badge, Heading, Text } from "@/components/typography"
 
 const COMPANY_HERO_IMAGE = "/fiber-cover.jpg"
 
@@ -25,16 +26,16 @@ export const SectionCompanyHero = () => {
           <div className="absolute inset-0 bg-slate-950/50" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-16 text-center text-white sm:px-12 lg:px-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-300">
+        <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
+          <Badge variant="emerald-light">
             {t("company.badge")}
-          </p>
-          <h1 className="mt-5 text-3xl font-semibold sm:text-4xl lg:text-5xl">
+          </Badge>
+          <Heading as="h1" size="3xl" variant="white" className="mt-4">
             {t("company.title")}
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg">
+          </Heading>
+          <Text variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
             {t("company.intro")}
-          </p>
+          </Text>
         </div>
       </div>
     </Section>

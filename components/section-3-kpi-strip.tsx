@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 
 import { useLanguage } from "@/components/language-provider"
-import { Badge, Heading, Text } from "@/components/typography"
+import { Badge, Heading, Text, Stat, Label } from "@/components/typography"
 import { Section } from "@/components/section"
 
 const kpis = [
@@ -112,7 +112,7 @@ export const Section3KpiStrip = () => {
             <Heading size="lg" className="mt-3">
               {t("kpi.heading")}
             </Heading>
-            <Text className="mt-4 sm:text-base">
+            <Text className="mt-3 sm:text-base">
               {t("kpi.subheading")}
             </Text>
           </div>
@@ -134,7 +134,7 @@ export const Section3KpiStrip = () => {
                   {t(kpi.labelKey)}
                 </Badge>
                 <div className="mt-4">
-                  <span className="block text-4xl font-semibold text-slate-900 sm:text-5xl">
+                  <Stat size="lg">
                     {hasNumber ? (
                       <AnimatedNumber
                         value={numericValue}
@@ -142,13 +142,13 @@ export const Section3KpiStrip = () => {
                         active={hasAnimated}
                       />
                     ) : rawValue}
-                  </span>
+                  </Stat>
                 </div>
                 <div className="mt-2">
                   {hasNumber && suffixText.length > 0 && (
-                    <span className="mt-2 mr-2 inline-block text-base font-medium text-slate-500">
+                    <Label variant="default">
                       {suffixText}
-                    </span>
+                    </Label>
                   )}
                   <Text as="p" size="sm" className="text-slate-500">
                     {t(kpi.descriptionKey)}

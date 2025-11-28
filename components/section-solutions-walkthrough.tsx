@@ -12,7 +12,7 @@ export function SectionSolutionsWalkthrough() {
   return (
     <Section className="bg-gray-50">
       <div className="container mx-auto grid gap-8 px-4 lg:grid-cols-[1fr_auto] lg:items-center">
-        <div className="max-w-3xl">
+        <div className="max-w-2xl">
           <h3 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
             {t("solutions.details.walkthroughHeading")}
           </h3>

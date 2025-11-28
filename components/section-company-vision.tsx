@@ -122,7 +122,7 @@ export function SectionCompanyVision() {
   return (
     <Section id="vision" className="bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl">
+        <div className="max-w-3xl">
           <Badge>{t("company.vision.badgeLabel")}</Badge>
           <Heading size="lg" className="mt-4">
             {t("company.vision.roadmapTitle")}

@@ -55,13 +55,13 @@ export const Section1Hero = () => {
           <div className="absolute inset-0 bg-slate-950/45" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-16 text-center text-white sm:px-12 lg:px-20">
+        <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
           <AnimatedHeadline
             prefix={t("hero.title")}
             phrases={slides.map(({ text, color }) => ({ text, color }))}
             onPhraseChange={setActivePhrase}
           />
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-normal text-white/80 sm:text-base">
             {t("hero.subtitle")}
           </p>
         </div>

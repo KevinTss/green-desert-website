@@ -7,7 +7,7 @@ export function SectionCompanyMission() {
 
   return (
     <Section id="mission">
-      <div className="container mx-auto px-4 max-w-2xl my-20">
+      <div className="container mx-auto px-4 max-w-xl my-16">
         <Heading className="pb-4">
           {t("company.mission.title")}
         </Heading>

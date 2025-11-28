@@ -210,7 +210,7 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <button
             className={cn(
-              "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
+              "flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium transition-colors duration-200",
               isHeroVisible
                 ? "bg-white text-slate-900 hover:bg-white/90"
                 : "bg-slate-900 text-white hover:bg-slate-800"

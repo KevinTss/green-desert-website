@@ -34,7 +34,7 @@ export const AnimatedHeadline = ({ prefix, phrases, intervalMs = 3000, onPhraseC
   }, [index, onPhraseChange])
 
   return (
-    <h1 className="text-xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+    <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-3 leading-tight">
       <span>
         {prefix}{" "}
       </span>

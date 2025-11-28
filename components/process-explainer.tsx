@@ -122,7 +122,7 @@ export const ProcessExplainer = () => {
                 )
               })}
             </div>
-            <div className="absolute inset-[28%] rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-sm font-semibold text-emerald-200">
+            <div className="absolute inset-[28%] rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-[13px] font-semibold text-emerald-200">
               {t("about.process.loopLabel")}
             </div>
           </div>

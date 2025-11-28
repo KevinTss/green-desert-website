@@ -14,7 +14,7 @@ export const Section = forwardRef<HTMLElement, SectionProps>(function Section(
     <section
       ref={ref}
       {...props}
-      className={cn(!disablePadding && "py-16 lg:py-20", className)}
+      className={cn(!disablePadding && "py-12 lg:py-16", className)}
     />
   )
 })

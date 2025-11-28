@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { getAssetPath } from "@/lib/assets"
 import type { SolutionSectorDefinition } from "@/lib/solutions"
+import { Badge, Heading, Text } from "@/components/typography"
 
 interface SectionSolutionDetailHeroProps {
   solution: SolutionSectorDefinition
@@ -33,16 +34,16 @@ export function SectionSolutionDetailHero({
           <div className="absolute inset-0 bg-slate-950/55" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-16 text-center text-white sm:px-12 lg:px-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-200">
+        <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
+          <Badge variant="emerald-light">
             {t(solution.taglineKey)}
-          </p>
-          <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+          </Badge>
+          <Heading as="h1" size="3xl" variant="white" className="mt-4">
             {t(solution.titleKey)}
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg">
+          </Heading>
+          <Text variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
             {t(solution.summaryKey)}
-          </p>
+          </Text>
         </div>
       </div>
     </Section>

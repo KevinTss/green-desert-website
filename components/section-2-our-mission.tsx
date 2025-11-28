@@ -10,11 +10,11 @@ export const Section2OurMission = () => {
     <Section id="story" className="relative overflow-hidden flex items-center min-h-[60vh]">
       <div className="container mx-auto px-4">
         <PartnersCarousel />
-        <div className="max-w-4xl mt-40">
+        <div className="max-w-3xl mt-32">
           <Badge>
             {t("about.smallTitle")}
           </Badge>
-          <Text size="lg" className="mt-4 lg:text-xl">
+          <Text size="lg" className="mt-3">
             {t("about.smallDescription")}
           </Text>
         </div>

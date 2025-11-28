@@ -14,7 +14,7 @@ export function SectionSolutionDetailIntro({ solution }: SectionSolutionDetailIn
 
   return (
     <Section>
-      <div className="container mx-auto max-w-3xl px-4 py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto max-w-2xl px-4 py-10 sm:py-12 lg:py-16">
         <Text className="text-center">
           {t(solution.summaryKey)}
         </Text>

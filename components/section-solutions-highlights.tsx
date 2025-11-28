@@ -16,11 +16,11 @@ export function SectionSolutionsHighlights() {
   return (
     <Section className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl">
+        <div className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
             {t("solutions.hero.badge")}
           </p>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mt-3 text-sm leading-normal text-slate-600 sm:text-base">
             {t("solutions.hero.body")}
           </p>
         </div>

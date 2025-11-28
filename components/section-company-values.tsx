@@ -31,7 +31,7 @@ export function SectionCompanyValues() {
 
   return (
     <Section id="values" className="bg-gray-50">
-      <div className="container mx-auto px-4 max-w-2xl mt-20 mb-16">
+      <div className="container mx-auto px-4 max-w-xl mt-16 mb-12">
         <Heading className="pb-4">
           {t("company.values.title")}
         </Heading>

@@ -83,7 +83,7 @@ export function MiniNavbar({ sections = DEFAULT_SECTIONS }: MiniNavbarProps) {
                 <button
                   onClick={() => scrollTo(s.id)}
                   className={cn(
-                    "px-3 md:px-4 py-2 text-sm md:text-[15px] rounded-full transition-colors",
+                    "px-3 md:px-4 py-2 text-[13px] md:text-[14px] rounded-full transition-colors",
                     active === s.id
                       ? "bg-green-600 text-white"
                       : "text-gray-700 hover:bg-gray-100"

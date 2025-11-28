@@ -89,7 +89,7 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
   const isDarkVariant = variant === "dark"
 
   const baseLinkClasses = cn(
-    "transition-colors duration-300 rounded-full px-5 py-2 text-sm font-medium",
+    "transition-colors duration-300 rounded-full px-5 py-2 text-[13px] font-medium",
     isDarkVariant
       ? "text-white/85 hover:bg-white/10 focus-visible:bg-white/15"
       : "text-gray-700 hover:bg-gray-100 focus-visible:bg-gray-100"
@@ -121,8 +121,8 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
   const dropdownTextClasses = isDarkVariant ? "text-white" : "text-gray-900"
   const dropdownMutedText = isDarkVariant ? "text-white/70" : "text-gray-600"
   const dropdownCtaClasses = isDarkVariant
-    ? "inline-flex gap-3 rounded-full border border-white/20 pl-5 pr-4 py-2 text-sm font-semibold text-white/90 transition-colors duration-200 hover:bg-white/10"
-    : "inline-flex gap-3 rounded-full border border-gray-100 pl-5 pr-4 py-2 text-sm font-semibold text-gray-600 transition-colors duration-200 hover:bg-gray-50"
+    ? "inline-flex gap-3 rounded-full border border-white/20 pl-5 pr-4 py-2 text-[13px] font-semibold text-white/90 transition-colors duration-200 hover:bg-white/10"
+    : "inline-flex gap-3 rounded-full border border-gray-100 pl-5 pr-4 py-2 text-[13px] font-semibold text-gray-600 transition-colors duration-200 hover:bg-gray-50"
 
   const chevronColor = isDarkVariant ? "text-white/70" : "text-gray-600"
 
@@ -170,7 +170,7 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
             dir={isRTL ? "rtl" : "ltr"}
           >
             <div className="flex flex-col items-start gap-8 pr-10 sm:max-w-48 md:max-w-72 max-w-96 shrink-0">
-              <p className={cn("text-lg leading-relaxed", dropdownTextClasses)}>
+              <p className={cn("text-base leading-normal", dropdownTextClasses)}>
                 {subMenuLead && t(subMenuLead.lead)}
               </p>
               {subMenuLead && (
@@ -198,15 +198,15 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
                       href={href}
                       className="flex flex-col justify-between transition-colors duration-200 outline-none"
                     >
-                      <span className={cn("text-lg font-semibold", dropdownTextClasses)}>
-                        {t(item.title)}
+                      <span className={cn("text-base font-semibold", dropdownTextClasses)}>
+                        {item.title}
                       </span>
-                      <span className={cn("mt-2 text-xs leading-relaxed", dropdownMutedText)}>
-                        {t(item.description)}
+                      <span className={cn("mt-1 text-[11px] leading-normal", dropdownMutedText)}>
+                        {item.description}
                       </span>
                       <span
                         className={cn(
-                          "mt-2 inline-flex items-center gap-1 text-xs font-semibold transition-colors duration-200",
+                          "mt-1 inline-flex items-center gap-1 text-[11px] font-semibold transition-colors duration-200",
                           dropdownMutedText,
                           isDarkVariant ? "hover:text-white" : "hover:text-gray-900"
                         )}
