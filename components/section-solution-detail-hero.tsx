@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { getAssetPath } from "@/lib/assets"
 import type { SolutionSectorDefinition } from "@/lib/solutions"
-import { Badge, Heading, Text as TypographyText } from "@/components/typography"
+import { Heading, Text as TypographyText } from "@/components/typography"
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -117,10 +117,7 @@ export function SectionSolutionDetailHero({
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-6 pb-12 text-white sm:px-8 lg:px-12">
           <div className="max-w-3xl">
-            <Badge variant="emerald-light">
-              {t(solution.taglineKey)}
-            </Badge>
-            <Heading as="h1" size="3xl" variant="white" className="mt-4">
+            <Heading as="h1" size="3xl" variant="white">
               {t(solution.titleKey)}
             </Heading>
             <TypographyText variant="white" className="mt-4 text-sm sm:text-base">
