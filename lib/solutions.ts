@@ -1,14 +1,15 @@
 export interface SolutionSectorDefinition {
-  slug: string
-  titleKey: string
-  taglineKey: string
-  summaryKey: string
-  highlightKeys: string[]
-  businessKeys: string[]
-  useCaseKeys: string[]
-  image?: string
-  preziEnvKey?: string
-  specLink?: string
+  slug: string;
+  titleKey: string;
+  taglineKey: string;
+  summaryKey: string;
+  highlightKeys: string[];
+  businessKeys: string[];
+  useCaseKeys: string[];
+  image?: string;
+  video?: string;
+  preziEnvKey?: string;
+  specLink?: string;
 }
 
 export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
@@ -40,6 +41,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     taglineKey: "solutions.sectors.construction.tagline",
     summaryKey: "solutions.sectors.construction.summary",
     image: "/hemp-blocks-01-443x300.jpg",
+    video: "/sliderV.mp4",
     highlightKeys: [
       "solutions.sectors.construction.highlights.0",
       "solutions.sectors.construction.highlights.1",
@@ -276,8 +278,8 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     ],
     preziEnvKey: "NEXT_PUBLIC_PREZI_SERVICES",
   },
-]
+];
 
 export function getSolutionBySlug(slug: string) {
-  return SOLUTION_SECTORS.find((solution) => solution.slug === slug)
+  return SOLUTION_SECTORS.find((solution) => solution.slug === slug);
 }
