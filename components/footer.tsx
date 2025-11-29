@@ -3,10 +3,10 @@
 import * as React from "react"
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
-import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon, ArrowRight } from "lucide-react"
+import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "lucide-react"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
-import { Text as TypographyText } from "@/components/typography"
+import Link from "next/link"
 
 export const Footer = () => {
   const { t, isRTL, languageRoute } = useLanguage()
@@ -24,151 +24,151 @@ export const Footer = () => {
   }
 
   return (
-    <footer id="site-footer" className="bg-gray-50 text-gray-800">
-      <div className="container mx-auto px-4 w-full py-10 space-y-10">
-        {/* Follow us bar */}
-        <div className={cn(
-          "flex items-center border-b border-gray-200 pb-6 gap-3",
-        )}>
-          <div className="text-sm font-medium text-gray-700">{t('footer.follow')}</div>
-          <div className="flex items-center gap-3">
-            {[
-              { href: "https://www.linkedin.com/company/green-desert-sa/", Icon: LinkedinIcon, label: "LinkedIn" },
-              { href: "https://www.instagram.com/greendesertsa/", Icon: InstagramIcon, label: "Instagram" },
-              { href: "https://twitter.com/Greendesertsa", Icon: TwitterIcon, label: "Twitter" },
-              { href: "https://www.youtube.com/@GreenDesertsa", Icon: YoutubeIcon, label: "YouTube" },
-            ].map(({ href, Icon, label }) => (
-              <a
-                key={label}
-                aria-label={label}
-                href={href}
-                className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors"
-              >
-                <Icon size={14} />
-              </a>
-            ))}
+    <footer id="site-footer" className="bg-white border-t border-gray-200">
+      <div className="container mx-auto px-6 py-16 sm:px-8 lg:px-12">
+        {/* Top section - Follow us with icons - Full width */}
+        <div className="flex items-center justify-between pb-8 border-b border-gray-200">
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-medium text-gray-900">{t('footer.follow')}</span>
+            <div className="flex items-center gap-2">
+              {[
+                { href: "https://twitter.com/Greendesertsa", Icon: TwitterIcon, label: "Twitter" },
+                { href: "https://www.instagram.com/greendesertsa/", Icon: InstagramIcon, label: "Instagram" },
+                { href: "https://www.youtube.com/@GreenDesertsa", Icon: YoutubeIcon, label: "YouTube" },
+                { href: "https://www.linkedin.com/company/green-desert-sa/", Icon: LinkedinIcon, label: "LinkedIn" },
+              ].map(({ href, Icon, label }) => (
+                <a
+                  key={label}
+                  aria-label={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Main Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Tagline only */}
+        {/* Newsletter signup section */}
+        <div className="py-12 border-b border-gray-200">
+          <div className="max-w-xl">
+            <h3 className="text-lg font-medium text-gray-900 mb-2">
+              {t('footer.newsletter.title')}
+            </h3>
+            <p className="text-sm text-gray-600 mb-4">
+              {t('footer.newsletter.description')}
+            </p>
+          </div>
+          <form onSubmit={onSubmit} className="relative">
+            <input
+              type="email"
+              inputMode="email"
+              placeholder={t('footer.newsletter.placeholder')}
+              value={email}
+              onChange={(e) => { setEmail(e.target.value); if (submitted !== 'idle') setSubmitted('idle') }}
+              className="w-full px-4 py-2.5 pr-28 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+              aria-invalid={submitted === 'error'}
+            />
+            <button
+              type="submit"
+              className="absolute right-1 top-1/2 -translate-y-1/2 px-6 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors whitespace-nowrap"
+            >
+              {t('footer.newsletter.cta')}
+            </button>
+          </form>
+          {submitted === 'error' && (
+            <p className="mt-2 text-sm text-red-600">{t('footer.newsletter.error')}</p>
+          )}
+          {submitted === 'success' && (
+            <p className="mt-2 text-sm text-emerald-600">{t('footer.newsletter.success')}</p>
+          )}
+        </div>
+
+        {/* Main content - Tagline + 3 columns */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Column 1 - Tagline text only */}
           <div>
-            <p className={cn("text-base md:text-lg text-gray-700 leading-normal", isRTL ? "text-right" : "text-left")}>
+            <p className="text-sm text-gray-600 leading-relaxed">
               {t('footer.description')}
             </p>
           </div>
 
-          {/* Company */}
+          {/* Column 2 - About submenu */}
           <div>
-            <div className="mb-8">
-              <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.products')}</h4>
-              <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
-                {[
-                  { href: "#", label: t('products.hemp_seeds') },
-                  { href: "#", label: t('products.temperature_boxes') },
-                  { href: "#", label: t('products.hemp_fibers') },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="hover:text-gray-900 transition-colors">
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.company')}</h4>
-            <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">{t('nav.about')}</h4>
+            <ul className="space-y-3">
               {[
-                { href: `/${languageRoute}/company`, label: t('nav.about') },
-                { href: "#", label: "Careers" },
-                { href: "#", label: t('nav.products') },
-                { href: "#", label: t('nav.services') },
-                { href: "#", label: t('mini.news') },
+                { href: `/${languageRoute}/company#story`, label: t('nav.about.story') },
+                { href: `/${languageRoute}/company#vision`, label: t('nav.about.vision') },
+                { href: `/${languageRoute}/company#leadership`, label: t('nav.about.leadership') },
+                { href: `/${languageRoute}/company#timeline`, label: t('nav.about.timeline') },
               ].map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="hover:text-gray-900 transition-colors">
+                  <Link href={item.href} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Products + Services stacked */}
+          {/* Column 3 - Solutions submenu (top 4) */}
           <div>
-            <div className="mb-8">
-              <h4 className={cn("font-bold mb-4 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.services')}</h4>
-              <ul className={cn("space-y-2 text-sm text-gray-600", isRTL ? "text-right" : "text-left")}>
-                {[
-                  { href: "#", label: t('services.sustainability.title') },
-                  { href: "#", label: t('services.research.title') },
-                  { href: "#", label: t('services.education.title') },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="hover:text-gray-900 transition-colors">
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">{t('nav.solutions')}</h4>
+            <ul className="space-y-3">
+              {[
+                { href: `/${languageRoute}/solutions/cultivation`, label: t('solutions.sectors.cultivation.title') },
+                { href: `/${languageRoute}/solutions/construction`, label: t('solutions.sectors.construction.title') },
+                { href: `/${languageRoute}/solutions/textiles`, label: t('solutions.sectors.textiles.title') },
+                { href: `/${languageRoute}/solutions/energy`, label: t('solutions.sectors.energy.title') },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href={`/${languageRoute}/solutions`} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  {t('nav.menu.learnMore')}
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-
-            {/* Newsletter signup */}
-            <div className="md:col-span-3">
-              <h4 className={cn("font-bold mb-2 text-gray-900", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.title')}</h4>
-              <TypographyText variant="muted" className={cn("text-sm mb-4", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.description')}</TypographyText>
-              <form onSubmit={onSubmit} className={cn("flex flex-col gap-3 items-start", isRTL && "items-end")}>
-                <div className="relative w-full md:w-96">
-                  <input
-                    type="email"
-                    inputMode="email"
-                    placeholder={t('footer.newsletter.placeholder')}
-                    value={email}
-                    onChange={(e) => { setEmail(e.target.value); if (submitted !== 'idle') setSubmitted('idle') }}
-                    className={cn(
-                      "w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-green-600",
-                      isRTL ? "pl-10 pr-4 text-right" : "pr-10 pl-4"
-                    )}
-                    aria-invalid={submitted === 'error'}
-                  />
-                  <button
-                    type="submit"
-                    aria-label={t('footer.newsletter.cta')}
-                    className={cn(
-                      "absolute top-1/2 -translate-y-1/2 p-1 rounded-md text-green-700 hover:text-green-800",
-                      isRTL ? "left-2" : "right-2"
-                    )}
-                  >
-                    <ArrowRight className={cn("w-5 h-5", isRTL && "rotate-180")} />
-                  </button>
-                </div>
-              </form>
-              {submitted === 'error' && (
-                <TypographyText variant="muted" className={cn("mt-2 text-sm", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.error')}</TypographyText>
-              )}
-              {submitted === 'success' && (
-                <TypographyText variant="muted" className={cn("mt-2 text-sm", isRTL ? "text-right" : "text-left")}>{t('footer.newsletter.success')}</TypographyText>
-              )}
-            </div>
+          {/* Column 4 - Home sections */}
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">{t('nav.home')}</h4>
+            <ul className="space-y-3">
+              {[
+                { href: `/${languageRoute}#mission`, label: t('company.mission.title') },
+                { href: `/${languageRoute}#services`, label: t('nav.services') },
+                { href: `/${languageRoute}#partners`, label: t('home.partners.title') },
+                { href: `/${languageRoute}#news`, label: t('mini.news') },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className={cn(
-          "border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between",
-        )}>
-          <div className="mb-4 md:mb-0">
-            <Image
-              src={getAssetPath("/logo_GD_black_EN.png")}
-              alt="Green Desert Logo"
-              width={140}
-              height={35}
-              className="h-8 w-auto"
-            />
-          </div>
-          <TypographyText variant="muted" className="text-sm text-center">{t('footer.copyright')}</TypographyText>
+        {/* Bottom section */}
+        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <Image
+            src={getAssetPath("/logo_GD_black_EN.png")}
+            alt="Green Desert Logo"
+            width={140}
+            height={35}
+            className="h-7 w-auto"
+          />
+          <p className="text-sm text-gray-600">{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>
