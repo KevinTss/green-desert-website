@@ -68,7 +68,7 @@ export function SectionSolutionsPathways() {
                   <Heading as="h3" size="md">
                     {t(sector.titleKey)}
                   </Heading>
-                  <p className="mt-2 text-[13px] leading-normal text-slate-600">
+                  <p className="mt-2 text-[13px] leading-normal text-slate-600 line-clamp-2">
                     {t(sector.summaryKey)}
                   </p>
                   <div className="mt-4 flex items-center justify-between text-[13px] font-semibold text-emerald-600">
