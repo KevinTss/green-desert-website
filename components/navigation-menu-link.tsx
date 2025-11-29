@@ -200,10 +200,10 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
                       className="flex flex-col justify-between transition-colors duration-200 outline-none"
                     >
                       <span className={cn("text-base font-semibold", dropdownTextClasses)}>
-                        {item.title}
+                        {t(item.title)}
                       </span>
                       <span className={cn("mt-1 text-[11px] leading-normal", dropdownMutedText)}>
-                        {item.description}
+                        {t(item.description)}
                       </span>
                       <span
                         className={cn(
