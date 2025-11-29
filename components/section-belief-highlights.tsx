@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 import { Section } from "@/components/section"
+import { Badge } from "@/components/typography"
 
 const FLOATING_STORIES = [
   {

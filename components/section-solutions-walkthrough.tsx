@@ -16,7 +16,7 @@ export function SectionSolutionsWalkthrough() {
         <div className="max-w-2xl">
           <Heading as="h3" size="2xl">
             {t("solutions.details.walkthroughHeading")}
-          </h3>
+          </Heading>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
             {t("solutions.details.walkthroughDescription")}
           </p>

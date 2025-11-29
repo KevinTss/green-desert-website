@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
+import { Badge, Heading } from "@/components/typography"
 
 interface PersonItem {
   key: string

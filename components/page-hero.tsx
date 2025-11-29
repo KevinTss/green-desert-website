@@ -1,4 +1,5 @@
 import { Section } from "@/components/section"
+import { Badge } from "@/components/typography"
 
 export const PageHero = ({
   title,
