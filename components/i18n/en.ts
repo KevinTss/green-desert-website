@@ -197,8 +197,80 @@ const en = {
   "solutions.sectors.services.useCases.1": "Training academies for contractors and operators to standardise quality and safety.",
   "solutions.sectors.services.useCases.2": "Raw material brokerage for regional partners that need predictable volumes and specifications.",
 
+  // Solution detail pages - Cultivation
+  "cultivation.intro.paragraph1": "Industrial hemp cultivation represents a transformative approach to sustainable agriculture in arid regions. With its deep root system and minimal water requirements, hemp thrives in challenging climates while improving soil health and sequestering significant amounts of carbon dioxide.",
+  "cultivation.intro.paragraph2": "Some of these agricultural benefits are then leveraged as building blocks for conventional supply chains. But it's costly. The process requires substantial expertise, careful regulatory compliance, and energy-intensive processing steps. One approach to improve the process is by better-integrating current agricultural practices to yield more sustainable products per hectare of land.",
+  "cultivation.content.paragraph1": "The Green Desert cultivation partnership demonstrates this integrated approach. Our licensed facilities combine proven agricultural techniques with modern biotechnology to maximize yield while minimizing environmental impact.",
+  "cultivation.content.paragraph2": "But what if the yield could be increased even more with fewer inputs? By optimizing irrigation systems, implementing precision agriculture techniques, and developing climate-adapted cultivars, we're pushing the boundaries of what's possible in sustainable hemp cultivation.",
+
+  // Construction
+  "construction.intro.paragraph1": "Hemp-based construction materials offer unprecedented opportunities for sustainable building practices. From hempcrete blocks to bio-composite panels, these materials provide superior insulation, carbon sequestration, and structural integrity while dramatically reducing the carbon footprint of construction projects.",
+  "construction.intro.paragraph2": "Traditional construction relies heavily on carbon-intensive materials like concrete and steel. The industry requires substantial, expensive, and energy-demanding production processes. Hemp construction materials present a viable alternative, capable of transforming the built environment while supporting circular economy principles.",
+  "construction.content.paragraph1": "Our construction solutions integrate seamlessly with modern building codes and standards. Projects utilizing hemp materials have demonstrated 30-50% reductions in embodied carbon compared to conventional approaches.",
+  "construction.content.paragraph2": "The Aramco and SABIC partnership with sustainable materials exemplifies this shift. With hemp-based solutions, we're not just building structures—we're building a sustainable future for the Kingdom's ambitious development projects.",
+
+  // Textiles
+  "textiles.intro.paragraph1": "Hemp fiber represents the future of sustainable textiles, combining exceptional durability with environmental responsibility. With natural antimicrobial properties and superior strength, hemp textiles offer performance characteristics that match or exceed conventional materials while requiring significantly less water and no pesticides.",
+  "textiles.intro.paragraph2": "The textile industry is one of the world's most polluting sectors, consuming vast amounts of water and energy. Hemp textiles provide a regenerative alternative, offering brands and manufacturers a pathway to reduce environmental impact while delivering premium quality fabrics.",
+  "textiles.content.paragraph1": "From technical workwear to luxury fashion, hemp fibers adapt to diverse applications. The material's natural breathability and UV resistance make it ideal for the Kingdom's climate conditions.",
+  "textiles.content.paragraph2": "Leading hospitality and retail brands are already integrating hemp textiles into their supply chains, recognizing both the environmental and performance benefits that align with Vision 2030 sustainability goals.",
+
+  // Energy
+  "energy.intro.paragraph1": "Hemp biomass presents a viable renewable energy feedstock for the Kingdom's energy transition. With high cellulose content and rapid growth cycles, hemp can be converted into biodiesel, bioethanol, and biogas through established thermochemical and biochemical processes.",
+  "energy.intro.paragraph2": "Current renewable energy development focuses primarily on solar and wind, but biomass energy offers complementary advantages including energy storage, dispatchability, and integration with existing infrastructure. Hemp's ability to grow in marginal lands without competing with food crops makes it particularly attractive.",
+  "energy.content.paragraph1": "Pilot projects have demonstrated that hemp pellets can achieve energy outputs comparable to traditional biomass while sequestering carbon during growth. This creates a carbon-negative energy cycle.",
+  "energy.content.paragraph2": "Integration with biorefinery concepts could yield multiple revenue streams per hectare—extracting high-value compounds before converting residual biomass to energy, maximizing both economic and environmental returns.",
+
+  // Biocomposites
+  "biocomposites.intro.paragraph1": "Hemp-reinforced biocomposites are revolutionizing manufacturing across automotive, aerospace, and consumer goods sectors. These advanced materials combine hemp fiber's exceptional strength-to-weight ratio with bio-based resins, creating components that are lighter, stronger, and more sustainable than traditional composites.",
+  "biocomposites.intro.paragraph2": "Conventional composite manufacturing relies on carbon fiber and fiberglass, materials that are energy-intensive to produce and difficult to recycle. Biocomposites offer comparable performance with drastically reduced environmental footprints and end-of-life recyclability.",
+  "biocomposites.content.paragraph1": "Our biocomposite formulations have been tested in demanding applications, from automotive interior panels to structural components in giga-project developments. Performance testing shows durability that exceeds industry standards.",
+  "biocomposites.content.paragraph2": "Major manufacturers are transitioning to biocomposites not just for sustainability credentials, but for tangible improvements in manufacturing efficiency, weight reduction, and material costs—creating business cases that work regardless of environmental considerations.",
+
+  // Waste
+  "waste.intro.paragraph1": "Hemp-based waste management solutions transform organic and industrial waste streams into valuable resources. Through biodigestion, composting, and phytoremediation, hemp systems convert what was once discarded into soil amendments, biogas, and reclaimed land.",
+  "waste.intro.paragraph2": "Current waste management approaches in the Kingdom face challenges with organic waste volumes, contaminated soils, and limited landfill capacity. Hemp's rapid biomass production and phytoremediation capabilities offer scalable solutions that align with circular economy principles.",
+  "waste.content.paragraph1": "Pilot implementations have demonstrated hemp's ability to extract heavy metals from contaminated industrial sites while producing biomass for energy or construction applications. This dual-purpose approach maximizes resource recovery.",
+  "waste.content.paragraph2": "Integration with municipal waste systems could divert thousands of tons from landfills annually while generating renewable materials and energy—transforming waste from an environmental liability into an economic asset.",
+
+  // Agriculture
+  "agriculture.intro.paragraph1": "Hemp cultivation enhances agricultural systems through crop rotation, soil improvement, and integrated pest management. As a break crop between grain harvests, hemp suppresses weeds, improves soil structure, and requires minimal chemical inputs.",
+  "agriculture.intro.paragraph2": "Modern agriculture faces challenges with soil degradation, water scarcity, and chemical dependency. Hemp offers a regenerative approach that restores rather than depletes agricultural lands while providing diversified income streams for farmers.",
+  "agriculture.content.paragraph1": "Field trials across the Kingdom have shown that hemp rotation increases subsequent crop yields by 10-20% through improved soil biology and structure. The deep taproot system also helps break up compacted soils.",
+  "agriculture.content.paragraph2": "For agricultural enterprises, hemp represents both a primary crop and an enhancement tool—generating revenue while improving the productivity and sustainability of entire farming operations.",
+
+  // Animal Care
+  "animal-care.intro.paragraph1": "Hemp-based animal bedding and feed supplements are transforming livestock and pet care industries. Hemp hurds provide superior absorbency and odor control compared to traditional bedding materials, while hemp seeds offer complete protein and essential fatty acids for animal nutrition.",
+  "animal-care.intro.paragraph2": "The animal care sector seeks sustainable alternatives to traditional products that often involve deforestation or intensive processing. Hemp products deliver enhanced performance with reduced environmental impact and improved animal welfare outcomes.",
+  "animal-care.content.paragraph1": "Equestrian facilities and dairy operations using hemp bedding report 30-40% reductions in bedding costs due to superior absorption rates and longer use cycles. The material's natural antimicrobial properties also contribute to healthier environments.",
+  "animal-care.content.paragraph2": "Hemp seed supplements are gaining recognition in veterinary nutrition for their balanced omega-3 to omega-6 ratios and digestibility, supporting everything from performance horses to companion animals.",
+
+  // Cosmetics
+  "cosmetics.intro.paragraph1": "Hemp-derived ingredients are reshaping the cosmetics and personal care industry with clean, effective formulations. Cold-pressed hemp seed oil delivers essential fatty acids, antioxidants, and skin barrier support without common allergens or irritants.",
+  "cosmetics.intro.paragraph2": "The beauty industry increasingly demands sustainable, traceable ingredients that meet clean beauty standards. Hemp cultivation's minimal environmental footprint and the oil's exceptional cosmetic properties make it an ideal active ingredient for premium formulations.",
+  "cosmetics.content.paragraph1": "Laboratory testing demonstrates hemp oil's stability in various formulation types, from serums to creams, with shelf-life profiles that meet commercial requirements. The naturally occurring vitamins and minerals enhance product efficacy.",
+  "cosmetics.content.paragraph2": "Leading cosmetic brands are incorporating hemp actives into their hero products, leveraging both the ingredient's performance characteristics and its sustainability narrative to capture premium market segments.",
+
+  // Food
+  "food.intro.paragraph1": "Hemp seeds and hemp-derived ingredients are revolutionizing functional food and beverage development. With complete protein profiles, ideal omega fatty acid ratios, and naturally occurring minerals, hemp offers nutritional density that few plant sources can match.",
+  "food.intro.paragraph2": "The global shift toward plant-based nutrition creates opportunities for ingredients that deliver on both nutrition and sustainability. Hemp's minimal processing requirements and allergen-friendly profile position it as a foundational ingredient for next-generation food products.",
+  "food.content.paragraph1": "Product developers can leverage hemp protein, oil, and fiber across multiple categories—from ready-to-drink beverages to protein bars and culinary oils. Each application maintains the nutritional integrity while offering distinct sensory profiles.",
+  "food.content.paragraph2": "Regulatory frameworks continue to expand for hemp food products, with the Kingdom positioned to supply both domestic and regional markets as demand accelerates across health-conscious consumer segments.",
+
+  // Pharma
+  "pharma.intro.paragraph1": "Pharmaceutical-grade hemp cultivation and extraction provides the foundation for medical cannabinoid therapies and wellness applications. With GMP-compliant facilities and validated quality systems, licensed hemp operations can supply the research and clinical communities with consistent, traceable materials.",
+  "pharma.intro.paragraph2": "The pharmaceutical industry requires exacting standards for plant-derived active ingredients. Hemp's cannabinoid and terpene profiles, when cultivated and processed under pharmaceutical protocols, offer therapeutic potential across pain management, inflammation, and neurological applications.",
+  "pharma.content.paragraph1": "Clinical partnerships benefit from batch-to-batch consistency, comprehensive analytical testing, and documentation that satisfies regulatory authorities. Every cultivation cycle includes stability studies and contaminant screening.",
+  "pharma.content.paragraph2": "As regional regulatory frameworks evolve to accommodate medical cannabis research, having licensed domestic cultivation capacity ensures research continuity and reduces dependence on imported materials of variable quality.",
+
+  // Services
+  "services.intro.paragraph1": "Comprehensive hemp project services de-risk adoption for organizations entering this emerging sector. From feasibility studies through commissioning and operations, integrated service delivery ensures projects meet technical, regulatory, and commercial objectives.",
+  "services.intro.paragraph2": "Many organizations recognize hemp's potential but lack the specialized knowledge to execute successfully. Turnkey project delivery that combines engineering, licensing, training, and supply chain development removes barriers to entry.",
+  "services.content.paragraph1": "Service offerings span the full project lifecycle—site selection, facility design, equipment procurement, regulatory compliance, staff training, and ongoing operational support. This integrated approach compresses timelines and reduces execution risk.",
+  "services.content.paragraph2": "For giga-project developers and private sector innovators alike, having experienced partners who understand both hemp applications and Saudi regulatory requirements is essential for transforming strategic vision into operational reality.",
+
   // Hero
-  "hero.title": "Accelerating Saudi Arabia’s transition to",
+  "hero.title": "Accelerating Saudi Arabia's transition to",
   "hero.subtitle": "Combining technological power and institutional cooperation to build the foundations of a carbon-neutral future",
   "hero.rotating.greener": "a greener future",
   "hero.rotating.bio": "a bio-based economy",
@@ -227,6 +299,9 @@ const en = {
   "mini.quality": "Quality",
   "mini.kpis": "KPIs",
   "mini.personas": "Personas",
+  "mini.solution.overview": "Overview",
+  "mini.solution.showcase": "Showcase",
+  "mini.solution.approach": "Approach",
 
   // Company page
   "company.badge": "Company",

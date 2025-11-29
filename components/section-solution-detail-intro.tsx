@@ -2,7 +2,6 @@
 
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Text as TypographyText } from "@/components/typography"
 import type { SolutionSectorDefinition } from "@/lib/solutions"
 
 interface SectionSolutionDetailIntroProps {
@@ -13,11 +12,14 @@ export function SectionSolutionDetailIntro({ solution }: SectionSolutionDetailIn
   const { t } = useLanguage()
 
   return (
-    <Section>
-      <div className="container mx-auto max-w-2xl px-4 py-10 sm:py-12 lg:py-16">
-        <TypographyText className="text-center">
-          {t(solution.summaryKey)}
-        </TypographyText>
+    <Section className="bg-white" id="overview">
+      <div className="container mx-auto max-w-[700px] px-6 sm:px-8 lg:px-12">
+        <p className="text-lg leading-relaxed text-gray-700 sm:text-xl">
+          {t(`${solution.slug}.intro.paragraph1`)}
+        </p>
+        <p className="mt-6 text-base leading-relaxed text-gray-600">
+          {t(`${solution.slug}.intro.paragraph2`)}
+        </p>
       </div>
     </Section>
   )

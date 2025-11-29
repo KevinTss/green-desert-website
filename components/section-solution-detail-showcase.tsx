@@ -4,7 +4,6 @@ import Image from "next/image"
 
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import { getAssetPath } from "@/lib/assets"
 import type { SolutionSectorDefinition } from "@/lib/solutions"
 
@@ -17,34 +16,19 @@ interface SectionSolutionDetailShowcaseProps {
 export function SectionSolutionDetailShowcase({ solution }: SectionSolutionDetailShowcaseProps) {
   const { t } = useLanguage()
   const imageSrc = getAssetPath(solution.image || SOLUTION_DETAIL_SHOWCASE_FALLBACK_IMAGE)
-  const secondaryParagraph = solution.highlightKeys.map((key) => t(key)).join(" ")
 
   return (
-    <Section className="bg-slate-50">
-      <div className="container mx-auto grid items-center gap-12 px-4 lg:grid-cols-[1fr_1.1fr]">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-100 shadow-sm">
+    <Section className="bg-slate-50" id="showcase">
+      <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl bg-slate-100 shadow-lg">
           <Image
             src={imageSrc}
             alt={t(solution.titleKey)}
             fill
             className="object-cover"
-            sizes="(min-width: 1024px) 45vw, 90vw"
+            sizes="(min-width: 1280px) 1280px, 100vw"
             priority
           />
-        </div>
-        <div className="space-y-5">
-          <Badge className="text-emerald-600">
-            {t(solution.taglineKey)}
-          </Badge>
-          <Heading size="2xl">
-            {t(solution.titleKey)}
-          </Heading>
-          <TypographyText>
-            {t(solution.summaryKey)}
-          </TypographyText>
-          <TypographyText>
-            {secondaryParagraph}
-          </TypographyText>
         </div>
       </div>
     </Section>
