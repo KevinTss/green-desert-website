@@ -10,6 +10,7 @@ import { MiniNavbar } from "@/components/mini-navbar"
 import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
 import { getSolutionBySlug } from "@/lib/solutions"
+import { SectionSolutionDetailHighlight } from "@/components/section-solution-detail-highlight"
 
 export function ClientSolutionDetail({ slug }: { slug: string }) {
   const { isRTL, language } = useLanguage()
@@ -33,6 +34,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
         <SectionSolutionDetailContent solution={solution} />
         <SectionSolutionDetailHighlights />
         <SectionSolutionDetailFeatures />
+        <SectionSolutionDetailHighlight />
       </div>
     </main>
   )
