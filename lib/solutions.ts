@@ -64,6 +64,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     taglineKey: "solutions.sectors.textiles.tagline",
     summaryKey: "solutions.sectors.textiles.summary",
     image: "/fiber-cover.jpg",
+    video: "/sliderV.mp4",
     highlightKeys: [
       "solutions.sectors.textiles.highlights.0",
       "solutions.sectors.textiles.highlights.1",
@@ -152,6 +153,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     taglineKey: "solutions.sectors.agriculture.tagline",
     summaryKey: "solutions.sectors.agriculture.summary",
     image: "/seeds-cover.jpg",
+    video: "/sliderV.mp4",
     highlightKeys: [
       "solutions.sectors.agriculture.highlights.0",
       "solutions.sectors.agriculture.highlights.1",
@@ -218,6 +220,7 @@ export const SOLUTION_SECTORS: SolutionSectorDefinition[] = [
     taglineKey: "solutions.sectors.food.tagline",
     summaryKey: "solutions.sectors.food.summary",
     image: "/hemp_seeds_AdobeStock-443x300.jpeg",
+    video: "/sliderV.mp4",
     highlightKeys: [
       "solutions.sectors.food.highlights.0",
       "solutions.sectors.food.highlights.1",
