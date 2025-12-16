@@ -4,6 +4,8 @@ import { SectionSolutionDetailHero } from "@/components/section-solution-detail-
 import { SectionSolutionDetailIntro } from "@/components/section-solution-detail-intro"
 import { SectionSolutionDetailShowcase } from "@/components/section-solution-detail-showcase"
 import { SectionSolutionDetailContent } from "@/components/section-solution-detail-content"
+import { SectionSolutionDetailHighlights } from "@/components/section-solution-detail-highlights"
+import { SectionSolutionDetailFeatures } from "@/components/section-solution-detail-features"
 import { MiniNavbar } from "@/components/mini-navbar"
 import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
@@ -29,6 +31,8 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
         <SectionSolutionDetailIntro solution={solution} />
         <SectionSolutionDetailShowcase solution={solution} />
         <SectionSolutionDetailContent solution={solution} />
+        <SectionSolutionDetailHighlights />
+        <SectionSolutionDetailFeatures />
       </div>
     </main>
   )

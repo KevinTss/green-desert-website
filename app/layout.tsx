@@ -106,7 +106,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} font-sans`}>
+      <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} font-sans overflow-x-hidden`}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
