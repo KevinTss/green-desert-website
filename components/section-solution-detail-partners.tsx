@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Section } from "@/components/section"
 import { Heading, Label } from "./typography"
 import { CarouselContainer } from "@/components/carousel-container"
@@ -55,7 +56,7 @@ export function SectionSolutionDetailPartners() {
               >
                 <div className="relative aspect-video w-full bg-gray-50 flex items-center justify-center overflow-hidden rounded-3xl">
                   <div className="flex h-20 w-20 items-center justify-center rounded-full text-emerald-200">
-                    <img src={partner.image} alt={partner.label} className="h-12 w-12 object-contain" />
+                    <Image src={partner.image} alt={partner.label} width={48} height={48} className="object-contain" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-gray-200/5 to-gray-200/10" />
                 </div>

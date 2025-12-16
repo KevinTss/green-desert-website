@@ -12,7 +12,7 @@ export function SectionSolutionWaitingList() {
           Experience Gemini Robotics
         </Label>
         <Heading size="xl" className="">
-          If you're interested in testing our models, please share a few details to join the waitlist.
+          If you&apos;re interested in testing our models, please share a few details to join the waitlist.
         </Heading>
         <Button className="rounded-full px-8 mt-10">
           Join waiting list
