@@ -14,6 +14,7 @@ import { SectionSolutionDetailHighlight } from "@/components/section-solution-de
 import { SectionSolutionDetailProducts } from "@/components/section-solution-detail-products"
 import { SectionSolutionDetailSignUp } from "@/components/section-solution-detail-sign-up"
 import { SectionSolutionWaitingList } from "@/components/section-solution-detail-waiting-list"
+import { SectionSolutionDetailPartners } from "@/components/section-solution-detail-partners"
 
 export function ClientSolutionDetail({ slug }: { slug: string }) {
   const { isRTL, language } = useLanguage()
@@ -40,7 +41,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
         <SectionSolutionDetailHighlight />
         <SectionSolutionDetailProducts />
         <SectionSolutionDetailSignUp />
-        {/* New section here */}
+        <SectionSolutionDetailPartners />
         <SectionSolutionWaitingList />
       </div>
     </main>
