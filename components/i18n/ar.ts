@@ -61,6 +61,13 @@ const ar = {
   "mini.quality": "الجودة",
   "mini.kpis": "KPIs",
   "mini.personas": "الأشخاص",
+  "mini.solution.overview": "نظرة عامة",
+  "mini.solution.showcase": "العرض",
+  "mini.solution.approach": "المنهج",
+  "mini.solution.highlights": "المميزات",
+  "mini.solution.features": "الميزات",
+  "mini.solution.products": "المنتجات",
+  "mini.solution.partners": "الشركاء",
 
   // Company page
   "company.badge": "عن الشركة",

@@ -302,6 +302,10 @@ const en = {
   "mini.solution.overview": "Overview",
   "mini.solution.showcase": "Showcase",
   "mini.solution.approach": "Approach",
+  "mini.solution.highlights": "Highlights",
+  "mini.solution.features": "Features",
+  "mini.solution.products": "Products",
+  "mini.solution.partners": "Partners",
 
   // Company page
   "company.badge": "Company",

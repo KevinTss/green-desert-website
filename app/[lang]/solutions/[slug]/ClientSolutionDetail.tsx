@@ -32,6 +32,10 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
           { id: "overview", key: "mini.solution.overview" },
           { id: "showcase", key: "mini.solution.showcase" },
           { id: "approach", key: "mini.solution.approach" },
+          { id: "highlights", key: "mini.solution.highlights" },
+          { id: "features", key: "mini.solution.features" },
+          { id: "products", key: "mini.solution.products" },
+          { id: "partners", key: "mini.solution.partners" },
         ]} />
         <SectionSolutionDetailIntro solution={solution} />
         <SectionSolutionDetailShowcase solution={solution} />

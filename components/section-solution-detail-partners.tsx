@@ -32,10 +32,10 @@ const partners = [
 ]
 
 export function SectionSolutionDetailPartners() {
-  const cardsPerView = 3
+  const cardsPerView = 4
 
   return (
-    <Section className="bg-white">
+    <Section className="bg-white" id="partners">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mb-12">
           <Heading size="2xl" className="leading-tight">
