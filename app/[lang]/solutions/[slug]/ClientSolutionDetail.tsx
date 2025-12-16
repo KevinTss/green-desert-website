@@ -11,6 +11,9 @@ import { useLanguage } from "@/components/language-provider"
 import { cn } from "@/lib/utils"
 import { getSolutionBySlug } from "@/lib/solutions"
 import { SectionSolutionDetailHighlight } from "@/components/section-solution-detail-highlight"
+import { SectionSolutionDetailProducts } from "@/components/section-solution-detail-products"
+import { SectionSolutionDetailSignUp } from "@/components/section-solution-detail-sign-up"
+import { SectionSolutionWaitingList } from "@/components/section-solution-detail-waiting-list"
 
 export function ClientSolutionDetail({ slug }: { slug: string }) {
   const { isRTL, language } = useLanguage()
@@ -35,6 +38,10 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
         <SectionSolutionDetailHighlights />
         <SectionSolutionDetailFeatures />
         <SectionSolutionDetailHighlight />
+        <SectionSolutionDetailProducts />
+        <SectionSolutionDetailSignUp />
+        {/* New section here */}
+        <SectionSolutionWaitingList />
       </div>
     </main>
   )
