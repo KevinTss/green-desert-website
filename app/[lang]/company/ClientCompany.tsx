@@ -5,7 +5,6 @@ import { MiniNavbar, type MiniSection } from "@/components/mini-navbar"
 import { SectionCompanyHero } from "@/components/section-company-hero"
 import { SectionCompanyLeadership } from "@/components/section-company-leadership"
 import { SectionCompanyMission } from "@/components/section-company-mission"
-// import { SectionCompanyPresentation } from "@/components/section-company-presentation"
 import { SectionCompanyStory } from "@/components/section-company-story"
 import { SectionCompanyTeam } from "@/components/section-company-team"
 import { SectionCompanyValues } from "@/components/section-company-values"
@@ -13,7 +12,6 @@ import { SectionCompanyVision } from "@/components/section-company-vision"
 import { cn } from "@/lib/utils"
 
 const COMPANY_NAV_SECTIONS: MiniSection[] = [
-  // { id: "presentation", key: "mini.presentation" },
   { id: "story", key: "mini.story" },
   { id: "vision", key: "mini.vision" },
   { id: "mission", key: "mini.mission" },
@@ -31,7 +29,6 @@ export function ClientCompany() {
 
       <div className="pt-[5%]">
         <MiniNavbar sections={COMPANY_NAV_SECTIONS} />
-        {/* <SectionCompanyPresentation /> */}
         <SectionCompanyStory />
         <SectionCompanyVision />
         <SectionCompanyMission />
