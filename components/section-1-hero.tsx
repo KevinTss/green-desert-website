@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react"
-import { useLanguage } from "@/components/language-provider"
+import { useContent } from "@/components/language-provider"
 import { AnimatedHeadline } from "./animated-headline"
 import Image from "next/image"
 import { getAssetPath } from "@/lib/assets"
@@ -8,26 +8,19 @@ import { Section } from "@/components/section"
 import { Text as TypographyText } from "@/components/typography"
 
 export const Section1Hero = () => {
-  const { t } = useLanguage()
+  const { home } = useContent()
+  const hero = home?.hero
   const [activePhrase, setActivePhrase] = useState(0)
 
-  const slides = useMemo(() => ([
-    {
-      text: t("hero.rotating.greener"),
-      color: "text-[#F2B67D]",
-      image: getAssetPath("/fiber-cover.jpg"),
-    },
-    {
-      text: t("hero.rotating.bio"),
-      color: "text-[#93A894]",
-      image: getAssetPath("/hurd-cover.jpg"),
-    },
-    {
-      text: t("hero.rotating.agriculture"),
-      color: "text-[#949182]",
-      image: getAssetPath("/seeds-cover.jpg"),
-    },
-  ]), [t])
+  const slides = useMemo(() => {
+    const data = Array.isArray(hero?.slides) ? hero.slides : []
+    if (!data.length) return []
+    return data.map((slide) => ({
+      text: slide.text ?? "",
+      color: slide.color ?? "#F2B67D",
+      image: getAssetPath(slide.image ?? "/fiber-cover.jpg"),
+    }))
+  }, [hero?.slides, hero?.title])
 
   const backgroundImage = slides[activePhrase]?.image ?? getAssetPath("/fiber-cover.jpg")
 
@@ -57,14 +50,18 @@ export const Section1Hero = () => {
         </div>
 
         <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
-          <AnimatedHeadline
-            prefix={t("hero.title")}
-            phrases={slides.map(({ text, color }) => ({ text, color }))}
-            onPhraseChange={setActivePhrase}
-          />
-          <TypographyText variant="white-muted" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
-            {t("hero.subtitle")}
-          </TypographyText>
+          {hero?.title && hero.slides && hero.slides.length > 0 && (
+            <AnimatedHeadline
+              prefix={hero.title}
+              phrases={slides.map(({ text, color }) => ({ text, color }))}
+              onPhraseChange={setActivePhrase}
+            />
+          )}
+          {hero?.subtitle && (
+            <TypographyText variant="white-muted" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
+              {hero.subtitle}
+            </TypographyText>
+          )}
         </div>
       </div>
     </Section>

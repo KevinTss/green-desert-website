@@ -36,7 +36,7 @@ interface LanguageContextType {
   languageRoute: 'en' | 'ar-SA'
 }
 
-interface ContentStructure {
+export interface ContentStructure {
   labels: typeof enLabels
   header: typeof enHeader
   footer: typeof enFooter

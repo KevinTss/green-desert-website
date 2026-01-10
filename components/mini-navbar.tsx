@@ -2,29 +2,26 @@
 
 import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
-import { useLanguage } from "@/components/language-provider"
+import { ContentStructure, useContent, useLanguage } from "@/components/language-provider"
 
-export interface MiniSection { id: string; key: string }
+// export interface MiniSection { id: string; key?: string; label?: string }
 
-const DEFAULT_SECTIONS: MiniSection[] = [
-  { id: "story", key: "mini.story" },
-  { id: "products", key: "mini.products" },
-  { id: "services", key: "mini.services" },
-  { id: "partners", key: "mini.partners" },
-  { id: "news", key: "mini.news" },
-]
+type ContentKey = keyof Pick<ContentStructure, 'home' | 'company' | 'team' | 'sponsors' | 'solutions' | 'products'>
 
-interface MiniNavbarProps {
-  sections?: MiniSection[]
-}
+type Section = { id: string; label: string }
 
-export function MiniNavbar({ sections = DEFAULT_SECTIONS }: MiniNavbarProps) {
+export function MiniNavbar({ contentKey }: { contentKey: ContentKey }) {
   const { t, isRTL } = useLanguage()
+  const content = useContent()
+  const sections: Section[] | undefined = "miniNav" in content[contentKey]
+    ? content[contentKey].miniNav as Section[]
+    : undefined
   const [active, setActive] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    const sectionEls = sections.map(s => document.getElementById(s.id)).filter(Boolean) as HTMLElement[]
+    if (!sections || sections.length === 0) return
+    const sectionEls = sections?.map(s => document.getElementById(s.id)).filter(Boolean) as HTMLElement[] || []
     if (sectionEls.length === 0) return
     let ticking = false
     const update = () => {
@@ -78,7 +75,7 @@ export function MiniNavbar({ sections = DEFAULT_SECTIONS }: MiniNavbarProps) {
           )}
         >
           <ul className={cn("flex items-center gap-1 p-1", isRTL && "flex-row-reverse")}>
-            {sections.map((s) => (
+            {sections?.map((s) => (
               <li key={s.id} className="shrink-0">
                 <button
                   onClick={() => scrollTo(s.id)}
@@ -89,7 +86,7 @@ export function MiniNavbar({ sections = DEFAULT_SECTIONS }: MiniNavbarProps) {
                       : "text-gray-700 hover:bg-gray-100"
                   )}
                 >
-                  {t(s.key)}
+                  {s.label ?? (s.id ? t(s.id) : "")}
                 </button>
               </li>
             ))}

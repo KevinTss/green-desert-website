@@ -21,7 +21,7 @@ export function ClientProductSeeds() {
     <main className={`${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
       <PageHero title={t('product.seeds.title')} badge={t('product.seeds.badge')} />
       <div>
-        <MiniNavbar sections={[...sections]} />
+        {/* <MiniNavbar sections={[...sections]} /> */}
 
         {/* Overview */}
         <Section id='overview' className="mt-10 min-h-[80vh] w-full flex items-center bg-gray-50">

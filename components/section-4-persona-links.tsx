@@ -1,37 +1,12 @@
-import { useLanguage } from "@/components/language-provider"
+import { useContent, useLanguage } from "@/components/language-provider"
 import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import { Section } from "@/components/section"
 import { AnimatedStatCards } from "@/components/animated-stat-cards"
 
-const personas = [
-  {
-    key: "government",
-    linkKey: "personas.government.link",
-    descriptionKey: "personas.government.description",
-    href: "/solutions/government",
-  },
-  {
-    key: "private",
-    linkKey: "personas.private.link",
-    descriptionKey: "personas.private.description",
-    href: "/solutions/private-sector",
-  },
-  {
-    key: "investors",
-    linkKey: "personas.investors.link",
-    descriptionKey: "personas.investors.description",
-    href: "/solutions/investors",
-  },
-  {
-    key: "engineers",
-    linkKey: "personas.engineers.link",
-    descriptionKey: "personas.engineers.description",
-    href: "/solutions/engineers",
-  },
-]
-
 export const Section4PersonaLinks = () => {
-  const { t, languageRoute } = useLanguage()
+  const { languageRoute } = useLanguage()
+  const { home } = useContent()
+  const personasContent = home?.personas
 
   return (
     <Section id="personas" className="bg-white">
@@ -39,31 +14,31 @@ export const Section4PersonaLinks = () => {
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <Badge>
-              {t("personas.badge")}
+              {personasContent?.badge}
             </Badge>
             <Heading size="lg" className="mt-3">
-              {t("personas.heading")}
+              {personasContent?.heading}
             </Heading>
             <TypographyText className="mt-3">
-              {t("personas.subheading")}
+              {personasContent?.subheading}
             </TypographyText>
           </div>
           <div className="lg:text-right">
             <Badge as="p" size="sm" className="text-emerald-500">
-              {t("personas.prompt")}
+              {personasContent?.prompt}
             </Badge>
           </div>
         </div>
 
         <AnimatedStatCards
           className="mt-2"
-          items={personas.map((persona) => {
-            const href = persona.href.startsWith("/") ? `/${languageRoute}${persona.href}` : persona.href
+          items={(personasContent?.items ?? []).map((persona) => {
+            const href = persona.href?.startsWith("/") ? `/${languageRoute}${persona.href}` : persona.href
             return {
-              id: persona.key,
-              label: t(persona.linkKey),
-              value: t(persona.linkKey),
-              description: t(persona.descriptionKey),
+              id: persona.id,
+              label: persona.title,
+              value: persona.title,
+              description: persona.description,
               href,
             }
           })}

@@ -1,73 +1,65 @@
 "use client"
 
 import type { ComponentType, CSSProperties } from "react"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Sprout, Scissors, Factory, Workflow, Building2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { useLanguage } from "@/components/language-provider"
 import { Text as TypographyText } from "@/components/typography"
 
-interface StepConfig {
-  id: string
-  gradient: string
-  accent: string
-  icon: ComponentType<{ className?: string, style?: CSSProperties }>
-  titleKey: string
-  descriptionKey: string
+const iconMap: Record<string, ComponentType<{ className?: string, style?: CSSProperties }>> = {
+  sprout: Sprout,
+  scissors: Scissors,
+  factory: Factory,
+  workflow: Workflow,
+  building: Building2,
 }
 
-const steps: StepConfig[] = [
-  {
-    id: "growing",
-    gradient: "linear-gradient(135deg, #34d399, #059669)",
-    accent: "#059669",
-    icon: Sprout,
-    titleKey: "about.process.steps.growing.title",
-    descriptionKey: "about.process.steps.growing.description",
-  },
-  {
-    id: "harvesting",
-    gradient: "linear-gradient(135deg, #fbbf24, #f97316)",
-    accent: "#f97316",
-    icon: Scissors,
-    titleKey: "about.process.steps.harvesting.title",
-    descriptionKey: "about.process.steps.harvesting.description",
-  },
-  {
-    id: "decorticating",
-    gradient: "linear-gradient(135deg, #38bdf8, #0284c7)",
-    accent: "#0284c7",
-    icon: Factory,
-    titleKey: "about.process.steps.decorticating.title",
-    descriptionKey: "about.process.steps.decorticating.description",
-  },
-  {
-    id: "transforming",
-    gradient: "linear-gradient(135deg, #c084fc, #7c3aed)",
-    accent: "#7c3aed",
-    icon: Workflow,
-    titleKey: "about.process.steps.transforming.title",
-    descriptionKey: "about.process.steps.transforming.description",
-  },
-  {
-    id: "building",
-    gradient: "linear-gradient(135deg, #bef264, #22c55e)",
-    accent: "#22c55e",
-    icon: Building2,
-    titleKey: "about.process.steps.building.title",
-    descriptionKey: "about.process.steps.building.description",
-  },
-]
+interface ProcessContent {
+  title?: string
+  subtitle?: string
+  loopLabel?: string
+  cta?: { label?: string; href?: string }
+  steps?: Array<{
+    id: string
+    title?: string
+    description?: string
+    accent?: string
+    icon?: string
+  }>
+}
 
-export const ProcessExplainer = () => {
-  const { t } = useLanguage()
+interface ProcessExplainerProps {
+  process?: ProcessContent
+}
+
+export const ProcessExplainer = ({ process }: ProcessExplainerProps) => {
+  const content = process ?? {}
+  const steps = useMemo(() => {
+    const source = Array.isArray(content.steps) ? content.steps : []
+    if (!source.length) return []
+    return source.map((step, idx) => {
+      const accent = step.accent || "#059669"
+      const iconKey = step.icon || "sprout"
+      const IconComponent = iconMap[iconKey] || Sprout
+      return {
+        ...step,
+        accent,
+        icon: iconKey,
+        gradient: `linear-gradient(135deg, ${accent}, ${accent})`,
+        IconComponent,
+      }
+    })
+  }, [content.steps])
+
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const totalSteps = steps.length
   const orbitRadius = 116
+
+  if (!steps.length) return null
 
   useEffect(() => {
     if (isPaused) return
@@ -79,7 +71,7 @@ export const ProcessExplainer = () => {
   }, [isPaused, totalSteps])
 
   const activeStep = steps[activeIndex]
-  const ActiveIcon = activeStep.icon
+  const ActiveIcon = iconMap[activeStep.icon || "sprout"] || Sprout
 
   return (
     <div
@@ -100,7 +92,7 @@ export const ProcessExplainer = () => {
             <div className="absolute inset-0 animate-[spin_28s_linear_infinite]" aria-hidden="true">
               {steps.map((step, index) => {
                 const angle = (360 / totalSteps) * index
-                const Icon = step.icon
+                const Icon = step.IconComponent || Sprout
                 const isActive = index === activeIndex
                 return (
                   <div
@@ -124,7 +116,7 @@ export const ProcessExplainer = () => {
               })}
             </div>
             <div className="absolute inset-[28%] rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-[13px] font-semibold text-emerald-200">
-              {t("about.process.loopLabel")}
+              {content.loopLabel}
             </div>
           </div>
         </div>
@@ -133,7 +125,7 @@ export const ProcessExplainer = () => {
             <div className="flex items-start gap-3 text-left">
               <div
                 className="rounded-full p-[2px] transition"
-                style={{ background: activeStep.gradient }}
+                style={{ background: activeStep.gradient || `linear-gradient(135deg, ${activeStep.accent}, ${activeStep.accent})` }}
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/40 backdrop-blur-sm">
                   <ActiveIcon className="h-5 w-5" style={{ color: activeStep.accent }} />
@@ -144,10 +136,10 @@ export const ProcessExplainer = () => {
                   className="text-sm font-semibold tracking-wide"
                   style={{ color: activeStep.accent }}
                 >
-                  {t(activeStep.titleKey)}
+                  {activeStep.title}
                 </p>
                 <TypographyText variant="white-muted" className="text-sm">
-                  {t(activeStep.descriptionKey)}
+                  {activeStep.description}
                 </TypographyText>
               </div>
             </div>
@@ -158,11 +150,13 @@ export const ProcessExplainer = () => {
       <div className="flex h-full flex-col space-y-6">
         <ul className="flex-1 space-y-3">
           {steps.map((step, index) => {
-            const Icon = step.icon
+            const Icon = step.IconComponent || Sprout
             const isActive = index === activeIndex
             const gradientBorderStyle: CSSProperties | undefined = isActive
               ? {
-                background: step.gradient,
+                background: step.accent
+                  ? `linear-gradient(135deg, ${step.accent}, ${step.accent})`
+                  : "linear-gradient(135deg, #34d399, #059669)",
                 padding: "2px",
                 borderRadius: "1.5rem",
               }
@@ -211,14 +205,14 @@ export const ProcessExplainer = () => {
                           className="text-sm font-semibold text-slate-900"
                           style={isActive ? { color: step.accent } : undefined}
                         >
-                          {t(step.titleKey)}
+                          {step.title}
                         </p>
                         <TypographyText
                           variant="muted"
                           className="text-sm"
                           style={isActive ? { color: `${step.accent}cc` } : undefined}
                         >
-                          {t(step.descriptionKey)}
+                          {step.description}
                         </TypographyText>
                       </div>
                     </div>
@@ -229,12 +223,14 @@ export const ProcessExplainer = () => {
           })}
         </ul>
 
-        <Button asChild variant="ghost" className="group gap-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 w-fit">
-          <Link href="/solutions">
-            {t("about.process.cta")}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </Button>
+        {content.cta?.label && content.cta?.href && (
+          <Button asChild variant="ghost" className="group gap-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 w-fit">
+            <Link href={content.cta.href}>
+              {content.cta.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        )}
       </div>
 
       <style jsx>{`

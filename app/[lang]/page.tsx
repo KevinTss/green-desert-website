@@ -23,22 +23,17 @@ export default function Page({ params }: PageProps) {
       {/* Sticky wrapper: overlaps hero with negative margin to visually place mini navbar */}
       {/* <div className="relative -mt-56 md:-mt-56 lg:-mt-60"> */}
       <div className="pt-[5%]">
-        <MiniNavbar sections={[
-          { id: "story", key: "mini.story" },
-          { id: "kpis", key: "mini.kpis" },
-          { id: "personas", key: "mini.personas" },
-          { id: "news", key: "mini.news" },
-        ]} />
+        <MiniNavbar contentKey="home" />
         {/* <div className="mt-56 md:mt-56 lg:mt-60"> */}
-        <div className="">
-          <Section2OurMission />
-          {/* <SectionBeliefHighlights /> */}
-          <Section3KpiStrip />
-          <Section4PersonaLinks />
-          {/* <Section4OurServices /> */}
-          {/* <Section5Partners /> */}
-          <Section6NewsClient />
-        </div>
+        {/* <div className=""> */}
+        <Section2OurMission />
+        {/* <SectionBeliefHighlights /> */}
+        <Section3KpiStrip />
+        <Section4PersonaLinks />
+        {/* <Section4OurServices /> */}
+        {/* <Section5Partners /> */}
+        <Section6NewsClient />
+        {/* </div> */}
       </div>
       <Footer />
     </div>

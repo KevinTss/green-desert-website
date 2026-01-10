@@ -19,7 +19,7 @@ export function ClientSponsors() {
       <PageHero title={t('sponsors.title')} badge={t('sponsors.badge')} />
 
       <div className="">
-        <MiniNavbar sections={[...sections]} />
+        {/* <MiniNavbar sections={[...sections]} /> */}
 
         <Section className="mt-10 min-h-[80vh] w-full flex items-center bg-gray-50">
           <div className="mx-auto max-w-xl">

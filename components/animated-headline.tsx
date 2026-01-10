@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 interface Phrase {
   text: string
@@ -50,7 +51,12 @@ export const AnimatedHeadline = ({ prefix, phrases, intervalMs = 3000, onPhraseC
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4 }}
-            className={`${current.color} inline-block`}
+            className={cn("inline-block", current.color && !current.color.startsWith("#") && !current.color.startsWith("rgb") && !current.color.startsWith("var(") ? current.color : undefined)}
+            style={
+              (current?.color?.startsWith("#") || current?.color?.startsWith("rgb") || current?.color?.startsWith("var("))
+                ? { color: current.color }
+                : undefined
+            }
           >
             {current.text}
           </motion.span>

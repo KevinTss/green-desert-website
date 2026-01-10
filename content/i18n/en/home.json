@@ -1,0 +1,189 @@
+{
+  "miniNav": [
+    { "id": "story", "label": "Story" },
+    { "id": "kpis", "label": "Impact" },
+    { "id": "personas", "label": "Audiences" },
+    { "id": "news", "label": "News" }
+  ],
+  "hero": {
+    "title": "Accelerating Saudi Arabia's transition to",
+    "subtitle": "Combining technological power and institutional cooperation to build the foundations of a carbon-neutral future.",
+    "slides": [
+      {
+        "text": "a greener future",
+        "color": "#F2B67D",
+        "image": "/fiber-cover.jpg"
+      },
+      {
+        "text": "a bio-based economy",
+        "color": "#93A894",
+        "image": "/hurd-cover.jpg"
+      },
+      {
+        "text": "sustainable agriculture",
+        "color": "#949182",
+        "image": "/seeds-cover.jpg"
+      }
+    ]
+  },
+  "story": {
+    "badge": "We are Green Desert",
+    "body": "We are Saudi Arabia's pioneering biotechnology startup, dedicated to scaling sustainable innovation across the Kingdom and the Gulf. By combining scientific research, advanced cultivation, and circular solutions, we help industries accelerate Vision 2030 environmental goals.",
+    "partners": [
+      {
+        "name": "Oasis Energy Partners",
+        "logo": "/oasis-energy.svg",
+        "url": "https://example.com/oasis-energy.svg"
+      },
+      {
+        "name": "Desert Labs",
+        "logo": "/desert-labs.svg",
+        "url": "https://example.com/desert-labs.svg"
+      },
+      {
+        "name": "Green Horizon",
+        "logo": "/green-horizon.svg",
+        "url": "https://example.com/green-horizon.svg"
+      },
+      {
+        "name": "Sahara Foundation",
+        "logo": "/sahara-foundation.svg",
+        "url": "https://example.com/sahara-foundation.svg"
+      }
+    ],
+    "process": {
+      "title": "How our hemp lifecycle works",
+      "subtitle": "Hover over each stage to watch the process evolve from seed to sustainable structures.",
+      "loopLabel": "Circular flow",
+      "cta": { "label": "Explore our solutions", "href": "/solutions" },
+      "steps": [
+        {
+          "id": "growing",
+          "title": "Growing",
+          "description": "Regenerative hemp cultivation restores soils and optimizes every drop of water.",
+          "accent": "#059669",
+          "icon": "sprout"
+        },
+        {
+          "id": "harvesting",
+          "title": "Harvesting",
+          "description": "Precision harvesting captures fiber and hurd at peak quality with minimal waste.",
+          "accent": "#f97316",
+          "icon": "scissors"
+        },
+        {
+          "id": "decorticating",
+          "title": "Decorticating",
+          "description": "Fiber and hurd are separated cleanly to unlock high-value biomaterials.",
+          "accent": "#0284c7",
+          "icon": "factory"
+        },
+        {
+          "id": "transforming",
+          "title": "Transforming",
+          "description": "We convert hemp inputs into bio-based solutions ready for industrial use.",
+          "accent": "#7c3aed",
+          "icon": "workflow"
+        },
+        {
+          "id": "building",
+          "title": "Building",
+          "description": "Circular construction systems deploy hemp materials to create healthier spaces.",
+          "accent": "#22c55e",
+          "icon": "building"
+        }
+      ]
+    }
+  },
+  "kpi": {
+    "badge": "Impact indicators",
+    "heading": "Impact-ready metrics for every sustainability roadmap",
+    "subheading": "We partner with private and public stakeholders to scale regenerative outcomes where they matter most.",
+    "items": [
+      {
+        "id": "co2",
+        "label": "CO₂ SEQUESTERED",
+        "value": "7.8",
+        "suffix": " t",
+        "description": "per hectare, annually"
+      },
+      {
+        "id": "footprint",
+        "label": "LOW-CARBON FOOTPRINT",
+        "value": "18,000",
+        "suffix": " m²",
+        "description": "of hemp-based structures"
+      },
+      {
+        "id": "pilots",
+        "label": "PILOT PROGRAMS",
+        "value": "12",
+        "description": "cross-sector deployments"
+      }
+    ]
+  },
+  "personas": {
+    "badge": "Audience pathways",
+    "heading": "Choose the track that matches your mission",
+    "subheading": "Guided journeys tailored to regulators, corporate sustainability leaders, capital partners, and engineering teams.",
+    "prompt": "Start where impact begins",
+    "items": [
+      {
+        "id": "government",
+        "title": "Government",
+        "description": "Policy-aligned pilots, climate reporting, and Vision 2030 acceleration.",
+        "href": "/solutions/government"
+      },
+      {
+        "id": "private",
+        "title": "Private Sector",
+        "description": "Carbon-smart materials and turnkey solutions for sustainable developments.",
+        "href": "/solutions/private-sector"
+      },
+      {
+        "id": "investors",
+        "title": "Investors",
+        "description": "Data-backed ventures in regenerative materials and green infrastructure.",
+        "href": "/solutions/investors"
+      },
+      {
+        "id": "engineers",
+        "title": "Engineers",
+        "description": "Technical specs, case studies, and modeling support for hemp-based systems.",
+        "href": "/solutions/engineers"
+      }
+    ]
+  },
+  "news": {
+    "title": "Latest News",
+    "subtitle": "Project milestones, partnerships, and in-market pilots.",
+    "viewAllLabel": "View all articles",
+    "tag": "News",
+    "items": [
+      {
+        "id": "partnership",
+        "title": "Exclusive Partnership Between Green Desert Establishment and La Chanvriere",
+        "description": "Green Desert announces strategic partnership with La Chanvriere to advance sustainable agricultural practices in the Middle East region.",
+        "image": "/news/partnership.jpg",
+        "date": "2024-01-15",
+        "link": "/blog/la-chanvriere-partnership"
+      },
+      {
+        "id": "office",
+        "title": "New Office Opening and Expansion Plans",
+        "description": "Green Desert opens new headquarters in Riyadh as part of expansion strategy to serve growing demand for environmental solutions.",
+        "image": "/news/office.jpg",
+        "date": "2023-12-10",
+        "link": "/blog/riyadh-office-opening"
+      },
+      {
+        "id": "hempcrete-basics",
+        "title": "Sustainable Building with Hempcrete: Basics and Benefits",
+        "description": "How hempcrete unlocks low-carbon construction across Saudi Arabia's giga projects.",
+        "image": "/hemp_hurds_mulch-443x300.png",
+        "date": "2024-10-20",
+        "link": "/blog/hempcrete-basics-benefits"
+      }
+    ]
+  }
+}

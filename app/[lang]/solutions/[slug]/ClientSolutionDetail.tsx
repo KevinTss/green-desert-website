@@ -28,7 +28,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
     <main className={cn(isRTL ? "rtl" : "ltr")} dir={isRTL ? "rtl" : "ltr"} lang={language}>
       <SectionSolutionDetailHero solution={solution} />
       <div className="pt-[5%]">
-        <MiniNavbar sections={[
+        {/* <MiniNavbar sections={[
           { id: "overview", key: "mini.solution.overview" },
           { id: "showcase", key: "mini.solution.showcase" },
           { id: "approach", key: "mini.solution.approach" },
@@ -36,7 +36,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
           { id: "features", key: "mini.solution.features" },
           { id: "products", key: "mini.solution.products" },
           { id: "partners", key: "mini.solution.partners" },
-        ]} />
+        ]} /> */}
         <SectionSolutionDetailIntro solution={solution} />
         <SectionSolutionDetailShowcase solution={solution} />
         <SectionSolutionDetailContent solution={solution} />

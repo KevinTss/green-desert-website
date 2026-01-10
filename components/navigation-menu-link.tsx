@@ -33,7 +33,6 @@ const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'e
 }
 
 export function NavigationMenuLink({ item, variant = "light", onOpenChange }: NavigationMenuLinkProps) {
-  console.log(`Item: ${item.label}`, item)
   const { t, isRTL, languageRoute } = useLanguage()
   const isTouchDevice = useIsTouchDevice()
   const pathname = usePathname() || "/"

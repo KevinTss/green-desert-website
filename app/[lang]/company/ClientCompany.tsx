@@ -28,7 +28,7 @@ export function ClientCompany() {
       <SectionCompanyHero />
 
       <div className="pt-[5%]">
-        <MiniNavbar sections={COMPANY_NAV_SECTIONS} />
+        {/* <MiniNavbar sections={COMPANY_NAV_SECTIONS} /> */}
         <SectionCompanyStory />
         <SectionCompanyVision />
         <SectionCompanyMission />

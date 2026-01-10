@@ -20,7 +20,7 @@ export function ClientProductHurds() {
     <main className={`${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'} lang={language}>
       <PageHero title={t('product.hurds.title')} badge={t('product.hurds.badge')} />
       <div>
-        <MiniNavbar sections={[...sections]} />
+        {/* <MiniNavbar sections={[...sections]} /> */}
 
         {/* Overview with large cover image */}
         <Section id='overview' className="mt-10 min-h-[80vh] w-full flex items-center bg-gray-50">
