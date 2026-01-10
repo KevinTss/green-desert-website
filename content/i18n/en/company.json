@@ -1,0 +1,205 @@
+{
+  "miniNav": [
+    { "id": "story", "label": "Story" },
+    { "id": "vision", "label": "Vision" },
+    { "id": "mission", "label": "Mission" },
+    { "id": "values", "label": "Values" },
+    { "id": "team", "label": "Team" },
+    { "id": "leadership", "label": "Leadership" }
+  ],
+  "hero": {
+    "badge": "Company",
+    "title": "About Green Desert",
+    "intro": "Green Desert is a Saudi Arabian biotechnology startup founded in January 2020. We address the region's most pressing environmental challenges through innovative, sustainable solutions rooted in Cannabis sativa (industrial hemp), aligned with Saudi Arabia's Vision 2030.",
+    "image": "/fiber-cover.jpg"
+  },
+  "story": {
+    "badge": "Company",
+    "columns": [
+      "Green Desert became Saudi Arabia's first licensed industrial hemp solutions company, born to support giga-project ambitions with regenerative materials, local supply chains, and Vision 2030 compliance.",
+      "Green Desert is a Saudi Arabian biotechnology startup founded in January 2020. We address the region's most pressing environmental challenges through innovative, sustainable solutions rooted in industrial hemp.",
+      "We combine science, policy, and industry execution to prove hemp's role in the region's sustainability transition."
+    ]
+  },
+  "vision": {
+    "badge": "Vision",
+    "title": "Committed roadmap to 2030",
+    "body": "Our initiatives contribute to quality-of-life, environmental protection, and economic diversification goals. We collaborate with government stakeholders and industry partners to deploy scalable solutions that deliver tangible impact across Saudi cities and regions.",
+    "phases": [
+      {
+        "id": "2020",
+        "year": "2020",
+        "title": "2020 • License secured",
+        "body": "Green Desert founded and awarded the first Saudi license for industrial hemp research and deployment.",
+        "details": [
+          "MEWA and SFDA approvals formalized the national industrial hemp research framework.",
+          "Internal governance, lab partnerships, and compliance reporting protocols were established."
+        ],
+        "image": "/hurd-cover.jpg"
+      },
+      {
+        "id": "2021",
+        "year": "2021",
+        "title": "2021 • Pilot validation",
+        "body": "Completed controlled-environment trials demonstrating 7.8 tonnes of CO₂ sequestration per hectare.",
+        "details": [],
+        "image": "/hurd-cover.jpg"
+      },
+      {
+        "id": "2022",
+        "year": "2022",
+        "title": "2022 • Mega-project pilots",
+        "body": "Signed proof-of-concept deployments with NEOM-aligned and Red Sea corridor developments.",
+        "details": [
+          "Demonstrated structural and environmental KPIs within giga project testbeds across desert climates.",
+          "Codified HSSE and construction SOPs with multidisciplinary engineering and materials teams."
+        ],
+        "image": "/hurd-cover.jpg"
+      },
+      {
+        "id": "2024",
+        "year": "2024",
+        "title": "2024 • GCC expansion",
+        "body": "Launched regional partnerships across GCC and initiated African feasibility studies with public-sector partners.",
+        "details": [
+          "Signed GCC MoUs covering logistics, procurement, and bilingual deployment support.",
+          "Rolled out digital carbon-accounting dashboards and ministerial reporting kits."
+        ],
+        "image": "/hurd-cover.jpg"
+      },
+      {
+        "id": "2026",
+        "year": "2026",
+        "title": "2026 • Public-private delivery",
+        "body": "Commissioning carbon-negative material packages for municipal housing, transport, and utilities programs in Riyadh and the Eastern Province.",
+        "details": [
+          "Delivered turnkey material suites for municipal housing, transit, and utilities mandates.",
+          "Scaled training hubs so public-private delivery teams share unified playbooks."
+        ],
+        "image": "/hurd-cover.jpg"
+      },
+      {
+        "id": "2028",
+        "year": "2028",
+        "title": "2028 • Export-ready processing",
+        "body": "Bringing an integrated agro-industrial campus online to supply certified hemp inputs across MENA and Africa with audited traceability.",
+        "details": [
+          "Commissioned an integrated agro-industrial campus with accredited QA and traceability labs.",
+          "Activated bonded logistics corridors to serve MENA and African partners with certified biomaterials."
+        ],
+        "image": "/hurd-cover.jpg"
+      },
+      {
+        "id": "2030",
+        "year": "2030",
+        "title": "2030 • Vision 2030 outcomes",
+        "body": "Fully embedded hemp circularity across giga projects, delivering local biomaterials, verified carbon credits, and future-proof jobs for the Green Saudi vision.",
+        "details": [
+          "Achieved full hemp circularity across giga assets with independently verified carbon offsets.",
+          "Graduated Saudi suppliers and SMEs into the Green Saudi marketplace with long-term jobs."
+        ],
+        "image": "/hurd-cover.jpg"
+      }
+    ]
+  },
+  "mission": {
+    "title": "Our Mission",
+    "body": "We aim to break the vicious cycle of desertification, water scarcity, and soil degradation with practical, scalable solutions. Our biotechnology-driven products and services reduce waste, turn byproducts into value, and power a greener circular economy across the Kingdom.",
+    "subtitle": "We combine science, policy, and industry execution to prove hemp's role in the region's sustainability transition."
+  },
+  "values": {
+    "title": "Our values",
+    "subtitle": "These operating principles guide how we collaborate with government, private sector innovators, and communities across the region.",
+    "items": [
+      {
+        "id": "pioneering",
+        "title": "Regulatory pioneers",
+        "body": "Licensed to deploy hemp-based systems under Saudi environmental frameworks while shaping new guidelines alongside ministries and giga-project owners.",
+        "icon": "scale"
+      },
+      {
+        "id": "science",
+        "title": "Science-led impact",
+        "body": "Data, field trials, and lifecycle analysis prove measurable CO₂ sequestration, water efficiency, and material performance for our partners.",
+        "icon": "microscope"
+      },
+      {
+        "id": "collaboration",
+        "title": "Partnership-first delivery",
+        "body": "We co-design solutions with developers, engineers, and financiers to de-risk adoption and accelerate scale.",
+        "icon": "handshake"
+      }
+    ]
+  },
+  "team": {
+    "title": "Our team",
+    "subtitle": "A founder-led, multidisciplinary group translating hemp innovation into ready-to-build solutions.",
+    "members": [
+      {
+        "id": "abdulhadi",
+        "name": "Abdulhadi Alamer",
+        "role": "Chairman & Founder",
+        "bio": "Leads government relations, investor engagement, and the strategic rollout of hemp industrialization across Saudi giga projects.",
+        "image": "/hadi.jpg",
+        "email": "info@greendesert.sa",
+        "linkedin": "https://www.linkedin.com/in/hadialamer/"
+      },
+      {
+        "id": "lucas",
+        "name": "Lucas Dietrich",
+        "role": "Co-founder",
+        "bio": "Drives commercialization, partnerships, and market expansion across GCC and global industrial partners.",
+        "image": "/lucas.jpg",
+        "email": "info@greendesert.sa",
+        "linkedin": "https://www.linkedin.com/in/lucasdietrich/"
+      }
+    ]
+  },
+  "leadership": {
+    "title": "Leadership & governance",
+    "subtitle": "Advisors and board members ensure regulatory, financial, and technical oversight while deepening government partnerships.",
+    "committee": {
+      "title": "Board committees focus on",
+      "items": [
+        {
+          "id": "regulatory",
+          "title": "Regulatory alignment",
+          "body": "Regulatory alignment with Saudi ministries and GACA/MAWANI compliance."
+        },
+        {
+          "id": "publicPartners",
+          "title": "Strategic partnerships",
+          "body": "Strategic partnerships with giga projects, NEOM-scale developments, and municipal authorities."
+        },
+        {
+          "id": "standards",
+          "title": "Standards and certification",
+          "body": "Standards and certification pathways for bio-based construction materials."
+        }
+      ]
+    },
+    "members": [
+      {
+        "id": "chair",
+        "name": "Abdulhadi Alamer",
+        "role": "Chairman & Founder",
+        "bio": "Leads government relations, investor engagement, and the strategic rollout of hemp industrialization across Saudi giga projects.",
+        "image": "/hadi.jpg"
+      },
+      {
+        "id": "policy",
+        "name": "Dr. Laila Al Harbi",
+        "role": "Government Affairs Advisor",
+        "bio": "Former advisor at the Ministry of Environment, Water and Agriculture supporting circular economy policies and sustainable farming programs.",
+        "image": "/hadi.jpg"
+      },
+      {
+        "id": "partnerships",
+        "name": "Eng. Faisal Al Qahtani",
+        "role": "Infrastructure Partnerships Lead",
+        "bio": "Civil engineer with megaproject experience at The Red Sea and Qiddiya, guiding technical integration and contractor onboarding.",
+        "image": "/hadi.jpg"
+      }
+    ]
+  }
+}

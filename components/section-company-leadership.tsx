@@ -1,100 +1,78 @@
 import Image from "next/image"
 
-import { useLanguage } from "@/components/language-provider"
+import { useContent } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
 import { Badge, Heading } from "@/components/typography"
 
-interface PersonItem {
-  key: string
-  nameKey: string
-  roleKey: string
-  bioKey: string
-  image?: string
-}
-
-const leadershipMembers: PersonItem[] = [
-  {
-    key: "chair",
-    nameKey: "company.leadership.members.chair.name",
-    roleKey: "company.leadership.members.chair.role",
-    bioKey: "company.leadership.members.chair.bio",
-    image: "/hadi.jpg",
-  },
-  {
-    key: "policy",
-    nameKey: "company.leadership.members.policy.name",
-    roleKey: "company.leadership.members.policy.role",
-    bioKey: "company.leadership.members.policy.bio",
-  },
-  {
-    key: "partnerships",
-    nameKey: "company.leadership.members.partnerships.name",
-    roleKey: "company.leadership.members.partnerships.role",
-    bioKey: "company.leadership.members.partnerships.bio",
-  },
-]
-
-const committeeItems = [
-  "company.leadership.committee.items.regulatory",
-  "company.leadership.committee.items.publicPartners",
-  "company.leadership.committee.items.standards",
-]
-
 export function SectionCompanyLeadership() {
-  const { t } = useLanguage()
+  const { company } = useContent()
+  const leadership = company?.leadership
+
+  if (!leadership) return null
 
   return (
     <Section id="leadership" className="bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="mb-8 max-w-2xl">
-          <Badge variant="emerald" size="md">
-            {t("company.leadership.title")}
-          </Badge>
-          <Heading size="2xl" className="mt-3">
-            {t("company.leadership.subtitle")}
-          </Heading>
+          {leadership.title && (
+            <Badge variant="emerald" size="md">
+              {leadership.title}
+            </Badge>
+          )}
+          {leadership.subtitle && (
+            <Heading size="2xl" className="mt-3">
+              {leadership.subtitle}
+            </Heading>
+          )}
         </div>
         <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
           <div className="grid gap-6 md:grid-cols-2">
-            {leadershipMembers.map((leader) => (
-              <div key={leader.key} className="flex flex-col gap-4 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-                <div className="flex items-center gap-4">
-                  {leader.image ? (
-                    <Image
-                      src={getAssetPath(leader.image)}
-                      alt={t(leader.nameKey)}
+          {leadership.members?.map((leader) => (
+            <div key={leader.id} className="flex flex-col gap-4 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-4">
+                {leader.image ? (
+                  <Image
+                    src={getAssetPath(leader.image)}
+                      alt={leader.name}
                       width={72}
                       height={72}
                       className="h-16 w-16 rounded-full object-cover shadow"
                     />
                   ) : (
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-sky-500 text-lg font-semibold text-white">
-                      {t(leader.nameKey).substring(0, 2)}
+                      {leader.name?.substring(0, 2)}
                     </div>
                   )}
                   <div>
-                    <h4 className="text-lg font-semibold text-slate-900">{t(leader.nameKey)}</h4>
-                    <p className="text-xs uppercase tracking-[0.25em] text-emerald-500">{t(leader.roleKey)}</p>
+                    <h4 className="text-lg font-semibold text-slate-900">{leader.name}</h4>
+                    {leader.role && <p className="text-xs uppercase tracking-[0.25em] text-emerald-500">{leader.role}</p>}
                   </div>
                 </div>
-                <p className="text-sm leading-relaxed text-slate-600">{t(leader.bioKey)}</p>
+                {leader.bio && <p className="text-sm leading-relaxed text-slate-600">{leader.bio}</p>}
               </div>
             ))}
           </div>
-          <div className="rounded-2xl border border-emerald-100 bg-white p-6">
-            <Badge variant="emerald" size="lg">
-              {t("company.leadership.committee.title")}
-            </Badge>
-            <ul className="mt-4 space-y-3">
-              {committeeItems.map((itemKey) => (
-                <li key={itemKey} className="flex items-start gap-3 text-sm text-slate-600">
-                  <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
-                  <span>{t(itemKey)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {leadership.committee?.items?.length ? (
+            <div className="rounded-2xl border border-emerald-100 bg-white p-6">
+              {leadership.committee.title && (
+                <Badge variant="emerald" size="lg">
+                  {leadership.committee.title}
+                </Badge>
+              )}
+              <ul className="mt-4 space-y-3">
+                {leadership.committee.items.map((item) => (
+                  <li key={item.id} className="flex items-start gap-3 text-sm text-slate-600">
+                    <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
+                    <span>
+                      <strong className="block text-slate-800">{item.title}</strong>
+                      <span className="text-slate-600">{item.body}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </div>
     </Section>

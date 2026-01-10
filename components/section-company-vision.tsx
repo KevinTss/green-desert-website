@@ -1,78 +1,19 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
-import { useLanguage } from "@/components/language-provider"
+import { useContent, useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import { cn } from "@/lib/utils"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
 
-const VISION_PHASES = [
-  {
-    key: "2020",
-    titleKey: "company.timeline.milestones.2020.title",
-    bodyKey: "company.timeline.milestones.2020.body",
-    detailKeys: [
-      "company.timeline.milestones.2020.details.0",
-      "company.timeline.milestones.2020.details.1",
-    ],
-    image: "/fiber-cover.jpg",
-  },
-  {
-    key: "2022",
-    titleKey: "company.timeline.milestones.2022.title",
-    bodyKey: "company.timeline.milestones.2022.body",
-    detailKeys: [
-      "company.timeline.milestones.2022.details.0",
-      "company.timeline.milestones.2022.details.1",
-    ],
-    image: "/hurd-cover.jpg",
-  },
-  {
-    key: "2024",
-    titleKey: "company.timeline.milestones.2024.title",
-    bodyKey: "company.timeline.milestones.2024.body",
-    detailKeys: [
-      "company.timeline.milestones.2024.details.0",
-      "company.timeline.milestones.2024.details.1",
-    ],
-    image: "/hemp-blocks-01-443x300.jpg",
-  },
-  {
-    key: "2026",
-    titleKey: "company.timeline.milestones.2026.title",
-    bodyKey: "company.timeline.milestones.2026.body",
-    detailKeys: [
-      "company.timeline.milestones.2026.details.0",
-      "company.timeline.milestones.2026.details.1",
-    ],
-    image: "/bast-fiber.png",
-  },
-  {
-    key: "2028",
-    titleKey: "company.timeline.milestones.2028.title",
-    bodyKey: "company.timeline.milestones.2028.body",
-    detailKeys: [
-      "company.timeline.milestones.2028.details.0",
-      "company.timeline.milestones.2028.details.1",
-    ],
-    image: "/hurds.png",
-  },
-  {
-    key: "2030",
-    titleKey: "company.timeline.milestones.2030.title",
-    bodyKey: "company.timeline.milestones.2030.body",
-    detailKeys: [
-      "company.timeline.milestones.2030.details.0",
-      "company.timeline.milestones.2030.details.1",
-    ],
-    image: "/seeds-cover.jpg",
-  },
-] as const
-
 export function SectionCompanyVision() {
-  const { t, isRTL } = useLanguage()
-  const [activePhaseKey, setActivePhaseKey] = useState<string>(VISION_PHASES[0].key)
+  const { isRTL } = useLanguage()
+  const { company } = useContent()
+  const vision = company?.vision
+  const phases = vision?.phases ?? []
+
+  const [activePhaseKey, setActivePhaseKey] = useState<string>(phases[0]?.id ?? "")
   const stickyRef = useRef<HTMLDivElement | null>(null)
   const entryRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -85,7 +26,7 @@ export function SectionCompanyVision() {
     isRTL ? "-right-[7px]" : "-left-[7px]"
   )
   const entryPadding = isRTL ? "pr-8 text-right" : "pl-8"
-  const activePhase = VISION_PHASES.find((phase) => phase.key === activePhaseKey) ?? VISION_PHASES[0]
+  const activePhase = phases.find((phase) => phase.id === activePhaseKey) ?? phases[0]
 
   useEffect(() => {
     let frame: number | null = null
@@ -97,14 +38,14 @@ export function SectionCompanyVision() {
         let closestKey = activePhaseKey
         let smallestDelta = Number.POSITIVE_INFINITY
         entryRefs.current.forEach((el, index) => {
-          if (!el) return
+          if (!el || !phases[index]) return
           const delta = Math.abs(el.getBoundingClientRect().top - stickyTop)
           if (delta < smallestDelta) {
             smallestDelta = delta
-            closestKey = VISION_PHASES[index].key
+            closestKey = phases[index].id
           }
         })
-        if (closestKey !== activePhaseKey) {
+        if (closestKey && closestKey !== activePhaseKey) {
           setActivePhaseKey(closestKey)
         }
       })
@@ -117,18 +58,26 @@ export function SectionCompanyVision() {
       window.removeEventListener("scroll", handleScroll)
       window.removeEventListener("resize", handleScroll)
     }
-  }, [activePhaseKey])
+  }, [activePhaseKey, phases])
+
+  useEffect(() => {
+    if (phases.length && !activePhaseKey) {
+      setActivePhaseKey(phases[0].id)
+    }
+  }, [phases, activePhaseKey])
+
+  if (!vision || !phases.length) return null
 
   return (
     <Section id="vision" className="bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
-          <Badge>{t("company.vision.badgeLabel")}</Badge>
+          {vision.badge && <Badge>{vision.badge}</Badge>}
           <Heading size="lg" className="mt-4">
-            {t("company.vision.roadmapTitle")}
+            {vision.title}
           </Heading>
           <TypographyText size="lg" className="mt-6">
-            {t("company.vision.body")}
+            {vision.body}
           </TypographyText>
         </div>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.35fr_0.65fr]">
@@ -142,7 +91,7 @@ export function SectionCompanyVision() {
                   key={activePhaseKey}
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url(${getAssetPath(activePhase.image)})`,
+                    backgroundImage: `url(${getAssetPath(activePhase?.image ?? "/fiber-cover.jpg")})`,
                   }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -162,20 +111,22 @@ export function SectionCompanyVision() {
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
                 <div className="rounded-2xl bg-white/10 p-5 backdrop-blur-sm">
-                  <Badge variant="emerald-light" className="text-emerald-200">
-                    {t(activePhase.titleKey)}
-                  </Badge>
+                  {activePhase?.title && (
+                    <Badge variant="emerald-light" className="text-emerald-200">
+                      {activePhase.title}
+                    </Badge>
+                  )}
                   <TypographyText className="mt-3 text-sm text-white/90">
-                    {t(activePhase.bodyKey)}
+                    {activePhase?.body}
                   </TypographyText>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
           <div className={axisClass}>
-            {VISION_PHASES.map((phase, index) => (
+            {phases.map((phase, index) => (
               <div
-                key={phase.key}
+                key={phase.id}
                 className={cn("relative", entryPadding)}
                 ref={(el) => { entryRefs.current[index] = el }}
                 style={{ minHeight: "400px" }}
@@ -184,20 +135,22 @@ export function SectionCompanyVision() {
                 <div
                   className={cn(
                     "rounded-3xl border bg-white p-8 shadow-sm transition min-h-[320px] flex flex-col",
-                    activePhaseKey === phase.key ? "border-emerald-300 shadow-lg" : "border-transparent opacity-80"
+                    activePhaseKey === phase.id ? "border-emerald-300 shadow-lg" : "border-transparent opacity-80"
                   )}
                 >
-                  <Badge variant="emerald" size="sm">
-                    {t(phase.titleKey)}
-                  </Badge>
+                  {phase.title && (
+                    <Badge variant="emerald" size="sm">
+                      {phase.title}
+                    </Badge>
+                  )}
                   <TypographyText className="mt-4">
-                    {t(phase.bodyKey)}
+                    {phase.body}
                   </TypographyText>
                   <ul className="mt-6 space-y-2 text-sm text-slate-600">
-                    {phase.detailKeys.map((detailKey) => (
-                      <li key={detailKey} className="flex gap-2">
+                    {phase.details?.map((detail, idx) => (
+                      <li key={`${phase.id}-detail-${idx}`} className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                        <span>{t(detailKey)}</span>
+                        <span>{detail}</span>
                       </li>
                     ))}
                   </ul>

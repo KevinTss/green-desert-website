@@ -2,23 +2,25 @@
 
 import Image from "next/image"
 
-import { useLanguage } from "@/components/language-provider"
+import { useContent } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
 import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 
-const COMPANY_HERO_IMAGE = "/fiber-cover.jpg"
-
 export const SectionCompanyHero = () => {
-  const { t } = useLanguage()
+  const { company } = useContent()
+  const hero = company?.hero
 
+  if (!hero) return null
+
+  const imageSrc = hero.image ? getAssetPath(hero.image) : getAssetPath("/fiber-cover.jpg")
   return (
     <Section disablePadding className="relative min-h-[95vh]" data-hero="true">
       <div className="relative flex min-h-[95vh] w-full items-center overflow-hidden bg-slate-900">
         <div className="absolute inset-0">
           <Image
-            src={getAssetPath(COMPANY_HERO_IMAGE)}
-            alt={t("company.title")}
+            src={imageSrc}
+            alt={hero.title ?? ""}
             fill
             priority
             className="object-cover object-center opacity-80"
@@ -27,15 +29,21 @@ export const SectionCompanyHero = () => {
         </div>
 
         <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
-          <Badge variant="emerald-light">
-            {t("company.badge")}
-          </Badge>
-          <Heading as="h1" size="3xl" variant="white" className="mt-4">
-            {t("company.title")}
-          </Heading>
-          <TypographyText variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
-            {t("company.intro")}
-          </TypographyText>
+          {hero.badge && (
+            <Badge variant="emerald-light">
+              {hero.badge}
+            </Badge>
+          )}
+          {hero.title && (
+            <Heading as="h1" size="3xl" variant="white" className="mt-4">
+              {hero.title}
+            </Heading>
+          )}
+          {hero.intro && (
+            <TypographyText variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
+              {hero.intro}
+            </TypographyText>
+          )}
         </div>
       </div>
     </Section>
