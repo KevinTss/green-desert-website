@@ -5,55 +5,14 @@ import Image from "next/image"
 
 import { useLanguage } from "@/components/language-provider"
 import { MobileMenu } from "@/components/mobile-menu"
-import { NavigationMenuLink, SubMenuItem, NavigationMenuLinkProps } from "./navigation-menu-link"
+import { NavigationMenuLink } from "./navigation-menu-link"
 import { useIsMobile } from "@/hooks/use-mobile"
 import Link from "next/link"
 import { getAssetPath } from "@/lib/assets"
 import { cn } from "@/lib/utils"
 import { LanguageDropdown } from "@/components/language-dropdown"
-import { SOLUTION_SECTORS } from "@/lib/solutions"
 import { usePathname } from "next/navigation"
-
-const aboutMenuLead: NavigationMenuLinkProps['subMenuLead'] = {
-  lead: "nav.about.menu.body",
-  cta: "nav.about.menu.cta",
-  ctaHref: "/company",
-}
-
-const aboutMenuItems: SubMenuItem[] = [
-  {
-    title: "nav.about.story",
-    href: "/company#story",
-    description: "nav.about.story.description",
-  },
-  {
-    title: "nav.about.vision",
-    href: "/company#vision",
-    description: "nav.about.vision.description",
-  },
-  {
-    title: "nav.about.leadership",
-    href: "/company#leadership",
-    description: "nav.about.leadership.description",
-  },
-  {
-    title: "nav.about.timeline",
-    href: "/company#timeline",
-    description: "nav.about.timeline.description",
-  },
-]
-
-const solutionsMenuLead: NavigationMenuLinkProps['subMenuLead'] = {
-  lead: "nav.solutions.menu.body",
-  cta: "nav.solutions.menu.cta",
-  ctaHref: "/solutions",
-}
-
-const solutionsMenuItems: SubMenuItem[] = SOLUTION_SECTORS.map((sector) => ({
-  title: sector.titleKey,
-  href: `/solutions/${sector.slug}`,
-  description: sector.taglineKey,
-}))
+import headerI18m from '@/content/i18n/en/header.json'
 
 export function Header() {
   const [showHeader, setShowHeader] = useState(true)
@@ -159,6 +118,8 @@ export function Header() {
       ? "bg-slate-950/90 text-white shadow-[0_20px_45px_rgba(2,6,23,0.55)] backdrop-blur"
       : "bg-white/95 text-slate-900 shadow-sm backdrop-blur"
 
+  const navigationItems = t('header.nav') as typeof headerI18m.nav
+
   return (
     <header
       ref={headerRef}
@@ -183,27 +144,14 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
-            <NavigationMenuLink
-              label="nav.about"
-              subMenuItems={aboutMenuItems}
-              subMenuLead={aboutMenuLead}
-              variant={navVariant}
-              onOpenChange={handleMenuToggle("nav.about")}
-            />
-            <NavigationMenuLink
-              label="nav.solutions"
-              subMenuItems={solutionsMenuItems}
-              subMenuLead={solutionsMenuLead}
-              variant={navVariant}
-              onOpenChange={handleMenuToggle("nav.solutions")}
-            />
-            {/* <NavigationMenuLink label="nav.services" /> */}
-            <NavigationMenuLink
-              label="nav.blog"
-              subMenuItems={[]}
-              variant={navVariant}
-              onOpenChange={handleMenuToggle("nav.blog")}
-            />
+            {navigationItems.map((navItem) => (
+              <NavigationMenuLink
+                key={navItem.label}
+                item={navItem}
+                variant={navVariant}
+                onOpenChange={handleMenuToggle(navItem.label)}
+              />
+            ))}
           </nav>
         </div>
 
@@ -227,8 +175,7 @@ export function Header() {
           )}
           {isMobile && (
             <MobileMenu
-              aboutMenuItems={aboutMenuItems}
-              solutionsMenuItems={solutionsMenuItems}
+              navigationItems={navigationItems}
               variant={navVariant}
             />
           )}

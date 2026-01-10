@@ -9,22 +9,10 @@ import { useIsTouchDevice } from "@/hooks/use-touch-device"
 import { usePathname } from "next/navigation"
 import { ChevronRight } from "lucide-react"
 import { Text as TypographyText } from "./typography"
-
-export interface SubMenuItem {
-  title: string
-  href: string
-  description: string
-  image?: string
-}
+import headerI18m from '@/content/i18n/en/header.json'
 
 export interface NavigationMenuLinkProps {
-  label: string
-  subMenuItems: SubMenuItem[]
-  subMenuLead?: {
-    lead: string
-    cta: string
-    ctaHref: string
-  }
+  item: typeof headerI18m['nav'][0]
   variant?: "light" | "dark"
   onOpenChange: (open: boolean) => void
 }
@@ -44,7 +32,8 @@ const getNavLink = ({ label, languageRoute }: { label: string, languageRoute: 'e
   }
 }
 
-export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant = "light", onOpenChange }: NavigationMenuLinkProps) {
+export function NavigationMenuLink({ item, variant = "light", onOpenChange }: NavigationMenuLinkProps) {
+  console.log(`Item: ${item.label}`, item)
   const { t, isRTL, languageRoute } = useLanguage()
   const isTouchDevice = useIsTouchDevice()
   const pathname = usePathname() || "/"
@@ -100,17 +89,17 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
     ? "bg-white/20 text-white"
     : "bg-gray-200 text-gray-900"
 
-  if (!subMenuItems.length) {
-    const isActive = routeActiveForLabel(label)
+  if (!!item && !item.subItems) {
+    const isActive = routeActiveForLabel(item.label)
     return (
       <Link
-        href={getNavLink({ label, languageRoute })}
+        href={getNavLink({ label: item.label, languageRoute })}
         className={cn(
           baseLinkClasses,
           isActive && activeLinkClasses
         )}
       >
-        {t(label)}
+        {item.label}
       </Link>
     )
   }
@@ -144,14 +133,14 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
         onPointerLeave={handleLeave}
       >
         <Link
-          href={getNavLink({ label, languageRoute })}
+          href={getNavLink({ label: item.label, languageRoute })}
           className={cn(
             "flex items-center gap-2 cursor-pointer outline-none relative",
             baseLinkClasses,
             open && activeLinkClasses
           )}
         >
-          {t(label)}
+          {item.label}
         </Link>
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
@@ -172,38 +161,40 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
           >
             <div className="flex flex-col items-start gap-8 pr-10 sm:max-w-48 md:max-w-72 max-w-96 shrink-0">
               <TypographyText className={cn("text-base leading-normal", dropdownTextClasses)}>
-                {subMenuLead && t(subMenuLead.lead)}
+                {item.lead && t(item.lead.label)}
               </TypographyText>
-              {subMenuLead && (
+              {item.lead && (
                 <Link
                   href={
-                    subMenuLead.ctaHref.startsWith("/")
-                      ? `/${languageRoute}${subMenuLead.ctaHref}`
-                      : subMenuLead.ctaHref
+                    item.lead.ctaHref.startsWith("/")
+                      ? `/${languageRoute}${item.lead.ctaHref}`
+                      : item.lead.ctaHref
                   }
                   className={dropdownCtaClasses}
                 >
-                  {t(subMenuLead.cta)}
+                  {t(item.lead.cta)}
                   <ChevronRight className={cn("w-4", chevronColor)} />
                 </Link>
               )}
             </div>
             <div className="grid flex-1 min-w-0 grid-cols-3 gap-5">
-              {subMenuItems.map((item) => {
-                const href = item.href.startsWith("/")
-                  ? `/${languageRoute}${item.href}`
-                  : item.href
+              {item.subItems.map((subItem) => {
+                const href = "href" in subItem
+                  ? subItem.href.startsWith("/")
+                    ? `/${languageRoute}${subItem.href}`
+                    : subItem?.href
+                  : "#"
                 return (
-                  <DropdownMenu.Item asChild key={item.title}>
+                  <DropdownMenu.Item asChild key={subItem.label}>
                     <a
                       href={href}
                       className="flex flex-col justify-between transition-colors duration-200 outline-none"
                     >
                       <span className={cn("text-base font-semibold", dropdownTextClasses)}>
-                        {t(item.title)}
+                        {t(subItem.label)}
                       </span>
                       <span className={cn("mt-1 text-[11px] leading-normal", dropdownMutedText)}>
-                        {t(item.description)}
+                        {t(subItem.description)}
                       </span>
                       <span
                         className={cn(
@@ -212,7 +203,7 @@ export function NavigationMenuLink({ label, subMenuItems, subMenuLead, variant =
                           isDarkVariant ? "hover:text-white" : "hover:text-gray-900"
                         )}
                       >
-                        {t("nav.menu.learnMore")}
+                        {t("labels.learnMore")}
                       </span>
                     </a>
                   </DropdownMenu.Item>

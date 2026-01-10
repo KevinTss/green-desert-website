@@ -13,23 +13,31 @@ import {
 } from "@/components/ui/sheet"
 import { clsx } from "clsx"
 import { useState } from "react"
-import { SubMenuItem } from "./navigation-menu-link"
 import { cn } from "@/lib/utils"
 import { Text as TypographyText } from "./typography"
+import headerContent from '@/content/i18n/en/header.json'
+
+type NavItem = (typeof headerContent)['nav'][number]
 
 interface MobileMenuProps {
-  aboutMenuItems?: SubMenuItem[]
-  solutionsMenuItems?: SubMenuItem[]
   variant?: "light" | "dark"
+  navigationItems?: NavItem[]
 }
 
 export function MobileMenu({
-  aboutMenuItems = [],
-  solutionsMenuItems = [],
-  variant = "light"
+  variant = "light",
+  navigationItems
 }: MobileMenuProps) {
   const { t, isRTL, language, languageRoute, setLanguage } = useLanguage()
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null)
+
+  const navItems = navigationItems ?? (t('header.nav') as NavItem[]) ?? []
+  const learnMoreLabel = t('labels.learnMore')
+
+  const formatHref = (href?: string) => {
+    if (!href) return undefined
+    return href.startsWith('/') ? `/${languageRoute}${href}` : href
+  }
 
 
   const toggleMenu = (menuName: string) => {
@@ -94,94 +102,90 @@ export function MobileMenu({
           <div className="flex flex-col flex-1">
             {/* Navigation Links */}
             <nav className="flex-1 px-6 py-8 space-y-2">
-              <a
-                href={`/${languageRoute}`}
-                className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
-              >
-                {t("nav.home")}
-              </a>
+              {navItems.map((item) => {
+                const hasSubItems = !!item.subItems?.length
+                const itemHref = formatHref(item.href) ?? '#'
+                const isExpanded = expandedMenu === item.label
 
-              {/* About Menu */}
-              <div className="rounded-lg overflow-hidden">
-                <button
-                  onClick={() => toggleMenu('about')}
-                  className={`w-full py-4 px-4 hover:bg-green-50 rounded-lg transition-all duration-200 ${expandedMenu === 'about' ? 'bg-green-50' : ''
-                    }`}
-                >
-                  <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <span className="text-xl font-medium text-gray-900 hover:text-green-600">
-                      {t("nav.about")}
-                    </span>
-                    {expandedMenu === 'about' ? (
-                      <ChevronUp className="w-5 h-5 text-gray-400" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                if (!hasSubItems) {
+                  return (
+                    <a
+                      key={item.label}
+                      href={itemHref}
+                      className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
+                    >
+                      {item.label}
+                    </a>
+                  )
+                }
+
+                return (
+                  <div className="rounded-lg overflow-hidden" key={item.label}>
+                    <button
+                      onClick={() => toggleMenu(item.label)}
+                      className={cn(
+                        "w-full py-4 px-4 hover:bg-green-50 rounded-lg transition-all duration-200",
+                        isExpanded && "bg-green-50"
+                      )}
+                    >
+                      <div className={cn("flex items-center justify-between", isRTL && "flex-row-reverse")}>
+                        <span className="text-xl font-medium text-gray-900 hover:text-green-600">
+                          {item.label}
+                        </span>
+                        {isExpanded ? (
+                          <ChevronUp className="w-5 h-5 text-gray-400" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-gray-400" />
+                        )}
+                      </div>
+                    </button>
+                    {isExpanded && (
+                      <div className={cn("mt-2 space-y-1", isRTL ? "mr-4" : "ml-4")}>
+                        {item.subItems?.map((subItem) => {
+                          const subHref = 'href' in subItem ? formatHref(subItem.href) : undefined
+
+                          if (subHref) {
+                            return (
+                              <a
+                                key={subItem.label}
+                                href={subHref}
+                                className="block rounded-lg px-4 py-3 transition-all duration-200 hover:bg-green-50 hover:text-green-600"
+                              >
+                                <span className="text-lg font-medium text-gray-900">{subItem.label}</span>
+                                {subItem.description && (
+                                  <TypographyText variant="muted" className="mt-1 text-sm">
+                                    {subItem.description}
+                                  </TypographyText>
+                                )}
+                                <TypographyText
+                                  variant="muted"
+                                  className="mt-2 text-xs font-semibold uppercase tracking-wide"
+                                >
+                                  {learnMoreLabel}
+                                </TypographyText>
+                              </a>
+                            )
+                          }
+
+                          return (
+                            <div
+                              key={subItem.label}
+                              className="block rounded-lg px-4 py-3 transition-all duration-200"
+                            >
+                              <span className="text-lg font-medium text-gray-900">{subItem.label}</span>
+                              {subItem.description && (
+                                <TypographyText variant="muted" className="mt-1 text-sm">
+                                  {subItem.description}
+                                </TypographyText>
+                              )}
+                            </div>
+                          )
+                        })}
+                      </div>
                     )}
                   </div>
-                </button>
-                {expandedMenu === 'about' && (
-                  <div className={`mt-2 ${isRTL ? 'mr-4' : 'ml-4'} space-y-1`}>
-                    {aboutMenuItems.map((item) => (
-                      <a
-                        key={item.title}
-                        href={item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href}
-                        className="block rounded-lg px-4 py-3 transition-all duration-200 hover:bg-green-50 hover:text-green-600"
-                      >
-                        <span className="text-lg font-medium text-gray-900">{t(item.title)}</span>
-                        <TypographyText variant="muted" className="mt-1 text-sm">{t(item.description)}</TypographyText>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Solutions Menu */}
-              <div className="rounded-lg overflow-hidden">
-                <button
-                  onClick={() => toggleMenu('solutions')}
-                  className={`w-full py-4 px-4 hover:bg-green-50 rounded-lg transition-all duration-200 ${expandedMenu === 'solutions' ? 'bg-green-50' : ''
-                    }`}
-                >
-                  <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
-                    <span className="text-xl font-medium text-gray-900 hover:text-green-600">
-                      {t("nav.solutions")}
-                    </span>
-                    {expandedMenu === 'solutions' ? (
-                      <ChevronUp className="w-5 h-5 text-gray-400" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-400" />
-                    )}
-                  </div>
-                </button>
-                {expandedMenu === 'solutions' && (
-                  <div className={`mt-2 ${isRTL ? 'mr-4' : 'ml-4'} space-y-1`}>
-                    {solutionsMenuItems.map((item) => (
-                      <a
-                        key={item.title}
-                        href={item.href.startsWith('/') ? `/${languageRoute}${item.href}` : item.href}
-                        className="block rounded-lg px-4 py-3 transition-all duration-200 hover:bg-green-50 hover:text-green-600"
-                      >
-                        <span className="text-lg font-medium text-gray-900">{t(item.title)}</span>
-                        <TypographyText variant="muted" className="mt-1 text-sm">{t(item.description)}</TypographyText>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* <a
-                href={`/${languageRoute}/services`}
-                className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
-              >
-                {t("nav.services")}
-              </a> */}
-
-              <a
-                href={`/${languageRoute}/blog`}
-                className="block py-4 px-4 text-xl font-medium text-gray-900 hover:bg-green-50 hover:text-green-600 rounded-lg transition-all duration-200"
-              >
-                {t("nav.blog")}
-              </a>
+                )
+              })}
             </nav>
 
             {/* Footer Actions */}

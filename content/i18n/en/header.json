@@ -1,0 +1,98 @@
+{
+  "nav": [
+    {
+      "label": "About",
+      "href": "/company",
+      "lead": {
+        "label": "Track the story, strategic mandate, and leadership teams powering our licensed hemp platform",
+        "cta": "Explore company",
+        "ctaHref": "/company"
+      },
+      "subItems": [
+        {
+          "href": "/company#story",
+          "label": "Story",
+          "description": "See how Saudi Arabia's first licensed hemp venture came to life"
+        },
+        {
+          "href": "/company#vision",
+          "label": "Vision & Mission",
+          "description": "Vision 2030 commitments guiding every Green Desert program"
+        },
+        {
+          "href": "/company#leadership",
+          "label": "Leadership",
+          "description": "Meet the executives aligning partnerships, policy, and delivery"
+        },
+        {
+          "href": "/company#timeline",
+          "label": "Timeline",
+          "description": "Milestones that moved us from pilot to national scale"
+        }
+      ]
+    },
+    {
+      "label": "Solutions",
+      "href": "/solutions",
+      "lead": {
+        "label": "Deploy hemp pathways tailored to giga projects, circular mandates, and private KPIs",
+        "cta": "View all solutions",
+        "ctaHref": "/solutions"
+      },
+      "subItems": [
+        {
+          "label": "Cultivation",
+          "description": "Regenerative carbon farming"
+        },
+        {
+          "label": "Construction",
+          "description": ""
+        },
+        {
+          "label": "Textile",
+          "description": ""
+        },
+        {
+          "label": "Energy & Biofuels",
+          "description": ""
+        },
+        {
+          "label": "Biocomposites",
+          "description": ""
+        },
+        {
+          "label": "Waste & Remediation",
+          "description": ""
+        },
+        {
+          "label": "Agriculture",
+          "description": ""
+        },
+        {
+          "label": "Animal Care",
+          "description": ""
+        },
+        {
+          "label": "Cosmetics & Personal Care",
+          "description": ""
+        },
+        {
+          "label": "Food & Beverage",
+          "description": ""
+        },
+        {
+          "label": "Pharmaceuticals",
+          "description": ""
+        },
+        {
+          "label": "Services",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "News",
+      "href": "/blog"
+    }
+  ]
+}
