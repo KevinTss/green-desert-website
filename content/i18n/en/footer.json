@@ -1,0 +1,73 @@
+{
+  "follow": {
+    "label": "Follow us",
+    "links": [
+      {
+        "label": "Twitter",
+        "href": "https://twitter.com/Greendesertsa",
+        "icon": "twitter"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/greendesertsa/",
+        "icon": "instagram"
+      },
+      {
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@GreenDesertsa",
+        "icon": "youtube"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/green-desert-sa/",
+        "icon": "linkedin"
+      }
+    ]
+  },
+  "logo": {
+    "src": "/logo_GD_black_EN.png",
+    "alt": "Green Desert Logo"
+  },
+  "description": "Saudi Arabia's licensed hemp platform delivering regenerative materials, carbon-smart agriculture, and circular solutions across construction, textiles, energy, and more.",
+  "newsletter": {
+    "title": "Get quarterly updates from Green Desert",
+    "description": "Project milestones, pilot results, and new solution pathways—no spam.",
+    "placeholder": "name@example.com",
+    "cta": "Subscribe",
+    "success": "Thank you for signing up.",
+    "error": "Please enter a valid email (e.g., \"name@example.com\")."
+  },
+  "sections": [
+    {
+      "title": "Company",
+      "links": [
+        { "label": "Story", "href": "/company#story" },
+        { "label": "Vision & Mission", "href": "/company#vision" },
+        { "label": "Leadership", "href": "/company#leadership" },
+        { "label": "Timeline", "href": "/company#timeline" }
+      ]
+    },
+    {
+      "title": "Solutions",
+      "links": [
+        { "label": "Cultivation", "href": "/solutions/cultivation" },
+        { "label": "Construction", "href": "/solutions/construction" },
+        { "label": "Textile", "href": "/solutions/textiles" },
+        { "label": "Energy & Biofuels", "href": "/solutions/energy" },
+        { "label": "View all solutions", "href": "/solutions" }
+      ]
+    },
+    {
+      "title": "Explore",
+      "links": [
+        { "label": "Services", "href": "/#services" },
+        { "label": "Partners", "href": "/#partners" },
+        { "label": "News", "href": "/blog" },
+        { "label": "Contact", "href": "/#contact" }
+      ]
+    }
+  ],
+  "legal": {
+    "copyright": "© 2024 Green Desert Co. All rights reserved."
+  }
+}

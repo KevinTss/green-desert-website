@@ -1,0 +1,73 @@
+{
+  "follow": {
+    "label": "تابعنا",
+    "links": [
+      {
+        "label": "تويتر",
+        "href": "https://twitter.com/Greendesertsa",
+        "icon": "twitter"
+      },
+      {
+        "label": "إنستغرام",
+        "href": "https://www.instagram.com/greendesertsa/",
+        "icon": "instagram"
+      },
+      {
+        "label": "يوتيوب",
+        "href": "https://www.youtube.com/@GreenDesertsa",
+        "icon": "youtube"
+      },
+      {
+        "label": "لينكدإن",
+        "href": "https://www.linkedin.com/company/green-desert-sa/",
+        "icon": "linkedin"
+      }
+    ]
+  },
+  "logo": {
+    "src": "/logo_GD_black_EN.png",
+    "alt": "شعار جرين ديزرت"
+  },
+  "description": "منصة القنب المرخّصة في المملكة العربية السعودية، تقدم مواد متجددة وزراعة ذكية للكربون وحلولًا دائرية في قطاعات الإنشاءات والمنسوجات والطاقة وغيرها.",
+  "newsletter": {
+    "title": "احصل على تحديثات ربع سنوية من جرين ديزرت",
+    "description": "مستجدات المشاريع ونتائج التجارب ومسارات حلول جديدة — بدون رسائل مزعجة.",
+    "placeholder": "name@example.com",
+    "cta": "اشترك",
+    "success": "شكرًا لاشتراكك.",
+    "error": "يرجى إدخال بريد إلكتروني صالح (مثل \"name@example.com\")."
+  },
+  "sections": [
+    {
+      "title": "الشركة",
+      "links": [
+        { "label": "القصة", "href": "/company#story" },
+        { "label": "الرؤية والرسالة", "href": "/company#vision" },
+        { "label": "القيادة", "href": "/company#leadership" },
+        { "label": "الجدول الزمني", "href": "/company#timeline" }
+      ]
+    },
+    {
+      "title": "الحلول",
+      "links": [
+        { "label": "الزراعة", "href": "/solutions/cultivation" },
+        { "label": "الإنشاءات", "href": "/solutions/construction" },
+        { "label": "المنسوجات", "href": "/solutions/textiles" },
+        { "label": "الطاقة والوقود الحيوي", "href": "/solutions/energy" },
+        { "label": "عرض جميع الحلول", "href": "/solutions" }
+      ]
+    },
+    {
+      "title": "استكشف",
+      "links": [
+        { "label": "الخدمات", "href": "/#services" },
+        { "label": "الشركاء", "href": "/#partners" },
+        { "label": "الأخبار", "href": "/blog" },
+        { "label": "تواصل معنا", "href": "/#contact" }
+      ]
+    }
+  ],
+  "legal": {
+    "copyright": "© 2024 شركة جرين ديزرت. جميع الحقوق محفوظة."
+  }
+}
