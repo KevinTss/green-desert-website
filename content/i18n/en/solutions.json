@@ -1,0 +1,129 @@
+{
+  "hero": {
+    "title": "Hemp-based solutions for every sustainability mandate",
+    "subtitle": "We align licensed hemp value chains with the KPIs that giga projects, regulators, and private industry must deliver.",
+    "image": "/hurd-cover.jpg"
+  },
+  "highlights": {
+    "badge": "Plant-based impact",
+    "body": "Choose a pathway to uncover business value, operational readiness, and the technical specs that move projects from pilot to scale.",
+    "stats": [
+      { "id": "projects", "label": "12 pilot deployments" },
+      { "id": "emissions", "label": "7.8 t CO₂e captured/ha" },
+      { "id": "partners", "label": "18 public-private partners" }
+    ]
+  },
+  "pathways": {
+    "title": "Sectors we empower",
+    "subtitle": "High-level impact first. Deep-dive specs when you're ready to commit.",
+    "sectors": [
+      {
+        "id": "cultivation",
+        "title": "Cultivation",
+        "tagline": "Regenerative carbon farming",
+        "summary": "Design hemp rotations that sequester carbon, rehabilitate soil, and unlock new income streams for growers.",
+        "image": "/seeds-cover.webp",
+        "video": null,
+        "href": "/solutions/cultivation"
+      },
+      {
+        "id": "construction",
+        "title": "Construction",
+        "tagline": "Hempcrete & envelope systems",
+        "summary": "Deliver low-carbon envelopes with mix designs, QA/QC protocols, and design-assist support for GCC climates.",
+        "video": "sliderV.mp4",
+        "image": "/hemp-blocks-01-443x300.webp",
+        "href": "/solutions/construction"
+      },
+      {
+        "id": "textiles",
+        "title": "Textile",
+        "tagline": "Premium natural fibres",
+        "summary": "Traceable hemp fibres for hospitality, healthcare, and premium textiles with finishing and testing support.",
+        "image": "/fiber-cover.webp",
+        "href": "/solutions/textiles"
+      },
+      {
+        "id": "energy",
+        "title": "Energy & biofuels",
+        "tagline": "Biomass-to-energy systems",
+        "summary": "Convert hemp biomass into clean fuels and CHP-ready pellets with emissions accounting and feedstock specs.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/energy"
+      },
+      {
+        "id": "biocomposites",
+        "title": "Biocomposites",
+        "tagline": "Lightweight, high-strength materials",
+        "summary": "Engineer hemp-based composites for automotive, aerospace, and packaging programs with tested mechanical properties. We supply fibre specs, resin pairings, and processing guidance to reduce risk during line trials.",
+        "video": "sliderV.mp4",
+        "image": null,
+        "href": "/solutions/biocomposites"
+      },
+      {
+        "id": "waste",
+        "title": "Waste & remediation",
+        "tagline": "Verified carbon removal",
+        "summary": "Quantify, verify, and monetise carbon sequestration from hemp projects with third-party validation and registry listings.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/waste"
+      },
+      {
+        "id": "agriculture",
+        "title": "Agriculture",
+        "tagline": "High-performance agritech",
+        "summary": "Supply inputs like hemp mats, mulches, and seeds that elevate productivity across controlled environments and open fields. We tailor genetics, substrates, and irrigation guidance to desert conditions and high-value crops.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/agriculture"
+      },
+      {
+        "id": "animalCare",
+        "title": "Animal care",
+        "tagline": "Comfort & nutrition",
+        "summary": "Clean, absorbent hemp inputs for livestock comfort, feed enrichment, and specialty animal health with full traceability. Programs include bedding specs, feed formulations, and waste-to-compost protocols.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/animal-care"
+      },
+      {
+        "id": "cosmetics",
+        "title": "Cosmetics & personal care",
+        "tagline": "Clean beauty actives",
+        "summary": "Develop CBD and non-CBD hemp actives for skincare, haircare, and spa applications with transparent sourcing. We provide COAs, stability data, and formulation guidance to shorten R&D cycles.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/cosmetics"
+      },
+      {
+        "id": "food",
+        "title": "Food & beverage",
+        "tagline": "Functional nutrition",
+        "summary": "Launch nutrient-dense hemp foods and beverages with clean supply assurance and sensory support. We help brands with formulation, shelf-life testing, and regulatory pathways to move from pilot to retail quickly.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/food"
+      },
+      {
+        "id": "pharmaceutical",
+        "title": "Pharmaceuticals & wellness",
+        "tagline": "Clinical-grade cannabinoids",
+        "summary": "Produce GMP-ready CBD, minor cannabinoids, and pharmaceutical flower for therapeutic programs with validated quality systems. We handle genetics, cultivation SOPs, and documentation to satisfy regulators and clinical partners.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/pharmaceutical"
+      },
+      {
+        "id": "services",
+        "title": "Services",
+        "tagline": "Design, build, and scale",
+        "summary": "Advisory, licensing, and supply-chain services that de-risk hemp adoption across any sector. We align strategy, engineering, and operations so teams can launch projects with confidence.",
+        "image": "/diagram-1.webp",
+        "href": "/solutions/services"
+      }
+    ]
+  },
+  "workWithUs": {
+    "label": "Partner with our team",
+    "body": "Tell us about your project and we'll design a hemp solution mapped to your KPIs.",
+    "cta": {
+      "label": "Work with us",
+      "href": "mailto:info@greendesert.sa?subject=Project%20assessment"
+    }
+  }
+}
