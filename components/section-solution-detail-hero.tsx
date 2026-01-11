@@ -31,14 +31,11 @@ import {
   Briefcase,
   type LucideIcon
 } from "lucide-react"
-import type solutionsContentEn from "@/content/i18n/en/solutions.json"
-
-type SolutionsKey = keyof typeof solutionsContentEn.details
-type ContentHero = typeof solutionsContentEn.details[SolutionsKey]["hero"]
+type ContentHero = typeof import("@/content/i18n/en/solutions.json")["details"][keyof typeof import("@/content/i18n/en/solutions.json")["details"]]["hero"]
 
 const SOLUTION_DETAIL_HERO_FALLBACK_IMAGE = "/hurd-cover.jpg"
 
-const SOLUTION_ICONS: Record<SolutionsKey, LucideIcon> = {
+const SOLUTION_ICONS: Record<string, LucideIcon> = {
   cultivation: Sprout,
   construction: Home,
   textiles: Shirt,
@@ -56,7 +53,7 @@ const SOLUTION_ICONS: Record<SolutionsKey, LucideIcon> = {
 export function SectionSolutionDetailHero({
   content,
   slug,
-}: { content?: ContentHero; slug: SolutionsKey }) {
+}: { content?: ContentHero; slug: string }) {
   const { t, languageRoute } = useLanguage()
   const { labels, header } = useContent()
 

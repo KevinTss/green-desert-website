@@ -14,16 +14,12 @@ import { SectionSolutionDetailProducts } from "@/components/section-solution-det
 import { SectionSolutionDetailSignUp } from "@/components/section-solution-detail-sign-up"
 import { SectionSolutionWaitingList } from "@/components/section-solution-detail-waiting-list"
 import { SectionSolutionDetailPartners } from "@/components/section-solution-detail-partners"
-import type solutionsContentEn from "@/content/i18n/en/solutions.json"
 
-type solutionsPagesEn = keyof typeof solutionsContentEn.details
-
-export function ClientSolutionDetail({ slug }: { slug: solutionsPagesEn }) {
+export function ClientSolutionDetail({ slug }: { slug: string }) {
   const { isRTL, language } = useLanguage()
   const { solutions } = useContent()
-  const detail = solutions?.details?.[slug]
-  // @ts-ignore
-  const navSections = solutions.detailsMiniNav.filter((section: any) => !!detail?.[section.id])
+  const detail = (solutions?.details as any)?.[slug]
+  const navSections = detail ? solutions.detailsMiniNav.filter((section: any) => !!detail?.[section.id]) : undefined
 
   if (!detail) return null
 

@@ -9,15 +9,17 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = SOLUTION_SECTORS.map((sector) => sector.slug)
+  const slugs: string[] = SOLUTION_SECTORS.map((sector) => sector.slug as string)
   const languages = ["en", "ar-SA"]
 
-  return languages.flatMap((lang) =>
+  const params: { lang: string; slug: string }[] = languages.flatMap((lang) =>
     slugs.map((slug) => ({
       lang,
-      slug,
+      slug: String(slug),
     }))
   )
+
+  return params
 }
 
 export default async function SolutionDetailPage({ params }: PageProps) {

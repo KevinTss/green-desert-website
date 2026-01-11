@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 
 export function SectionSolutionsWalkthrough() {
   const { solutions } = useContent()
-  const details = solutions?.details
+  const details = solutions?.details as any
   const actions = details?.actions
 
   if (!details) return null

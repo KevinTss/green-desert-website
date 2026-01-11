@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import { ContentStructure, useContent, useLanguage } from "@/components/language-provider"
 
-type ContentKey = keyof Pick<ContentStructure, 'home' | 'company' | 'team' | 'sponsors' | 'solutions' | 'products'>
+type ContentKey = keyof Pick<ContentStructure, 'home' | 'company' | 'solutions'>
 
 type Section = { id: string; label: string }
 
@@ -12,7 +12,7 @@ export function MiniNavbar({ contentKey, sections: overrideSections }: { content
   const { t, isRTL } = useLanguage()
   const content = useContent()
   const sections: Section[] | undefined = overrideSections
-    ?? ("miniNav" in content[contentKey] ? content[contentKey].miniNav as Section[] : undefined)
+    ?? ("miniNav" in (content as any)[contentKey] ? (content as any)[contentKey].miniNav as Section[] : undefined)
   const [active, setActive] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
 

@@ -10,20 +10,14 @@ import enHeader from '@/content/i18n/en/header.json'
 import enFooter from '@/content/i18n/en/footer.json'
 import enHome from '@/content/i18n/en/home.json'
 import enCompany from '@/content/i18n/en/company.json'
-import enTeam from '@/content/i18n/en/team.json'
-import enSponsors from '@/content/i18n/en/sponsors.json'
 import enSolutions from '@/content/i18n/en/solutions.json'
-import enProducts from '@/content/i18n/en/products.json'
 
 import arLabels from '@/content/i18n/ar/labels.json'
 import arHeader from '@/content/i18n/ar/header.json'
 import arFooter from '@/content/i18n/ar/footer.json'
 import arHome from '@/content/i18n/ar/home.json'
 import arCompany from '@/content/i18n/ar/company.json'
-import arTeam from '@/content/i18n/ar/team.json'
-import arSponsors from '@/content/i18n/ar/sponsors.json'
 import arSolutions from '@/content/i18n/ar/solutions.json'
-import arProducts from '@/content/i18n/ar/products.json'
 
 export type Language = "en" | "ar"
 
@@ -42,10 +36,7 @@ export interface ContentStructure {
   footer: typeof enFooter
   home: typeof enHome
   company: typeof enCompany
-  team: typeof enTeam
-  sponsors: typeof enSponsors
   solutions: typeof enSolutions
-  products: typeof enProducts
 }
 
 const content = {
@@ -55,10 +46,7 @@ const content = {
     footer: enFooter,
     home: enHome,
     company: enCompany,
-    team: enTeam,
-    sponsors: enSponsors,
     solutions: enSolutions,
-    products: enProducts,
   },
   ar: {
     labels: arLabels,
@@ -66,10 +54,7 @@ const content = {
     footer: arFooter,
     home: arHome,
     company: arCompany,
-    team: arTeam,
-    sponsors: arSponsors,
     solutions: arSolutions,
-    products: arProducts,
   },
 }
 

@@ -178,10 +178,10 @@ export function NavigationMenuLink({ item, variant = "light", onOpenChange }: Na
             </div>
             <div className="grid flex-1 min-w-0 grid-cols-3 gap-5">
               {item.subItems.map((subItem) => {
-                const href = "href" in subItem
+                const href = "href" in subItem && typeof subItem.href === "string"
                   ? subItem.href.startsWith("/")
                     ? `/${languageRoute}${subItem.href}`
-                    : subItem?.href
+                    : subItem.href
                   : "#"
                 return (
                   <DropdownMenu.Item asChild key={subItem.label}>
