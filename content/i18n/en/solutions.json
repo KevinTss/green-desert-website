@@ -1,10 +1,4 @@
 {
-  "miniNav": [
-    { "id": "overview", "label": "Overview" },
-    { "id": "highlights", "label": "Highlights" },
-    { "id": "pathways", "label": "Pathways" },
-    { "id": "walkthrough", "label": "Engage" }
-  ],
   "hero": {
     "title": "Hemp-based solutions for every sustainability mandate",
     "subtitle": "We align licensed hemp value chains with the KPIs that giga projects, regulators, and private industry must deliver.",

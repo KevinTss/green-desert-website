@@ -125,5 +125,239 @@
       "label": "اعمل معنا",
       "href": "mailto:info@greendesert.sa?subject=Project%20assessment"
     }
+  },
+  "detailsMiniNav": [
+    { "id": "overview", "label": "Overview" },
+    { "id": "showcase", "label": "Showcase" },
+    { "id": "approach", "label": "Approach" },
+    { "id": "highlights", "label": "Highlights" },
+    { "id": "features", "label": "Features" },
+    { "id": "products", "label": "Products" },
+    { "id": "partners", "label": "Partners" }
+  ],
+  "details": {
+    "cultivation": {
+      "hero": {
+        "title": "Cultivation",
+        "body": "Design hemp rotations that sequester carbon, rehabilitate soil, and unlock new income streams for growers. Agronomy programs cover varietal selection, irrigation playbooks, and MRV so corporate farms can prove climate impacts to regulators and financiers.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Industrial hemp cultivation represents a transformative approach to sustainable agriculture in arid regions. With its deep root system and minimal water requirements, hemp thrives in challenging climates while improving soil health and sequestering significant amounts of carbon dioxide.",
+          "Some of these agricultural benefits are then leveraged as building blocks for conventional supply chains. But it's costly. The process requires substantial expertise, careful regulatory compliance, and energy-intensive processing steps. One approach to improve the process is by better-integrating current agricultural practices to yield more sustainable products per hectare of land."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "content": null,
+      "highlights": {
+        "title": "Capabilities",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "items": [
+          {
+            "title": "MRV-ready",
+            "description": "Baselines, drone/LiDAR, and third-party verification baked in.",
+            "icon": "target"
+          },
+          {
+            "title": "Soil rehab",
+            "description": "Programs to restore water retention and microbial activity.",
+            "icon": "zap"
+          },
+          {
+            "title": "Circular outputs",
+            "description": "Biochar, feedstock, and fiber channels mapped from day one.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": "Feature reels",
+        "subTitle": "Short clips or static cards—mix and match.",
+        "items": [
+          {
+            "title": "Field protocol",
+            "description": "Stepwise irrigation, harvest, and processing guidance.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Data capture",
+            "description": "Sensor + audit trail templates to keep compliance simple.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
+      "spotlight": {
+        "title": "Responsibly advancing AI and robotics",
+        "subtitle": "To ensure Gemini Robotics benefits humanity, we’ve taken a comprehensive approach to safety, from practical safeguards to collaborations with experts, policymakers, and our Responsibility and Safety Council.",
+        "ctaLabel": "Contact solutions team",
+        "ctaHref": "mailto:info@greendesert.sa?subject=Cultivation%20support"
+      },
+      "products": {
+        "title": "Service kits",
+        "subtitle": "Reusable blocks for new deployments.",
+        "items": [
+          {
+            "icon": "target",
+            "title": "Gemini Robotics 1.5",
+            "description": "Our most capable vision-language-action (VLA) model. It can ‘see’ (vision), ‘understand’ (language) and ‘act’ (action) within the physical world. It processes visual inputs and user prompts, learning within different embodiments and increasing its ability to generalize problem-solving.",
+            "ctaLabel": "Learn more",
+            "ctaHref": "mailto:info@greendesert.sa?subject=Pilot%20kit"
+          },
+          {
+            "icon": "shield",
+            "title": "Gemini Robotics-ER 1.5",
+            "description": "Our state-of-the-art embodied reasoning model. It specializes in understanding physical spaces, planning, and making logical decisions relating to its surroundings. It doesn’t directly control robotic limbs – but provides high-level insights to help the VLA model decide what to do next.",
+            "ctaLabel": "Learn more",
+            "ctaHref": "mailto:info@greendesert.sa?subject=Reporting%20bundle"
+          }
+        ]
+      },
+      "partners": {
+        "title": "Collaborations",
+        "subtitle": "We’re partnering with Apptronik to build the next generation of humanoid robots. We’re also working with over 60 trusted testers to guide the future of Gemini Robotics-ER.",
+        "items": [
+          {
+            "label": "Agronomy partner",
+            "description": "Agility Robotics",
+            "image": "/oasis-energy.svg"
+          },
+          {
+            "label": "MRV partner",
+            "description": "Apptronik",
+            "image": "/desert-labs.svg"
+          }
+        ]
+      }
+    },
+    "construction": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        ]
+      },
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "textiles": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "energy": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "biocomposites": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "waste": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "agriculture": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "animal-care": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "cosmetics": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "food": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "pharmaceutical": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    },
+    "services": {
+      "hero": null,
+      "overview": null,
+      "showcase": null,
+      "content": null,
+      "highlights": null,
+      "features": null,
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    }
   }
 }

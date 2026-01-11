@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { useLanguage } from "@/components/language-provider"
+import { useContent, useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { getAssetPath } from "@/lib/assets"
 import { Heading, Text as TypographyText } from "@/components/typography"
@@ -33,8 +33,8 @@ import {
 } from "lucide-react"
 import type solutionsContentEn from "@/content/i18n/en/solutions.json"
 
-type SolutionsKey = keyof typeof solutionsContentEn.pages
-type ContentHero = typeof solutionsContentEn.pages[SolutionsKey]["hero"]
+type SolutionsKey = keyof typeof solutionsContentEn.details
+type ContentHero = typeof solutionsContentEn.details[SolutionsKey]["hero"]
 
 const SOLUTION_DETAIL_HERO_FALLBACK_IMAGE = "/hurd-cover.jpg"
 
@@ -58,11 +58,12 @@ export function SectionSolutionDetailHero({
   slug,
 }: { content?: ContentHero; slug: SolutionsKey }) {
   const { t, languageRoute } = useLanguage()
+  const { labels, header } = useContent()
 
   if (!content) return null
 
   const title = content.title ?? ""
-  const subtitle = content.subtitle ?? content.body ?? ""
+  const subtitle = content.body ?? ""
   const heroImage = getAssetPath(content.image || SOLUTION_DETAIL_HERO_FALLBACK_IMAGE)
   const SolutionIcon = SOLUTION_ICONS[slug] || Package
 
@@ -94,7 +95,7 @@ export function SectionSolutionDetailHero({
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
                   <Link href={`/${languageRoute}`} className="text-white/70 hover:text-white">
-                    {t("nav.home")}
+                    {labels.home}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
@@ -104,7 +105,7 @@ export function SectionSolutionDetailHero({
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
                   <Link href={`/${languageRoute}/solutions`} className="text-white/70 hover:text-white">
-                    {t("nav.solutions")}
+                    {header.nav?.[1].label}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
