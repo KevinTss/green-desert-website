@@ -4,18 +4,15 @@ import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import { ContentStructure, useContent, useLanguage } from "@/components/language-provider"
 
-// export interface MiniSection { id: string; key?: string; label?: string }
-
 type ContentKey = keyof Pick<ContentStructure, 'home' | 'company' | 'team' | 'sponsors' | 'solutions' | 'products'>
 
 type Section = { id: string; label: string }
 
-export function MiniNavbar({ contentKey }: { contentKey: ContentKey }) {
+export function MiniNavbar({ contentKey, sections: overrideSections }: { contentKey: ContentKey, sections?: Section[] }) {
   const { t, isRTL } = useLanguage()
   const content = useContent()
-  const sections: Section[] | undefined = "miniNav" in content[contentKey]
-    ? content[contentKey].miniNav as Section[]
-    : undefined
+  const sections: Section[] | undefined = overrideSections
+    ?? ("miniNav" in content[contentKey] ? content[contentKey].miniNav as Section[] : undefined)
   const [active, setActive] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement | null>(null)
 

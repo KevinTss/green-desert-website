@@ -4,24 +4,26 @@ import Image from "next/image"
 import { useState, useRef } from "react"
 import { Play, Pause } from "lucide-react"
 
-import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { getAssetPath } from "@/lib/assets"
-import type { SolutionSectorDefinition } from "@/lib/solutions"
 
 const SOLUTION_DETAIL_SHOWCASE_FALLBACK_IMAGE = "/hurd-cover.jpg"
 
-interface SectionSolutionDetailShowcaseProps {
-  solution: SolutionSectorDefinition
-}
-
-export function SectionSolutionDetailShowcase({ solution }: SectionSolutionDetailShowcaseProps) {
-  const { t } = useLanguage()
+export function SectionSolutionDetailShowcase({
+  content
+}: {
+  content?: {
+    image?: string | null,
+    video?: string | null
+  } | null
+}) {
   const [isPlaying, setIsPlaying] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  const imageSrc = getAssetPath(solution.image || SOLUTION_DETAIL_SHOWCASE_FALLBACK_IMAGE)
-  const videoSrc = solution.video ? getAssetPath(solution.video) : null
+  if (!content) return null
+
+  const imageSrc = getAssetPath(content?.image || SOLUTION_DETAIL_SHOWCASE_FALLBACK_IMAGE)
+  const videoSrc = content.video ? getAssetPath(content.video) : null
 
   const togglePlayPause = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -69,7 +71,7 @@ export function SectionSolutionDetailShowcase({ solution }: SectionSolutionDetai
             <>
               <Image
                 src={imageSrc}
-                alt={t(solution.titleKey)}
+                alt="Showcase image"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1280px) 1280px, 100vw"

@@ -6,7 +6,6 @@ import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { getAssetPath } from "@/lib/assets"
-import type { SolutionSectorDefinition } from "@/lib/solutions"
 import { Heading, Text as TypographyText } from "@/components/typography"
 import {
   Breadcrumb,
@@ -32,14 +31,14 @@ import {
   Briefcase,
   type LucideIcon
 } from "lucide-react"
+import type solutionsContentEn from "@/content/i18n/en/solutions.json"
 
-interface SectionSolutionDetailHeroProps {
-  solution: SolutionSectorDefinition
-}
+type SolutionsKey = keyof typeof solutionsContentEn.pages
+type ContentHero = typeof solutionsContentEn.pages[SolutionsKey]["hero"]
 
 const SOLUTION_DETAIL_HERO_FALLBACK_IMAGE = "/hurd-cover.jpg"
 
-const SOLUTION_ICONS: Record<string, LucideIcon> = {
+const SOLUTION_ICONS: Record<SolutionsKey, LucideIcon> = {
   cultivation: Sprout,
   construction: Home,
   textiles: Shirt,
@@ -50,16 +49,22 @@ const SOLUTION_ICONS: Record<string, LucideIcon> = {
   "animal-care": PawPrint,
   cosmetics: Sparkles,
   food: UtensilsCrossed,
-  pharma: Pill,
+  pharmaceutical: Pill,
   services: Briefcase,
 }
 
 export function SectionSolutionDetailHero({
-  solution,
-}: SectionSolutionDetailHeroProps) {
+  content,
+  slug,
+}: { content?: ContentHero; slug: SolutionsKey }) {
   const { t, languageRoute } = useLanguage()
-  const heroImage = getAssetPath(solution.image || SOLUTION_DETAIL_HERO_FALLBACK_IMAGE)
-  const SolutionIcon = SOLUTION_ICONS[solution.slug] || Package
+
+  if (!content) return null
+
+  const title = content.title ?? ""
+  const subtitle = content.subtitle ?? content.body ?? ""
+  const heroImage = getAssetPath(content.image || SOLUTION_DETAIL_HERO_FALLBACK_IMAGE)
+  const SolutionIcon = SOLUTION_ICONS[slug] || Package
 
   return (
     <Section disablePadding className="relative min-h-[95vh]" data-hero="true">
@@ -67,7 +72,7 @@ export function SectionSolutionDetailHero({
         <div className="absolute inset-0">
           <Image
             src={heroImage}
-            alt={t(solution.titleKey)}
+            alt={content.title}
             fill
             priority
             className="object-cover object-center opacity-80"
@@ -108,7 +113,7 @@ export function SectionSolutionDetailHero({
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-white">
-                  {t(solution.titleKey)}
+                  {title || t("nav.solutions")}
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
@@ -118,11 +123,13 @@ export function SectionSolutionDetailHero({
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-6 pb-12 text-white sm:px-8 lg:px-12">
           <div className="max-w-3xl">
             <Heading as="h1" size="3xl" variant="white">
-              {t(solution.titleKey)}
+              {title}
             </Heading>
-            <TypographyText variant="white" className="mt-4 text-sm sm:text-base">
-              {t(solution.summaryKey)}
-            </TypographyText>
+            {subtitle && (
+              <TypographyText variant="white" className="mt-4 text-sm sm:text-base">
+                {subtitle}
+              </TypographyText>
+            )}
           </div>
         </div>
       </div>

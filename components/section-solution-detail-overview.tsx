@@ -2,11 +2,11 @@
 
 import { Section } from "@/components/section"
 
-export function SectionSolutionDetailContent({ content }: { content?: string[] }) {
+export function SectionSolutionDetailOverview({ content }: { content?: string[] }) {
   if (!content?.length) return null
 
   return (
-    <Section className="bg-white" id="approach">
+    <Section className="bg-white" id="overview">
       <div className="container mx-auto max-w-[700px] px-6 sm:px-8 lg:px-12">
         {content.map((p, idx) => (
           <p
