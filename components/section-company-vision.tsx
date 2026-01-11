@@ -11,7 +11,7 @@ export function SectionCompanyVision() {
   const { isRTL } = useLanguage()
   const { company } = useContent()
   const vision = company?.vision
-  const phases = vision?.phases ?? []
+  const phases = useMemo(() => vision?.phases ?? [], [vision?.phases])
 
   const [activePhaseKey, setActivePhaseKey] = useState<string>(phases[0]?.id ?? "")
   const stickyRef = useRef<HTMLDivElement | null>(null)

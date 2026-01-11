@@ -20,7 +20,7 @@ export const Section1Hero = () => {
       color: slide.color ?? "#F2B67D",
       image: getAssetPath(slide.image ?? "/fiber-cover.jpg"),
     }))
-  }, [hero?.slides, hero?.title])
+  }, [hero?.slides])
 
   const backgroundImage = slides[activePhrase]?.image ?? getAssetPath("/fiber-cover.jpg")
 

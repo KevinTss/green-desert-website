@@ -59,16 +59,16 @@ export const ProcessExplainer = ({ process }: ProcessExplainerProps) => {
   const totalSteps = steps.length
   const orbitRadius = 116
 
-  if (!steps.length) return null
-
   useEffect(() => {
-    if (isPaused) return
+    if (!steps.length || isPaused) return
     const timer = window.setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % totalSteps)
     }, 5000)
 
     return () => window.clearInterval(timer)
-  }, [isPaused, totalSteps])
+  }, [isPaused, totalSteps, steps.length])
+
+  if (!steps.length) return null
 
   const activeStep = steps[activeIndex]
   const ActiveIcon = iconMap[activeStep.icon || "sprout"] || Sprout
