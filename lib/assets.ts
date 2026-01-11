@@ -1,5 +1,5 @@
-const isProd = process.env.NODE_ENV === 'production'
-const basePath = isProd ? '/green-desert-website' : ''
+export const isProd = process.env.NODE_ENV === 'production'
+export const basePath = isProd ? '/green-desert-website' : ''
 
 function preferWebp(path: string): string {
   if (!isProd) return path
@@ -19,4 +19,12 @@ export function getAssetPath(path: string): string {
   
   // Add basePath prefix for production GitHub Pages deployment
   return `${basePath}${preferWebp(path)}`
+}
+
+export function getRoutePath(path: string): string {
+  if (!path) return path
+  if (path.startsWith('http') || path.startsWith('mailto:') || path.startsWith('tel:') || path.startsWith('//')) {
+    return path
+  }
+  return `${basePath}${path}`
 }

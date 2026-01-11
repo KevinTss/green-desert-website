@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Menu, ChevronDown, ChevronUp } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
-import { getAssetPath } from "@/lib/assets"
+import { getAssetPath, getRoutePath } from "@/lib/assets"
 import {
   Sheet,
   SheetContent,
@@ -36,7 +36,8 @@ export function MobileMenu({
 
   const formatHref = (href?: string) => {
     if (!href) return undefined
-    return href.startsWith('/') ? `/${languageRoute}${href}` : href
+    const prefixed = href.startsWith('/') ? `/${languageRoute}${href}` : href
+    return getRoutePath(prefixed)
   }
 
 

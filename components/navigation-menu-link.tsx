@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation"
 import { ChevronRight } from "lucide-react"
 import { Text as TypographyText } from "./typography"
 import headerI18m from '@/content/i18n/en/header.json'
+import { getRoutePath } from "@/lib/assets"
 
 export interface NavigationMenuLinkProps {
   item: typeof headerI18m['nav'][0]
@@ -166,8 +167,8 @@ export function NavigationMenuLink({ item, variant = "light", onOpenChange }: Na
                 <Link
                   href={
                     item.lead.ctaHref.startsWith("/")
-                      ? `/${languageRoute}${item.lead.ctaHref}`
-                      : item.lead.ctaHref
+                      ? getRoutePath(`/${languageRoute}${item.lead.ctaHref}`)
+                      : getRoutePath(item.lead.ctaHref)
                   }
                   className={dropdownCtaClasses}
                 >
@@ -178,11 +179,11 @@ export function NavigationMenuLink({ item, variant = "light", onOpenChange }: Na
             </div>
             <div className="grid flex-1 min-w-0 grid-cols-3 gap-5">
               {item.subItems.map((subItem) => {
-                const href = "href" in subItem && typeof subItem.href === "string"
-                  ? subItem.href.startsWith("/")
-                    ? `/${languageRoute}${subItem.href}`
-                    : subItem.href
-                  : "#"
+              const href = "href" in subItem && typeof subItem.href === "string"
+                ? subItem.href.startsWith("/")
+                  ? getRoutePath(`/${languageRoute}${subItem.href}`)
+                  : getRoutePath(subItem.href)
+                : "#"
                 return (
                   <DropdownMenu.Item asChild key={subItem.label}>
                     <a
