@@ -16,15 +16,15 @@
   "story": {
     "badge": "Company",
     "columns": [
-      "Green Desert became Saudi Arabia's first licensed industrial hemp solutions company, born to support giga-project ambitions with regenerative materials, local supply chains, and Vision 2030 compliance.",
-      "Green Desert is a Saudi Arabian biotechnology startup founded in January 2020. We address the region's most pressing environmental challenges through innovative, sustainable solutions rooted in industrial hemp.",
-      "We combine science, policy, and industry execution to prove hemp's role in the region's sustainability transition."
+      "Green Desert is a Saudi Arabian biotechnology company founded in 2020, dedicated to developing sustainable, science-driven solutions for some of the region’s most pressing environmental and industrial challenges. Operating at the intersection of biotechnology, materials science, and circular economy principles, the company works across multiple sectors including construction, sustainable materials, plant-based products, and bio-industrial applications.",
+      "With deep expertise in industrial hemp (Cannabis sativa L.), Green Desert was the first company to obtain an official license in Saudi Arabia to research, import, and develop hemp-based solutions. This specialization enables the company to deliver regenerative materials, localized supply chains, and scalable innovations aligned with Saudi Arabia’s Vision 2030 and the ambitions of major regional development projects.",
+      "By combining scientific research, regulatory alignment, and industrial execution, Green Desert advances plant-based technologies—both hemp-derived and beyond—to support a more resilient, low-impact, and future-ready economy across Saudi Arabia, the Middle East, and Africa."
     ]
   },
   "vision": {
     "badge": "Vision",
     "title": "Committed roadmap to 2030",
-    "body": "Our initiatives contribute to quality-of-life, environmental protection, and economic diversification goals. We collaborate with government stakeholders and industry partners to deploy scalable solutions that deliver tangible impact across Saudi cities and regions.",
+    "body": "Green Desert’s vision is to help shape a new industrial model in which nature-based technologies are integral to economic development. GD aspires to see plant-derived materials—industrial hemp among them—become mainstream contributors to resilient infrastructure, responsible manufacturing, and long-term sustainability across the region.",
     "phases": [
       {
         "id": "2020",
@@ -104,8 +104,8 @@
   },
   "mission": {
     "title": "Our Mission",
-    "body": "We aim to break the vicious cycle of desertification, water scarcity, and soil degradation with practical, scalable solutions. Our biotechnology-driven products and services reduce waste, turn byproducts into value, and power a greener circular economy across the Kingdom.",
-    "subtitle": "We combine science, policy, and industry execution to prove hemp's role in the region's sustainability transition."
+    "body": "Green Desert’s mission is to transform biological resources into practical sustainable solutions. GD focuses on applying biotechnology, material innovation, and circular economy thinking to create plant-based products that reduce environmental impact on the region while remaining viable at industrial scale.",
+    "subtitle": "null"
   },
   "values": {
     "title": "Our values",
