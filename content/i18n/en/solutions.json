@@ -152,7 +152,12 @@
         "image": "/seeds-cover.jpg",
         "video": null
       },
-      "content": null,
+      "approach": {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        ]
+      },
       "highlights": {
         "title": "Capabilities",
         "subtitle": "Advancing the Kingdom’s food and material security through high-yield, water-efficient regenerative agronomy.",
@@ -252,7 +257,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": {
+      "approach": {
         "paragraphs": [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -268,7 +273,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -279,7 +284,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -290,7 +295,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -301,7 +306,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -312,7 +317,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -323,7 +328,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -334,7 +339,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -345,7 +350,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -356,7 +361,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -367,7 +372,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
