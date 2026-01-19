@@ -60,35 +60,35 @@
         {
           "id": "growing",
           "title": "Growing",
-          "description": "Regenerative hemp cultivation restores soils and optimizes every drop of water.",
+          "description": "Advanced regenerative methods restore soil vitality while optimizing water efficiency.",
           "accent": "#059669",
           "icon": "sprout"
         },
         {
           "id": "harvesting",
           "title": "Harvesting",
-          "description": "Precision harvesting captures fiber and hurd at peak quality with minimal waste.",
+          "description": "Precision techniques capture fiber and Hurd at peak quality with a zero-waste approach.",
           "accent": "#f97316",
           "icon": "scissors"
         },
         {
           "id": "decorticating",
           "title": "Decorticating",
-          "description": "Fiber and hurd are separated cleanly to unlock high-value biomaterials.",
+          "description": "Stalks are cleanly separated into high-value advanced biomaterials.",
           "accent": "#0284c7",
           "icon": "factory"
         },
         {
           "id": "transforming",
           "title": "Transforming",
-          "description": "We convert hemp inputs into bio-based solutions ready for industrial use.",
+          "description": "We convert raw hemp inputs into specialized, bio-based industrial solutions.",
           "accent": "#7c3aed",
           "icon": "workflow"
         },
         {
           "id": "building",
           "title": "Building",
-          "description": "Circular construction systems deploy hemp materials to create healthier spaces.",
+          "description": "Our circular systems deploy these materials to construct healthier, high-performance environments.",
           "accent": "#22c55e",
           "icon": "building"
         }
@@ -122,7 +122,7 @@
       }
     ]
   },
-  "personas": {
+  "Audience": {
     "badge": "Audience pathways",
     "heading": "Choose the track that matches your mission",
     "subheading": "Guided journeys tailored to regulators, corporate sustainability leaders, capital partners, and engineering teams.",
