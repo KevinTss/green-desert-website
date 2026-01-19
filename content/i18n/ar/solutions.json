@@ -152,7 +152,12 @@
         "image": "/seeds-cover.jpg",
         "video": null
       },
-      "content": null,
+      "approach": {
+        "paragraphs": [
+          "ننفّذ برامج زراعية متدرجة تبدأ باختيار الأصناف وتحليل التربة ثم إدارة الري الدقيقة لضمان أداء القنب في المناخات الصحراوية.",
+          "نُوثّق الأثر الكربوني ونربط المخرجات بسلاسل الإمداد الصناعية حتى تتحول الحقول إلى أصول منشطة لاقتصاد أخضر."
+        ]
+      },
       "highlights": {
         "title": "Capabilities",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -237,10 +242,10 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": {
+      "approach": {
         "paragraphs": [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "نموذج تسليم متكامل يغطي تصميم الخلطات وضبط الجودة ودعم التنفيذ لمشاريع الهيمبكريت في المنطقة.",
+          "نوفّر جداول زمنية وإرشادات ميدانية للمقاولين لضمان الأداء الحراري وتقليل الانبعاثات عبر المشاريع العملاقة."
         ]
       },
       "highlights": null,
@@ -253,7 +258,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -264,7 +269,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -275,7 +280,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -286,7 +291,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -297,7 +302,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -308,7 +313,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -319,7 +324,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -330,7 +335,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -341,7 +346,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,
@@ -352,7 +357,7 @@
       "hero": null,
       "overview": null,
       "showcase": null,
-      "content": null,
+      "approach": null,
       "highlights": null,
       "features": null,
       "spotlight": null,

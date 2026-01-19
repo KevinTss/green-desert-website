@@ -122,7 +122,7 @@
       }
     ]
   },
-  "Audience": {
+  "personas": {
     "badge": "Audience pathways",
     "heading": "Choose the track that matches your mission",
     "subheading": "Guided journeys tailored to regulators, corporate sustainability leaders, capital partners, and engineering teams.",
