@@ -1,6 +1,10 @@
 {
   "learnMore": "Learn more",
   "home": "Home",
+  "contactUsCta": {
+    "label": "Contact us",
+    "href": "mailto:info@greendesert.sa"
+  },
   "solutionNewsletter": {
     "label": "Stay in the loop",
     "title": "Get solution updates, specs, and pilot openings",
