@@ -436,13 +436,13 @@
     "energy": {
       "hero": {
         "title": "Energy & biofuels",
-        "body": "Developing high-tenacity, climate-adaptive fibers for the Kingdom’s industrial and fashion sectors. Delivering sustainable textile systems that meet the rigorous performance and comfort standards of the GCC.",
+        "body": "Converting industrial biomass into clean fuels, green hydrogen feedstock, and Cogeneration ready pellets. We engineer feedstock specifications and emissions accounting to deliver verified, carbon-negative heat and power solutions.",
         "image": "/seeds-cover.webp"
       },
       "overview": {
         "paragraphs": [
-          "Hemp fiber represents the future of sustainable textiles, combining exceptional durability with environmental responsibility. It offers performance that matches or exceeds traditional materials while requiring minimal water and no pesticides.",
-          "Our goal is to provide a regenerative alternative to one of the world's most polluting sectors, delivering premium quality while minimizing environmental impact."
+          "Energy diversification and decarbonization one of the Saudi Vision 2030. Our Energy & Biofuel solutions focus on converting sustainable biomass into renewable energy inputs that support national energy transition goals. By leveraging bio-based resources.",
+          "we contribute to reduced emissions, enhanced energy security, and the development of circular, low-carbon industries."
         ]
       },
       "showcase": {
@@ -451,48 +451,43 @@
       },
       "approach": {
         "paragraphs": [
-          "Specialized Decortication– Mechanically separating the hemp stalk into high-quality fiber and Hurd using precision industrial equipment.",
-          "Advanced Degumming– Utilizing eco-friendly processes to remove lignin and pectins, ensuring the fiber is soft enough for premium textiles.",
-          "Refinement & Spinning– Preparing the fiber for blending with organic cotton or silk to meet the standards of global luxury markets."
+          "Biomass Harvesting: Gathering high-cellulose hemp stalks from our licensed cultivation areas.",
+          "Technical Processing: Mechanical refining and pelletization to meet specific CHP and industrial boiler requirements.",
+          "Impact Validation: Providing the carbon sequestration data and emissions certificates required for national energy compliance."
         ]
       },
       "highlights": {
         "title": null,
-        "subtitle": "Engineering superior, locally-sourced natural fibers to drive a sustainable textile value chain.",
+        "subtitle": "Powering a circular future with high-densitybiomass and advanced biofuels designed for low-carbon intensity.",
         "items": [
           {
-            "title": "Biodegradability",
-            "description": "The material is fully biodegradable and can be safely returned to the earth at the end of its lengthy life",
+            "title": "Carbon Substitution",
+            "description": "Providing a direct, renewable alternative to high-carbon fossil fuels for industrial heat and power generation.",
             "icon": "target"
           },
           {
-            "title": "UV Protection",
-            "description": "Naturally blocks a high percentage of harmful UVA/UVB rays, with testing showing 50% higher efficacy than polyester.",
+            "title": "Cogeneration Efficiency",
+            "description": "Optimized for Combined Heat and Power (CHP) systems to maximize energy recovery and reduce operational losses.",
             "icon": "zap"
           },
           {
-            "title": "Hypoallergenic",
-            "description": "Naturally gentle and non-irritating,making it an ideal choice for sensitive skin.",
+            "title": "Hydrogen Feedstock",
+            "description": "Clean, verified biomass engineered for compatibility with emerging green hydrogen and bio-syngas pathways.",
             "icon": "shield"
           },
           {
-            "title": "Highly Absorbent",
-            "description": "The porosity of the fiber allows it to absorb moisture efficiently, making it perfect for towels and activewear.",
+            "title": "Lifecycle Traceability",
+            "description": "Full carbon accounting, MRV frameworks, and data verification to support national ESG, decarbonization, and reporting requirements.",
             "icon": "shield"
           },
           {
-            "title": "Antimicrobial",
-            "description": "Prevents the formation of mold and bacteria that cause odors.",
+            "title": "High Calorific Density",
+            "description": "Engineered pellets and briquettes delivering consistent combustion and superior energy-per-kilogram performance.",
             "icon": "shield"
           },
           {
-            "title": "Durability",
-            "description": "3x to 5x stronger than cotton, with less stretching or degradation.",
-            "icon": "shield"
-          },
-          {
-            "title": "Breathable",
-            "description": "The permeable fiber enables excellent air circulation, removing moisture and insulating the body—cool in summer, warm in winter.",
+            "title": "Sustainable Logistics",
+            "description": "Reliable, year-round feedstock supply chains designed for large-scale industrial energy consumers.",
             "icon": "shield"
           }
           
@@ -500,44 +495,183 @@
       },
       "features": {
         "title": null,
-        "subTitle": " Integrating advanced fiber processing with localized manufacturing to deliver high-tenacity materials that meet global industrial standards",
+        "subTitle": " Optimizing the energy value chain through high-precision biomass processing and the development of stabilized, low-carbon biofuel feedstocks.",
         "items": [
           {
             "title": "Advanced Technology",
-            "description": "Using specific decortication processes, raw hemp is refined into high-tenacity, long-lasting fibers suitable for industrial spinning.",
+            "description": "Using advanced mechanical refining and pelletization processes, raw biomass is transformed into high-performance, standardized energy inputs.",
             "video": "/sliderV.mp4"
           },
           {
             "title": "Sustainable Solutions",
-            "description": "Providing low-impact, biodegradable alternatives to synthetics, enabling brands to lower their emissions while supporting the Saudi Green Initiative.",
+            "description": "Delivering verified carbon-negative pathways that allow heavy industry to reduce emissions while supporting the Saudi Green Initiative.",
             "video": "/sliderV.mp4"
           },
           {
             "title": "Expert Support",
-            "description": "Managing technical validation, customized mixing, and finishing support to guarantee that each textile batch satisfies the highest worldwide durability and safety standards.",
+            "description": "Managing feedstock specifications, logistical coordination, and emissions validation to ensure seamless integration into existing energy infrastructure.",
             "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
     },
     "biocomposites": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Biocomposites",
+        "body": "Engineering hemp-based composites for automotive and packaging programs with tested mechanical properties. We supply fiber specifications, resin pairings, and technical guidance to reduce risk and lower the carbon footprint of industrial components.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Hemp-reinforced biocomposites offer a high-performance, low-impact alternative to conventional composite materials. By combining hemp fiber’s exceptional strength-to-weight ratio with bio-based resins, these materials deliver lighter, stronger, and more sustainable components for advanced manufacturing applications.",
+          "Aligned with Saudi Vision 2030, our biocomposite solutions support industrial diversification and material innovation, providing a verified pathway for the transition toward resource-efficient, low-carbon manufacturing."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Fiber modification: the process of mechanically and chemically treating high-purity hemp fibers to ensure good resin bonding.",
+          "Advanced molding: the process of creating high-performance industrial components using compression molding or 3D printing methods.",
+          "Performance validation: conducting extensive stress, temperature, and durability tests to ensure compliance with production standards."
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Replacing traditional plastics with high-specific- strength bio-composites engineered for automotive and industrial excellence.",
+        "items": [
+          {
+            "title": "Strength",
+            "description": "Superior mechanical performance that reduces component weight without sacrificing structural integrity.",
+            "icon": "target"
+          },
+          {
+            "title": "Vibration Damping",
+            "description": "Natural acoustic and vibration absorption properties, ideal for automotive and industrial housings.",
+            "icon": "zap"
+          },
+          {
+            "title": "Low Embodied Carbon",
+            "description": "Significant reduction in manufacturing emissions compared to traditional glass fiber or petroleum-based resins.",
+            "icon": "shield"
+          },
+          {
+            "title": "Thermal Stability",
+            "description": "Low thermal expansion rates ensuring dimensional stability in the extreme temperature shifts of the GCC.",
+            "icon": "shield"
+          },
+          {
+            "title": "National Supply Chain",
+            "description": "Locally sourced raw materials that strengthen Saudi Arabia’s industrial autonomy and material security.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": " Engineering custom bio-composite resin and fiber blends to meet the rigorous mechanical and weight-reduction requirements of modern manufacturing.",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Optimizing fiber aspect ratios and surface treatments to maximize interfacial bonding strength for high-load industrial applications.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Replacing petroleum-based fillers with high-tenacity hemp biomass to significantly lower the carbon footprint of mass-produced components.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Providing on-site processing guidance and custom fiber specifications to ensure seamless transitions during industrial manufacturing trials.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
     },
     "waste": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Waste & Remediation",
+        "body": "Transforming industrial waste into valuable resources through phytoremediation and circular processing. We engineer natural systems for soil rehabilitation and land restoration to meet national environmental standards.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Waste & Remediation solutions address critical environmental challenges by transforming industrial and agricultural waste streams into high-value resources. Our approach leverages biological systems for soil detoxification and land rehabilitation, directly supporting Saudi Vision 2030 goals for environmental protection, circular economy development, and the restoration of the Kingdom’s natural ecosystems.",
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Environmental Assessment Conducting comprehensive site audits and soil/water analysis to identify contaminant profiles and establish baseline carbon sequestration metrics.",
+          "Phytoremediation Deployment Implementing targeted cultivation of specific hemp varieties engineered to extract heavy metals and pollutants while stabilizing the soil structure.",
+          "Circular Biomass Recovery Harvesting the remediation crop and utilizing specialized processing to safely sequester captured toxins or convert clean biomass into industrial feedstock."،,
+          "Impact Validation & MRV Providing final technical reports, soil health certification, and verified carbon-negative data for national regulatory compliance and ESG reporting."
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Transforming environmental liabilities into industrial assets through precision phytoremediation and waste recycling.",
+        "items": [
+          {
+            "title": "Soil Phytoremediation",
+            "description": "Utilizing specialized hemp cultivars to extract heavy metals and toxins from degraded industrial soil.",
+            "icon": "target"
+          },
+          {
+            "title": "Carbon Sequestration",
+            "description": "Verified protocols for capturing atmospheric carbon and storing it permanently within the soil and processed biomass.",
+            "icon": "zap"
+          },
+          {
+            "title": "Circular Waste Systems",
+            "description": "Converting agricultural by-products into high-performance industrial feedstock, eliminating landfill dependency.",
+            "icon": "shield"
+          },
+          {
+            "title": "Thermal Stability",
+            "description": "Low thermal expansion rates ensuring dimensional stability in the extreme temperature shifts of the GCC.",
+            "icon": "shield"
+          },
+          {
+            "title": "National Supply Chain",
+            "description": "Locally sourced raw materials that strengthen Saudi Arabia’s industrial autonomy and material security.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": " Engineering custom bio-composite resin and fiber blends to meet the rigorous mechanical and weight-reduction requirements of modern manufacturing.",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Optimizing fiber aspect ratios and surface treatments to maximize interfacial bonding strength for high-load industrial applications.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Replacing petroleum-based fillers with high-tenacity hemp biomass to significantly lower the carbon footprint of mass-produced components.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Providing on-site processing guidance and custom fiber specifications to ensure seamless transitions during industrial manufacturing trials.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
