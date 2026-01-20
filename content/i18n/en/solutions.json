@@ -154,8 +154,8 @@
       },
       "approach": {
         "paragraphs": [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "Our approach combines science-based agronomy with regional priorities, ensuring agricultural productivity while protecting natural resources. We conduct a rigorous assessment of soil quality and land to establish a baseline for success, followed by crop selection suited for arid climates using salt-tolerant and heat-resilient genetics.",
+          "By integrating efficient water and nutrient management through precision irrigation, we minimize resource consumption. Throughout the cultivation cycle, we maintain continuous performance monitoring and optimization to ensure a reliable, high-yield sovereign feedstock supply."
         ]
       },
       "highlights": {
@@ -195,17 +195,22 @@
         ]
       },
       "features": {
-        "title": "Feature reels",
-        "subTitle": "Providing full agronomic management, from soil capability assessment to optimized harvesting, ensuring a reliable sovereign feedstock supply.",
+        "title": "Hands-on",
+        "subTitle": " Providing full agronomic management, from soil capability assessment to optimized harvesting, ensuring a reliable sovereign feedstock supply.",
         "items": [
           {
-            "title": "Field protocol",
-            "description": "Stepwise irrigation, harvest, and processing guidance.",
+            "title": "Advanced Technology",
+            "description": "Using of climate-smart R&D and precision systems to ensure resilient hemp crops thrive in harsh, arid environments.",
             "video": "/sliderV.mp4"
           },
           {
-            "title": "Data capture",
-            "description": "Sensor + audit trail templates to keep compliance simple.",
+            "title": "Sustainable Solutions",
+            "description": "Delivering carbon-sequestering cultivation models that restore soil health while producing the high-value raw materials needed for a green economy.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Global agronomy and cultivation expertise embedded within our licensed operations, combining international best practices with local execution to ensure varietal performance, system integrity, and full regulatory compliance.",
             "video": "/sliderV.mp4"
           }
         ]
@@ -254,39 +259,263 @@
       }
     },
     "construction": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": {
+      "hero": {
+        "title": "Construction",
+        "body": "Creating low-carbon building envelopes to support the Kingdom’s urban growth. Our hempcrete systems are developed using verified mix designs and strict QA/QC protocols to meet the rigorous structural and thermal performance requirements of large-scale Saudi developments.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
         "paragraphs": [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "Hemp-based construction materials offer a low-carbon alternative to conventional building systems, combining high-performance insulation and durability. Engineered for arid and GCC climates, these materials reduce reliance on carbon-intensive inputs while supporting circular, climate-resilient construction at scale, By replacing traditional, energy heavy materials.",
+          "Our bio-composite solutions allow builders to significantly decrease the embodied carbon of their projects. This strategy not only meets Saudi Arabia's environmental thermal requirements but also provides a measurable pathway toward achieving national net-zero targets."
         ]
       },
-      "highlights": null,
-      "features": null,
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Bio-Mass Processing: Converting raw hemp stalks into high-quality hurd and fiber.",
+          "Precision Formulation: Utilizing our verified mix designs to create climate- adaptive binders.",
+          "Industrial Manufacturing: Scaling the production of blocks, panels, and spray-applied insulation.",
+          "Site Integration: Delivering ready-to-use building envelopes that meet Saudi building codes."
+        ]
+      },
+      "highlights": {
+        "title": "Capabilities",
+        "subtitle": "Decarbonizing the built environment with carbon-sequestering bio-materials and high-performance thermal insulation.",
+        "items": [
+          {
+            "title": "Thermal Resilience",
+            "description": "High performance insulation that reduces cooling energy demand, engineered specifically for the extreme heat of the GCC.",
+            "icon": "target"
+          },
+          {
+            "title": "Carbon Sequestration",
+            "description": "A net-negative building material that actively captures CO2 , helping developers achieve their Net-Zero goals.",
+            "icon": "zap"
+          },
+          {
+            "title": "Fire & Safety",
+            "description": "Naturally fire-resistant bio-composites that meet rigorous international safety standards for large-scale developments.",
+            "icon": "shield"
+          },
+          {
+            "title": "Breathable",
+            "description": "Superior moisture regulation that prevents mold and improves indoor air quality in humid or coastal desert regions.",
+            "icon": "shield"
+          },
+          {
+            "title": "Acoustic Comfort",
+            "description": "High-density Hempcrete provides exceptional sound dampening, ideal for high-end residential and urban commercial projects.",
+            "icon": "shield"
+          },
+          {
+            "title": "Circular Economy",
+            "description": "A fully renewable resource that supports the Kingdom’s shift toward sustainable, waste-free construction ecosystems.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": "Hands-on",
+        "subTitle": " Assisting developers and engineers in integrating carbon-negative bio-materials into modern infrastructure for superior thermal and structural performance.",
+        "items": [
+          {
+            "title": "Climate-Adaptive Engineering",
+            "description": "Material systems specifically designed to withstand the GCC’s extreme heat, reducing Air Conditioning& heating dependency and enhancing the longevity of the building.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "By constructing building systems that absorb more carbon than they release, builders can reduce the embodied carbon of large-scale projects.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Quality Assurance",
+            "description": "Fully controlled QA/QC and structural testing protocols, ensuring every hemp-based component meets the safety and building codes of the Kingdom.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
     },
     "textiles": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Textiles",
+        "body": "Developing high-tenacity, climate-adaptive fibers for the Kingdom’s industrial and fashion sectors. Delivering sustainable textile systems that meet the rigorous performance and comfort standards of the GCC.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Hemp fiber represents the future of sustainable textiles, combining exceptional durability with environmental responsibility. It offers performance that matches or exceeds traditional materials while requiring minimal water and no pesticides.",
+          "Our goal is to provide a regenerative alternative to one of the world's most polluting sectors, delivering premium quality while minimizing environmental impact."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Specialized Decortication– Mechanically separating the hemp stalk into high-quality fiber and Hurd using precision industrial equipment.",
+          "Advanced Degumming– Utilizing eco-friendly processes to remove lignin and pectins, ensuring the fiber is soft enough for premium textiles.",
+          "Refinement & Spinning– Preparing the fiber for blending with organic cotton or silk to meet the standards of global luxury markets."
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Engineering superior, locally-sourced natural fibers to drive a sustainable textile value chain.",
+        "items": [
+          {
+            "title": "Biodegradability",
+            "description": "The material is fully biodegradable and can be safely returned to the earth at the end of its lengthy life",
+            "icon": "target"
+          },
+          {
+            "title": "UV Protection",
+            "description": "Naturally blocks a high percentage of harmful UVA/UVB rays, with testing showing 50% higher efficacy than polyester.",
+            "icon": "zap"
+          },
+          {
+            "title": "Hypoallergenic",
+            "description": "Naturally gentle and non-irritating,making it an ideal choice for sensitive skin.",
+            "icon": "shield"
+          },
+          {
+            "title": "Highly Absorbent",
+            "description": "The porosity of the fiber allows it to absorb moisture efficiently, making it perfect for towels and activewear.",
+            "icon": "shield"
+          },
+          {
+            "title": "Antimicrobial",
+            "description": "Prevents the formation of mold and bacteria that cause odors.",
+            "icon": "shield"
+          },
+          {
+            "title": "Durability",
+            "description": "3x to 5x stronger than cotton, with less stretching or degradation.",
+            "icon": "shield"
+          },
+          {
+            "title": "Breathable",
+            "description": "The permeable fiber enables excellent air circulation, removing moisture and insulating the body—cool in summer, warm in winter.",
+            "icon": "shield"
+          }
+          
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": " Integrating advanced fiber processing with localized manufacturing to deliver high-tenacity materials that meet global industrial standards",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Using specific decortication processes, raw hemp is refined into high-tenacity, long-lasting fibers suitable for industrial spinning.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Providing low-impact, biodegradable alternatives to synthetics, enabling brands to lower their emissions while supporting the Saudi Green Initiative.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Managing technical validation, customized mixing, and finishing support to guarantee that each textile batch satisfies the highest worldwide durability and safety standards.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
     },
     "energy": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Energy & biofuels",
+        "body": "Developing high-tenacity, climate-adaptive fibers for the Kingdom’s industrial and fashion sectors. Delivering sustainable textile systems that meet the rigorous performance and comfort standards of the GCC.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Hemp fiber represents the future of sustainable textiles, combining exceptional durability with environmental responsibility. It offers performance that matches or exceeds traditional materials while requiring minimal water and no pesticides.",
+          "Our goal is to provide a regenerative alternative to one of the world's most polluting sectors, delivering premium quality while minimizing environmental impact."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Specialized Decortication– Mechanically separating the hemp stalk into high-quality fiber and Hurd using precision industrial equipment.",
+          "Advanced Degumming– Utilizing eco-friendly processes to remove lignin and pectins, ensuring the fiber is soft enough for premium textiles.",
+          "Refinement & Spinning– Preparing the fiber for blending with organic cotton or silk to meet the standards of global luxury markets."
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Engineering superior, locally-sourced natural fibers to drive a sustainable textile value chain.",
+        "items": [
+          {
+            "title": "Biodegradability",
+            "description": "The material is fully biodegradable and can be safely returned to the earth at the end of its lengthy life",
+            "icon": "target"
+          },
+          {
+            "title": "UV Protection",
+            "description": "Naturally blocks a high percentage of harmful UVA/UVB rays, with testing showing 50% higher efficacy than polyester.",
+            "icon": "zap"
+          },
+          {
+            "title": "Hypoallergenic",
+            "description": "Naturally gentle and non-irritating,making it an ideal choice for sensitive skin.",
+            "icon": "shield"
+          },
+          {
+            "title": "Highly Absorbent",
+            "description": "The porosity of the fiber allows it to absorb moisture efficiently, making it perfect for towels and activewear.",
+            "icon": "shield"
+          },
+          {
+            "title": "Antimicrobial",
+            "description": "Prevents the formation of mold and bacteria that cause odors.",
+            "icon": "shield"
+          },
+          {
+            "title": "Durability",
+            "description": "3x to 5x stronger than cotton, with less stretching or degradation.",
+            "icon": "shield"
+          },
+          {
+            "title": "Breathable",
+            "description": "The permeable fiber enables excellent air circulation, removing moisture and insulating the body—cool in summer, warm in winter.",
+            "icon": "shield"
+          }
+          
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": " Integrating advanced fiber processing with localized manufacturing to deliver high-tenacity materials that meet global industrial standards",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Using specific decortication processes, raw hemp is refined into high-tenacity, long-lasting fibers suitable for industrial spinning.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Providing low-impact, biodegradable alternatives to synthetics, enabling brands to lower their emissions while supporting the Saudi Green Initiative.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Managing technical validation, customized mixing, and finishing support to guarantee that each textile batch satisfies the highest worldwide durability and safety standards.",
+            "video": "/sliderV.mp4"
       "spotlight": null,
       "products": null,
       "partners": null
