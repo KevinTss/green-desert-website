@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Hemp-based solutions for every sustainability mandate",
-    "subtitle": "We align licensed hemp value chains with the KPIs that giga projects, regulators, and private industry must deliver.",
+    "subtitle": "We design and operate licensed hemp value chains matched with the performance, compliance, and ESG needs of giga-projects, regulators, and industrial leaders.",
     "image": "/hurd-cover.jpg"
   },
   "highlights": {
@@ -9,7 +9,7 @@
     "body": "Choose a pathway to uncover business value, operational readiness, and the technical specs that move projects from pilot to scale.",
     "stats": [
       { "id": "projects", "label": "12 pilot deployments" },
-      { "id": "emissions", "label": "7.8 t CO₂e captured/ha" },
+      { "id": "emissions", "label": "UP to 7.8 t CO₂e captured/ha" },
       { "id": "partners", "label": "18 public-private partners" }
     ]
   },
