@@ -165,7 +165,7 @@
           {
             "title": "Innovative Solutions",
             "description": "Climate-adapted hemp cultivars and precision agriculture systems designed to perform in arid and desert-edge environments.",
-            "icon": "target"
+            "icon": "lightbulb"
           },
           {
             "title": "Target Approach",
@@ -215,6 +215,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     
@@ -390,6 +391,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -474,6 +476,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -552,6 +555,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -630,6 +634,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -701,6 +706,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -780,6 +786,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -851,6 +858,7 @@
           }
         ]
       },
+      "spotlight":null,
       "products": null,
       "partners": null
     },
@@ -922,6 +930,7 @@
           }
         ]
       },
+      "spotlight": null, 
       "products": null,
       "partners": null
     },
@@ -996,6 +1005,7 @@
           }
         ]
       },
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -1006,6 +1016,7 @@
       "approach": null,
       "highlights": null,
       "features": null,
+      "spotlight": null,
       "products": null,
       "partners": null
     }
