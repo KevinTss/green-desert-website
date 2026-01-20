@@ -684,7 +684,7 @@
       },
       "overview": {
         "paragraphs": [
-          "Sustainable agriculture is a cornerstone of environmental resilience and economic diversification under Saudi Vision 2030. Our agricultural solutions focus on improving productivity while reducing pressure on water resources and soil systems. By integrating regenerative practices and climate-adapted crops, we support long-term agricultural viability in arid and semi-arid regions.",
+          "Sustainable agriculture is a cornerstone of environmental resilience and economic diversification under Saudi Vision 2030. Our agricultural solutions focus on improving productivity while reducing pressure on water resources and soil systems. By integrating regenerative practices and climate-adapted crops, we support long-term agricultural viability in arid and semi-arid regions."
         ]
       },
       "showcase": {
@@ -739,7 +739,7 @@
           },
           {
             "title": "Expert Support",
-            "description": Managing the full cultivation lifecycle—from land capability assessment to optimized harvesting—ensuring a reliable, locally secured feedstock supply.",
+            "description": "Managing the full cultivation lifecycle—from land capability assessment to optimized harvesting—ensuring a reliable, locally secured feedstock supply.",
             "video": "/sliderV.mp4"
           }
         ]
@@ -749,12 +749,81 @@
       "partners": null
     },
     "animal-care": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Animal care",
+        "body": "Providing high-performance bio-materials for livestock comfort and health management. We engineer traceable, absorbent, and antimicrobial solutions that enhance animal welfare and hygiene while optimizing operational biosecurity across the livestock sector.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Hemp-based animal care solutions provide clean, high-performance alternatives for livestock comfort, nutrition, and health management. We use bio-based inputs to enhance animal welfare and hygiene while reducing environmental impact.",
+          "Aligned with Saudi Vision 2030, our animal care portfolio supports sustainable food systems, responsible resource use, and improved agricultural efficiency. By deploying superior, locally sourced bio-materials, we ensure a sovereign supply of traceable, compostable solutions that drive the Kingdom’s circular bio-economy."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Material Analysis: Auditing livestock environments to determine the optimal fiber-to-core ratio for absorbency and ammonia control.",
+          "Local Sourcing: Processing locally grown biomass into dust-screened, antimicrobial bedding and nutritional feedstock. Deployment Support: Providing guidance on integration into existing farm management systems to improve biosecurity and animal health.",
+          "Waste Valorization: Facilitating the transition of used materials into nutrient-rich compost, returning value to the agricultural land."
+          
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Enhancing livestock biosecurity and welfare with antimicrobial, absorbent bio-materials for cleaner agricultural systems.",
+        "items": [
+          {
+            "title": "Superior Absorbency",
+            "description": "Absorbs up to 4x its weight, maintaining a drier and cleaner environment.",
+            "icon": "target"
+          },
+          {
+            "title": "Antimicrobial Performance",
+            "description": "Natural resistance to bacteria, mold, and pests without chemical treatment.",
+            "icon": "zap"
+          },
+          {
+            "title": "Respiratory Protection",
+            "description": "Dust-screened materials designed to minimize respiratory stress for animals and handlers.",
+            "icon": "shield"
+          },
+          {
+            "title": "Ammonia Control",
+            "description": "High cation-exchange capacity that neutralizes odors and improves air quality in enclosures.",
+            "icon": "shield"
+          },
+           {
+            "title": "Thermal Insulation",
+            "description": "Provides consistent temperature regulation for comfort in both extreme heat and cold.",
+            "icon": "shield"
+          },
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": "Collaborating with livestock managers to implement high-performance bio-material systems that improve operational hygiene and environmental compliance.",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Using the natural antimicrobial and high absorbency properties of hemp to create pathogen-resistant environments for commercial livestock.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Transforming industrial biomass into fully compostable bedding and nutrition inputs that reduce waste and return vital nutrients to the soil.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Providing Seed-to-Stable" traceability and moisture- performance data to help producers meet high standards of animal welfare.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
