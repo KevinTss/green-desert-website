@@ -215,48 +215,10 @@
           }
         ]
       },
-      "spotlight": {
-        "title": "Responsibly advancing AI and robotics",
-        "subtitle": "To ensure Gemini Robotics benefits humanity, we’ve taken a comprehensive approach to safety, from practical safeguards to collaborations with experts, policymakers, and our Responsibility and Safety Council.",
-        "ctaLabel": "Contact solutions team",
-        "ctaHref": "mailto:info@greendesert.sa?subject=Cultivation%20support"
-      },
-      "products": {
-        "title": "Service kits",
-        "subtitle": "Reusable blocks for new deployments.",
-        "items": [
-          {
-            "icon": "target",
-            "title": "Gemini Robotics 1.5",
-            "description": "Our most capable vision-language-action (VLA) model. It can ‘see’ (vision), ‘understand’ (language) and ‘act’ (action) within the physical world. It processes visual inputs and user prompts, learning within different embodiments and increasing its ability to generalize problem-solving.",
-            "ctaLabel": "Learn more",
-            "ctaHref": "mailto:info@greendesert.sa?subject=Pilot%20kit"
-          },
-          {
-            "icon": "shield",
-            "title": "Gemini Robotics-ER 1.5",
-            "description": "Our state-of-the-art embodied reasoning model. It specializes in understanding physical spaces, planning, and making logical decisions relating to its surroundings. It doesn’t directly control robotic limbs – but provides high-level insights to help the VLA model decide what to do next.",
-            "ctaLabel": "Learn more",
-            "ctaHref": "mailto:info@greendesert.sa?subject=Reporting%20bundle"
-          }
-        ]
-      },
-      "partners": {
-        "title": "Collaborations",
-        "subtitle": "We’re partnering with Apptronik to build the next generation of humanoid robots. We’re also working with over 60 trusted testers to guide the future of Gemini Robotics-ER.",
-        "items": [
-          {
-            "label": "Agronomy partner",
-            "description": "Agility Robotics",
-            "image": "/oasis-energy.svg"
-          },
-          {
-            "label": "MRV partner",
-            "description": "Apptronik",
-            "image": "/desert-labs.svg"
-          }
-        ]
-      }
+      "spotlight": null,
+      "products": null,
+      "partners": null
+    
     },
     "construction": {
       "hero": {
@@ -973,11 +935,76 @@
       "partners": null
     },
     "pharmaceutical": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
+      "hero": {
+        "title": "Pharmaceutical & Wellness",
+        "body": "creating high-purity cannabinoids for medical and therapeutic applications. We provide clinical-quality inputs, comprehensive lab validation, and stability data to support pharmaceutical R&D and national health initiatives.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "The pharmaceutical and wellness sectors are evolving toward bio-based, evidence-backed solutions. We specialize in the extraction of high-purity hemp compounds that serve as active pharmaceutical ingredients (APIs) and therapeutic supplements. By prioritizing molecular integrity and standardized potency, we provide the pharmaceutical industry with the reliable raw materials needed for advanced drug development.",
+          "Our approach ensures that every compound is traceable from seed to shelf, aligning with Saudi Vision 2030’s goals for localizing pharmaceutical manufacturing and improving the quality of preventative care."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Molecular Profiling Selecting hemp genetics with specific chemical expressions to target desired therapeutic outcomes and active compound yields.",
+          "Precision Isolation Employing multi-stage purification processes to extract and refine targeted cannabinoids while maintaining molecular stability.",
+          "Laboratory Certification Executing exhaustive third-party and internal testing to provide a complete chemical and safety profile for every production lot.",
+          "Clinical Integration Partnering with researchers and manufacturers to develop standardized delivery systems and support localized pharmaceutical R&D."
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Bridging molecular science and patient care with clinical-grade isolates and bioactive compounds for medical innovation.",
+        "items": [
+          {
+            "title": "High-Purity Isolates",
+            "description": "Specialized production of CBD, CBG, and other cannabinoids at 99%+ purity levels for medical applications.",
+            "icon": "target"
+          },
+          {
+            "title": "Stability Validated",
+            "description": "Ingredients tested under various environmental conditions to ensure potency remains consistent throughout the product lifecycle.",
+            "icon": "zap"
+          },
+          {
+            "title": "Formulation Flexibility",
+            "description": "Ingredients available in oil, isolate, and water-soluble formats for integration into capsules, topicals, or liquid tinctures.",
+            "icon": "shield"
+          },
+          {
+            "title": "National API Supply",
+            "description": "Localized production of active ingredients, reducing dependence on global pharmaceutical imports and securing the national supply chain.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": "Scaling medical-grade innovation by integrating high-purity molecular extraction with the rigorous stability testing and clinical documentation required for pharmaceutical advancement.",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Using CO2 and chromatography technologies to isolate specific cannabinoids and terpenes with pharmaceutical-level purity and zero residual solvents.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Providing consistent, batch-verified active ingredients that allow for precise dosing and predictable therapeutic outcomes in medical and wellness formulations.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Delivering full technical dossiers, Certificates of Analysis (COAs), and stability profiles to ensure seamless SFDA registration and adherence to global Good Manufacturing Practices (GMP).",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "features": null,
       "spotlight": null,
       "products": null,
