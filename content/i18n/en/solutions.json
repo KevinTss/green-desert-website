@@ -800,7 +800,7 @@
             "title": "Thermal Insulation",
             "description": "Provides consistent temperature regulation for comfort in both extreme heat and cold.",
             "icon": "shield"
-          },
+          }
         ]
       },
       "features": {
@@ -819,7 +819,7 @@
           },
           {
             "title": "Expert Support",
-            "description": "Providing Seed-to-Stable" traceability and moisture- performance data to help producers meet high standards of animal welfare.",
+            "description": "Providing Seed-to-Stable traceability and moisture- performance data to help producers meet high standards of animal welfare.",
             "video": "/sliderV.mp4"
           }
         ]
@@ -829,23 +829,145 @@
       "partners": null
     },
     "cosmetics": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Animal care",
+        "body": "Developing & Supplying high-purity hemp extracts and seed oils for advanced skincare, haircare, and spa applications with transparent sourcing. We provide COAs, stability data, and formulation guidance to shorten R&D cycles and ensure regulatory compliance.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Hemp-derived ingredients are redefining the cosmetics and personal care industry through clean, high-potency formulations. We unlock the plant’s biological potential to deliver essential fatty acids, antioxidants, and skin barrier support—all without common allergens.",
+          "At Green Desert, we believe premium personal care should reflect a sustainable relationship with the environment. By localizing the production of high-purity botanical extracts, we provide the industry with traceable, bio-based raw materials that align with Saudi Vision 2030’s goals for industrial innovation."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Our extraction and lab approach ensures high-purity, standardized bio-actives: Precision, solvent-free extraction and chemical profiling, Stability and compatibility testing for shelf-life and formulation synergy and Technical documentation and COAs to meet SFDA and international standards. This method delivers consistent, high-quality actives while supporting regulatory compliance."          
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Unlocking the biological potential of high-purity hemp actives to redefine clean beauty and personal care formulations.",
+        "items": [
+          {
+            "title": "Fatty Acid Profile",
+            "description": "Rich in Omega-3, 6, and 9 to deeply nourish the skin barrier and prevent transepidermal water loss.",
+            "icon": "target"
+          },
+          {
+            "title": "Antioxidant Protection",
+            "description": "High concentrations of Vitamin E and phenolic compounds to combat oxidative stress from environmental pollutants.",
+            "icon": "zap"
+          },
+          {
+            "title": "Non-Comedogenic",
+            "description": "A specialized lightweight oil profile that provides intense hydration without clogging pores.",
+            "icon": "shield"
+          },
+          {
+            "title": "Anti-Inflammatory Properties",
+            "description": "Natural soothing compounds that reduce skin redness and sensitivity in dermatological applications.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": "Providing manufacturers with standardized bio-actives, rigorous stability validation, and formulation expertise to accelerate R&D and ensure regulatory excellence.",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Using gentle, solvent-free extraction methods to preserve the integrity of Omega-3 and Omega-6 fatty acids and potent antioxidants for superior skin-barrier support.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Replacing synthetic ingredients with locally sourced, bio-based , high-potency ingredients for skincare, haircare, and to reduce the environmental footprint of personal care products.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Providing COAs and formulation guidance to streamline development and ensure full regulatory compliance.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
     },
     "food": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Food & beverage",
+        "body": "Developing high-density plant-based proteins and nutrient-rich hemp derivatives for the functional food market. We provide stabilized, traceable ingredients and technical support to enhance nutritional profiles and drive food security.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Hemp-derived ingredients are redefining the cosmetics and personal care industry through clean, high-potency formulations. We unlock the plant’s biological potential to deliver essential fatty acids, antioxidants, and skin barrier support—all without common allergens.",
+          "At Green Desert, we believe premium personal care should reflect a sustainable relationship with the environment. By localizing the production of high-purity botanical extracts, we provide the industry with traceable, bio-based raw materials that align with Saudi Vision 2030’s goals for industrial innovation."
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Our extraction and lab approach ensures high-purity, standardized bio-actives: Precision, solvent-free extraction and chemical profiling, Stability and compatibility testing for shelf-life and formulation synergy and Technical documentation and COAs to meet SFDA and international standards. This method delivers consistent, high-quality actives while supporting regulatory compliance."          
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Unlocking the biological potential of high-purity hemp actives to redefine clean beauty and personal care formulations.",
+        "items": [
+          {
+            "title": "Fatty Acid Profile",
+            "description": "Rich in Omega-3, 6, and 9 to deeply nourish the skin barrier and prevent transepidermal water loss.",
+            "icon": "target"
+          },
+          {
+            "title": "Antioxidant Protection",
+            "description": "High concentrations of Vitamin E and phenolic compounds to combat oxidative stress from environmental pollutants.",
+            "icon": "zap"
+          },
+          {
+            "title": "Non-Comedogenic",
+            "description": "A specialized lightweight oil profile that provides intense hydration without clogging pores.",
+            "icon": "shield"
+          },
+          {
+            "title": "Anti-Inflammatory Properties",
+            "description": "Natural soothing compounds that reduce skin redness and sensitivity in dermatological applications.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": "Providing manufacturers with standardized bio-actives, rigorous stability validation, and formulation expertise to accelerate R&D and ensure regulatory excellence.",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Using gentle, solvent-free extraction methods to preserve the integrity of Omega-3 and Omega-6 fatty acids and potent antioxidants for superior skin-barrier support.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Replacing synthetic ingredients with locally sourced, bio-based , high-potency ingredients for skincare, haircare, and to reduce the environmental footprint of personal care products.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": "Providing COAs and formulation guidance to streamline development and ensure full regulatory compliance.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
