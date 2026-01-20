@@ -156,13 +156,13 @@
     ]
   },
   "leadership": {
-    "title": "Leadership & governance",
-    "subtitle": "Advisors and board members ensure regulatory, financial, and technical oversight while deepening government partnerships.",
+    "title": null,
+    "subtitle": null,
     "committee": {
-      "title": "Board committees focus on",
+      "title": null,
       "items": [
         {
-          "id": "regulatory",
+          "id": null,
           "title": "Regulatory alignment",
           "body": "Regulatory alignment with Saudi ministries and GACA/MAWANI compliance."
         },
@@ -180,25 +180,25 @@
     },
     "members": [
       {
-        "id": "chair",
-        "name": "Abdulhadi Alamer",
-        "role": "Chairman & Founder",
-        "bio": "Leads government relations, investor engagement, and the strategic rollout of hemp industrialization across Saudi giga projects.",
-        "image": "/hadi.jpg"
+        "id": null,
+        "name": null,
+        "role": null,
+        "bio": null,
+        "image": null
       },
       {
-        "id": "policy",
-        "name": "Dr. Laila Al Harbi",
-        "role": "Government Affairs Advisor",
-        "bio": "Former advisor at the Ministry of Environment, Water and Agriculture supporting circular economy policies and sustainable farming programs.",
-        "image": "/hadi.jpg"
+        "id": null,
+        "name": null,
+        "role": null,
+        "bio": null,
+        "image": null
       },
       {
-        "id": "partnerships",
-        "name": "Eng. Faisal Al Qahtani",
-        "role": "Infrastructure Partnerships Lead",
-        "bio": "Civil engineer with megaproject experience at The Red Sea and Qiddiya, guiding technical integration and contractor onboarding.",
-        "image": "/hadi.jpg"
+        "id": null,
+        "name": null,
+        "role": null,
+        "bio": null,
+        "image": null
       }
     ]
   }
