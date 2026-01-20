@@ -616,7 +616,7 @@
         "paragraphs": [
           "Environmental Assessment Conducting comprehensive site audits and soil/water analysis to identify contaminant profiles and establish baseline carbon sequestration metrics.",
           "Phytoremediation Deployment Implementing targeted cultivation of specific hemp varieties engineered to extract heavy metals and pollutants while stabilizing the soil structure.",
-          "Circular Biomass Recovery Harvesting the remediation crop and utilizing specialized processing to safely sequester captured toxins or convert clean biomass into industrial feedstock."،,
+          "Circular Biomass Recovery Harvesting the remediation crop and utilizing specialized processing to safely sequester captured toxins or convert clean biomass into industrial feedstock.",
           "Impact Validation & MRV Providing final technical reports, soil health certification, and verified carbon-negative data for national regulatory compliance and ESG reporting."
         ]
       },
@@ -640,34 +640,34 @@
             "icon": "shield"
           },
           {
-            "title": "Thermal Stability",
-            "description": "Low thermal expansion rates ensuring dimensional stability in the extreme temperature shifts of the GCC.",
+            "title": "Land Rehabilitation",
+            "description": "Advanced biological treatments designed to restore fertility and structural integrity to arid or over-farmed land.",
             "icon": "shield"
           },
           {
-            "title": "National Supply Chain",
-            "description": "Locally sourced raw materials that strengthen Saudi Arabia’s industrial autonomy and material security.",
+            "title": "Effluent Bio Filtration",
+            "description": "Engineering natural fiber systems to filter and remediate industrial wastewater before discharge.",
             "icon": "shield"
           }
         ]
       },
       "features": {
         "title": null,
-        "subTitle": " Engineering custom bio-composite resin and fiber blends to meet the rigorous mechanical and weight-reduction requirements of modern manufacturing.",
+        "subTitle": "Deploying site-specific remediation protocols and verified MRV data to transform degraded land and industrial waste into productive resources.",
         "items": [
           {
             "title": "Advanced Technology",
-            "description": "Optimizing fiber aspect ratios and surface treatments to maximize interfacial bonding strength for high-load industrial applications.",
+            "description": "Deploying hemp systems to remediate soils and process industrial residues into controlled biomass via precision monitoring and lab validation.",
             "video": "/sliderV.mp4"
           },
           {
             "title": "Sustainable Solutions",
-            "description": "Replacing petroleum-based fillers with high-tenacity hemp biomass to significantly lower the carbon footprint of mass-produced components.",
+            "description": "Converting organic waste and remediation biomass into safe, usable outputs like bioenergy feedstock and stabilized industrial inputs.",
             "video": "/sliderV.mp4"
           },
           {
             "title": "Expert Support",
-            "description": "Providing on-site processing guidance and custom fiber specifications to ensure seamless transitions during industrial manufacturing trials.",
+            "description": "Delivering site audits, waste characterization, remediation protocols, and verified Monitoring, Reporting, and Verification (MRV).",
             "video": "/sliderV.mp4"
           }
         ]
@@ -677,12 +677,73 @@
       "partners": null
     },
     "agriculture": {
-      "hero": null,
-      "overview": null,
-      "showcase": null,
-      "approach": null,
-      "highlights": null,
-      "features": null,
+      "hero": {
+        "title": "Agriculture",
+        "body": "Deploying climate-adapted crops and regenerative agronomy to secure the Kingdom’s industrial feedstock. We engineer high-yield, water-efficient systems that restore soil health and drive national resource autonomy.",
+        "image": "/seeds-cover.webp"
+      },
+      "overview": {
+        "paragraphs": [
+          "Sustainable agriculture is a cornerstone of environmental resilience and economic diversification under Saudi Vision 2030. Our agricultural solutions focus on improving productivity while reducing pressure on water resources and soil systems. By integrating regenerative practices and climate-adapted crops, we support long-term agricultural viability in arid and semi-arid regions.",
+        ]
+      },
+      "showcase": {
+        "image": "/seeds-cover.jpg",
+        "video": null
+      },
+      "approach": {
+        "paragraphs": [
+          "Our approach combines science-based agronomy with regional priorities: Assessment of soil quality and land capability, Crop selection suited for arid climates, Efficient water and nutrient management, Continuous performance monitoring and optimization. This ensures agricultural productivity while protecting natural resources."
+          
+        ]
+      },
+      "highlights": {
+        "title": null,
+        "subtitle": "Advancing the Kingdom’s food and material security through high-yield, water-efficient regenerative agronomy.",
+        "items": [
+          {
+            "title": "Arid-Climate Genetics",
+            "description": "Seed varieties optimized for the Kingdom’s temperature extremes and high salinity levels.",
+            "icon": "target"
+          },
+          {
+            "title": "Water-Efficiency Protocols",
+            "description": "Advanced irrigation strategies designed to minimize agricultural water use.",
+            "icon": "zap"
+          },
+          {
+            "title": "Soil Health Restoration",
+            "description": "Regenerative practices that rebuild organic matter and structural integrity in degraded lands.",
+            "icon": "shield"
+          },
+          {
+            "title": "Rapid Biomass Growth",
+            "description": "High-yield cycles delivering consistent industrial raw materials in under 150 days.",
+            "icon": "shield"
+          }
+        ]
+      },
+      "features": {
+        "title": null,
+        "subTitle": "Providing end-to-end agronomic management, from soil capability assessment to optimized harvesting, ensuring a reliable national feedstock supply.",
+        "items": [
+          {
+            "title": "Advanced Technology",
+            "description": "Using precision a gritech and salt-tolerant crop genetics to maximize biomass yields while significantly reducing freshwater demand.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Sustainable Solutions",
+            "description": "Applying soil restoration practices and efficient nutrient management to convert arid land into productive, carbon- sequestering agricultural systems.",
+            "video": "/sliderV.mp4"
+          },
+          {
+            "title": "Expert Support",
+            "description": Managing the full cultivation lifecycle—from land capability assessment to optimized harvesting—ensuring a reliable, locally secured feedstock supply.",
+            "video": "/sliderV.mp4"
+          }
+        ]
+      },
       "spotlight": null,
       "products": null,
       "partners": null
