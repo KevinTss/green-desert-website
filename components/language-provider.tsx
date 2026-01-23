@@ -21,24 +21,6 @@ import arSolutions from '@/content/i18n/ar/solutions.json'
 
 export type Language = "en" | "ar"
 
-interface LanguageContextType {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: (key: string) => any
-  content: ContentStructure
-  isRTL: boolean
-  languageRoute: 'en' | 'ar-SA'
-}
-
-export interface ContentStructure {
-  labels: typeof enLabels
-  header: typeof enHeader
-  footer: typeof enFooter
-  home: typeof enHome
-  company: typeof enCompany
-  solutions: typeof enSolutions
-}
-
 const content = {
   en: {
     labels: enLabels,
@@ -56,6 +38,17 @@ const content = {
     company: arCompany,
     solutions: arSolutions,
   },
+} as const
+
+export type ContentStructure = (typeof content)[Language]
+
+interface LanguageContextType {
+  language: Language
+  setLanguage: (lang: Language) => void
+  t: (key: string) => any
+  content: ContentStructure
+  isRTL: boolean
+  languageRoute: 'en' | 'ar-SA'
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)

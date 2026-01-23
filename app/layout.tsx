@@ -1,22 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "@/components/language-provider"
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://greendesert.sa"
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta-sans",
-  display: "swap",
-})
-
-const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  variable: "--font-arabic",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -106,7 +93,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${plusJakartaSans.variable} ${notoSansArabic.variable} font-sans overflow-x-hidden`}>
+      <body className="font-sans overflow-x-hidden">
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

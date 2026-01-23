@@ -1,20 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google"
 import "../globals.css"
 import { LanguageProvider } from "@/components/language-provider"
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta-sans",
-  display: "swap",
-})
-
-const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  variable: "--font-arabic",
-  display: "swap",
-})
 
 interface LayoutProps {
   children: React.ReactNode
