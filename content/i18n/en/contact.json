@@ -1,0 +1,17 @@
+{
+  "title": "Contact us",
+  "subtitle": "Share your details and we'll connect you to the right team member.",
+  "formTitle": "Get in touch with us",
+  "formSubtitle": "Send us a message",
+  "emailLabel": "Email",
+  "subjectLabel": "Subject",
+  "messageLabel": "Message",
+  "submit": "Send message",
+  "submitting": "Sending...",
+  "success": "Thanks! We'll be in touch shortly.",
+  "error": "Something went wrong. Please try again.",
+  "invalidEmail": "Please enter a valid email.",
+  "missingFields": "Subject and message are required.",
+  "mapTitle": "Riyadh, Saudi Arabia",
+  "mapSubtitle": "Green Desert"
+}

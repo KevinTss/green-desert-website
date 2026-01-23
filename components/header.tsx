@@ -167,7 +167,8 @@ export function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <button
+          <Link
+            href={`/${language === "ar" ? "ar-SA" : "en"}/contact`}
             className={cn(
               "flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium transition-colors duration-200",
               isHeroVisible
@@ -176,7 +177,7 @@ export function Header() {
             )}
           >
             {t("labels.contactUsCta.label")}
-          </button>
+          </Link>
           {!isMobile && (
             <LanguageDropdown
               language={language}
