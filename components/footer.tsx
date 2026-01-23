@@ -1,65 +1,127 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Image from "next/image"
-import { useContent, useLanguage } from "@/components/language-provider"
-import { LinkedinIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "lucide-react"
-import { getAssetPath } from "@/lib/assets"
-import Link from "next/link"
-import footerContentEn from "@/content/i18n/en/footer.json"
+import * as React from "react";
+import Image from "next/image";
+import { useContent, useLanguage } from "@/components/language-provider";
+import {
+  LinkedinIcon,
+  InstagramIcon,
+  TwitterIcon,
+  YoutubeIcon,
+} from "lucide-react";
+import { getAssetPath } from "@/lib/assets";
+import Link from "next/link";
+import footerContentEn from "@/content/i18n/en/footer.json";
 
-type FooterContent = typeof footerContentEn
+type FooterContent = typeof footerContentEn;
 
 export const Footer = () => {
-  const { languageRoute } = useLanguage()
-  const { footer: rawFooter } = useContent()
-  const [email, setEmail] = React.useState("")
-  const [submitted, setSubmitted] = React.useState<"idle" | "success" | "error">("idle")
+  const { languageRoute } = useLanguage();
+  const { footer: rawFooter } = useContent();
+  const [email, setEmail] = React.useState("");
+  const [submitted, setSubmitted] = React.useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
 
-  const footer = (rawFooter as (Partial<FooterContent> & Record<string, any>)) ?? {}
+  const footer =
+    (rawFooter as Partial<FooterContent> & Record<string, any>) ?? {};
 
   const resolvedFollowLabel =
     typeof footer.follow === "string"
       ? footer.follow
-      : footer.follow?.label ?? footerContentEn.follow.label
+      : (footer.follow?.label ?? footerContentEn.follow.label);
 
   const resolvedFollowLinks =
-    footer && typeof footer.follow === "object" && Array.isArray(footer.follow?.links)
+    footer &&
+      typeof footer.follow === "object" &&
+      Array.isArray(footer.follow?.links)
       ? footer.follow.links
-      : footerContentEn.follow.links
+      : footerContentEn.follow.links;
 
-  const resolvedNewsletter = footer.newsletter ?? footerContentEn.newsletter
-  const resolvedDescription = footer.description ?? footerContentEn.description
-  const resolvedSections = Array.isArray(footer.sections) ? footer.sections : footerContentEn.sections
-  const resolvedLegal = footer.legal ?? footerContentEn.legal
-  const resolvedLogo = footer.logo ?? footerContentEn.logo
+  const resolvedNewsletter = footer.newsletter ?? footerContentEn.newsletter;
+  const resolvedDescription = footer.description ?? footerContentEn.description;
+  const resolvedSections = Array.isArray(footer.sections)
+    ? footer.sections
+    : footerContentEn.sections;
+  const resolvedLegal = footer.legal ?? footerContentEn.legal;
+  const resolvedLogo = footer.logo ?? footerContentEn.logo;
 
-  const isValidEmail = (val: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim())
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const isValidEmail = (val: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmedEmail = email.trim();
     if (!isValidEmail(email)) {
-      setSubmitted("error")
-      return
+      setSubmitted("error");
+      setErrorMessage(
+        resolvedNewsletter.error ?? "Please enter a valid email.",
+      );
+      return;
     }
-    setSubmitted("success")
-  }
+
+    const formId = "mjgyypve";
+    if (!formId) {
+      setSubmitted("error");
+      setErrorMessage("Newsletter form is not configured.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${formId}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: trimmedEmail,
+          subject: "subscribe to newsletter from website footer",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      setSubmitted("success");
+      setEmail("");
+    } catch (err) {
+      setSubmitted("error");
+      setErrorMessage(
+        resolvedNewsletter.error ?? "Something went wrong. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const isExternalLink = (href?: string) =>
-    !!href && (/^(https?:)?\/\//.test(href) || href.startsWith("mailto:") || href.startsWith("tel:"))
+    !!href &&
+    (/^(https?:)?\/\//.test(href) ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:"));
 
   const formatHref = (href?: string) => {
-    if (!href) return "#"
-    if (href.startsWith("#")) return href
-    if (isExternalLink(href)) return href
-    return href.startsWith("/") ? `/${languageRoute}${href}` : href
-  }
+    if (!href) return "#";
+    if (href.startsWith("#")) return href;
+    if (isExternalLink(href)) return href;
+    return href.startsWith("/") ? `/${languageRoute}${href}` : href;
+  };
 
-  const socialIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  const socialIconMap: Record<
+    string,
+    React.ComponentType<{ className?: string }>
+  > = {
     twitter: TwitterIcon,
     instagram: InstagramIcon,
     youtube: YoutubeIcon,
     linkedin: LinkedinIcon,
-  }
+  };
 
   return (
     <footer id="site-footer" className="bg-white border-t border-gray-200">
@@ -67,11 +129,13 @@ export const Footer = () => {
         {/* Top section - Follow us with icons - Full width */}
         <div className="flex items-center justify-between pb-8 border-b border-gray-200">
           <div className="flex items-center gap-4">
-            <span className="text-sm font-medium text-gray-900">{resolvedFollowLabel}</span>
+            <span className="text-sm font-medium text-gray-900">
+              {resolvedFollowLabel}
+            </span>
             <div className="flex items-center gap-2">
               {resolvedFollowLinks.map(({ href, icon, label }) => {
-                const Icon = icon ? socialIconMap[icon] : undefined
-                if (!Icon || !href) return null
+                const Icon = icon ? socialIconMap[icon] : undefined;
+                if (!Icon || !href) return null;
                 return (
                   <a
                     key={label}
@@ -83,7 +147,7 @@ export const Footer = () => {
                   >
                     <Icon className="w-5 h-5" />
                   </a>
-                )
+                );
               })}
             </div>
           </div>
@@ -105,22 +169,30 @@ export const Footer = () => {
               inputMode="email"
               placeholder={resolvedNewsletter.placeholder}
               value={email}
-              onChange={(e) => { setEmail(e.target.value); if (submitted !== 'idle') setSubmitted('idle') }}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (submitted !== "idle") setSubmitted("idle");
+              }}
               className="w-full px-4 py-2.5 pr-28 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-              aria-invalid={submitted === 'error'}
+              aria-invalid={submitted === "error"}
             />
             <button
               type="submit"
+              disabled={isSubmitting}
               className="absolute right-1 top-1/2 -translate-y-1/2 px-6 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors whitespace-nowrap"
             >
-              {resolvedNewsletter.cta}
+              {isSubmitting ? "..." : resolvedNewsletter.cta}
             </button>
           </form>
-          {submitted === 'error' && (
-            <p className="mt-2 text-sm text-red-600">{resolvedNewsletter.error}</p>
+          {submitted === "error" && (
+            <p className="mt-2 text-sm text-red-600">
+              {errorMessage ?? resolvedNewsletter.error}
+            </p>
           )}
-          {submitted === 'success' && (
-            <p className="mt-2 text-sm text-emerald-600">{resolvedNewsletter.success}</p>
+          {submitted === "success" && (
+            <p className="mt-2 text-sm text-emerald-600">
+              {resolvedNewsletter.success}
+            </p>
           )}
         </div>
 
@@ -135,11 +207,13 @@ export const Footer = () => {
 
           {resolvedSections.map((section, idx) => (
             <div key={section.title ?? `section-${idx}`}>
-              <h4 className="text-sm font-semibold text-gray-900 mb-4">{section.title}</h4>
+              <h4 className="text-sm font-semibold text-gray-900 mb-4">
+                {section.title}
+              </h4>
               <ul className="space-y-3">
                 {section.links?.map((item) => {
-                  const href = formatHref(item.href)
-                  const isExternal = isExternalLink(item.href)
+                  const href = formatHref(item.href);
+                  const isExternal = isExternalLink(item.href);
                   if (isExternal) {
                     return (
                       <li key={item.label ?? href}>
@@ -152,15 +226,18 @@ export const Footer = () => {
                           {item.label ?? href}
                         </a>
                       </li>
-                    )
+                    );
                   }
                   return (
                     <li key={item.label ?? href}>
-                      <Link href={href} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                      <Link
+                        href={href}
+                        className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                      >
                         {item.label ?? href}
                       </Link>
                     </li>
-                  )
+                  );
                 })}
               </ul>
             </div>
@@ -180,5 +257,5 @@ export const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
