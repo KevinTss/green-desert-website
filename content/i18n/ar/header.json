@@ -41,50 +41,62 @@
       },
       "subItems": [
         {
+          "href": "/solutions/cultivation",
           "label": "الزراعة",
           "description": "الزراعة التجديدية لاحتجاز الكربون"
         },
         {
+          "href": "/solutions/construction",
           "label": "الإنشاءات",
           "description": ""
         },
         {
+          "href": "/solutions/textiles",
           "label": "المنسوجات",
           "description": ""
         },
         {
+          "href": "/solutions/energy",
           "label": "الطاقة والوقود الحيوي",
           "description": ""
         },
         {
+          "href": "/solutions/biocomposites",
           "label": "المواد الحيوية المركّبة",
           "description": ""
         },
         {
+          "href": "/solutions/waste",
           "label": "إدارة النفايات والمعالجة البيئية",
           "description": ""
         },
         {
+          "href": "/solutions/agriculture",
           "label": "الزراعة",
           "description": ""
         },
         {
+          "href": "/solutions/animal-care",
           "label": "رعاية الحيوان",
           "description": ""
         },
         {
+          "href": "/solutions/cosmetics",
           "label": "مستحضرات التجميل والعناية الشخصية",
           "description": ""
         },
         {
+          "href": "/solutions/food",
           "label": "الأغذية والمشروبات",
           "description": ""
         },
         {
+          "href": "/solutions/pharmaceutical",
           "label": "الأدوية",
           "description": ""
         },
         {
+          "href": "/solutions/services",
           "label": "الخدمات",
           "description": ""
         }

@@ -41,50 +41,62 @@
       },
       "subItems": [
         {
+          "href": "/solutions/cultivation",
           "label": "Cultivation",
           "description": "Regenerative carbon farming"
         },
         {
+          "href": "/solutions/construction",
           "label": "Construction",
           "description": "Hempcrete & envelope systems"
         },
         {
+          "href": "/solutions/textiles",
           "label": "Textile",
           "description": "Premium natural fibers"
         },
         {
+          "href": "/solutions/energy",
           "label": "Energy & Biofuels",
           "description": "Biomass-to-energy systems"
         },
         {
+          "href": "/solutions/biocomposites",
           "label": "Biocomposites",
           "description": "Lightweight, high-strength materials"
         },
         {
+          "href": "/solutions/waste",
           "label": "Waste & Remediation",
           "description": "phytoremedation & circular waste"
         },
         {
+          "href": "/solutions/agriculture",
           "label": "Agriculture",
           "description": "High-performance agritech"
         },
         {
+          "href": "/solutions/animal-care",
           "label": "Animal Care",
           "description": "Comfort & nutrition"
         },
         {
+          "href": "/solutions/cosmetics",
           "label": "Cosmetics & Personal Care",
           "description": "Clean beuty actives"
         },
         {
+          "href": "/solutions/food",
           "label": "Food & Beverage",
           "description": "Functional nutrition"
         },
         {
+          "href": "/solutions/pharmaceutical",
           "label": "Pharmaceuticals",
           "description": "Clinical-grade cannabinoids"
         },
         {
+          "href": "/solutions/services",
           "label": "Services",
           "description": ""
         }
