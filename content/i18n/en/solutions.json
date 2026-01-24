@@ -170,12 +170,12 @@
           {
             "title": "Target Approach",
             "description": "Custom irrigation, soil management, and agronomy tailored to Middle Eastern soil profiles and water constraints.",
-            "icon": "zap"
+            "icon": "target"
           },
           {
             "title": "Fast Implementation",
             "description": "Rapid growth cycles enable multiple harvests per year, accelerating biomass production and project timelines.",
-            "icon": "shield"
+            "icon": "zap"
           },
           {
             "title": "Relible & Secure",
@@ -185,12 +185,12 @@
           {
             "title": "Scalable Growth",
             "description": "Cultivation systems capable of expanding from local projects to national and regional level.",
-            "icon": "shield"
+            "icon": "trending-up"
           },
           {
             "title": "Industry Leading",
             "description": "Serving as the Kingdom's first licensed pioneer in industrial hemp research, setting the regional standard for arid-land biotechnology.",
-            "icon": "shield"
+            "icon": "award"
           }
         ]
       },
@@ -251,32 +251,32 @@
           {
             "title": "Thermal Resilience",
             "description": "High performance insulation that reduces cooling energy demand, engineered specifically for the extreme heat of the GCC.",
-            "icon": "target"
+            "icon": "ThermometerSun"
           },
           {
             "title": "Carbon Sequestration",
             "description": "A net-negative building material that actively captures CO2 , helping developers achieve their Net-Zero goals.",
-            "icon": "zap"
+            "icon": "leaf"
           },
           {
             "title": "Fire & Safety",
             "description": "Naturally fire-resistant bio-composites that meet rigorous international safety standards for large-scale developments.",
-            "icon": "shield"
+            "icon": "shield-check"
           },
           {
             "title": "Breathable",
             "description": "Superior moisture regulation that prevents mold and improves indoor air quality in humid or coastal desert regions.",
-            "icon": "shield"
+            "icon": "wind"
           },
           {
             "title": "Acoustic Comfort",
             "description": "High-density Hempcrete provides exceptional sound dampening, ideal for high-end residential and urban commercial projects.",
-            "icon": "shield"
+            "icon": "volume-1"
           },
           {
             "title": "Circular Economy",
             "description": "A fully renewable resource that supports the Kingdom’s shift toward sustainable, waste-free construction ecosystems.",
-            "icon": "shield"
+            "icon": "refresh-ccw"
           }
         ]
       },
@@ -335,27 +335,27 @@
           {
             "title": "Biodegradability",
             "description": "The material is fully biodegradable and can be safely returned to the earth at the end of its lengthy life",
-            "icon": "target"
+            "icon": "sprout"
           },
           {
             "title": "UV Protection",
             "description": "Naturally blocks a high percentage of harmful UVA/UVB rays, with testing showing 50% higher efficacy than polyester.",
-            "icon": "zap"
+            "icon": "sun"
           },
           {
             "title": "Hypoallergenic",
             "description": "Naturally gentle and non-irritating,making it an ideal choice for sensitive skin.",
-            "icon": "shield"
+            "icon": "Sparkles"
           },
           {
             "title": "Highly Absorbent",
             "description": "The porosity of the fiber allows it to absorb moisture efficiently, making it perfect for towels and activewear.",
-            "icon": "shield"
+            "icon": "droplets"
           },
           {
             "title": "Antimicrobial",
             "description": "Prevents the formation of mold and bacteria that cause odors.",
-            "icon": "shield"
+            "icon": "shield-minus"
           },
           {
             "title": "Durability",
@@ -365,7 +365,7 @@
           {
             "title": "Breathable",
             "description": "The permeable fiber enables excellent air circulation, removing moisture and insulating the body—cool in summer, warm in winter.",
-            "icon": "shield"
+            "icon": "wind"
           }
           
         ]
@@ -425,32 +425,32 @@
           {
             "title": "Carbon Substitution",
             "description": "Providing a direct, renewable alternative to high-carbon fossil fuels for industrial heat and power generation.",
-            "icon": "target"
+            "icon": "fuel"
           },
           {
             "title": "Cogeneration Efficiency",
             "description": "Optimized for Combined Heat and Power (CHP) systems to maximize energy recovery and reduce operational losses.",
-            "icon": "zap"
+            "icon": "repeat"
           },
           {
             "title": "Hydrogen Feedstock",
             "description": "Clean, verified biomass engineered for compatibility with emerging green hydrogen and bio-syngas pathways.",
-            "icon": "shield"
+            "icon": "flask-conical"
           },
           {
             "title": "Lifecycle Traceability",
             "description": "Full carbon accounting, MRV frameworks, and data verification to support national ESG, decarbonization, and reporting requirements.",
-            "icon": "shield"
+            "icon": "file-check"
           },
           {
             "title": "High Calorific Density",
             "description": "Engineered pellets and briquettes delivering consistent combustion and superior energy-per-kilogram performance.",
-            "icon": "shield"
+            "icon": "gauge"
           },
           {
             "title": "Sustainable Logistics",
             "description": "Reliable, year-round feedstock supply chains designed for large-scale industrial energy consumers.",
-            "icon": "shield"
+            "icon": "truck"
           }
           
         ]
@@ -510,27 +510,27 @@
           {
             "title": "Strength",
             "description": "Superior mechanical performance that reduces component weight without sacrificing structural integrity.",
-            "icon": "target"
+            "icon": "Shield"
           },
           {
             "title": "Vibration Damping",
             "description": "Natural acoustic and vibration absorption properties, ideal for automotive and industrial housings.",
-            "icon": "zap"
+            "icon": "volume-x"
           },
           {
             "title": "Low Embodied Carbon",
             "description": "Significant reduction in manufacturing emissions compared to traditional glass fiber or petroleum-based resins.",
-            "icon": "shield"
+            "icon": "leaf"
           },
           {
             "title": "Thermal Stability",
             "description": "Low thermal expansion rates ensuring dimensional stability in the extreme temperature shifts of the GCC.",
-            "icon": "shield"
+            "icon": "thermometer"
           },
           {
             "title": "National Supply Chain",
             "description": "Locally sourced raw materials that strengthen Saudi Arabia’s industrial autonomy and material security.",
-            "icon": "shield"
+            "icon": "factory"
           }
         ]
       },
@@ -589,27 +589,27 @@
           {
             "title": "Soil Phytoremediation",
             "description": "Utilizing specialized hemp cultivars to extract heavy metals and toxins from degraded industrial soil.",
-            "icon": "target"
+            "icon": "sprout"
           },
           {
             "title": "Carbon Sequestration",
             "description": "Verified protocols for capturing atmospheric carbon and storing it permanently within the soil and processed biomass.",
-            "icon": "zap"
+            "icon": "leaf"
           },
           {
             "title": "Circular Waste Systems",
             "description": "Converting agricultural by-products into high-performance industrial feedstock, eliminating landfill dependency.",
-            "icon": "shield"
+            "icon": "refresh-ccw"
           },
           {
             "title": "Land Rehabilitation",
             "description": "Advanced biological treatments designed to restore fertility and structural integrity to arid or over-farmed land.",
-            "icon": "shield"
+            "icon": "layers"
           },
           {
             "title": "Effluent Bio Filtration",
             "description": "Engineering natural fiber systems to filter and remediate industrial wastewater before discharge.",
-            "icon": "shield"
+            "icon": "droplet"
           }
         ]
       },
@@ -666,22 +666,22 @@
           {
             "title": "Arid-Climate Genetics",
             "description": "Seed varieties optimized for the Kingdom’s temperature extremes and high salinity levels.",
-            "icon": "target"
+            "icon": "sun"
           },
           {
             "title": "Water-Efficiency Protocols",
             "description": "Advanced irrigation strategies designed to minimize agricultural water use.",
-            "icon": "zap"
+            "icon": "droplet-off"
           },
           {
             "title": "Soil Health Restoration",
             "description": "Regenerative practices that rebuild organic matter and structural integrity in degraded lands.",
-            "icon": "shield"
+            "icon": "sprout"
           },
           {
             "title": "Rapid Biomass Growth",
             "description": "High-yield cycles delivering consistent industrial raw materials in under 150 days.",
-            "icon": "shield"
+            "icon": "trending-up"
           }
         ]
       },
@@ -741,27 +741,27 @@
           {
             "title": "Superior Absorbency",
             "description": "Absorbs up to 4x its weight, maintaining a drier and cleaner environment.",
-            "icon": "target"
+            "icon": "droplets"
           },
           {
             "title": "Antimicrobial Performance",
             "description": "Natural resistance to bacteria, mold, and pests without chemical treatment.",
-            "icon": "zap"
+            "icon": "shield-check"
           },
           {
             "title": "Respiratory Protection",
             "description": "Dust-screened materials designed to minimize respiratory stress for animals and handlers.",
-            "icon": "shield"
+            "icon": "wind"
           },
           {
             "title": "Ammonia Control",
             "description": "High cation-exchange capacity that neutralizes odors and improves air quality in enclosures.",
-            "icon": "shield"
+            "icon": "circle-off"
           },
            {
             "title": "Thermal Insulation",
             "description": "Provides consistent temperature regulation for comfort in both extreme heat and cold.",
-            "icon": "shield"
+            "icon": "thermometer"
           }
         ]
       },
