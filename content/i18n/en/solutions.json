@@ -818,22 +818,22 @@
           {
             "title": "Fatty Acid Profile",
             "description": "Rich in Omega-3, 6, and 9 to deeply nourish the skin barrier and prevent transepidermal water loss.",
-            "icon": "target"
+            "icon": "droplet"
           },
           {
             "title": "Antioxidant Protection",
             "description": "High concentrations of Vitamin E and phenolic compounds to combat oxidative stress from environmental pollutants.",
-            "icon": "zap"
+            "icon": "shield"
           },
           {
             "title": "Non-Comedogenic",
             "description": "A specialized lightweight oil profile that provides intense hydration without clogging pores.",
-            "icon": "shield"
+            "icon": "circle-off"
           },
           {
             "title": "Anti-Inflammatory Properties",
             "description": "Natural soothing compounds that reduce skin redness and sensitivity in dermatological applications.",
-            "icon": "shield"
+            "icon": "heart"
           }
         ]
       },
@@ -870,8 +870,8 @@
       },
       "overview": {
         "paragraphs": [
-          "Hemp-derived ingredients are redefining the cosmetics and personal care industry through clean, high-potency formulations. We unlock the plant’s biological potential to deliver essential fatty acids, antioxidants, and skin barrier support—all without common allergens.",
-          "At Green Desert, we believe premium personal care should reflect a sustainable relationship with the environment. By localizing the production of high-purity botanical extracts, we provide the industry with traceable, bio-based raw materials that align with Saudi Vision 2030’s goals for industrial innovation."
+          "Hemp-based nutrition is a critical component of a sustainable and secure food system. We specialize in the production of high-purity proteins, essential fatty acids, and functional ingredients that meet the growing demand for clean-label, plant-based nutrition.",
+          "AOur solutions focus on industrial-scale reliability and nutrient density. By localizing the production of superfood ingredients, we support the Kingdom’s food security initiatives and provide manufacturers with high-performance raw materials for the modern consumer."
         ]
       },
       "showcase": {
@@ -880,52 +880,65 @@
       },
       "approach": {
         "paragraphs": [
-          "Our extraction and lab approach ensures high-purity, standardized bio-actives: Precision, solvent-free extraction and chemical profiling, Stability and compatibility testing for shelf-life and formulation synergy and Technical documentation and COAs to meet SFDA and international standards. This method delivers consistent, high-quality actives while supporting regulatory compliance."          
+          "Feedstock Selection: Selecting high-yield, food-grade cultivars optimized for nutritional density and arid-climate resilience.",
+          "Precision Processing Executing cold-mechanical extraction to produce high-purity oils, flours, and protein isolates without chemical solvents.",
+          "Quality Validation Conducting rigorous batch testing for purity, nutritional consistency, and microbial safety to meet SFDA standards.",
+          "Industrial Integration Partnering with F&B manufacturers to optimize formulations and ensure a consistent, scalable supply of functional ingredients."
+
         ]
       },
       "highlights": {
         "title": null,
-        "subtitle": "Unlocking the biological potential of high-purity hemp actives to redefine clean beauty and personal care formulations.",
+        "subtitle": "Strengthening regional food security with nutrient-dense, plant-based proteins and stabilized functional ingredients.",
         "items": [
           {
-            "title": "Fatty Acid Profile",
-            "description": "Rich in Omega-3, 6, and 9 to deeply nourish the skin barrier and prevent transepidermal water loss.",
-            "icon": "target"
+            "title": "Complete Protein Profile",
+            "description": "Contains all nine essential amino acids, making it a superior plant- based alternative for functional nutrition.",
+            "icon": "layers"
           },
           {
-            "title": "Antioxidant Protection",
-            "description": "High concentrations of Vitamin E and phenolic compounds to combat oxidative stress from environmental pollutants.",
-            "icon": "zap"
+            "title": "Omega-3 & 6 Balance",
+            "description": "Perfectly ratioed essential fatty acids to support cardiovascular health and brain function.",
+            "icon": "heart-pulse"
           },
           {
-            "title": "Non-Comedogenic",
-            "description": "A specialized lightweight oil profile that provides intense hydration without clogging pores.",
-            "icon": "shield"
+            "title": "Allergen-Free Status",
+            "description": "Naturally free from gluten, soy, and dairy, providing a safe and clean-label foundation for mass-market products.",
+            "icon": "shield-check"
           },
           {
-            "title": "Anti-Inflammatory Properties",
-            "description": "Natural soothing compounds that reduce skin redness and sensitivity in dermatological applications.",
-            "icon": "shield"
+            "title": "Micro-Nutrient Rich",
+            "description": "High concentrations of Magnesium, Iron, and Zinc to support national health and wellness objectives.",
+            "icon": "sparkles"
+          },
+          {
+            "title": "Flavor Stability",
+            "description": "Specialized processing ensures a neutral, nutty flavor profile that integrates seamlessly into beverages and solids.",
+            "icon": "beaker"
+          },{
+            "title": "National Food Security",
+            "description": "Locally grown and processed feedstock that reduces reliance on global supply chains and imported ingredients.",
+            "icon": "factory"
           }
         ]
       },
       "features": {
         "title": null,
-        "subTitle": "Providing manufacturers with standardized bio-actives, rigorous stability validation, and formulation expertise to accelerate R&D and ensure regulatory excellence.",
+        "subTitle": "Partnering with F&B brands to provide stabilized, nutrient-dense ingredients and technical guidance for the next generation of functional nutrition.",
         "items": [
           {
             "title": "Advanced Technology",
-            "description": "Using gentle, solvent-free extraction methods to preserve the integrity of Omega-3 and Omega-6 fatty acids and potent antioxidants for superior skin-barrier support.",
+            "description": "Using cold-press and mechanical separation technologies to preserve the complete amino acid profile and bioavailable Omega fatty acids in every batch.",
             "video": "/sliderV.mp4"
           },
           {
             "title": "Sustainable Solutions",
-            "description": "Replacing synthetic ingredients with locally sourced, bio-based , high-potency ingredients for skincare, haircare, and to reduce the environmental footprint of personal care products.",
+            "description": "Developing low-impact, plant-based alternatives to animal proteins that significantly reduce water and land usage while maintaining superior nutritional value.",
             "video": "/sliderV.mp4"
           },
           {
             "title": "Expert Support",
-            "description": "Providing COAs and formulation guidance to streamline development and ensure full regulatory compliance.",
+            "description": "Providing manufacturers with standardized ingredient specifications and shelf-life stability data for rapid product integration.",
             "video": "/sliderV.mp4"
           }
         ]
@@ -965,22 +978,22 @@
           {
             "title": "High-Purity Isolates",
             "description": "Specialized production of CBD, CBG, and other cannabinoids at 99%+ purity levels for medical applications.",
-            "icon": "target"
+            "icon": "flask-conical"
           },
           {
             "title": "Stability Validated",
             "description": "Ingredients tested under various environmental conditions to ensure potency remains consistent throughout the product lifecycle.",
-            "icon": "zap"
+            "icon": "shield-check"
           },
           {
             "title": "Formulation Flexibility",
             "description": "Ingredients available in oil, isolate, and water-soluble formats for integration into capsules, topicals, or liquid tinctures.",
-            "icon": "shield"
+            "icon": "shuffle"
           },
           {
             "title": "National API Supply",
             "description": "Localized production of active ingredients, reducing dependence on global pharmaceutical imports and securing the national supply chain.",
-            "icon": "shield"
+            "icon": "factory"
           }
         ]
       },
