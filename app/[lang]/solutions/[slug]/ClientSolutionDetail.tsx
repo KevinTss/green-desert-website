@@ -43,9 +43,9 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
         <SectionSolutionDetailFeatures content={detail.features} />
         <SectionSolutionDetailSpotlight content={detail.spotlight} />
         <SectionSolutionDetailProducts content={detail.products} />
-        <SectionSolutionDetailSignUp />
+        {detail.showSignUp !== false && <SectionSolutionDetailSignUp />}
         <SectionSolutionDetailPartners content={detail.partners} />
-        <SectionSolutionWaitingList />
+        {detail.showWaitlist !== false && <SectionSolutionWaitingList />}
       </div>
     </main>
   );

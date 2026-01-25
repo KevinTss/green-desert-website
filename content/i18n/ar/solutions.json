@@ -129,6 +129,8 @@
   ],
   "details": {
     "cultivation": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": {
         "title": "Cultivation",
         "body": "Design hemp rotations that sequester carbon, rehabilitate soil, and unlock new income streams for growers. Agronomy programs cover varietal selection, irrigation playbooks, and MRV so corporate farms can prove climate impacts to regulators and financiers.",
@@ -231,6 +233,8 @@
       }
     },
     "construction": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -247,6 +251,8 @@
       "partners": null
     },
     "textiles": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -258,6 +264,8 @@
       "partners": null
     },
     "energy": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -269,6 +277,8 @@
       "partners": null
     },
     "biocomposites": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -280,6 +290,8 @@
       "partners": null
     },
     "waste": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -291,6 +303,8 @@
       "partners": null
     },
     "agriculture": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -302,6 +316,8 @@
       "partners": null
     },
     "animal-care": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -313,6 +329,8 @@
       "partners": null
     },
     "cosmetics": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -324,6 +342,8 @@
       "partners": null
     },
     "food": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -335,6 +355,8 @@
       "partners": null
     },
     "pharmaceutical": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
@@ -346,6 +368,8 @@
       "partners": null
     },
     "services": {
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": null,
       "overview": null,
       "showcase": null,
