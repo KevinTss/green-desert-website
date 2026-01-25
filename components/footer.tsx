@@ -61,7 +61,7 @@ export const Footer = () => {
       return;
     }
 
-    const formId = "mjgyypve";
+    const formId = "xeealydl";
     if (!formId) {
       setSubmitted("error");
       setErrorMessage("Newsletter form is not configured.");
