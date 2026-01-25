@@ -107,14 +107,6 @@
         "summary": "Produce GMP-ready CBD, minor cannabinoids, and pharmaceutical flower for therapeutic programs with validated quality systems. We handle genetics, cultivation SOPs, and documentation to satisfy regulators and clinical partners.",
         "image": "/diagram-1.webp",
         "href": "/solutions/pharmaceutical"
-      },
-      {
-        "id": "services",
-        "title": "Services",
-        "tagline": "Design, build, and scale",
-        "summary": "Advisory, licensing, and supply-chain services that de-risk hemp adoption across any sector. We align strategy, engineering, and operations so teams can launch projects with confidence.",
-        "image": "/diagram-1.webp",
-        "href": "/solutions/services"
       }
     ]
   },
@@ -218,7 +210,6 @@
       "spotlight": null,
       "products": null,
       "partners": null
-    
     },
     "construction": {
       "hero": {
@@ -367,7 +358,6 @@
             "description": "The permeable fiber enables excellent air circulation, removing moisture and insulating the body—cool in summer, warm in winter.",
             "icon": "wind"
           }
-          
         ]
       },
       "features": {
@@ -452,7 +442,6 @@
             "description": "Reliable, year-round feedstock supply chains designed for large-scale industrial energy consumers.",
             "icon": "truck"
           }
-          
         ]
       },
       "features": {
@@ -656,7 +645,6 @@
       "approach": {
         "paragraphs": [
           "Our approach combines science-based agronomy with regional priorities: Assessment of soil quality and land capability, Crop selection suited for arid climates, Efficient water and nutrient management, Continuous performance monitoring and optimization. This ensures agricultural productivity while protecting natural resources."
-          
         ]
       },
       "highlights": {
@@ -731,7 +719,6 @@
           "Material Analysis: Auditing livestock environments to determine the optimal fiber-to-core ratio for absorbency and ammonia control.",
           "Local Sourcing: Processing locally grown biomass into dust-screened, antimicrobial bedding and nutritional feedstock. Deployment Support: Providing guidance on integration into existing farm management systems to improve biosecurity and animal health.",
           "Waste Valorization: Facilitating the transition of used materials into nutrient-rich compost, returning value to the agricultural land."
-          
         ]
       },
       "highlights": {
@@ -758,7 +745,7 @@
             "description": "High cation-exchange capacity that neutralizes odors and improves air quality in enclosures.",
             "icon": "circle-off"
           },
-           {
+          {
             "title": "Thermal Insulation",
             "description": "Provides consistent temperature regulation for comfort in both extreme heat and cold.",
             "icon": "thermometer"
@@ -808,7 +795,7 @@
       },
       "approach": {
         "paragraphs": [
-          "Our extraction and lab approach ensures high-purity, standardized bio-actives: Precision, solvent-free extraction and chemical profiling, Stability and compatibility testing for shelf-life and formulation synergy and Technical documentation and COAs to meet SFDA and international standards. This method delivers consistent, high-quality actives while supporting regulatory compliance."          
+          "Our extraction and lab approach ensures high-purity, standardized bio-actives: Precision, solvent-free extraction and chemical profiling, Stability and compatibility testing for shelf-life and formulation synergy and Technical documentation and COAs to meet SFDA and international standards. This method delivers consistent, high-quality actives while supporting regulatory compliance."
         ]
       },
       "highlights": {
@@ -858,7 +845,7 @@
           }
         ]
       },
-      "spotlight":null,
+      "spotlight": null,
       "products": null,
       "partners": null
     },
@@ -884,7 +871,6 @@
           "Precision Processing Executing cold-mechanical extraction to produce high-purity oils, flours, and protein isolates without chemical solvents.",
           "Quality Validation Conducting rigorous batch testing for purity, nutritional consistency, and microbial safety to meet SFDA standards.",
           "Industrial Integration Partnering with F&B manufacturers to optimize formulations and ensure a consistent, scalable supply of functional ingredients."
-
         ]
       },
       "highlights": {
@@ -915,7 +901,8 @@
             "title": "Flavor Stability",
             "description": "Specialized processing ensures a neutral, nutty flavor profile that integrates seamlessly into beverages and solids.",
             "icon": "beaker"
-          },{
+          },
+          {
             "title": "National Food Security",
             "description": "Locally grown and processed feedstock that reduces reliance on global supply chains and imported ingredients.",
             "icon": "factory"
@@ -943,7 +930,7 @@
           }
         ]
       },
-      "spotlight": null, 
+      "spotlight": null,
       "products": null,
       "partners": null
     },
