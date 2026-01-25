@@ -114,10 +114,6 @@ export function Header() {
     setActiveSubmenu(open ? menu : null);
   };
 
-  useEffect(() => {
-    setActiveSubmenu(null);
-  }, [pathname]);
-
   const isOverlayState = isHeroVisible && !isSubmenuOpen;
   const headerTone = isHeroVisible ? "dark" : "light";
 
@@ -154,7 +150,10 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav
+            className="hidden md:flex items-center gap-6"
+          // style={{ background: "blue" }}
+          >
             {navigationItems.map((navItem) => (
               <NavigationMenuLink
                 key={navItem.label}
