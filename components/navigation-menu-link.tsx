@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { Text as TypographyText } from "./typography";
 import headerI18m from "@/content/i18n/en/header.json";
-import { getRoutePath } from "@/lib/assets";
 
 export interface NavigationMenuLinkProps {
   item: (typeof headerI18m)["nav"][0];
@@ -200,11 +199,11 @@ export function NavigationMenuLink({
               </TypographyText>
               {item.lead && (
                 <Link
-                  href={
-                    item.lead.ctaHref.startsWith("/")
-                      ? getRoutePath(`/${languageRoute}${item.lead.ctaHref}`)
-                      : getRoutePath(item.lead.ctaHref)
-                  }
+                  href={resolveHref({
+                    href: item.lead.ctaHref,
+                    label: item.label,
+                    languageRoute,
+                  })}
                   className={dropdownCtaClasses}
                 >
                   {t(item.lead.cta)}
@@ -216,44 +215,34 @@ export function NavigationMenuLink({
               {item.subItems.map((subItem) => {
                 const href =
                   "href" in subItem && typeof subItem.href === "string"
-                    ? subItem.href.startsWith("/")
-                      ? getRoutePath(`/${languageRoute}${subItem.href}`)
-                      : getRoutePath(subItem.href)
+                    ? resolveHref({
+                        href: subItem.href,
+                        label: subItem.label,
+                        languageRoute,
+                      })
                     : "#";
                 return (
                   <DropdownMenu.Item asChild key={subItem.label}>
-                    <a
+                    <Link
                       href={href}
                       className="flex flex-col justify-between transition-colors duration-200 outline-none"
                     >
-                      <span
-                        className={cn(
-                          "text-base font-semibold",
-                          dropdownTextClasses,
-                        )}
-                      >
+                      <span className={cn("text-base font-semibold", dropdownTextClasses)}>
                         {t(subItem.label)}
                       </span>
-                      <span
-                        className={cn(
-                          "mt-1 text-[11px] leading-normal",
-                          dropdownMutedText,
-                        )}
-                      >
+                      <span className={cn("mt-1 text-[11px] leading-normal", dropdownMutedText)}>
                         {t(subItem.description)}
                       </span>
                       <span
                         className={cn(
                           "mt-1 inline-flex items-center gap-1 text-[11px] font-semibold transition-colors duration-200",
                           dropdownMutedText,
-                          isDarkVariant
-                            ? "hover:text-white"
-                            : "hover:text-gray-900",
+                          isDarkVariant ? "hover:text-white" : "hover:text-gray-900",
                         )}
                       >
                         {t("labels.learnMore")}
                       </span>
-                    </a>
+                    </Link>
                   </DropdownMenu.Item>
                 );
               })}
