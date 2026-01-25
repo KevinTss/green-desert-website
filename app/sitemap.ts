@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
-import { SOLUTION_SECTORS } from '@/lib/solutions'
+import { SOLUTION_SLUGS } from '@/lib/solutions'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://greendesert.sa'
 
@@ -87,16 +87,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getAllPosts('ar'),
   ])
 
-  SOLUTION_SECTORS.forEach((sector) => {
+  SOLUTION_SLUGS.forEach((slug) => {
     routes.push(
       {
-        url: `${BASE_URL}/en/solutions/${sector.slug}/`,
+        url: `${BASE_URL}/en/solutions/${slug}/`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.75,
       },
       {
-        url: `${BASE_URL}/ar-SA/solutions/${sector.slug}/`,
+        url: `${BASE_URL}/ar-SA/solutions/${slug}/`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.75,

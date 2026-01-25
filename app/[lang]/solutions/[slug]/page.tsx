@@ -2,14 +2,14 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ClientSolutionDetail } from "./ClientSolutionDetail"
 import { notFound } from "next/navigation"
-import { SOLUTION_SECTORS } from "@/lib/solutions"
+import { SOLUTION_SLUGS } from "@/lib/solutions"
 
 interface PageProps {
   params: Promise<{ lang: string; slug: string }>
 }
 
 export async function generateStaticParams() {
-  const slugs: string[] = SOLUTION_SECTORS.map((sector) => sector.slug as string)
+  const slugs: string[] = SOLUTION_SLUGS
   const languages = ["en", "ar-SA"]
 
   const params: { lang: string; slug: string }[] = languages.flatMap((lang) =>
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 
 export default async function SolutionDetailPage({ params }: PageProps) {
   const { slug } = await params
-  const exists = SOLUTION_SECTORS.some((sector) => sector.slug === slug)
+  const exists = SOLUTION_SLUGS.some((sectorSlug) => sectorSlug === slug)
 
   if (!exists) {
     notFound()
