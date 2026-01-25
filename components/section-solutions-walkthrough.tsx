@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
 
-import { useContent } from "@/components/language-provider"
-import { Section } from "@/components/section"
-import { Heading } from "@/components/typography"
-import { Button } from "@/components/ui/button"
+import { useContent } from "@/components/language-provider";
+import { Section } from "@/components/section";
+import { Heading } from "@/components/typography";
+import { Button } from "@/components/ui/button";
 
 export function SectionSolutionsWalkthrough() {
-  const { solutions } = useContent()
-  const details = solutions?.details as any
-  const actions = details?.actions
+  const { solutions } = useContent();
+  const details = solutions?.details as any;
+  const actions = details?.actions;
 
-  if (!details) return null
+  if (!details) return null;
 
   return (
     <Section id="walkthrough" className="bg-gray-50">
@@ -28,15 +28,26 @@ export function SectionSolutionsWalkthrough() {
           )}
           <div className="mt-8 flex flex-wrap gap-4">
             {actions?.scheduleHref && actions.scheduleLabel && (
-              <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white">
-                <Link href={actions.scheduleHref}>
-                  {actions.scheduleLabel}
-                </Link>
+              <Button
+                asChild
+                size="lg"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white"
+              >
+                <Link href={actions.scheduleHref}>{actions.scheduleLabel}</Link>
               </Button>
             )}
             {actions?.specsHref && actions.specsLabel && (
-              <Button asChild size="lg" variant="outline" className="border-emerald-400 text-emerald-600 hover:bg-emerald-50">
-                <Link href={actions.specsHref} target="_blank" rel="noopener noreferrer">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-emerald-400 text-emerald-600 hover:bg-emerald-50"
+              >
+                <Link
+                  href={actions.specsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {actions.specsLabel}
                 </Link>
               </Button>
@@ -53,5 +64,5 @@ export function SectionSolutionsWalkthrough() {
         </div>
       </div>
     </Section>
-  )
+  );
 }
