@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Language } from './language-provider'
-import { cn } from '@/lib/utils'
+import { cn, isExternalHref } from '@/lib/utils'
 import { Heading } from '@/components/typography'
 
 // Narrow post shape so this component works with both
@@ -47,7 +47,7 @@ export function BlogCard({ post, isRTL, languageRoute, href, imageClassName, ext
 
   const firstTag = post.tags && post.tags.length > 0 ? post.tags[0] : undefined
   const linkHref = href ?? `/${languageRoute}/blog/${post.slug}`
-  const isExternal = external || (!!post.url && (post.url.startsWith("http") || post.url.startsWith("mailto:")))
+  const isExternal = external || (!!post.url && isExternalHref(post.url))
   const anchorHref = isExternal ? (post.url || linkHref) : linkHref
 
   const CardContent = (

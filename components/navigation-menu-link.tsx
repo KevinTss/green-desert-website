@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, isExternalHref } from "@/lib/utils";
 import { useState, useRef, useEffect } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
@@ -71,11 +71,7 @@ export function NavigationMenuLink({
 
   const routeActiveForItem = (lbl: string, href?: string) => {
     const resolved = resolveHref({ href, label: lbl, languageRoute });
-    if (
-      resolved.startsWith("http") ||
-      resolved.startsWith("mailto:") ||
-      resolved === "#"
-    )
+    if (isExternalHref(resolved) || resolved === "#")
       return false;
     if (resolved === `/${languageRoute}` || resolved === `/${languageRoute}/`) {
       return (

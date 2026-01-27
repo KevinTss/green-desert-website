@@ -12,6 +12,8 @@ import {
 import { getAssetPath } from "@/lib/assets";
 import Link from "next/link";
 import footerContentEn from "@/content/i18n/en/footer.json";
+import { isExternalHref } from "@/lib/utils";
+import { Icon } from "./ui/icon";
 
 type FooterContent = typeof footerContentEn;
 
@@ -117,16 +119,10 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
     }
   };
 
-  const isExternalLink = (href?: string) =>
-    !!href &&
-    (/^(https?:)?\/\//.test(href) ||
-      href.startsWith("mailto:") ||
-      href.startsWith("tel:"));
-
   const formatHref = (href?: string) => {
     if (!href) return "#";
     if (href.startsWith("#")) return href;
-    if (isExternalLink(href)) return href;
+    if (isExternalHref(href)) return href;
     return href.startsWith("/") ? `/${languageRoute}${href}` : href;
   };
 
@@ -137,10 +133,10 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
     return Number.isNaN(date.getTime())
       ? value
       : date.toLocaleDateString(locale, {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        });
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
   };
 
   const socialIconMap: Record<
@@ -163,22 +159,18 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
               {resolvedFollowLabel}
             </span>
             <div className="flex items-center gap-2">
-              {resolvedFollowLinks.map(({ href, icon, label }) => {
-                const Icon = icon ? socialIconMap[icon] : undefined;
-                if (!Icon || !href) return null;
-                return (
-                  <a
-                    key={label}
-                    aria-label={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors"
-                  >
-                    <Icon className="w-5 h-5" />
-                  </a>
-                );
-              })}
+              {resolvedFollowLinks.map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  aria-label={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  <Icon name={icon} className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -243,7 +235,7 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
               <ul className="space-y-3">
                 {section.links?.map((item) => {
                   const href = formatHref(item.href);
-                  const isExternal = isExternalLink(item.href);
+                  const isExternal = isExternalHref(item.href);
                   if (isExternal) {
                     return (
                       <li key={item.label ?? href}>

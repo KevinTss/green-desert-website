@@ -5,7 +5,7 @@
       {
         "label": "Twitter",
         "href": "https://twitter.com/Greendesertsa",
-        "icon": "twitter"
+        "icon": "x"
       },
       {
         "label": "Instagram",
@@ -43,8 +43,8 @@
       "links": [
         { "label": "Story", "href": "/company#story" },
         { "label": "Vision & Mission", "href": "/company#vision" },
-        { "label": "Leadership", "href": "/company#leadership" },
-        { "label": "Timeline", "href": "/company#timeline" }
+        { "label": "Teams", "href": "/company#teams" },
+        { "label": "Vision", "href": "/company#vision" }
       ]
     },
     {
@@ -60,11 +60,9 @@
     {
       "title": "Explore",
       "links": [
-        { "label": "Services", "href": "/#services" },
-        { "label": "Partners", "href": "/#partners" },
         { "label": "News", "href": "/news" },
         { "label": "Blog", "href": "/blog" },
-        { "label": "Contact", "href": "/#contact" }
+        { "label": "Contact", "href": "/contact" }
       ]
     }
   ],

@@ -5,7 +5,7 @@
       {
         "label": "تويتر",
         "href": "https://twitter.com/Greendesertsa",
-        "icon": "twitter"
+        "icon": "x"
       },
       {
         "label": "إنستغرام",
@@ -43,8 +43,8 @@
       "links": [
         { "label": "القصة", "href": "/company#story" },
         { "label": "الرؤية والرسالة", "href": "/company#vision" },
-        { "label": "القيادة", "href": "/company#leadership" },
-        { "label": "الجدول الزمني", "href": "/company#timeline" }
+        { "label": "القيادة", "href": "/company#teams" },
+        { "label": "الجدول الزمني", "href": "/company#vision" }
       ]
     },
     {
@@ -60,8 +60,6 @@
     {
       "title": "استكشف",
       "links": [
-        { "label": "الخدمات", "href": "/#services" },
-        { "label": "الشركاء", "href": "/#partners" },
         { "label": "الأخبار", "href": "/news" },
         { "label": "المدونة", "href": "/blog" },
         { "label": "تواصل معنا", "href": "/#contact" }
