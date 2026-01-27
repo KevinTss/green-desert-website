@@ -3,7 +3,7 @@ title: "Exclusive Partnership Between Green Desert and La Chanvriere"
 date: 2024-01-15
 excerpt: "Green Desert announces a strategic partnership with La Chanvriere to advance sustainable agricultural practices in the Middle East region."
 author: "Green Desert"
-image: "/news/partnership.jpg"
+image: "/la-chanveriere.webp"
 tags: [Partnership, Agriculture]
 url: "https://example.com/external-news/la-chanvriere-partnership"
 ---
