@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { Section } from "@/components/section";
 import { useLanguage, useContent } from "@/components/language-provider";
 import { cn } from "@/lib/utils";
@@ -196,7 +195,6 @@ export function ClientContact() {
           </div>
         </Section>
       </main>
-      <Footer />
     </div>
   );
 }

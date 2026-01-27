@@ -1,3 +1,5 @@
+"use client";
+
 import { useContent } from "@/components/language-provider";
 // import { PartnersCarousel } from "@/components/partners-carousel"
 import { ProcessExplainer } from "@/components/process-explainer";

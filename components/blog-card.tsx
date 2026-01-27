@@ -15,6 +15,7 @@ export interface BlogCardPost {
   author?: string
   image?: string
   tags?: string[]
+  url?: string
 }
 
 interface BlogCardProps {
@@ -22,10 +23,11 @@ interface BlogCardProps {
   isRTL: boolean
   languageRoute: Language
   href?: string
+  external?: boolean
   imageClassName?: string
 }
 
-export function BlogCard({ post, isRTL, languageRoute, href, imageClassName }: BlogCardProps) {
+export function BlogCard({ post, isRTL, languageRoute, href, imageClassName, external }: BlogCardProps) {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -45,9 +47,10 @@ export function BlogCard({ post, isRTL, languageRoute, href, imageClassName }: B
 
   const firstTag = post.tags && post.tags.length > 0 ? post.tags[0] : undefined
   const linkHref = href ?? `/${languageRoute}/blog/${post.slug}`
+  const isExternal = external || (!!post.url && (post.url.startsWith("http") || post.url.startsWith("mailto:")))
+  const anchorHref = isExternal ? (post.url || linkHref) : linkHref
 
-  return (
-    <Link href={linkHref} className="group block h-full">
+  const CardContent = (
       <article className="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-gray-200 transition-colors duration-300 hover:shadow-lg hover:border-gray-300 hover:cursor-pointer">
         {post.image && (
           <div className="relative h-48 w-full overflow-hidden">
@@ -100,6 +103,19 @@ export function BlogCard({ post, isRTL, languageRoute, href, imageClassName }: B
           </div>
         </div>
       </article>
+  )
+
+  if (isExternal) {
+    return (
+      <a href={anchorHref} target="_blank" rel="noopener noreferrer" className="group block h-full">
+        {CardContent}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={anchorHref} className="group block h-full">
+      {CardContent}
     </Link>
   )
 }

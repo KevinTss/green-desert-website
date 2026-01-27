@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts } from '@/lib/blog'
+import { getEntryBySlug, getAllEntries } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,12 +13,12 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const enPosts = await getAllPosts('en')
-  const arPosts = await getAllPosts('ar')
+  const enPosts = await getAllEntries('blog', 'en')
+  const arPosts = await getAllEntries('blog', 'ar')
 
   const params = [
-    ...enPosts.map(post => ({ lang: 'en', slug: post.slug })),
-    ...arPosts.map(post => ({ lang: 'ar-SA', slug: post.slug }))
+    ...enPosts.map((post) => ({ lang: 'en', slug: post.slug })),
+    ...arPosts.map((post) => ({ lang: 'ar-SA', slug: post.slug })),
   ]
 
   return params
@@ -27,7 +27,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { lang, slug } = await params
   const language = lang === 'ar-SA' ? 'ar' : 'en'
-  const post = await getPostBySlug(slug, language)
+  const post = await getEntryBySlug('blog', slug, language)
 
   if (!post) {
     return {
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { lang, slug } = await params
   const language = lang === 'ar-SA' ? 'ar' : 'en'
-  const post = await getPostBySlug(slug, language)
+  const post = await getEntryBySlug('blog', slug, language)
   const isArabic = language === 'ar'
   const languageRoute = language === 'ar' ? 'ar-SA' : 'en'
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://greendesert.sa'

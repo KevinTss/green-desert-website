@@ -1,13 +1,20 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import FooterWithNews from "@/components/footer-with-news"
 import { ClientSolutions } from "./ClientSolutions"
 
-export default function SolutionsPage() {
+interface PageProps {
+  params: Promise<{
+    lang: string
+  }>
+}
+
+export default async function SolutionsPage({ params }: PageProps) {
+  const { lang } = await params
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <ClientSolutions />
-      <Footer />
+      <FooterWithNews lang={lang} />
     </div>
   )
 }

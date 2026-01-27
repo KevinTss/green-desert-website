@@ -15,9 +15,20 @@ import footerContentEn from "@/content/i18n/en/footer.json";
 
 type FooterContent = typeof footerContentEn;
 
-export const Footer = () => {
-  const { languageRoute } = useLanguage();
-  const { footer: rawFooter } = useContent();
+type FooterNewsItem = {
+  title: string;
+  date?: string;
+  image?: string;
+  href: string;
+};
+
+interface FooterProps {
+  latestNews?: FooterNewsItem[];
+}
+
+export const Footer = ({ latestNews = [] }: FooterProps) => {
+  const { languageRoute, language } = useLanguage();
+  const { footer: rawFooter, labels } = useContent();
   const [email, setEmail] = React.useState("");
   const [submitted, setSubmitted] = React.useState<
     "idle" | "success" | "error"
@@ -47,6 +58,12 @@ export const Footer = () => {
     : footerContentEn.sections;
   const resolvedLegal = footer.legal ?? footerContentEn.legal;
   const resolvedLogo = footer.logo ?? footerContentEn.logo;
+  const resolvedLabels = footer.labels ?? labels ?? footerContentEn;
+  const newsHeading =
+    footer.newsTitle ??
+    (footerContentEn as any).newsTitle ??
+    (resolvedLabels as any)?.news ??
+    "News";
 
   const isValidEmail = (val: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
@@ -111,6 +128,19 @@ export const Footer = () => {
     if (href.startsWith("#")) return href;
     if (isExternalLink(href)) return href;
     return href.startsWith("/") ? `/${languageRoute}${href}` : href;
+  };
+
+  const locale = language === "ar" ? "ar-SA" : "en-US";
+  const formatNewsDate = (value?: string) => {
+    if (!value) return "";
+    const date = new Date(value);
+    return Number.isNaN(date.getTime())
+      ? value
+      : date.toLocaleDateString(locale, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
   };
 
   const socialIconMap: Record<
@@ -196,8 +226,8 @@ export const Footer = () => {
           )}
         </div>
 
-        {/* Main content - Tagline + 3 columns */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Main content - Tagline + columns */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-[1.25fr_repeat(4,minmax(0,1fr))] gap-8">
           {/* Column 1 - Tagline text only */}
           <div>
             <p className="text-sm text-gray-600 leading-relaxed">
@@ -242,6 +272,49 @@ export const Footer = () => {
               </ul>
             </div>
           ))}
+
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 mb-4">
+              {newsHeading}
+            </h4>
+            <div className="space-y-3">
+              {latestNews.map((item) => {
+                const href = formatHref(item.href);
+                const formattedDate = formatNewsDate(item.date);
+                return (
+                  <Link
+                    key={item.href ?? item.title}
+                    href={href}
+                    className="flex items-center gap-3 rounded-lg transition-colors hover:text-gray-900"
+                  >
+                    {item.image && (
+                      <div className="relative h-12 w-16 min-w-16 overflow-hidden rounded-md bg-gray-100">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      {formattedDate && (
+                        <div className="text-[11px] uppercase tracking-wide text-emerald-600">
+                          {formattedDate}
+                        </div>
+                      )}
+                      <p className="text-sm font-semibold text-gray-900 truncate">
+                        {item.title}
+                      </p>
+                      <span className="text-xs font-semibold text-emerald-600">
+                        {resolvedLabels.readMore ?? "Read more"}
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {/* Bottom section */}

@@ -1,5 +1,5 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import FooterWithNews from "@/components/footer-with-news"
 import { ClientSolutionDetail } from "./ClientSolutionDetail"
 import { notFound } from "next/navigation"
 import { SOLUTION_SLUGS } from "@/lib/solutions"
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 }
 
 export default async function SolutionDetailPage({ params }: PageProps) {
-  const { slug } = await params
+  const { slug, lang } = await params
   const exists = SOLUTION_SLUGS.some((sectorSlug) => sectorSlug === slug)
 
   if (!exists) {
@@ -34,7 +34,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white">
       <Header />
       <ClientSolutionDetail slug={slug} />
-      <Footer />
+      <FooterWithNews lang={lang} />
     </div>
   )
 }

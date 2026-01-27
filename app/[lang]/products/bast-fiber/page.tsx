@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import FooterWithNews from "@/components/footer-with-news"
 import { ClientProductBastFiber } from "./ClientProductBastFiber"
 
 interface PageProps {
@@ -44,15 +44,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function BastFiberPage({}: PageProps) {
+export default async function BastFiberPage({ params }: PageProps) {
+  const { lang } = await params
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <ClientProductBastFiber />
-      <Footer />
+      <FooterWithNews lang={lang} />
     </div>
   )
 }
 
 export const dynamic = 'force-static'
-

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/blog'
+import { getAllEntries } from '@/lib/posts'
 import { SOLUTION_SLUGS } from '@/lib/solutions'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://greendesert.sa'
@@ -79,12 +79,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${BASE_URL}/en/news/`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/ar-SA/news/`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
   ]
 
   // Blog posts for both languages
   const [enPosts, arPosts] = await Promise.all([
-    getAllPosts('en'),
-    getAllPosts('ar'),
+    getAllEntries('blog', 'en'),
+    getAllEntries('blog', 'ar'),
   ])
 
   SOLUTION_SLUGS.forEach((slug) => {
@@ -102,6 +114,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.75,
       },
     )
+  })
+
+  // News posts
+  const [enNews, arNews] = await Promise.all([
+    getAllEntries('news', 'en'),
+    getAllEntries('news', 'ar'),
+  ])
+  enNews.forEach((post) => {
+    routes.push({
+      url: `${BASE_URL}/en/news/${post.slug}/`,
+      lastModified: new Date(post.date || Date.now()),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })
+  })
+  arNews.forEach((post) => {
+    routes.push({
+      url: `${BASE_URL}/ar-SA/news/${post.slug}/`,
+      lastModified: new Date(post.date || Date.now()),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })
   })
 
   enPosts.forEach((post) => {

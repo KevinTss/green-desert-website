@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import FooterWithNews from "@/components/footer-with-news"
 import { ClientCompany } from "./ClientCompany"
 
 interface PageProps {
@@ -61,12 +61,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function CompanyPage({}: PageProps) {
+export default async function CompanyPage({ params }: PageProps) {
+  const { lang } = await params
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <ClientCompany />
-      <Footer />
+      <FooterWithNews lang={lang} />
     </div>
   )
 }

@@ -1,8 +1,6 @@
-"use client";
-
 import { Section1Hero } from "@/components/section-1-hero";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import FooterWithNews from "@/components/footer-with-news";
 import { Section2OurMission } from "@/components/section-2-our-mission";
 import { Section3KpiStrip } from "@/components/section-3-kpi-strip";
 import { Section4PersonaLinks } from "@/components/section-4-persona-links";
@@ -15,7 +13,9 @@ interface PageProps {
   }>;
 }
 
-export default function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
+  const { lang } = await params;
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -35,7 +35,7 @@ export default function Page({ params }: PageProps) {
         <Section6NewsClient />
         {/* </div> */}
       </div>
-      <Footer />
+      <FooterWithNews lang={lang} />
     </div>
   );
 }

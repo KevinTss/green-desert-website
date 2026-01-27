@@ -62,7 +62,8 @@
       "links": [
         { "label": "الخدمات", "href": "/#services" },
         { "label": "الشركاء", "href": "/#partners" },
-        { "label": "الأخبار", "href": "/blog" },
+        { "label": "الأخبار", "href": "/news" },
+        { "label": "المدونة", "href": "/blog" },
         { "label": "تواصل معنا", "href": "/#contact" }
       ]
     }

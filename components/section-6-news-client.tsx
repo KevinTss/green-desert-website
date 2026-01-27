@@ -12,14 +12,11 @@ export const Section6NewsClient = () => {
   const { isRTL, language, languageRoute } = useLanguage()
   const { home } = useContent()
   const news = home?.news ?? {}
-  const hasNewsContent = !!news.title || !!(news.items && news.items.length)
 
   // Get latest posts for current language
   const posts = getLatestPosts(language as 'en' | 'ar', 3)
 
-  // Card formatting handled by reusable BlogCard component
-
-  if (!hasNewsContent && posts.length === 0) return null
+  if (!news.title && posts.length === 0) return null
 
   return (
     <Section id="news">

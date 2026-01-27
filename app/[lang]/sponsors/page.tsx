@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import FooterWithNews from "@/components/footer-with-news"
 import { ClientSponsors } from "./ClientSponsors"
 
 interface PageProps {
@@ -46,15 +46,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function SponsorsPage({}: PageProps) {
+export default async function SponsorsPage({ params }: PageProps) {
+  const { lang } = await params
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <ClientSponsors />
-      <Footer />
+      <FooterWithNews lang={lang} />
     </div>
   )
 }
 
 export const dynamic = 'force-static'
-

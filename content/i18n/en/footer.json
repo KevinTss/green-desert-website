@@ -62,7 +62,8 @@
       "links": [
         { "label": "Services", "href": "/#services" },
         { "label": "Partners", "href": "/#partners" },
-        { "label": "News", "href": "/blog" },
+        { "label": "News", "href": "/news" },
+        { "label": "Blog", "href": "/blog" },
         { "label": "Contact", "href": "/#contact" }
       ]
     }

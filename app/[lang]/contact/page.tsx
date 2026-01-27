@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { ClientContact } from "./ClientContact"
+import FooterWithNews from "@/components/footer-with-news"
 
 interface PageProps {
   params: Promise<{
@@ -44,8 +45,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function ContactPage({}: PageProps) {
-  return <ClientContact />
+export default async function ContactPage({ params }: PageProps) {
+  const { lang } = await params
+  return (
+    <>
+      <ClientContact />
+      <FooterWithNews lang={lang} />
+    </>
+  )
 }
 
 export const dynamic = 'force-static'

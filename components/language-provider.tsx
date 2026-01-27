@@ -12,6 +12,8 @@ import enHome from '@/content/i18n/en/home.json'
 import enCompany from '@/content/i18n/en/company.json'
 import enSolutions from '@/content/i18n/en/solutions.json'
 import enContact from '@/content/i18n/en/contact.json'
+import enNews from '@/content/i18n/en/news.json'
+import enBlog from '@/content/i18n/en/blog.json'
 
 import arLabels from '@/content/i18n/ar/labels.json'
 import arHeader from '@/content/i18n/ar/header.json'
@@ -20,6 +22,8 @@ import arHome from '@/content/i18n/ar/home.json'
 import arCompany from '@/content/i18n/ar/company.json'
 import arSolutions from '@/content/i18n/ar/solutions.json'
 import arContact from '@/content/i18n/ar/contact.json'
+import arNews from '@/content/i18n/ar/news.json'
+import arBlog from '@/content/i18n/ar/blog.json'
 
 export type Language = "en" | "ar"
 
@@ -32,6 +36,8 @@ const content = {
     company: enCompany,
     solutions: enSolutions,
     contact: enContact,
+    news: enNews,
+    blog: enBlog,
   },
   ar: {
     labels: arLabels,
@@ -41,6 +47,8 @@ const content = {
     company: arCompany,
     solutions: arSolutions,
     contact: arContact,
+    news: arNews,
+    blog: arBlog,
   },
 } as const
 

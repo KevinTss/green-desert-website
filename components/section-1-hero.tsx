@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useMemo } from "react"
 import { useContent } from "@/components/language-provider"
 import { AnimatedHeadline } from "./animated-headline"

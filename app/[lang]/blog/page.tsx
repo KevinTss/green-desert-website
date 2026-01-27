@@ -1,7 +1,10 @@
-import { getAllPosts } from '@/lib/blog'
+import { getAllEntries } from '@/lib/posts'
 import { BlogCard } from '@/components/blog-card'
 import { Header } from '@/components/header'
+import FooterWithNews from '@/components/footer-with-news'
 import { Metadata } from 'next'
+import enBlogContent from '@/content/i18n/en/blog.json'
+import arBlogContent from '@/content/i18n/ar/blog.json'
 
 interface BlogPageProps {
   params: Promise<{
@@ -24,8 +27,9 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 export default async function BlogPage({ params }: BlogPageProps) {
   const { lang } = await params
   const language = lang === 'ar-SA' ? 'ar' : 'en'
-  const posts = await getAllPosts(language)
+  const posts = await getAllEntries('blog', language)
   const isArabic = language === 'ar'
+  const content = isArabic ? arBlogContent : enBlogContent
 
   return (
     <div className="min-h-screen bg-white">
@@ -34,13 +38,10 @@ export default async function BlogPage({ params }: BlogPageProps) {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {isArabic ? 'مدونة الصحراء الخضراء' : 'Green Desert Blog'}
+            {content.title}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {isArabic
-              ? 'اكتشف أحدث المقالات والأخبار حول التكنولوجيا الحيوية والحلول البيئية المستدامة في المملكة العربية السعودية'
-              : 'Discover the latest articles and news about biotechnology and sustainable environmental solutions in Saudi Arabia'
-            }
+            {content.subtitle}
           </p>
         </div>
 
@@ -66,6 +67,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
           </div>
         )}
       </div>
+      <FooterWithNews lang={lang} />
     </div>
   )
 }

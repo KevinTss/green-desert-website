@@ -1,3 +1,5 @@
+"use client"
+
 import { useContent, useLanguage } from "@/components/language-provider"
 import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 import { Section } from "@/components/section"
