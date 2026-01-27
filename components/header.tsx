@@ -177,13 +177,13 @@ export function Header() {
           >
             {t("labels.contactUsCta.label")}
           </Link>
-          {!isMobile && (
+          {/* {!isMobile && (
             <LanguageDropdown
               language={language}
               setLanguage={setLanguage}
               variant={navVariant}
             />
-          )}
+          )} */}
           {isMobile && (
             <MobileMenu
               navigationItems={navigationItems}
