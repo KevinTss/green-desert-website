@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { Language } from './language-provider'
 import { cn, isExternalHref } from '@/lib/utils'
 import { Heading } from '@/components/typography'
+import { getAssetPath } from '@/lib/assets'
 
 // Narrow post shape so this component works with both
 // lib/blog and lib/blog-static post sources
@@ -49,13 +50,14 @@ export function BlogCard({ post, isRTL, languageRoute, href, imageClassName, ext
   const linkHref = href ?? `/${languageRoute}/blog/${post.slug}`
   const isExternal = external || (!!post.url && isExternalHref(post.url))
   const anchorHref = isExternal ? (post.url || linkHref) : linkHref
+  const imageSrc = post.image ? getAssetPath(post.image) : getAssetPath('/placeholder.jpg')
 
   const CardContent = (
       <article className="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-gray-200 transition-colors duration-300 hover:shadow-lg hover:border-gray-300 hover:cursor-pointer">
         {post.image && (
           <div className="relative h-48 w-full overflow-hidden">
             <Image
-              src={post.image}
+              src={imageSrc}
               alt={post.title}
               fill
               className={cn(

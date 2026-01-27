@@ -1,6 +1,7 @@
 import { use } from "react";
 import { Footer } from "./footer";
 import { getAllEntries } from "@/lib/posts";
+import { getAssetPath } from "@/lib/assets";
 
 interface FooterWithNewsProps {
   lang: string;
@@ -13,7 +14,7 @@ async function loadLatestNews(lang: string) {
   return posts.slice(0, 3).map((post) => ({
     title: post.title,
     date: post.date,
-    image: post.image,
+    image: post.image ? getAssetPath(post.image) : getAssetPath("/placeholder.jpg"),
     href: post.url ? post.url : `/news/${post.slug}`,
   }));
 }

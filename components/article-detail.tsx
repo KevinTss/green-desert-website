@@ -15,6 +15,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Icon } from "./ui/icon";
+import { getAssetPath } from "@/lib/assets";
 
 interface ArticleDetailProps {
   post: ContentEntry;
@@ -92,7 +93,7 @@ export function ArticleDetail({
           {post.image && (
             <div className="relative mt-8 overflow-hidden rounded-2xl border border-gray-200 shadow-sm h-96">
               <Image
-                src={post.image}
+                src={getAssetPath(post.image)}
                 alt={post.title}
                 width={728}
                 height={332}

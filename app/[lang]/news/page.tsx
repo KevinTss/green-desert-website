@@ -6,6 +6,7 @@ import { BlogCard } from "@/components/blog-card";
 import { getAllEntries } from "@/lib/posts";
 import enNewsContent from "@/content/i18n/en/news.json";
 import arNewsContent from "@/content/i18n/ar/news.json";
+import { getAssetPath } from "@/lib/assets";
 
 interface PageProps {
   params: Promise<{
@@ -101,7 +102,7 @@ export default async function NewsPage({ params }: PageProps) {
                       {post.image && (
                         <div className="relative h-14 w-20 overflow-hidden rounded-lg border border-gray-100">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
+                          <img src={getAssetPath(post.image)} alt={post.title} className="h-full w-full object-cover" />
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
