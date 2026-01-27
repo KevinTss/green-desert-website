@@ -1,9 +1,9 @@
 import { getEntryBySlug, getAllEntries } from '@/lib/posts'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Metadata } from 'next'
+import { ArticleDetail } from '@/components/article-detail'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -72,22 +72,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    if (isArabic) {
-      return date.toLocaleDateString('ar-SA', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    }
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
-  }
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -119,103 +103,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           }),
         }}
       />
-      <div className="container mx-auto px-4 py-8 pt-24">
-        {/* Back to blog link */}
-        <div className={`mb-8 ${isArabic ? 'text-right' : 'text-left'}`}>
-          <Link
-            href={`/${languageRoute}/blog`}
-            className="text-green-600 hover:text-green-700 font-medium inline-flex items-center"
-          >
-            <svg
-              className={`w-4 h-4 ${isArabic ? 'ml-1' : 'mr-1 rotate-180'}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            {isArabic ? 'العودة إلى المدونة' : 'Back to Blog'}
-          </Link>
-        </div>
-
-        {/* Article Header */}
-        <header className={`mb-12 ${isArabic ? 'text-right' : 'text-left'}`}>
-          {/* Tags */}
-          {post.tags && post.tags.length > 0 && (
-            <div className={`flex flex-wrap gap-2 mb-6 ${isArabic ? 'flex-row-reverse justify-end' : ''}`}>
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            {post.title}
-          </h1>
-
-          {/* Meta information */}
-          <div className={`flex items-center text-gray-600 mb-8 ${isArabic ? 'flex-row-reverse justify-end space-x-reverse space-x-6' : 'space-x-6'}`}>
-            {post.author && (
-              <div className={`flex items-center ${isArabic ? 'flex-row-reverse space-x-reverse space-x-2' : 'space-x-2'}`}>
-                <span className="text-sm">{isArabic ? 'بواسطة' : 'By'}</span>
-                <span className="font-medium">{post.author}</span>
-              </div>
-            )}
-            <time dateTime={post.date} className="text-sm">
-              {formatDate(post.date)}
-            </time>
-          </div>
-
-          {/* Featured Image */}
-          {post.image && (
-            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden mb-8">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                sizes="100vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-          )}
-        </header>
-
-        {/* Article Content */}
-        <article className="max-w-4xl mx-auto">
-          <div
-            className={`prose prose-lg max-w-none ${isArabic
-              ? 'prose-headings:text-right prose-p:text-right prose-li:text-right prose-blockquote:text-right'
-              : ''
-              } prose-headings:text-gray-900 prose-a:text-green-600 prose-a:no-underline hover:prose-a:text-green-700`}
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-        </article>
-
-        {/* Back to blog link (bottom) */}
-        <div className={`mt-16 pt-8 border-t border-gray-200 ${isArabic ? 'text-right' : 'text-left'}`}>
-          <Link
-            href={`/${languageRoute}/blog`}
-            className="text-green-600 hover:text-green-700 font-medium inline-flex items-center"
-          >
-            <svg
-              className={`w-4 h-4 ${isArabic ? 'ml-1' : 'mr-1 rotate-180'}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-            {isArabic ? 'العودة إلى المدونة' : 'Back to Blog'}
-          </Link>
-        </div>
-      </div>
+      <ArticleDetail
+        post={post}
+        isArabic={isArabic}
+        languageRoute={languageRoute}
+        backHref={`/${languageRoute}/blog`}
+        backLabel={isArabic ? 'العودة إلى المدونة' : 'Back to Blog'}
+      />
     </div>
   )
 }
