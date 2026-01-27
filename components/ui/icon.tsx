@@ -26,8 +26,6 @@ export function Icon({
 }: IconProps) {
   const normalized = normalizeName(name);
 
-  console.log("Icon name:", name, "-> normalized:", normalized);
-
   // Special-case Twitter/X to use the Simple Icons paths instead of Lucide's defaults
   if (normalized.toLowerCase() === "x") {
     return (
