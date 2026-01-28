@@ -3,7 +3,7 @@ title: "Navigating Regulatory Pathways for Hemp in Saudi Arabia"
 date: 2024-12-12
 excerpt: "A quick guide to approvals, licensing, and compliance for industrial hemp projects in the Kingdom."
 author: "Green Desert"
-image: "fiber-cover.webp"
+image: "fiber-cover.jpg"
 tags: [Regulation, Compliance]
 ---
 

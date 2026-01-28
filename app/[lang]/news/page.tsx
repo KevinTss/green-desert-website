@@ -7,6 +7,7 @@ import { getAllEntries } from "@/lib/posts";
 import enNewsContent from "@/content/i18n/en/news.json";
 import arNewsContent from "@/content/i18n/ar/news.json";
 import { getAssetPath } from "@/lib/assets";
+import { formatDate } from "@/lib/utils";
 
 interface PageProps {
   params: Promise<{
@@ -14,7 +15,9 @@ interface PageProps {
   }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const isArabic = lang === "ar-SA";
 
@@ -84,7 +87,9 @@ export default async function NewsPage({ params }: PageProps) {
                   post={post}
                   isRTL={isArabic}
                   languageRoute={languageRoute as any}
-                  href={post.url ? post.url : `/${languageRoute}/news/${post.slug}`}
+                  href={
+                    post.url ? post.url : `/${languageRoute}/news/${post.slug}`
+                  }
                   external={!!post.url}
                 />
               ))}
@@ -93,7 +98,9 @@ export default async function NewsPage({ params }: PageProps) {
             {rest.length > 0 && (
               <div className="mt-10 space-y-3">
                 {rest.map((post) => {
-                  const href = post.url ? post.url : `/${languageRoute}/news/${post.slug}`;
+                  const href = post.url
+                    ? post.url
+                    : `/${languageRoute}/news/${post.slug}`;
                   return (
                     <div
                       key={post.slug}
@@ -102,12 +109,16 @@ export default async function NewsPage({ params }: PageProps) {
                       {post.image && (
                         <div className="relative h-14 w-20 overflow-hidden rounded-lg border border-gray-100">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={getAssetPath(post.image)} alt={post.title} className="h-full w-full object-cover" />
+                          <img
+                            src={getAssetPath(post.image)}
+                            alt={post.title}
+                            className="h-full w-full object-cover"
+                          />
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
                         <div className="text-[11px] uppercase tracking-wide text-emerald-600">
-                          {post.date}
+                          {formatDate(post.date)}
                         </div>
                         <div className="flex items-center justify-between gap-3">
                           <p className="text-sm font-semibold text-gray-900 truncate">
