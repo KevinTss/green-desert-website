@@ -118,7 +118,7 @@ export default async function NewsPage({ params }: PageProps) {
                       )}
                       <div className="flex-1 min-w-0">
                         <div className="text-[11px] uppercase tracking-wide text-emerald-600">
-                          {formatDate(post.date)}
+                          {formatDate(post.date, isArabic)}
                         </div>
                         <div className="flex items-center justify-between gap-3">
                           <p className="text-sm font-semibold text-gray-900 truncate">

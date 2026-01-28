@@ -3,7 +3,7 @@ title: "New Office Opening and Expansion Plans"
 date: 2023-12-10
 excerpt: "Green Desert opens a new headquarters in Riyadh to serve growing demand for environmental solutions and giga-project partners."
 author: "Green Desert"
-image: "food.webp"
+image: "/food.webp"
 tags: [Expansion, Operations]
 ---
 
