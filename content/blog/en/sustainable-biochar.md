@@ -3,7 +3,7 @@ title: "Turning Agricultural Waste into Biochar for Desert Soils"
 date: 2024-11-30
 excerpt: "How biochar from hemp residues boosts soil health, water retention, and carbon storage in arid environments."
 author: "Green Desert"
-image: "/diagram-1.webp"
+image: "/hurd-cover.jpg"
 tags: [Biochar, Soil, Carbon]
 ---
 

@@ -17,4 +17,4 @@ Industrial hemp deployment requires coordination with MEWA, SFDA, and local muni
 - Transparent QA/QC documentation
 - Training programs for contractors and operators
 
-![Regulatory placeholder](/placeholder.jpg)
+![Regulatory placeholder](/fiber-cover.jpg)
