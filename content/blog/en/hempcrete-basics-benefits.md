@@ -1,12 +1,12 @@
 ---
-title: 'Sustainable Building with Hempcrete: Basics and Benefits'
-date: '2024-10-20'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-author: 'Green Desert Editorial'
-image: '/hemp_hurds_mulch-443x300.png'
+title: "Sustainable Building with Hempcrete: Basics and Benefits"
+date: "2024-10-20"
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+author: "Green Desert Editorial"
+image: "/Agri.webp"
 tags:
-  - 'Hempcrete'
-  - 'Construction'
+  - "Hempcrete"
+  - "Construction"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
