@@ -48,7 +48,7 @@
         "title": "Energy & biofuels",
         "tagline": "Biomass-to-energy systems",
         "summary": "Convert hemp biomass into clean fuels and CHP-ready pellets with emissions accounting and feedstock specs.",
-        "image": "/diagram-1.webp",
+        "image": "/energy.jpeg",
         "href": "/solutions/energy"
       },
       {
@@ -105,7 +105,7 @@
         "title": "Pharmaceuticals & wellness",
         "tagline": "Clinical-grade cannabinoids",
         "summary": "Produce GMP-ready CBD, minor cannabinoids, and pharmaceutical flower for therapeutic programs with validated quality systems. We handle genetics, cultivation SOPs, and documentation to satisfy regulators and clinical partners.",
-        "image": "/diagram-1.webp",
+        "image": "/pharma.png",
         "href": "/solutions/pharmaceutical"
       }
     ]
@@ -397,7 +397,7 @@
       "hero": {
         "title": "Energy & biofuels",
         "body": "Converting industrial biomass into clean fuels, green hydrogen feedstock, and Cogeneration ready pellets. We engineer feedstock specifications and emissions accounting to deliver verified, carbon-negative heat and power solutions.",
-        "image": "/seeds-cover.webp"
+        "image": "/energy.jpeg"
       },
       "overview": {
         "paragraphs": [
@@ -960,7 +960,7 @@
       "hero": {
         "title": "Pharmaceutical & Wellness",
         "body": "creating high-purity cannabinoids for medical and therapeutic applications. We provide clinical-quality inputs, comprehensive lab validation, and stability data to support pharmaceutical R&D and national health initiatives.",
-        "image": "/seeds-cover.webp"
+        "image": "/pharma.png"
       },
       "overview": {
         "paragraphs": [
