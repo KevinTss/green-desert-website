@@ -32,7 +32,7 @@
         "tagline": "Hempcrete & envelope systems",
         "summary": "Transforming desert environments into carbon sinks. Through precision agriculture and regenerative crop rotation, we cultivate climate resilient hemp that restore soil health and supplies raw materials for Saudi Arabia's green transition.",
         "video": "sliderV.mp4",
-        "image": "/hemp-blocks-01-443x300.webp",
+        "image": "/hempblock.jpg",
         "href": "/solutions/construction"
       },
       {
@@ -73,7 +73,7 @@
         "title": "Agriculture",
         "tagline": "High-performance agritech",
         "summary": "Supply inputs like hemp mats, mulches, and seeds that elevate productivity across controlled environments and open fields. We tailor genetics, substrates, and irrigation guidance to desert conditions and high-value crops.",
-        "image": "/diagram-1.webp",
+        "image": "/soil .jpeg",
         "href": "/solutions/agriculture"
       },
       {
@@ -97,7 +97,7 @@
         "title": "Food & beverage",
         "tagline": "Functional nutrition",
         "summary": "Launch nutrient-dense hemp foods and beverages with clean supply assurance and sensory support. We help brands with formulation, shelf-life testing, and regulatory pathways to move from pilot to retail quickly.",
-        "image": "/diagram-1.webp",
+        "image": "/food.jpeg",
         "href": "/solutions/food"
       },
       {
@@ -219,7 +219,7 @@
       "hero": {
         "title": "Construction",
         "body": "Creating low-carbon building envelopes to support the Kingdom’s urban growth. Our hempcrete systems are developed using verified mix designs and strict QA/QC protocols to meet the rigorous structural and thermal performance requirements of large-scale Saudi developments.",
-        "image": "/seeds-cover.webp"
+        "image": "/hempblock.jpg"
       },
       "overview": {
         "paragraphs": [
@@ -645,7 +645,7 @@
       "hero": {
         "title": "Agriculture",
         "body": "Deploying climate-adapted crops and regenerative agronomy to secure the Kingdom’s industrial feedstock. We engineer high-yield, water-efficient systems that restore soil health and drive national resource autonomy.",
-        "image": "/seeds-cover.webp"
+        "image": "/soil .jpeg"
       },
       "overview": {
         "paragraphs": [
@@ -873,7 +873,7 @@
       "hero": {
         "title": "Food & beverage",
         "body": "Developing high-density plant-based proteins and nutrient-rich hemp derivatives for the functional food market. We provide stabilized, traceable ingredients and technical support to enhance nutritional profiles and drive food security.",
-        "image": "/seeds-cover.webp"
+        "image": "/food.jpeg"
       },
       "overview": {
         "paragraphs": [
