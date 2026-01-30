@@ -97,7 +97,7 @@
         "title": "Food & beverage",
         "tagline": "Functional nutrition",
         "summary": "Launch nutrient-dense hemp foods and beverages with clean supply assurance and sensory support. We help brands with formulation, shelf-life testing, and regulatory pathways to move from pilot to retail quickly.",
-        "image": "/food.jpeg",
+        "image": "/food2.jpeg",
         "href": "/solutions/food"
       },
       {
@@ -873,7 +873,7 @@
       "hero": {
         "title": "Food & beverage",
         "body": "Developing high-density plant-based proteins and nutrient-rich hemp derivatives for the functional food market. We provide stabilized, traceable ingredients and technical support to enhance nutritional profiles and drive food security.",
-        "image": "/food.jpeg"
+        "image": "/food2.jpeg"
       },
       "overview": {
         "paragraphs": [
@@ -882,7 +882,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
@@ -969,7 +969,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
