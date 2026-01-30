@@ -39,8 +39,8 @@
         "id": "textiles",
         "title": "Textile",
         "tagline": "Premium natural fibres",
-        "summary": "Traceable hemp fibres for hospitality, healthcare, and premium textiles with finishing and testing support.",
-        "image": "/fiber-cover.webp",
+        "summary": "Developing high-tenacity, climate-adaptive fibers for the Kingdom’s industrial and fashion sectors.",
+        "image": "/textile.jpeg",
         "href": "/solutions/textiles"
       },
       {
@@ -143,7 +143,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": "null,
         "video": null
       },
       "approach": {
@@ -228,7 +228,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
@@ -306,7 +306,7 @@
       "hero": {
         "title": "Textiles",
         "body": "Developing high-tenacity, climate-adaptive fibers for the Kingdom’s industrial and fashion sectors. Delivering sustainable textile systems that meet the rigorous performance and comfort standards of the GCC.",
-        "image": "/seeds-cover.webp"
+        "image": "/textile.jpeg"
       },
       "overview": {
         "paragraphs": [
@@ -315,7 +315,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
@@ -406,7 +406,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
@@ -492,7 +492,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
@@ -572,7 +572,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
@@ -653,7 +653,7 @@
         ]
       },
       "showcase": {
-        "image": "/seeds-cover.jpg",
+        "image": null,
         "video": null
       },
       "approach": {
