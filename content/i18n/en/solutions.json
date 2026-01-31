@@ -10,8 +10,8 @@
     "stats": [
       { "id": "Partners", "label": "3 Gov-Smi-Private partners" },
       { "id": "Projects", "label": "3 Pilot Deployments" },
-      { "id": "emissions", "label": "8 to 22 t CO₂ captured/ha" },
-      { "id": "Pending projects", "label": "3 Pending Projects public-private partners" }
+      { "id": "emissions", "label": "8to22t CO₂ captured/ha" },
+      { "id": "Pending projects", "label": "3 Pending Projects" }
       
     ]
   },
