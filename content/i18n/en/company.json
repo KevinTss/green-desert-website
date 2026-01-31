@@ -25,14 +25,15 @@
     "badge": "Vision",
     "title": "Committed roadmap to 2030",
     "body": "Green Desert’s vision is to help shape a new industrial model in which nature-based technologies are integral to economic development. GD aspires to see plant-derived materials—industrial hemp among them—become mainstream contributors to resilient infrastructure, responsible manufacturing, and long-term sustainability across the region.",
-    "phases": [
+    "phases": null
+    [
       {
         "id": "2020",
         "year": "2020",
         "title": "2020 • License secured",
         "body": "Green Desert founded and awarded the first Saudi license for industrial hemp research and deployment.",
         "details": [
-          "MEWA and SFDA approvals formalized the national industrial hemp research framework.",
+          "MEWA approvals formalized the national industrial hemp research framework.",
           "Internal governance, lab partnerships, and compliance reporting protocols were established."
         ],
         "image": "/hurd-cover.jpg"
