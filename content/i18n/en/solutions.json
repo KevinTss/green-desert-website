@@ -8,10 +8,10 @@
     "badge": "Plant-based impact",
     "body": "Choose a pathway to uncover business value, operational readiness, and the technical specs that move projects from pilot to scale.",
     "stats": [
-      { "id": "Partners", "label": "3 Gov-Smi-private partners" },
-      { "id": "Projects", "label": "3 pilot deployments" },
-      { "id": "emissions", "label": "UP to 7.8 t CO₂e captured/ha" },
-      { "id": "Pending projects", "label": "3 public-private partners" }
+      { "id": "Partners", "label": "3 Gov-Smi-Private partners" },
+      { "id": "Projects", "label": "3 Pilot Deployments" },
+      { "id": "emissions", "label": "8 to 22 t CO₂ captured/ha" },
+      { "id": "Pending projects", "label": "3 Pending Projects public-private partners" }
       
     ]
   },
