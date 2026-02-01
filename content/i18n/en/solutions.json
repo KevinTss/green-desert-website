@@ -303,8 +303,8 @@
       "partners": null
     },
     "textiles": {
-      "showSignUp": true,
-      "showWaitlist": true,
+      "showSignUp": false,
+      "showWaitlist": false,
       "hero": {
         "title": "Textiles",
         "body": "Developing high-tenacity, climate-adaptive fibers for the Kingdom’s industrial and fashion sectors. Delivering sustainable textile systems that meet the rigorous performance and comfort standards of the GCC.",
