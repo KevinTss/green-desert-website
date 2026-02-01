@@ -11,7 +11,7 @@
     "badge": "Company",
     "title": "About Green Desert",
     "intro": "Green Desert is a Saudi Arabian biotechnology startup founded in January 2020. We address the region's most pressing environmental challenges through innovative, sustainable solutions rooted in Cannabis sativa (industrial hemp), aligned with Saudi Arabia's Vision 2030.",
-    "image": "/GD about3.png"
+    "image": "/GD about1.png"
   },
   "story": {
     "badge": "Company",
@@ -25,7 +25,6 @@
     "badge": "Vision",
     "title": "Committed roadmap to 2030",
     "body": "Green Desert’s vision is to help shape a new industrial model in which nature-based technologies are integral to economic development. GD aspires to see plant-derived materials—industrial hemp among them—become mainstream contributors to resilient infrastructure, responsible manufacturing, and long-term sustainability across the region.",
-    "phases": null
     
   },
   "mission": {
