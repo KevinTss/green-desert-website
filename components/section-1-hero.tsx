@@ -48,7 +48,7 @@ export const Section1Hero = () => {
               />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-slate-950/45" />
+          {/* <div className="absolute inset-0 bg-slate-950/45" /> */}
         </div>
 
         <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
