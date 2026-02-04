@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn, formatHref } from "@/lib/utils";
 import { Text as TypographyText } from "@/components/typography";
 import { useLanguage } from "@/components/language-provider";
 import { getRoutePath } from "@/lib/assets";
@@ -262,11 +262,7 @@ export const ProcessExplainer = ({ process }: ProcessExplainerProps) => {
             className="group gap-2 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 w-fit"
           >
             <Link
-              href={
-                content.cta.href.startsWith("/")
-                  ? getRoutePath(`/${languageRoute}${content.cta.href}`)
-                  : getRoutePath(content.cta.href)
-              }
+              href={formatHref(content.cta.href, languageRoute)}
               prefetch={false}
             >
               {content.cta.label}

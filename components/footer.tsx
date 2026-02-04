@@ -12,7 +12,7 @@ import {
 import { getAssetPath } from "@/lib/assets";
 import Link from "next/link";
 import footerContentEn from "@/content/i18n/en/footer.json";
-import { isExternalHref } from "@/lib/utils";
+import { isExternalHref, formatHref } from "@/lib/utils";
 import { Icon } from "./ui/icon";
 
 type FooterContent = typeof footerContentEn;
@@ -117,13 +117,6 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const formatHref = (href?: string) => {
-    if (!href) return "#";
-    if (href.startsWith("#")) return href;
-    if (isExternalHref(href)) return href;
-    return href.startsWith("/") ? `/${languageRoute}${href}` : href;
   };
 
   const locale = language === "ar" ? "ar-SA" : "en-US";
@@ -234,7 +227,7 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
               </h4>
               <ul className="space-y-3">
                 {section.links?.map((item) => {
-                  const href = formatHref(item.href);
+                  const href = formatHref(item.href, languageRoute);
                   const isExternal = isExternalHref(item.href);
                   if (isExternal) {
                     return (
@@ -271,7 +264,7 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
             </h4>
             <div className="space-y-3">
               {latestNews.map((item) => {
-                const href = formatHref(item.href);
+                const href = formatHref(item.href, languageRoute);
                 const formattedDate = formatNewsDate(item.date);
                 return (
                   <Link
