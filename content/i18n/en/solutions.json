@@ -136,7 +136,7 @@
       "hero": {
         "title": "Cultivation",
         "body": "Transforming desert environments into carbon sinks. Through precision agriculture and regenerative crop rotation, we cultivate climate resilient hemp that restore soil health and supplies raw materials for Saudi Arabia's green transition.",
-        "image": "/cultivation-showcase.jpeg"
+        "image": "/Cultivation.png"
       },
       "overview": {
         "paragraphs": [
@@ -145,7 +145,7 @@
         ]
       },
       "showcase": {
-        "image": "/Cultivation2.jpg",
+        "image": "/cultivation-showcase.jpeg",
         "video": null
       },
       "approach": {
