@@ -59,7 +59,7 @@
         "tagline": "Lightweight, high-strength materials",
         "summary": "Engineer hemp-based composites for automotive, aerospace, and packaging programs with tested mechanical properties. We supply fibre specs, resin pairings, and processing guidance to reduce risk during line trials.",
         "video": null,
-        "image": "/Bio.jpg",
+        "image": null,
         "href": "/solutions/biocomposites"
       },
       {
@@ -67,7 +67,7 @@
         "title": "Waste & remediation",
         "tagline": "Verified carbon removal",
         "summary": "Quantify, verify, and monetise carbon sequestration from hemp projects with third-party validation and registry listings.",
-        "image": "/remdation.jpeg",
+        "image": "/Bio.jpg",
         "href": "/solutions/waste"
       },
       {
@@ -566,7 +566,7 @@
       "hero": {
         "title": "Waste & Remediation",
         "body": "Transforming industrial waste into valuable resources through phytoremediation and circular processing. We engineer natural systems for soil rehabilitation and land restoration to meet national environmental standards.",
-        "image": "/remdation.jpeg"
+        "image": "/Bio.jpg"
       },
       "overview": {
         "paragraphs": [
@@ -574,7 +574,7 @@
         ]
       },
       "showcase": {
-        "image": null,
+        "image": "/remedation-showcase.png",
         "video": null
       },
       "approach": {
@@ -884,7 +884,7 @@
         ]
       },
       "showcase": {
-        "image": null,
+        "image": "/food-showcase.jpeg",
         "video": null
       },
       "approach": {
