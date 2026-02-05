@@ -59,7 +59,7 @@
         "tagline": "Lightweight, high-strength materials",
         "summary": "Engineer hemp-based composites for automotive, aerospace, and packaging programs with tested mechanical properties. We supply fibre specs, resin pairings, and processing guidance to reduce risk during line trials.",
         "video": null,
-        "image": null,
+        "image": "/biocomsite.jpeg",
         "href": "/solutions/biocomposites"
       },
       {
@@ -485,7 +485,7 @@
       "hero": {
         "title": "Biocomposites",
         "body": "Engineering hemp-based composites for automotive and packaging programs with tested mechanical properties. We supply fiber specifications, resin pairings, and technical guidance to reduce risk and lower the carbon footprint of industrial components.",
-        "image": "/Bio.jpg"
+        "image": "/biocomsite.jpeg"
       },
       "overview": {
         "paragraphs": [
