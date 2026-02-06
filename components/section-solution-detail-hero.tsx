@@ -75,7 +75,7 @@ export function SectionSolutionDetailHero({
             priority
             className="object-cover object-center opacity-80"
           />
-          <div className="absolute inset-0 bg-slate-950/55" />
+          <div className="absolute inset-0 bg-slate-950/25" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-24 sm:px-8 sm:pt-28 lg:px-12">

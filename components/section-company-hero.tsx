@@ -25,7 +25,7 @@ export const SectionCompanyHero = () => {
             priority
             className="object-cover object-center opacity-80"
           />
-          <div className="absolute inset-0 bg-slate-950/20" />
+          <div className="absolute inset-0 bg-slate-950/25" />
         </div>
 
         <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
