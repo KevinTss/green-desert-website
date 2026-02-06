@@ -202,9 +202,8 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
             <Image
               src={getAssetPath(resolvedLogo?.src || "/logo_GD_black_EN.png")}
               alt={resolvedLogo?.alt || "Green Desert Logo"}
-              width={160}
-              height={40}
-              className="h-7"
+              width={250}
+              height={52}
             />
             <p className="text-sm text-gray-600 leading-relaxed">
               {resolvedDescription}
