@@ -2,7 +2,6 @@
   "miniNav": [
     { "id": "story", "label": "Story" },
     { "id": "kpis", "label": "Impact" },
-    { "id": "personas", "label": "Audiences" },
     { "id": "news", "label": "News" }
   ],
   "hero": {
