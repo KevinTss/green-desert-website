@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { ArticleDetail } from "@/components/article-detail";
+import FooterWithNews from "@/components/footer-with-news";
 
 interface NewsPageProps {
   params: Promise<{
@@ -69,6 +70,7 @@ export default async function NewsArticlePage({ params }: NewsPageProps) {
     <div className="min-h-screen bg-white">
       <Header />
       <ArticleDetail post={post} languageRoute={languageRoute} root="news" />
+      <FooterWithNews lang={lang} />
     </div>
   );
 }

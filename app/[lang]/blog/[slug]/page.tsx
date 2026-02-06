@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Metadata } from "next";
 import { ArticleDetail } from "@/components/article-detail";
+import FooterWithNews from "@/components/footer-with-news";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -110,6 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         }}
       />
       <ArticleDetail post={post} languageRoute={languageRoute} root="blog" />
+      <FooterWithNews lang={lang} />
     </div>
   );
 }
