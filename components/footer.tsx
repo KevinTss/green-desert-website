@@ -3,12 +3,6 @@
 import * as React from "react";
 import Image from "next/image";
 import { useContent, useLanguage } from "@/components/language-provider";
-import {
-  LinkedinIcon,
-  InstagramIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from "lucide-react";
 import { getAssetPath } from "@/lib/assets";
 import Link from "next/link";
 import footerContentEn from "@/content/i18n/en/footer.json";
@@ -130,16 +124,6 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
         month: "short",
         day: "numeric",
       });
-  };
-
-  const socialIconMap: Record<
-    string,
-    React.ComponentType<{ className?: string }>
-  > = {
-    twitter: TwitterIcon,
-    instagram: InstagramIcon,
-    youtube: YoutubeIcon,
-    linkedin: LinkedinIcon,
   };
 
   return (
