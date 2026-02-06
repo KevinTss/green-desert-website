@@ -4,6 +4,7 @@ import { useState, useMemo } from "react"
 import { useContent } from "@/components/language-provider"
 import { AnimatedHeadline } from "./animated-headline"
 import Image from "next/image"
+import Link from "next/link"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
 import { Section } from "@/components/section"
@@ -65,6 +66,20 @@ export const Section1Hero = () => {
             </TypographyText>
           )}
         </div>
+
+        <Link 
+          href="https://saudiarabia.un.org/en/sdgs" 
+          target="_blank"
+          className="absolute bottom-10 right-10 "
+          style={{ background: "red" }}
+        >
+          <Image
+            src={getAssetPath("/sdq-logo.png")}
+            alt="SDG logo"
+            width={144}
+            height={65}
+          />
+          </Link>
       </div>
     </Section>
   )
