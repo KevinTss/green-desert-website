@@ -4,8 +4,7 @@
     { "id": "vision", "label": "Vision" },
     { "id": "mission", "label": "Mission" },
     { "id": "values", "label": "Values" },
-    { "id": "team", "label": "Team" },
-    { "id": "leadership", "label": "Leadership" }
+    { "id": "team", "label": "Team" }
   ],
   "hero": {
     "badge": "Company",

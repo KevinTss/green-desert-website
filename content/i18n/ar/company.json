@@ -4,8 +4,7 @@
     { "id": "vision", "label": "الرؤية" },
     { "id": "mission", "label": "الرسالة" },
     { "id": "values", "label": "القيم" },
-    { "id": "team", "label": "الفريق" },
-    { "id": "leadership", "label": "القيادة" }
+    { "id": "team", "label": "الفريق" }
   ],
   "hero": {
     "badge": "الشركة",
