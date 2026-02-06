@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   build-and-deploy:
+    if: github.actor != 'Kevin Tassi'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
