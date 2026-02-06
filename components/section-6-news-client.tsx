@@ -2,7 +2,6 @@
 
 import { useContent, useLanguage } from "@/components/language-provider"
 import { SectionHeader } from "@/components/section-header"
-import { getAssetPath } from "@/lib/assets"
 import { BlogCard, BlogCardPost } from "@/components/blog-card"
 import { Heading } from "@/components/typography"
 import { Section } from "@/components/section"
@@ -33,45 +32,24 @@ export const Section6NewsClient = ({ latestNews }: { latestNews: {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {latestNews.length > 0
-            ? latestNews.map((item) => (
+          {latestNews.map((item) => {
+            const post: BlogCardPost = {
+              slug: item.href,
+              title: item.title,
+              date: item.date,
+              image: item.image,
+              tags: news.tag ? [news.tag] : undefined,
+            }
+            return (
               <BlogCard
                 key={item.href}
-                post={{
-                  slug: "",
-                  title: item.title,
-                  date: item.date,
-                  excerpt: "",
-                  author: "",
-                  image: item.image,
-                  tags: [],
-                  url: item.href,
-                }}
+                post={post}
                 isRTL={isRTL}
                 languageRoute={languageRoute}
                 href={item.href}
               />
-            ))
-            : (news.items ?? []).map((item) => {
-              const fallbackHref = item.link ?? undefined
-              const fallbackPost: BlogCardPost = {
-                slug: item.id,
-                title: item.title,
-                date: item.date ?? "",
-                excerpt: item.description,
-                image: getAssetPath(item.image ?? "/placeholder.svg?height=250&width=400"),
-                tags: [news.tag ?? "News"],
-              }
-              return (
-                <BlogCard
-                  key={fallbackPost.slug}
-                  post={fallbackPost}
-                  isRTL={isRTL}
-                  languageRoute={languageRoute}
-                  href={fallbackHref}
-                />
-              )
-            })}
+            )
+          })}
         </div>
       </div>
     </Section>
