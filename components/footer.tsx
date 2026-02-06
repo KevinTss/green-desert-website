@@ -198,7 +198,14 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
         {/* Main content - Tagline + columns */}
         <div className="py-12 grid grid-cols-1 md:grid-cols-[1.25fr_repeat(4,minmax(0,1fr))] gap-8">
           {/* Column 1 - Tagline text only */}
-          <div>
+          <div className="flex flex-col gap-6">
+            <Image
+              src={getAssetPath(resolvedLogo?.src || "/logo_GD_black_EN.png")}
+              alt={resolvedLogo?.alt || "Green Desert Logo"}
+              width={160}
+              height={40}
+              className="h-7"
+            />
             <p className="text-sm text-gray-600 leading-relaxed">
               {resolvedDescription}
             </p>
@@ -288,13 +295,13 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
 
         {/* Bottom section */}
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <Image
+          {/* <Image
             src={getAssetPath(resolvedLogo?.src || "/logo_GD_black_EN.png")}
             alt={resolvedLogo?.alt || "Green Desert Logo"}
             width={140}
             height={35}
             className="h-7 w-auto"
-          />
+          /> */}
           <p className="text-sm text-gray-600">{resolvedLegal?.copyright}</p>
         </div>
       </div>
