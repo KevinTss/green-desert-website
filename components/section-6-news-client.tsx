@@ -2,21 +2,22 @@
 
 import { useContent, useLanguage } from "@/components/language-provider"
 import { SectionHeader } from "@/components/section-header"
-import { getLatestPosts } from "@/lib/blog-static"
 import { getAssetPath } from "@/lib/assets"
 import { BlogCard, BlogCardPost } from "@/components/blog-card"
 import { Heading } from "@/components/typography"
 import { Section } from "@/components/section"
 
-export const Section6NewsClient = () => {
-  const { isRTL, language, languageRoute } = useLanguage()
+export const Section6NewsClient = ({ latestNews }: { latestNews: {
+    title: string,
+    date: string,
+    image: string,
+    href: string,
+}[] }) => {
+  const { isRTL, languageRoute } = useLanguage()
   const { home } = useContent()
   const news = home?.news ?? {}
 
-  // Get latest posts for current language
-  const posts = getLatestPosts(language as 'en' | 'ar', 3)
-
-  if (!news.title && posts.length === 0) return null
+  if (!news.title && latestNews.length === 0) return null
 
   return (
     <Section id="news">
@@ -25,24 +26,34 @@ export const Section6NewsClient = () => {
         <SectionHeader
           title={<Heading className="mb-2" align={isRTL ? "right" : "left"}>{news.title}</Heading>}
           subtitle={news.subtitle}
-          actionHref={posts.length > 0 ? `/${languageRoute}/blog` : undefined}
-          actionText={posts.length > 0 ? news.viewAllLabel : undefined}
+          actionHref={latestNews.length > 0 ? `/${languageRoute}/news` : undefined}
+          actionText={latestNews.length > 0 ? news.viewAllLabel : undefined}
           isRTL={isRTL}
           className="text-center md:text-left"
         />
 
-        {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {posts.length > 0
-            ? posts.map((post) => (
-              <BlogCard key={post.slug} post={post} isRTL={isRTL} languageRoute={language} />
+          {latestNews.length > 0
+            ? latestNews.map((item) => (
+              <BlogCard
+                key={item.href}
+                post={{
+                  slug: "",
+                  title: item.title,
+                  date: item.date,
+                  excerpt: "",
+                  author: "",
+                  image: item.image,
+                  tags: [],
+                  url: item.href,
+                }}
+                isRTL={isRTL}
+                languageRoute={languageRoute}
+                href={item.href}
+              />
             ))
             : (news.items ?? []).map((item) => {
-              const fallbackHref = item.link
-                ? item.link.startsWith("/")
-                  ? `/${languageRoute}${item.link}`
-                  : item.link
-                : undefined
+              const fallbackHref = item.link ?? undefined
               const fallbackPost: BlogCardPost = {
                 slug: item.id,
                 title: item.title,
@@ -51,7 +62,15 @@ export const Section6NewsClient = () => {
                 image: getAssetPath(item.image ?? "/placeholder.svg?height=250&width=400"),
                 tags: [news.tag ?? "News"],
               }
-              return <BlogCard key={fallbackPost.slug} post={fallbackPost} isRTL={isRTL} languageRoute={language} href={fallbackHref} />
+              return (
+                <BlogCard
+                  key={fallbackPost.slug}
+                  post={fallbackPost}
+                  isRTL={isRTL}
+                  languageRoute={languageRoute}
+                  href={fallbackHref}
+                />
+              )
             })}
         </div>
       </div>

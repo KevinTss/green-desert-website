@@ -86,11 +86,8 @@ export default async function NewsPage({ params }: PageProps) {
                   key={post.slug}
                   post={post}
                   isRTL={isArabic}
-                  languageRoute={languageRoute as any}
-                  href={
-                    post.url ? post.url : `/${languageRoute}/news/${post.slug}`
-                  }
-                  external={!!post.url}
+                  languageRoute={languageRoute}
+                  href={post.url ?? `/news/${post.slug}`}
                 />
               ))}
             </div>

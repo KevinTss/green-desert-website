@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 export default async function BlogPage({ params }: BlogPageProps) {
   const { lang } = await params
   const language = lang === 'ar-SA' ? 'ar' : 'en'
+  const languageRoute = lang === 'ar-SA' ? 'ar-SA' : 'en'
   const posts = await getAllEntries('blog', language)
   const isArabic = language === 'ar'
   const content = isArabic ? arBlogContent : enBlogContent
@@ -49,7 +50,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
         {posts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <BlogCard key={post.slug} post={post} isRTL={isArabic} languageRoute={language} />
+              <BlogCard
+                key={post.slug}
+                post={post}
+                isRTL={isArabic}
+                languageRoute={languageRoute}
+                href={post.url ?? `/blog/${post.slug}`}
+              />
             ))}
           </div>
         ) : (

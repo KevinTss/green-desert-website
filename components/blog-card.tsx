@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { Language } from './language-provider'
-import { cn, isExternalHref } from '@/lib/utils'
+import { cn, formatHref, isExternalHref } from '@/lib/utils'
 import { Heading } from '@/components/typography'
 import { getAssetPath } from '@/lib/assets'
 
@@ -22,7 +21,7 @@ export interface BlogCardPost {
 interface BlogCardProps {
   post: BlogCardPost
   isRTL: boolean
-  languageRoute: Language
+  languageRoute: string
   href?: string
   external?: boolean
   imageClassName?: string
@@ -47,9 +46,10 @@ export function BlogCard({ post, isRTL, languageRoute, href, imageClassName, ext
   }
 
   const firstTag = post.tags && post.tags.length > 0 ? post.tags[0] : undefined
-  const linkHref = href ?? `/${languageRoute}/blog/${post.slug}`
-  const isExternal = external || (!!post.url && isExternalHref(post.url))
-  const anchorHref = isExternal ? (post.url || linkHref) : linkHref
+  const rawHref = href ?? post.url
+  const resolvedHref = formatHref(rawHref, languageRoute)
+  const isExternal = external || isExternalHref(rawHref)
+  const anchorHref = isExternal ? (rawHref ?? "#") : resolvedHref
   const imageSrc = post.image ? getAssetPath(post.image) : getAssetPath('/placeholder.jpg')
 
   const CardContent = (
