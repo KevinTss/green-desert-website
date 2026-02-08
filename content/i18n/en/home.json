@@ -88,15 +88,13 @@
         "id": "co2",
         "label": "CO₂ SEQUESTERED",
         "value": "7.8",
-        "suffix": " t",
-        "description": "per hectare, annually"
+        "description": "tons per hectare, annually"
       },
       {
         "id": "footprint",
         "label": "LOW-CARBON FOOTPRINT",
         "value": "18,000",
-        "suffix": " m²",
-        "description": "of hemp-based structures"
+        "description": " m² of hemp-based structures"
       },
       {
         "id": "pilots",
