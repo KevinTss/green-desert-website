@@ -280,7 +280,7 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
         </div>
 
         {/* Bottom section */}
-        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="pt-8 border-t border-gray-200 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-4">
           {/* <Image
             src={getAssetPath(resolvedLogo?.src || "/logo_GD_black_EN.png")}
             alt={resolvedLogo?.alt || "Green Desert Logo"}
@@ -289,6 +289,17 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
             className="h-7 w-auto"
           /> */}
           <p className="text-sm text-gray-600">{resolvedLegal?.copyright}</p>
+          <div className="flex justify-center md:justify-self-center">
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Back to top"
+              className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-600 hover:shadow-md"
+            >
+              <Icon name="arrow-up" className="h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
+            </button>
+          </div>
+          <div aria-hidden="true" />
         </div>
       </div>
     </footer>
