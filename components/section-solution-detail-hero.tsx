@@ -124,7 +124,7 @@ export function SectionSolutionDetailHero({
               {title}
             </Heading>
             {subtitle && (
-              <TypographyText variant="white" className="mt-4">
+              <TypographyText variant="white" className="mt-4 text-[1.2rem]">
                 {subtitle}
               </TypographyText>
             )}
