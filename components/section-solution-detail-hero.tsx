@@ -83,34 +83,34 @@ export function SectionSolutionDetailHero({
             <BreadcrumbList>
               <BreadcrumbItem>
                 <div className="flex items-center gap-1.5 text-white/70">
-                  <SolutionIcon className="h-4 w-4" />
+                  <SolutionIcon className="h-5 w-5" />
                 </div>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-white/50">
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-5 w-5" />
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href={`/${languageRoute}`} className="text-white/70 hover:text-white">
+                  <Link href={`/${languageRoute}`} className="text-white/70 hover:text-white text-[1.2rem]">
                     {labels.home}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-white/50">
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-5 w-5" />
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href={`/${languageRoute}/solutions`} className="text-white/70 hover:text-white">
+                  <Link href={`/${languageRoute}/solutions`} className="text-white/70 hover:text-white text-[1.2rem]">
                     {header.nav?.[1].label}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-white/50">
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-5 w-5" />
               </BreadcrumbSeparator>
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-white">
+                <BreadcrumbPage className="text-white text-[1.2rem]">
                   {title || t("nav.solutions")}
                 </BreadcrumbPage>
               </BreadcrumbItem>
