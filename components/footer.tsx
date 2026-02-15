@@ -35,11 +35,6 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
   const footer =
     (rawFooter as Partial<FooterContent> & Record<string, any>) ?? {};
 
-  const resolvedFollowLabel =
-    typeof footer.follow === "string"
-      ? footer.follow
-      : (footer.follow?.label ?? footerContentEn.follow.label);
-
   const resolvedFollowLinks =
     footer &&
       typeof footer.follow === "object" &&
@@ -128,30 +123,7 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
 
   return (
     <footer id="site-footer" className="bg-white border-t border-gray-200">
-      <div className="container mx-auto px-6 py-16 sm:px-8 lg:px-12">
-        {/* Top section - Follow us with icons - Full width */}
-        <div className="flex items-center justify-between pb-8 border-b border-gray-200">
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-medium text-gray-900">
-              {resolvedFollowLabel}
-            </span>
-            <div className="flex items-center gap-2">
-              {resolvedFollowLinks.map(({ href, icon, label }) => (
-                <a
-                  key={label}
-                  aria-label={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  <Icon name={icon} className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
+      <div className="container mx-auto px-6 pb-16 sm:px-8 lg:px-12">
         {/* Newsletter signup section */}
         <div className="py-12 border-b border-gray-200">
           <div className="max-w-xl">
@@ -208,6 +180,21 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
             <p className="text-sm text-gray-600 leading-relaxed">
               {resolvedDescription}
             </p>
+            {/* Socials with icons */}
+            <div className="flex items-center gap-2">
+              {resolvedFollowLinks.map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  aria-label={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  <Icon name={icon} className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {resolvedSections.map((section, idx) => (
