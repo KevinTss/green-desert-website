@@ -3,7 +3,7 @@ title: "Turning Agricultural Waste into Biochar for Desert Soils"
 date: 2024-11-29
 excerpt: "Biochar converts agricultural waste into a carbon-rich solution for improving desert soils and promoting sustainable agriculture."
 author: "Green Desert"
-image: "/Cultivation2.webp"
+image: "/biochar202.webp"
 tags: [Biochar, Soil, Carbon]
 ---
 
