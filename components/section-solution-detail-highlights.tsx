@@ -4,6 +4,8 @@ import { Section } from "@/components/section"
 import { Heading } from "./typography"
 import { CarouselContainer } from "@/components/carousel-container"
 import { Icon } from "@/components/ui/icon"
+import Image from "next/image"
+import { getAssetPath } from "@/lib/assets"
 
 export function SectionSolutionDetailHighlights({
   content
@@ -13,7 +15,9 @@ export function SectionSolutionDetailHighlights({
     subtitle?: string,
     items?: Array<{
       title?: string,
-      description?: string
+      description?: string,
+      icon?: string,
+      image?: string
     }>
   } | null
 }) {
@@ -49,9 +53,18 @@ export function SectionSolutionDetailHighlights({
               style={{ width: `calc(${100 / cardsPerView}% - ${(6 * (cardsPerView - 1)) / cardsPerView}px)` }}
             >
               <div className="relative aspect-video w-full bg-gray-50 flex items-center justify-center overflow-hidden rounded-3xl">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full text-emerald-200">
-                  {highlight.icon ? <Icon name={highlight.icon} className="h-14 w-14" /> : null}
-                </div>
+                {highlight.image ? (
+                  <Image
+                    src={getAssetPath(highlight.image)}
+                    alt={highlight.title ?? "Highlight image"}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full text-emerald-200">
+                    {highlight.icon ? <Icon name={highlight.icon} className="h-14 w-14" /> : null}
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-gray-200/5 to-gray-200/10" />
               </div>
               <div className="flex flex-1 flex-col justify-between px-2 pb-6 pt-5">

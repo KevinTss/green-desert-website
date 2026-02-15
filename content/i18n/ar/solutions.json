@@ -8,9 +8,18 @@
     "badge": "أثر قائم على النباتات",
     "body": "اختر المسار المناسب لاكتشاف القيمة التجارية وجاهزية التشغيل والمواصفات التقنية التي تنقل المشاريع من التجربة إلى التوسع.",
     "stats": [
-      { "id": "projects", "label": "12 تطبيقًا تجريبيًا" },
-      { "id": "emissions", "label": "احتجاز 7.8 طن مكافئ CO₂/هكتار" },
-      { "id": "partners", "label": "18 شريكًا من القطاعين العام والخاص" }
+      {
+        "id": "projects",
+        "label": "12 تطبيقًا تجريبيًا"
+      },
+      {
+        "id": "emissions",
+        "label": "احتجاز 7.8 طن مكافئ CO₂/هكتار"
+      },
+      {
+        "id": "partners",
+        "label": "18 شريكًا من القطاعين العام والخاص"
+      }
     ]
   },
   "pathways": {
@@ -119,13 +128,34 @@
     }
   },
   "detailsMiniNav": [
-    { "id": "overview", "label": "Overview" },
-    { "id": "showcase", "label": "Showcase" },
-    { "id": "approach", "label": "Approach" },
-    { "id": "highlights", "label": "Highlights" },
-    { "id": "features", "label": "Features" },
-    { "id": "products", "label": "Products" },
-    { "id": "partners", "label": "Partners" }
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "showcase",
+      "label": "Showcase"
+    },
+    {
+      "id": "approach",
+      "label": "Approach"
+    },
+    {
+      "id": "highlights",
+      "label": "Highlights"
+    },
+    {
+      "id": "features",
+      "label": "Features"
+    },
+    {
+      "id": "products",
+      "label": "Products"
+    },
+    {
+      "id": "partners",
+      "label": "Partners"
+    }
   ],
   "details": {
     "cultivation": {
@@ -159,17 +189,20 @@
           {
             "title": "MRV-ready",
             "description": "Baselines, drone/LiDAR, and third-party verification baked in.",
-            "icon": "target"
+            "icon": "target",
+            "image": "/fiber-cover.jpg"
           },
           {
             "title": "Soil rehab",
             "description": "Programs to restore water retention and microbial activity.",
-            "icon": "zap"
+            "icon": "zap",
+            "image": "/fiber-cover.jpg"
           },
           {
             "title": "Circular outputs",
             "description": "Biochar, feedstock, and fiber channels mapped from day one.",
-            "icon": "shield"
+            "icon": "shield",
+            "image": "/fiber-cover.jpg"
           }
         ]
       },
