@@ -3,7 +3,7 @@
 import { useContent } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { AnimatedStatCards } from "@/components/animated-stat-cards"
-import { Badge, Text as TypographyText } from "@/components/typography"
+import { SectionLabel, Text as TypographyText } from "@/components/typography"
 
 export function SectionSolutionsHighlights() {
   const { solutions } = useContent()
@@ -17,9 +17,12 @@ export function SectionSolutionsHighlights() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
           {badge && (
-            <Badge variant="emerald" size="md">
-              {badge}
-            </Badge>
+            <>
+              {/* Section label (was Badge) */}
+              <SectionLabel>
+                {badge}
+              </SectionLabel>
+            </>
           )}
           {body && (
             <TypographyText className="mt-3 text-sm sm:text-base">

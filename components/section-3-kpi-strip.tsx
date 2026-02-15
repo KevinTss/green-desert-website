@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 
 import { useContent } from "@/components/language-provider"
-import { Badge, Heading, Text as TypographyText, Stat, Label } from "@/components/typography"
+import { Badge, SectionLabel, Heading, Text as TypographyText, Stat, Label } from "@/components/typography"
 import { Section } from "@/components/section"
 
 const parseKpiValue = (rawValue: string) => {
@@ -89,9 +89,12 @@ export const Section3KpiStrip = () => {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
             {kpiContent.badge && (
-              <Badge>
-                {kpiContent.badge}
-              </Badge>
+              <>
+                {/* Section label (was Badge) */}
+                <SectionLabel>
+                  {kpiContent.badge}
+                </SectionLabel>
+              </>
             )}
             {kpiContent.heading && (
               <Heading size="lg" className="mt-3">

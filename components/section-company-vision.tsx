@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 import { useContent, useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Badge, Heading, Text as TypographyText } from "@/components/typography"
+import { Badge, SectionLabel, Heading, Text as TypographyText } from "@/components/typography"
 import { cn } from "@/lib/utils"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
@@ -72,7 +72,12 @@ export function SectionCompanyVision() {
     <Section id="vision" className="bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
-          {vision.badge && <Badge>{vision.badge}</Badge>}
+          {vision.badge && (
+            <>
+              {/* Section label (was Badge) */}
+              <SectionLabel>{vision.badge}</SectionLabel>
+            </>
+          )}
           <Heading size="lg" className="mt-4">
             {vision.title}
           </Heading>

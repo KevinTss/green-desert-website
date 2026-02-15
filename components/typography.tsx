@@ -48,6 +48,30 @@ export function Badge<T extends ElementType = "p">({
 }
 
 // ============================================================================
+// SECTION LABEL COMPONENT - H1 labels above section titles
+// ============================================================================
+type SectionLabelProps<T extends ElementType> = {
+  as?: T
+} & Omit<ComponentPropsWithoutRef<T>, "as">
+
+export function SectionLabel<T extends ElementType = "h1">({
+  as,
+  className,
+  ...props
+}: SectionLabelProps<T>) {
+  const Tag = (as ?? "h1") as ElementType
+  return (
+    <Tag
+      {...props}
+      className={cn(
+        "text-[25px] tracking-[2.5px] text-black font-semibold uppercase",
+        className
+      )}
+    />
+  )
+}
+
+// ============================================================================
 // HEADING COMPONENT - Semantic headings with consistent sizing
 // ============================================================================
 const HEADING_SIZES = {

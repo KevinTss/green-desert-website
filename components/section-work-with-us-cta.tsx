@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useContent } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { Button } from "@/components/ui/button"
-import { Badge, Text as TypographyText } from "@/components/typography"
+import { SectionLabel, Text as TypographyText } from "@/components/typography"
 
 interface SectionWorkWithUsCtaProps {
   muted?: boolean
@@ -21,9 +21,12 @@ export function SectionWorkWithUsCta({ muted }: SectionWorkWithUsCtaProps) {
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div className="max-w-2xl">
               {content?.label && (
-                <Badge variant="emerald-dark" size="xs">
-                  {content?.label}
-                </Badge>
+                <>
+                  {/* Section label (was Badge) */}
+                  <SectionLabel>
+                    {content?.label}
+                  </SectionLabel>
+                </>
               )}
               {content?.body && (
                 <TypographyText className="mt-2 text-sm sm:text-base text-slate-700">

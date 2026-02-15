@@ -3,7 +3,7 @@
 import { useContent } from "@/components/language-provider";
 // import { PartnersCarousel } from "@/components/partners-carousel"
 import { ProcessExplainer } from "@/components/process-explainer";
-import { Badge, Text as TypographyText } from "@/components/typography";
+import { SectionLabel, Text as TypographyText } from "@/components/typography";
 import { Section } from "@/components/section";
 
 export const Section2OurMission = () => {
@@ -20,7 +20,12 @@ export const Section2OurMission = () => {
         {story && (
           // <div className="max-w-3xl mt-32">
           <div className="max-w-3xl">
-            {!!story.badge && <Badge>{story.badge}</Badge>}
+            {!!story.badge && (
+              <>
+                {/* Section label (was Badge) */}
+                <SectionLabel>{story.badge}</SectionLabel>
+              </>
+            )}
             {!!story.body && (
               <TypographyText size="lg" className="mt-3">
                 {story.body}

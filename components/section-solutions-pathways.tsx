@@ -7,7 +7,7 @@ import { useState, useRef } from "react"
 import { useContent, useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { getAssetPath } from "@/lib/assets"
-import { Badge, Heading } from "./typography"
+import { SectionLabel, Heading } from "./typography"
 import { Play, Pause } from "lucide-react"
 
 function SolutionCard({
@@ -124,9 +124,12 @@ export function SectionSolutionsPathways() {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl">
           {pathways.title && (
-            <Badge variant="emerald" size="xs">
-              {pathways.title}
-            </Badge>
+            <>
+              {/* Section label (was Badge) */}
+              <SectionLabel>
+                {pathways.title}
+              </SectionLabel>
+            </>
           )}
           {pathways.subtitle && (
             <Heading size="xl" className="mt-3">

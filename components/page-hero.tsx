@@ -1,5 +1,5 @@
 import { Section } from "@/components/section"
-import { Badge } from "@/components/typography"
+import { SectionLabel } from "@/components/typography"
 
 export const PageHero = ({
   title,
@@ -11,9 +11,10 @@ export const PageHero = ({
   return (
     <Section className="pt-32 pb-8 text-center">
       <div className="mx-auto max-w-5xl px-6 py-12">
-        <Badge variant="emerald" size="sm">
+        {/* Section label (was Badge) */}
+        <SectionLabel>
           {badge}
-        </Badge>
+        </SectionLabel>
         <h1 className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
           {title}
         </h1>
