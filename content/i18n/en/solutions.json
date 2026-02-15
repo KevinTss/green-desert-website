@@ -61,7 +61,7 @@
         "title": "Energy & biofuels",
         "tagline": "Biomass-to-energy systems",
         "summary": "Convert hemp biomass into clean fuels and CHP-ready pellets with emissions accounting and feedstock specs.",
-        "image": "/energy.jpeg",
+        "image": "/Energy-GD.png",
         "href": "/solutions/energy"
       },
       {
@@ -450,7 +450,7 @@
       "hero": {
         "title": "Energy & biofuels",
         "body": "Converting industrial biomass into clean fuels, green hydrogen feedstock, and Cogeneration ready pellets. We engineer feedstock specifications and emissions accounting to deliver verified, carbon-negative heat and power solutions.",
-        "image": "/energy.jpeg"
+        "image": "/Energy-GD.png"
       },
       "overview": {
         "paragraphs": [
