@@ -84,7 +84,7 @@ export function NavigationMenuLink({
   const isDarkVariant = variant === "dark";
 
   const baseLinkClasses = cn(
-    "transition-colors duration-300 rounded-full px-5 py-2 text-[13px] font-medium",
+    "transition-colors duration-300 rounded-full px-5 py-2 text-base font-medium",
     isDarkVariant
       ? "text-white/85 hover:bg-white/10 focus-visible:bg-white/15"
       : "text-gray-700 hover:bg-gray-100 focus-visible:bg-gray-100",
