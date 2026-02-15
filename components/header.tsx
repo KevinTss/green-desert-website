@@ -10,7 +10,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import Link from "next/link";
 import { getAssetPath } from "@/lib/assets";
 import { cn } from "@/lib/utils";
-import { LanguageDropdown } from "@/components/language-dropdown";
+// import { LanguageDropdown } from "@/components/language-dropdown";
 import { usePathname } from "next/navigation";
 import headerI18m from "@/content/i18n/en/header.json";
 
@@ -145,7 +145,7 @@ export function Header() {
               alt="Green Desert Logo"
               width={150}
               height={40}
-              className="h-8 w-auto transition-opacity duration-300"
+              className="h-12 w-auto transition-opacity duration-300"
               priority
             />
           </Link>
