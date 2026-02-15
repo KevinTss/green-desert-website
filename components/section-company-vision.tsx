@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 import { useContent, useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Badge, SectionLabel, Heading, Text as TypographyText } from "@/components/typography"
+import { Badge, SectionLabel, Heading, SectionSubtitle, Text as TypographyText } from "@/components/typography"
 import { cn } from "@/lib/utils"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
@@ -81,9 +81,9 @@ export function SectionCompanyVision() {
           <Heading size="lg" className="mt-4">
             {vision.title}
           </Heading>
-          <TypographyText size="lg" className="mt-6">
+          <SectionSubtitle className="mt-6 text-slate-600">
             {vision.body}
-          </TypographyText>
+          </SectionSubtitle>
         </div>
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.35fr_0.65fr]">
           <div

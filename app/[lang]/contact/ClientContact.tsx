@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Header } from "@/components/header";
 import { Section } from "@/components/section";
+import { SectionSubtitle } from "@/components/typography";
 import { useLanguage, useContent } from "@/components/language-provider";
 import { cn } from "@/lib/utils";
 
@@ -100,9 +101,9 @@ export function ClientContact() {
               <h1 className="text-3xl font-semibold text-gray-900">
                 {contactContent?.formTitle ?? contactContent?.title}
               </h1>
-              <p className="text-sm text-gray-600">
+              <SectionSubtitle className="text-gray-600">
                 {contactContent?.formSubtitle ?? contactContent?.subtitle}
-              </p>
+              </SectionSubtitle>
               <form onSubmit={handleSubmit} className="mt-2 space-y-4">
                 <div className="space-y-1">
                   <label

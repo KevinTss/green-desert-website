@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
+import { SectionSubtitle } from "@/components/typography"
 
 export default function RootPage() {
   const router = useRouter()
@@ -21,7 +22,9 @@ export default function RootPage() {
     <div className="min-h-screen bg-white flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-2xl font-semibold text-gray-900">Loading...</h1>
-        <p className="mt-2 text-gray-600">Redirecting to your preferred language</p>
+        <SectionSubtitle className="mt-2 text-gray-600">
+          Redirecting to your preferred language
+        </SectionSubtitle>
       </div>
     </div>
   )

@@ -72,6 +72,27 @@ export function SectionLabel<T extends ElementType = "h1">({
 }
 
 // ============================================================================
+// SECTION SUBTITLE COMPONENT - Paragraphs under section titles
+// ============================================================================
+type SectionSubtitleProps<T extends ElementType> = {
+  as?: T
+} & Omit<ComponentPropsWithoutRef<T>, "as">
+
+export function SectionSubtitle<T extends ElementType = "p">({
+  as,
+  className,
+  ...props
+}: SectionSubtitleProps<T>) {
+  const Tag = (as ?? "p") as ElementType
+  return (
+    <Tag
+      {...props}
+      className={cn("text-[1.2rem] leading-[1.7rem]", className)}
+    />
+  )
+}
+
+// ============================================================================
 // HEADING COMPONENT - Semantic headings with consistent sizing
 // ============================================================================
 const HEADING_SIZES = {

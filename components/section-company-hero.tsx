@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useContent } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
-import { SectionLabel, Heading, Text as TypographyText } from "@/components/typography"
+import { SectionLabel, Heading, SectionSubtitle } from "@/components/typography"
 
 export const SectionCompanyHero = () => {
   const { company } = useContent()
@@ -43,9 +43,9 @@ export const SectionCompanyHero = () => {
             </Heading>
           )}
           {hero.intro && (
-            <TypographyText variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
+            <SectionSubtitle className="mx-auto mt-4 max-w-2xl text-white/90">
               {hero.intro}
-            </TypographyText>
+            </SectionSubtitle>
           )}
         </div>
       </div>

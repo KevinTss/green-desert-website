@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useContent } from "@/components/language-provider";
 import { Section } from "@/components/section";
-import { Heading } from "@/components/typography";
+import { Heading, SectionSubtitle } from "@/components/typography";
 import { Button } from "@/components/ui/button";
 
 export function SectionSolutionsWalkthrough() {
@@ -22,9 +22,9 @@ export function SectionSolutionsWalkthrough() {
             {details.walkthroughHeading}
           </Heading>
           {details.walkthroughDescription && (
-            <p className="mt-4 text-base leading-relaxed text-slate-600">
+            <SectionSubtitle className="mt-4 text-slate-600">
               {details.walkthroughDescription}
-            </p>
+            </SectionSubtitle>
           )}
           <div className="mt-8 flex flex-wrap gap-4">
             {actions?.scheduleHref && actions.scheduleLabel && (

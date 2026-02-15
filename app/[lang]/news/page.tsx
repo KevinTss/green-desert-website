@@ -6,6 +6,7 @@ import { BlogCard } from "@/components/blog-card";
 import { getAllEntries } from "@/lib/posts";
 import enNewsContent from "@/content/i18n/en/news.json";
 import arNewsContent from "@/content/i18n/ar/news.json";
+import { SectionSubtitle } from "@/components/typography";
 import { getAssetPath } from "@/lib/assets";
 import { formatDate } from "@/lib/utils";
 
@@ -73,9 +74,9 @@ export default async function NewsPage({ params }: PageProps) {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {content.title}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <SectionSubtitle className="text-gray-600 max-w-3xl mx-auto">
             {content.subtitle}
-          </p>
+          </SectionSubtitle>
         </div>
 
         {posts.length > 0 ? (
@@ -143,11 +144,11 @@ export default async function NewsPage({ params }: PageProps) {
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
               {isArabic ? "لا توجد أخبار بعد" : "No news yet"}
             </h3>
-            <p className="text-gray-600 max-w-md mx-auto">
+            <SectionSubtitle className="text-gray-600 max-w-md mx-auto">
               {isArabic
                 ? "نحن نعمل على إضافة أخبار جديدة. تابعونا للمستجدات!"
                 : "We're working on adding fresh news. Check back soon!"}
-            </p>
+            </SectionSubtitle>
             <Link
               href={`/${languageRoute}`}
               className="mt-4 inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"

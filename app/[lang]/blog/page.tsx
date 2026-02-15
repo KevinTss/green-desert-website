@@ -2,6 +2,7 @@ import { getAllEntries } from '@/lib/posts'
 import { BlogCard } from '@/components/blog-card'
 import { Header } from '@/components/header'
 import FooterWithNews from '@/components/footer-with-news'
+import { SectionSubtitle } from '@/components/typography'
 import { Metadata } from 'next'
 import enBlogContent from '@/content/i18n/en/blog.json'
 import arBlogContent from '@/content/i18n/ar/blog.json'
@@ -41,9 +42,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {content.title}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <SectionSubtitle className="text-gray-600 max-w-3xl mx-auto">
             {content.subtitle}
-          </p>
+          </SectionSubtitle>
         </div>
 
         {/* Blog Posts Grid */}
@@ -65,12 +66,12 @@ export default async function BlogPage({ params }: BlogPageProps) {
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
               {isArabic ? 'لا توجد مقالات بعد' : 'No articles yet'}
             </h3>
-            <p className="text-gray-600 max-w-md mx-auto">
+            <SectionSubtitle className="text-gray-600 max-w-md mx-auto">
               {isArabic
                 ? 'نحن نعمل على إضافة محتوى رائع قريباً. تابعونا للحصول على آخر الأخبار!'
                 : "We're working on adding great content soon. Stay tuned for the latest updates!"
               }
-            </p>
+            </SectionSubtitle>
           </div>
         )}
       </div>

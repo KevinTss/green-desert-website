@@ -8,7 +8,7 @@ import Link from "next/link"
 import { getAssetPath } from "@/lib/assets"
 import { AnimatePresence, motion } from "framer-motion"
 import { Section } from "@/components/section"
-import { Text as TypographyText } from "@/components/typography"
+import { SectionSubtitle } from "@/components/typography"
 
 export const Section1Hero = () => {
   const { home } = useContent()
@@ -61,9 +61,9 @@ export const Section1Hero = () => {
             />
           )}
           {hero?.subtitle && (
-            <TypographyText variant="white-muted" className="mx-auto mt-4 max-w-2xl text-[1.2rem]">
+            <SectionSubtitle className="mx-auto mt-4 max-w-2xl text-white/80">
               {hero.subtitle}
-            </TypographyText>
+            </SectionSubtitle>
           )}
         </div>
 
