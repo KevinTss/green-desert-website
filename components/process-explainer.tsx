@@ -133,7 +133,7 @@ export const ProcessExplainer = ({ process }: ProcessExplainerProps) => {
                 );
               })}
             </div>
-            <div className="absolute inset-[28%] rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-[13px] font-semibold text-emerald-200">
+            <div className="absolute inset-[28%] rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-[15px] font-semibold text-emerald-200">
               {content.loopLabel}
             </div>
           </div>
