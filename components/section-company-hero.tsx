@@ -29,21 +29,28 @@ export const SectionCompanyHero = () => {
         </div>
 
         <div className="relative mx-auto w-full max-w-5xl px-6 py-12 text-center text-white sm:px-12 lg:px-16">
-          {hero.badge && (
+          {/* {hero.badge && (
             <Badge variant="emerald-light">
               {hero.badge}
             </Badge>
-          )}
+          )} */}
           {hero.title && (
-            <Heading as="h1" size="3xl" variant="white" className="mt-4">
+            <Heading 
+              as="h1"
+              variant="white"
+              className="uppercase"
+              style={{
+                fontSize: '5.45rem'
+              }}
+            >
               {hero.title}
             </Heading>
           )}
-          {hero.intro && (
+          {/* {hero.intro && (
             <TypographyText variant="white" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
               {hero.intro}
             </TypographyText>
-          )}
+          )} */}
         </div>
       </div>
     </Section>
