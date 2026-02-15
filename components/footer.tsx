@@ -240,17 +240,17 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
               {newsHeading}
             </h4>
             <div className="space-y-3">
-              {latestNews.map((item) => {
+              {latestNews.slice(0,2).map((item) => {
                 const href = formatHref(item.href, languageRoute);
                 const formattedDate = formatNewsDate(item.date);
                 return (
                   <Link
                     key={item.href ?? item.title}
                     href={href}
-                    className="flex items-center gap-3 rounded-lg transition-colors hover:text-gray-900"
+                    className="group flex items-center gap-3 rounded-lg transition-colors hover:text-emerald-600"
                   >
                     {item.image && (
-                      <div className="relative h-12 w-16 min-w-16 overflow-hidden rounded-md bg-gray-100">
+                      <div className="relative h-16 w-16 min-w-16 overflow-hidden rounded-md bg-gray-100">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={item.image}
@@ -265,12 +265,12 @@ export const Footer = ({ latestNews = [] }: FooterProps) => {
                           {formattedDate}
                         </div>
                       )}
-                      <p className="text-sm font-semibold text-gray-900 truncate">
+                      <p className="text-sm font-semibold text-gray-900 truncate transition-colors group-hover:text-emerald-600">
                         {item.title}
                       </p>
-                      <span className="text-xs font-semibold text-emerald-600">
+                      {/* <span className="text-xs font-semibold text-emerald-600">
                         {resolvedLabels.readMore ?? "Read more"}
-                      </span>
+                      </span> */}
                     </div>
                   </Link>
                 );
