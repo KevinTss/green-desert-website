@@ -109,9 +109,8 @@ export const Section3KpiStrip = () => {
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {(kpiContent.items ?? []).map((kpi) => {
             const rawValue = kpi.value ?? ""
-            const { numericValue, decimals, suffix } = parseKpiValue(rawValue + (kpi.suffix || ""))
+            const { numericValue, decimals } = parseKpiValue(rawValue)
             const hasNumber = Number.isFinite(numericValue)
-            const suffixText = suffix.trim()
             return (
               <div
                 key={kpi.id}
@@ -135,11 +134,6 @@ export const Section3KpiStrip = () => {
                   </Stat>
                 </div>
                 <div className="mt-2">
-                  {hasNumber && suffixText.length > 0 && (
-                    <Label variant="default">
-                      {suffixText}
-                    </Label>
-                  )}
                   {kpi.description && (
                     <TypographyText as="p" size="sm" className="text-slate-500">
                       {kpi.description}
