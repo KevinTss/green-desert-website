@@ -3,7 +3,7 @@
 import { useContent } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { AnimatedStatCards } from "@/components/animated-stat-cards"
-import { SectionLabel, SectionSubtitle } from "@/components/typography"
+import { SectionLabel, Text as TypographyText } from "@/components/typography"
 
 export function SectionSolutionsHighlights() {
   const { solutions } = useContent()
@@ -25,9 +25,9 @@ export function SectionSolutionsHighlights() {
             </>
           )}
           {body && (
-            <SectionSubtitle className="mt-3 text-slate-600">
+            <TypographyText className="mt-3 text-slate-600">
               {body}
-            </SectionSubtitle>
+            </TypographyText>
           )}
         </div>
 

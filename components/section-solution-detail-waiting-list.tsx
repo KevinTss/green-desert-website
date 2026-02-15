@@ -1,7 +1,7 @@
 "use client"
 
 import { Section } from "@/components/section"
-import { Heading, Label, SectionSubtitle } from "./typography"
+import { Heading, Label, Text as TypographyText } from "./typography"
 import { Button } from "./ui/button"
 import { useContent } from "@/components/language-provider"
 
@@ -21,9 +21,9 @@ export function SectionSolutionWaitingList() {
           </Heading>
         )}
         {waitlist.subtitle && (
-          <SectionSubtitle className="mt-4 text-slate-600">
+          <TypographyText className="mt-4 text-slate-600">
             {waitlist.subtitle}
-          </SectionSubtitle>
+          </TypographyText>
         )}
         {waitlist.cta && waitlist.href && (
           <Button className="rounded-full px-8 mt-10" asChild>

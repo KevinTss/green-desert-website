@@ -6,7 +6,7 @@ import Link from "next/link"
 import { useContent, useLanguage } from "@/components/language-provider"
 import { Section } from "@/components/section"
 import { getAssetPath } from "@/lib/assets"
-import { Heading, SectionSubtitle } from "@/components/typography"
+import { Heading, Text as TypographyText } from "@/components/typography"
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -124,9 +124,9 @@ export function SectionSolutionDetailHero({
               {title}
             </Heading>
             {subtitle && (
-              <SectionSubtitle className="mt-4 text-white/90">
+              <TypographyText variant="white" className="mt-4">
                 {subtitle}
-              </SectionSubtitle>
+              </TypographyText>
             )}
           </div>
         </div>

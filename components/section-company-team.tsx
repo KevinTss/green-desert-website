@@ -5,7 +5,7 @@ import { MailIcon, LinkedinIcon } from "lucide-react"
 import { useContent } from "@/components/language-provider"
 import { getAssetPath } from "@/lib/assets"
 import { Section } from "@/components/section"
-import { Heading, Text as TypographyText, Badge, SectionSubtitle } from "@/components/typography"
+import { Heading, Text as TypographyText, Badge } from "@/components/typography"
 import { cn } from "@/lib/utils"
 
 export function SectionCompanyTeam() {
@@ -24,9 +24,9 @@ export function SectionCompanyTeam() {
             </Heading>
           )}
           {team.subtitle && (
-            <SectionSubtitle>
+            <TypographyText>
               {team.subtitle}
-            </SectionSubtitle>
+            </TypographyText>
           )}
         </div>
         <div className="space-y-12">

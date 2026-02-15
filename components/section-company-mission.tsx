@@ -1,6 +1,6 @@
 import { useContent } from "@/components/language-provider";
 import { Section } from "@/components/section";
-import { Heading, SectionSubtitle } from "@/components/typography";
+import { Heading, Text as TypographyText } from "@/components/typography";
 
 export function SectionCompanyMission() {
   const { company } = useContent();
@@ -15,10 +15,10 @@ export function SectionCompanyMission() {
           <Heading className="pb-4">{mission.title}</Heading>
         )}
         {!!mission?.body && (
-          <SectionSubtitle className="pb-4">{mission.body}</SectionSubtitle>
+          <TypographyText className="pb-4">{mission.body}</TypographyText>
         )}
         {!!mission?.subtitle && (
-          <SectionSubtitle>{mission.subtitle}</SectionSubtitle>
+          <TypographyText>{mission.subtitle}</TypographyText>
         )}
       </div>
     </Section>

@@ -1,7 +1,7 @@
 "use client"
 
 import { Section } from "@/components/section"
-import { Heading, Label, SectionSubtitle } from "./typography"
+import { Heading, Label, Text as TypographyText } from "./typography"
 import { Button } from "./ui/button"
 import { useContent } from "@/components/language-provider"
 
@@ -19,9 +19,9 @@ export function SectionSolutionDetailSignUp() {
           </Heading>
         )}
         {newsletter.subtitle && (
-          <SectionSubtitle className="mt-4 text-slate-600">
+          <TypographyText className="mt-4 text-slate-600">
             {newsletter.subtitle}
-          </SectionSubtitle>
+          </TypographyText>
         )}
         {newsletter.cta && newsletter.href && (
           <Button className="rounded-full px-8 mt-10" asChild>

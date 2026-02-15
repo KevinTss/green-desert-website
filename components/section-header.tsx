@@ -2,7 +2,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { ReactNode } from "react"
 import { cn } from "@/lib/utils"
-import { SectionSubtitle } from "@/components/typography"
+import { Text as TypographyText } from "@/components/typography"
 
 interface SectionHeaderProps {
   title: ReactNode
@@ -30,9 +30,9 @@ export function SectionHeader({
       >
         {title}
         {subtitle && (
-          <SectionSubtitle className="mt-1 text-gray-500">
+          <TypographyText className="mt-1 text-gray-500">
             {subtitle}
-          </SectionSubtitle>
+          </TypographyText>
         )}
       </div>
 

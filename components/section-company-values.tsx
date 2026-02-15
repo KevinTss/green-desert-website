@@ -1,6 +1,6 @@
 import { useContent } from "@/components/language-provider"
 import { Section } from "@/components/section"
-import { Badge, Heading, SectionSubtitle } from "@/components/typography"
+import { Badge, Heading, Text as TypographyText } from "@/components/typography"
 
 export function SectionCompanyValues() {
   const { company } = useContent()
@@ -17,9 +17,9 @@ export function SectionCompanyValues() {
           </Heading>
         )}
         {values.subtitle && (
-          <SectionSubtitle>
+          <TypographyText>
             {values.subtitle}
-          </SectionSubtitle>
+          </TypographyText>
         )}
       </div>
       <div className="container mx-auto px-4 mb-20">
