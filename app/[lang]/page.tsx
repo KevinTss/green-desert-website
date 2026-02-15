@@ -7,7 +7,6 @@ import { Section3KpiStrip } from "@/components/section-3-kpi-strip";
 import { Section6NewsClient } from "@/components/section-6-news-client";
 import { MiniNavbar } from "@/components/mini-navbar";
 import { getAllEntries } from "@/lib/posts";
-import { getAssetPath } from "@/lib/assets";
 
 async function loadLatestNews(lang: string) {
   const language = lang === "ar-SA" ? "ar" : "en";
@@ -16,7 +15,7 @@ async function loadLatestNews(lang: string) {
   return news.slice(0, 3).map((item) => ({
     title: item.title,
     date: item.date,
-    image: item.image ? getAssetPath(item.image) : getAssetPath("/placeholder.jpg"),
+    image: item.image ?? "/placeholder.jpg",
     href: item.url ? item.url : `/news/${item.slug}`,
   }));
 }
