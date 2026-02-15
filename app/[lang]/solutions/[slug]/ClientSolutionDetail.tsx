@@ -5,7 +5,7 @@ import { SectionSolutionDetailOverview } from "@/components/section-solution-det
 import { SectionSolutionDetailShowcase } from "@/components/section-solution-detail-showcase";
 import { SectionSolutionDetailContent } from "@/components/section-solution-detail-content";
 import { SectionSolutionDetailHighlights } from "@/components/section-solution-detail-highlights";
-import { SectionSolutionDetailFeatures } from "@/components/section-solution-detail-features";
+// import { SectionSolutionDetailFeatures } from "@/components/section-solution-detail-features";
 import { MiniNavbar } from "@/components/mini-navbar";
 import { useContent, useLanguage } from "@/components/language-provider";
 import { cn } from "@/lib/utils";
@@ -40,7 +40,7 @@ export function ClientSolutionDetail({ slug }: { slug: string }) {
         <SectionSolutionDetailShowcase content={detail.showcase} />
         <SectionSolutionDetailContent content={detail.approach?.paragraphs} />
         <SectionSolutionDetailHighlights content={detail.highlights} />
-        <SectionSolutionDetailFeatures content={detail.features} />
+        {/* <SectionSolutionDetailFeatures content={detail.features} /> */}
         <SectionSolutionDetailSpotlight content={detail.spotlight} />
         <SectionSolutionDetailProducts content={detail.products} />
         {detail.showSignUp !== false && <SectionSolutionDetailSignUp />}
