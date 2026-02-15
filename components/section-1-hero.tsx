@@ -61,7 +61,7 @@ export const Section1Hero = () => {
             />
           )}
           {hero?.subtitle && (
-            <TypographyText variant="white-muted" className="mx-auto mt-4 max-w-2xl text-sm sm:text-base">
+            <TypographyText variant="white-muted" className="mx-auto mt-4 max-w-2xl text-[1.2rem]">
               {hero.subtitle}
             </TypographyText>
           )}
