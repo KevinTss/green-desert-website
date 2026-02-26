@@ -19,10 +19,10 @@ This is a Next.js 15 website for Green Desert, a Saudi Arabian biotechnology sta
 - Uses `pnpm` as package manager (evidenced by pnpm-lock.yaml)
 
 ### Deployment
-- **GitHub Pages**: Static export to `/green-desert-website` subdirectory
+- **GitHub Pages** with custom domain `greendesert.sa`
 - Uses `output: "export"` in next.config.mjs
-- `basePath` and `assetPrefix` configured for subdirectory deployment
-- All static assets require `getAssetPath()` helper for correct prefixing
+- `public/CNAME` file configures the custom domain
+- `getAssetPath()` helper handles webp conversion in production
 
 ## Architecture Overview
 
@@ -34,7 +34,7 @@ This is a Next.js 15 website for Green Desert, a Saudi Arabian biotechnology sta
 - **State Management**: React Context for language switching
 - **Icons**: Lucide React
 - **Content**: Markdown-based blog system with frontmatter
-- **Deployment**: GitHub Pages with subdirectory support
+- **Deployment**: GitHub Pages with custom domain (`greendesert.sa`)
 
 ### Key Components Structure
 
@@ -60,7 +60,7 @@ This is a Next.js 15 website for Green Desert, a Saudi Arabian biotechnology sta
 - **Theme Support**: CSS variables for light/dark mode capability
 - **Component Library**: Full shadcn/ui component set available
 - **Blog System**: Markdown-based with frontmatter, bilingual support
-- **Asset Management**: `getAssetPath()` helper for deployment prefixing
+- **Asset Management**: `getAssetPath()` helper for webp conversion
 - **Navigation**: Dropdown menus with hover states and language switcher
 
 ### File Organization
@@ -73,11 +73,11 @@ This is a Next.js 15 website for Green Desert, a Saudi Arabian biotechnology sta
 - `content/` - Blog posts in markdown format (en/ and ar/ subdirectories)
 
 #### Key Files
-- `lib/assets.ts` - Asset path helper for deployment prefixing
+- `lib/assets.ts` - Asset path helper with webp conversion
 - `lib/blog.ts` - Blog post utilities and markdown processing
 - `components/language-provider.tsx` - i18n context and translations
 - `components/scroll-header.tsx` - Main navigation with language dropdown
-- `next.config.mjs` - Next.js configuration with GitHub Pages setup
+- `next.config.mjs` - Next.js configuration with static export
 
 ### Development Notes
 - TypeScript strict mode enabled but build errors ignored
@@ -86,7 +86,7 @@ This is a Next.js 15 website for Green Desert, a Saudi Arabian biotechnology sta
 - Uses CSS variables for theming throughout
 - RTL support implemented at the document level
 - Blog posts use gray-matter for frontmatter parsing
-- All static assets must use `getAssetPath()` for correct deployment paths
+- All static assets must use `getAssetPath()` for webp conversion in production
 - Language switcher uses hover dropdown with proper state management
 
 ### Styling Approach
@@ -102,7 +102,7 @@ This is a Next.js 15 website for Green Desert, a Saudi Arabian biotechnology sta
 - **ALWAYS** use `getAssetPath()` for any static asset references
 - Import: `import { getAssetPath } from "@/lib/assets"`
 - Usage: `src={getAssetPath("/image.png")}` instead of `src="/image.png"`
-- This ensures correct paths for GitHub Pages subdirectory deployment
+- This handles automatic webp conversion in production builds
 
 ### Blog System
 - Blog posts are markdown files in `content/en/` and `content/ar/`
@@ -124,4 +124,4 @@ When working with this codebase:
 5. Consider both English and Arabic layouts when making UI changes
 6. **ALWAYS** use `getAssetPath()` for static assets
 7. Follow the existing blog post structure for content
-8. Test builds with `pnpm build` to ensure GitHub Pages compatibility
+8. Test builds with `pnpm build` to ensure static export compatibility

@@ -1,5 +1,5 @@
 export const isProd = process.env.NODE_ENV === 'production'
-export const basePath = isProd ? '/green-desert-website' : ''
+export const basePath = ''
 
 function preferWebp(path: string): string {
   if (!isProd) return path
